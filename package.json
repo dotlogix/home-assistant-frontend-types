@@ -1,0 +1,22 @@
+{
+  "name": "home-assistant-frontend-types",
+  "version": "2025.11.05.0",
+  "description": "TypeScript types for the Home Assistant frontend",
+  "main": "index.d.ts",
+  "repository": "https://github.com/dotlogix/home-assistant-frontend-types",
+  "author": "Alexander Schill <alexander@schillnet.de>",
+  "license": "MIT",
+  "private": false,
+  "dependencies": {
+    "@formatjs/intl-datetimeformat": "6.18.2",
+    "@formatjs/intl-displaynames": "6.8.13",
+    "@formatjs/intl-durationformat": "0.7.6",
+    "@formatjs/intl-getcanonicallocales": "2.5.6",
+    "@formatjs/intl-listformat": "7.7.13",
+    "@formatjs/intl-locale": "4.2.13",
+    "@formatjs/intl-numberformat": "8.15.6",
+    "@formatjs/intl-pluralrules": "5.4.6",
+    "@formatjs/intl-relativetimeformat": "11.4.13",
+    "home-assistant-js-websocket": "^9.5.0"
+  }
+}
