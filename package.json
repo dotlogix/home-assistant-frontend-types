@@ -1,6 +1,6 @@
 {
   "name": "home-assistant-frontend-types",
-  "version": "2025.11.05.0",
+  "version": "2025.11.5",
   "description": "TypeScript types for the Home Assistant frontend",
   "main": "index.d.ts",
   "repository": "https://github.com/dotlogix/home-assistant-frontend-types",
