@@ -20,7 +20,7 @@ export declare class HuiEntityBadge extends LitElement implements LovelaceBadge 
     get hasAction(): boolean;
     private _computeStateColor;
     private _getImageUrl;
-    protected render(): typeof nothing | import("lit-html").TemplateResult<1>;
+    protected render(): import("lit-html").TemplateResult<1> | typeof nothing;
     private _handleAction;
     static styles: import("lit").CSSResult;
 }

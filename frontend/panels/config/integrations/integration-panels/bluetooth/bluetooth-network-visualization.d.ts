@@ -1,7 +1,7 @@
 import type { CSSResultGroup } from "lit";
 import { LitElement } from "lit";
 import "../../../../../components/chart/ha-network-graph";
-import "../../../../../layouts/hass-subpage";
+import "../../../../../layouts/hass-tabs-subpage";
 import type { HomeAssistant, Route } from "../../../../../types";
 export declare class BluetoothNetworkVisualization extends LitElement {
     hass: HomeAssistant;

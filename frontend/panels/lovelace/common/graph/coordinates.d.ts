@@ -4,7 +4,7 @@ export declare const coordinates: (history: [number, number][], width: number, h
     maxX?: number;
     minY?: number;
     maxY?: number;
-}) => {
+}, useMean?: boolean) => {
     points: [number, number][];
     yAxisOrigin: number;
 };
@@ -13,7 +13,7 @@ export declare const coordinatesMinimalResponseCompressedState: (history: Entity
     maxX?: number;
     minY?: number;
     maxY?: number;
-}) => {
+}, useMean?: boolean) => {
     points: [number, number][];
     yAxisOrigin: number;
 };

@@ -18,7 +18,7 @@ export declare class HuiDialogSuggestCard extends LitElement {
     closeDialog(): void;
     private get _viewSupportsSection();
     private _renderPreview;
-    protected render(): typeof nothing | import("lit-html").TemplateResult<1>;
+    protected render(): import("lit-html").TemplateResult<1> | typeof nothing;
     static get styles(): CSSResultGroup;
     private _pickCard;
     private _computeNewConfig;

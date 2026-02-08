@@ -20,7 +20,7 @@ declare class HaCounterForm extends LitElement {
     private _step?;
     set item(item: Counter);
     focus(): void;
-    protected render(): typeof nothing | import("lit-html").TemplateResult<1>;
+    protected render(): import("lit-html").TemplateResult<1> | typeof nothing;
     private _valueChanged;
     static get styles(): CSSResultGroup;
 }

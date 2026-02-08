@@ -85,6 +85,7 @@ export interface BackupContent {
     failed_folders?: string[];
     extra_metadata?: {
         "supervisor.addon_update"?: string;
+        "supervisor.app_update"?: string;
     };
     with_automatic_settings: boolean;
 }
@@ -165,7 +166,7 @@ export declare const isLocalAgent: (agentId: string) => boolean;
 export declare const isNetworkMountAgent: (agentId: string) => boolean;
 export declare const computeBackupAgentName: (localize: LocalizeFunc, agentId: string, agents: BackupAgent[]) => string;
 export declare const computeBackupSize: (backup: BackupContent) => number;
-export type BackupType = "automatic" | "manual" | "addon_update";
+export type BackupType = "automatic" | "manual" | "app_update";
 export declare const getBackupTypes: (isHassio: boolean) => BackupType[];
 export declare const computeBackupType: (backup: BackupContent, isHassio: boolean) => BackupType;
 export declare const compareAgents: (a: string, b: string) => number;

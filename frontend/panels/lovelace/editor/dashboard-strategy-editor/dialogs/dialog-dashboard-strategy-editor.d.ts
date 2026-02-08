@@ -1,11 +1,11 @@
 import type { CSSResultGroup } from "lit";
 import { LitElement, nothing } from "lit";
 import "../../../../../components/ha-button";
-import "../../../../../components/ha-button-menu";
 import "../../../../../components/ha-dialog";
 import "../../../../../components/ha-dialog-header";
+import "../../../../../components/ha-dropdown";
+import "../../../../../components/ha-dropdown-item";
 import "../../../../../components/ha-icon-button";
-import "../../../../../components/ha-list-item";
 import type { HomeAssistant } from "../../../../../types";
 import "../hui-dashboard-strategy-element-editor";
 import type { DashboardStrategyEditorDialogParams } from "./show-dialog-dashboard-strategy-editor";
@@ -27,7 +27,7 @@ declare class DialogDashboardStrategyEditor extends LitElement {
     private _handleAction;
     private _toggleMode;
     private _takeControl;
-    protected render(): typeof nothing | import("lit-html").TemplateResult<1>;
+    protected render(): import("lit-html").TemplateResult<1> | typeof nothing;
     static get styles(): CSSResultGroup;
 }
 declare global {

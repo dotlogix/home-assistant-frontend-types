@@ -2,10 +2,10 @@ import type { CSSResultGroup, TemplateResult } from "lit";
 import { LitElement } from "lit";
 import "../../../../../components/ha-fab";
 import "../../../../../components/ha-icon-button";
+import "../../../../../components/ha-metric";
 import "../../../../../components/ha-relative-time";
 import "../../../../../layouts/hass-tabs-subpage-data-table";
 import type { HomeAssistant, Route } from "../../../../../types";
-import "../../../../../components/ha-metric";
 export declare class BluetoothConnectionMonitorPanel extends LitElement {
     hass: HomeAssistant;
     route: Route;

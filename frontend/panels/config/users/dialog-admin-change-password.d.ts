@@ -18,7 +18,7 @@ declare class DialogAdminChangePassword extends LitElement {
     private _computeLabel;
     private _computeError;
     private _validate;
-    protected render(): typeof nothing | import("lit-html").TemplateResult<1>;
+    protected render(): import("lit-html").TemplateResult<1> | typeof nothing;
     private _valueChanged;
     private _changePassword;
     static get styles(): CSSResultGroup;

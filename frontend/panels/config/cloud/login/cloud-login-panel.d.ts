@@ -1,11 +1,13 @@
 import type { TemplateResult } from "lit";
 import { LitElement } from "lit";
 import "../../../../components/ha-alert";
-import "../../../../components/ha-button-menu";
 import "../../../../components/ha-card";
+import "../../../../components/ha-dropdown";
+import "../../../../components/ha-dropdown-item";
 import "../../../../components/ha-icon-next";
 import "../../../../components/ha-list";
 import "../../../../components/ha-list-item";
+import "../../../../components/ha-svg-icon";
 import "../../../../layouts/hass-subpage";
 import type { HomeAssistant } from "../../../../types";
 import "../../ha-config-section";

@@ -15,14 +15,17 @@ export declare class DialogEnergyDeviceSettings extends LitElement implements Ha
     private _params?;
     private _device?;
     private _energy_units?;
+    private _power_units?;
     private _error?;
     private _excludeList?;
+    private _excludeListPower?;
     private _possibleParents;
     showDialog(params: EnergySettingsDeviceDialogParams): Promise<void>;
     private _computePossibleParents;
     closeDialog(): boolean;
-    protected render(): typeof nothing | import("lit-html").TemplateResult<1>;
+    protected render(): import("lit-html").TemplateResult<1> | typeof nothing;
     private _statisticChanged;
+    private _powerStatisticChanged;
     private _nameChanged;
     private _parentSelected;
     private _save;

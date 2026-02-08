@@ -7,6 +7,7 @@ import "../../../components/ha-icon-button";
 import "../../../components/ha-icon-overflow-menu";
 import "../../../components/ha-svg-icon";
 import type { Blueprints } from "../../../data/blueprint";
+import "../../../components/chips/ha-assist-chip";
 import "../../../layouts/hass-tabs-subpage-data-table";
 import type { HomeAssistant, Route } from "../../../types";
 declare class HaBlueprintOverview extends LitElement {
@@ -21,15 +22,20 @@ declare class HaBlueprintOverview extends LitElement {
     private _activeColumnOrder?;
     private _activeHiddenColumns?;
     private _filter;
+    private _usageCounts;
+    private _usageCountRequest;
     private _processedBlueprints;
     private _columns;
     protected firstUpdated(changedProps: PropertyValues): void;
+    protected updated(changedProps: PropertyValues): void;
     protected render(): TemplateResult;
     private _showHelp;
     private _addBlueprint;
     private _addBlueprintClicked;
     private _reload;
+    private _loadUsageCounts;
     private _handleRowClicked;
+    private _handleUsageClick;
     private _showUsed;
     private _createNew;
     private _share;

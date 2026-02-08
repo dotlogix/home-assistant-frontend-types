@@ -14,35 +14,35 @@ export declare const pictureHeaderFooterConfigStruct: import("superstruct").Stru
     alt_text: import("superstruct").Struct<string, null>;
 }>;
 export declare const buttonsHeaderFooterConfigStruct: import("superstruct").Struct<{
-    type: string;
     entities: {
-        entity: string;
         image: string;
         name: string;
         icon: string;
+        entity: string;
         show_icon: boolean;
         show_name: boolean;
         double_tap_action?: any;
         hold_action?: any;
         tap_action?: any;
     }[];
+    type: string;
 }, {
     type: import("superstruct").Struct<string, null>;
     entities: import("superstruct").Struct<{
-        entity: string;
         image: string;
         name: string;
         icon: string;
+        entity: string;
         show_icon: boolean;
         show_name: boolean;
         double_tap_action?: any;
         hold_action?: any;
         tap_action?: any;
     }[], import("superstruct").Struct<{
-        entity: string;
         image: string;
         name: string;
         icon: string;
+        entity: string;
         show_icon: boolean;
         show_name: boolean;
         double_tap_action?: any;
@@ -61,8 +61,8 @@ export declare const buttonsHeaderFooterConfigStruct: import("superstruct").Stru
     }>>;
 }>;
 export declare const graphHeaderFooterConfigStruct: import("superstruct").Struct<{
-    entity: string;
     type: string;
+    entity: string;
     detail: number;
     hours_to_show: number;
 }, {

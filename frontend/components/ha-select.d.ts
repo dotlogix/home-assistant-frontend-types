@@ -9,7 +9,7 @@ export declare class HaSelect extends SelectBase {
     options: any;
     protected render(): import("lit-html").TemplateResult<1>;
     protected renderMenu(): import("lit-html").TemplateResult<1>;
-    protected renderLeadingIcon(): typeof nothing | import("lit-html").TemplateResult<1>;
+    protected renderLeadingIcon(): import("lit-html").TemplateResult<1> | typeof nothing;
     connectedCallback(): void;
     protected firstUpdated(): Promise<void>;
     protected updated(changedProperties: any): void;

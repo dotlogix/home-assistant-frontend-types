@@ -1,10 +1,11 @@
+import "@home-assistant/webawesome/dist/components/divider/divider";
 import type { CSSResultGroup, PropertyValues, TemplateResult } from "lit";
 import { LitElement } from "lit";
 import "../../../components/ha-button";
-import "../../../components/ha-button-menu";
 import "../../../components/ha-card";
+import "../../../components/ha-dropdown";
+import "../../../components/ha-dropdown-item";
 import "../../../components/ha-icon-button";
-import "../../../components/ha-list-item";
 import type { LovelaceCardConfig } from "../../../data/lovelace/config/card";
 import type { HomeAssistant } from "../../../types";
 import { type LovelaceCardPath } from "../editor/lovelace-path";
@@ -21,7 +22,7 @@ export declare class HuiCardOptions extends LitElement {
     private get _cards();
     protected render(): TemplateResult;
     static get styles(): CSSResultGroup;
-    private _handleAction;
+    private _handleDropdownSelect;
     private _duplicateCard;
     private _editCard;
     private _cutCard;

@@ -27,7 +27,7 @@ export declare class HuiViewBadges extends LitElement {
     private _dragStart;
     private _dragEnd;
     private _addBadge;
-    render(): typeof nothing | import("lit-html").TemplateResult<1>;
+    render(): import("lit-html").TemplateResult<1> | typeof nothing;
     static styles: import("lit").CSSResult;
 }
 declare global {

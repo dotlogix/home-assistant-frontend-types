@@ -25,7 +25,7 @@ declare class DialogZHAManageZigbeeDevice extends LitElement {
     closeDialog(): void;
     protected firstUpdated(changedProps: PropertyValues): void;
     protected willUpdate(changedProps: PropertyValues): void;
-    protected render(): typeof nothing | import("lit-html").TemplateResult<1>;
+    protected render(): import("lit-html").TemplateResult<1> | typeof nothing;
     private _fetchData;
     private _enlarge;
     private _handleTabChanged;

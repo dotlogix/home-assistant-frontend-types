@@ -14,7 +14,7 @@ export declare class DialogDataTableSettings extends LitElement {
     showDialog(params: DataTableSettingsDialogParams): void;
     closeDialog(): void;
     private _sortedColumns;
-    protected render(): typeof nothing | import("lit-html").TemplateResult<1>;
+    protected render(): import("lit-html").TemplateResult<1> | typeof nothing;
     private _columnMoved;
     private _toggle;
     private _reset;

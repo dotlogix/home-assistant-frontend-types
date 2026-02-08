@@ -13,7 +13,7 @@ export declare class HuiHistoryGraphCardEditor extends LitElement implements Lov
     private _configEntities?;
     setConfig(config: HistoryGraphCardConfig): void;
     private _schema;
-    protected render(): typeof nothing | import("lit-html").TemplateResult<1>;
+    protected render(): import("lit-html").TemplateResult<1> | typeof nothing;
     private _goBack;
     private _editDetailElement;
     private _handleSubEntityChanged;

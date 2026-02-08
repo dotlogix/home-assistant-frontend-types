@@ -1,6 +1,5 @@
 import type { CSSResultGroup } from "lit";
 import { LitElement, nothing } from "lit";
-import "../../../components/ha-attributes";
 import "../../../components/ha-control-button";
 import "../../../components/ha-control-button-group";
 import "../../../components/ha-outlined-icon-button";
@@ -21,7 +20,7 @@ declare class MoreInfoLock extends LitElement {
     disconnectedCallback(): void;
     private _lock;
     private _unlock;
-    protected render(): typeof nothing | import("lit-html").TemplateResult<1>;
+    protected render(): import("lit-html").TemplateResult<1> | typeof nothing;
     static get styles(): CSSResultGroup;
 }
 declare global {

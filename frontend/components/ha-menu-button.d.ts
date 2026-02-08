@@ -2,7 +2,6 @@ import { LitElement, nothing } from "lit";
 import type { HomeAssistant } from "../types";
 import "./ha-icon-button";
 declare class HaMenuButton extends LitElement {
-    hassio: boolean;
     narrow: boolean;
     hass: HomeAssistant;
     private _hasNotifications;
@@ -12,8 +11,7 @@ declare class HaMenuButton extends LitElement {
     private _unsubNotifications?;
     connectedCallback(): void;
     disconnectedCallback(): void;
-    protected render(): typeof nothing | import("lit-html").TemplateResult<1>;
-    protected firstUpdated(changedProps: any): void;
+    protected render(): import("lit-html").TemplateResult<1> | typeof nothing;
     protected willUpdate(changedProps: any): void;
     private _subscribeNotifications;
     private _toggleMenu;

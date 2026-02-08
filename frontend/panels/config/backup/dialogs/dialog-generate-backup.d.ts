@@ -35,7 +35,7 @@ declare class DialogGenerateBackup extends LitElement implements HassDialog {
     private _nextStep;
     private get _allAgentIds();
     protected willUpdate(changedProperties: PropertyValues): void;
-    protected render(): typeof nothing | import("lit-html").TemplateResult<1>;
+    protected render(): import("lit-html").TemplateResult<1> | typeof nothing;
     private get _noDataSelected();
     private _renderData;
     private _dataConfigChanged;

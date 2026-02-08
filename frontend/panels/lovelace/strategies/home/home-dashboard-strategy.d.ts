@@ -5,6 +5,7 @@ import type { LovelaceStrategyEditor } from "../types";
 export interface HomeDashboardStrategyConfig {
     type: "home";
     favorite_entities?: string[];
+    home_panel?: boolean;
 }
 export declare class HomeDashboardStrategy extends ReactiveElement {
     static generate(config: HomeDashboardStrategyConfig, hass: HomeAssistant): Promise<LovelaceConfig>;

@@ -15,7 +15,7 @@ export declare class HaVoiceAssistantSetupStepPipeline extends LitElement {
     private _languageScores?;
     protected willUpdate(changedProperties: PropertyValues): void;
     private _getOptions;
-    protected render(): typeof nothing | import("lit-html").TemplateResult<1>;
+    protected render(): import("lit-html").TemplateResult<1> | typeof nothing;
     private _fetchData;
     private _hasCloud;
     private _createCloudPipeline;

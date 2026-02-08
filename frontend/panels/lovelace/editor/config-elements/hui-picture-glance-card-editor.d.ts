@@ -14,7 +14,7 @@ export declare class HuiPictureGlanceCardEditor extends LitElement implements Lo
     private _schema;
     private _subSchema;
     setConfig(config: PictureGlanceCardConfig): void;
-    protected render(): typeof nothing | import("lit-html").TemplateResult<1>;
+    protected render(): import("lit-html").TemplateResult<1> | typeof nothing;
     private _processData;
     private _goBack;
     private _editDetailElement;

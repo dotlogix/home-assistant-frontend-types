@@ -1,4 +1,4 @@
-import type { HaEntityPickerEntityFilterFunc } from "../../../data/entity";
+import type { HaEntityPickerEntityFilterFunc } from "../../../data/entity/entity";
 import type { TargetType } from "../../../data/target";
 import type { HaDevicePickerDeviceFilterFunc } from "../../device/ha-device-picker";
 export type NewBackupType = "automatic" | "manual";

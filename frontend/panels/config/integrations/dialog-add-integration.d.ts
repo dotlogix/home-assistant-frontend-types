@@ -22,6 +22,7 @@ export interface IntegrationListItem {
     overwrites_built_in?: boolean;
     is_add?: boolean;
     single_config_entry?: boolean;
+    is_discovered?: boolean;
 }
 declare class AddIntegrationDialog extends LitElement {
     hass: HomeAssistant;
@@ -32,6 +33,9 @@ declare class AddIntegrationDialog extends LitElement {
     private _pickedBrand?;
     private _prevPickedBrand?;
     private _flowsInProgress?;
+    private _showDiscovered;
+    private _openedDirectly;
+    private _navigateToResult;
     private _open;
     private _narrow;
     private _width?;
@@ -41,9 +45,9 @@ declare class AddIntegrationDialog extends LitElement {
     willUpdate(changedProps: PropertyValues): void;
     private _filterIntegrations;
     private _getIntegrations;
-    protected render(): typeof nothing | TemplateResult<1>;
-    private _calculateBrandHeading;
-    private _renderIntegration;
+    protected render(): TemplateResult<1> | typeof nothing;
+    private _getFlowsForCurrentView;
+    private _renderBrandView;
     private _handleSelectBrandEvent;
     private _handleSupportedByEvent;
     private _supportedBy;
@@ -56,7 +60,7 @@ declare class AddIntegrationDialog extends LitElement {
     private _handleKeyPress;
     private _handleIntegrationPicked;
     private _createFlow;
-    private _fetchFlowsInProgress;
+    private _getFlowsInProgressForDomains;
     private _maybeSubmit;
     private _prevClicked;
     static styles: import("lit").CSSResult[];

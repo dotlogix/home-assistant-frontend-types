@@ -29,6 +29,7 @@ export declare class HaDateRangePicker extends LitElement {
     minimal: boolean;
     private _hour24format;
     extendedPresets: boolean;
+    verticalOpeningDirection?: "up" | "down";
     openingDirection?: "right" | "left" | "center" | "inline";
     private _calcedOpeningDirection?;
     protected willUpdate(changedProps: PropertyValues): void;

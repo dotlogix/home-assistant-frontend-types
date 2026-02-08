@@ -27,6 +27,12 @@ interface EMMessageResultError {
 interface EMOutgoingMessageConfigGet extends EMMessage {
     type: "config/get";
 }
+interface EMOutgoingMessageEntityAddToGetActions extends EMMessage {
+    type: "entity/add_to/get_actions";
+    payload: {
+        entity_id: string;
+    };
+}
 interface EMOutgoingMessageBarCodeScan extends EMMessage {
     type: "bar_code/scan";
     payload: {
@@ -60,6 +66,10 @@ interface EMOutgoingMessageWithAnswer {
     "config/get": {
         request: EMOutgoingMessageConfigGet;
         response: ExternalConfig;
+    };
+    "entity/add_to/get_actions": {
+        request: EMOutgoingMessageEntityAddToGetActions;
+        response: ExternalEntityAddToActions;
     };
 }
 interface EMOutgoingMessageExoplayerPlayHLS extends EMMessage {
@@ -134,7 +144,20 @@ interface EMOutgoingMessageThreadStoreInPlatformKeychain extends EMMessage {
         extended_pan_id: string;
     };
 }
-type EMOutgoingMessageWithoutAnswer = EMMessageResultError | EMMessageResultSuccess | EMOutgoingMessageAppConfiguration | EMOutgoingMessageAssistShow | EMOutgoingMessageBarCodeClose | EMOutgoingMessageBarCodeNotify | EMOutgoingMessageBarCodeScan | EMOutgoingMessageConnectionStatus | EMOutgoingMessageExoplayerPlayHLS | EMOutgoingMessageExoplayerResize | EMOutgoingMessageExoplayerStop | EMOutgoingMessageHaptic | EMOutgoingMessageImportThreadCredentials | EMOutgoingMessageMatterCommission | EMOutgoingMessageSidebarShow | EMOutgoingMessageTagWrite | EMOutgoingMessageThemeUpdate | EMOutgoingMessageThreadStoreInPlatformKeychain | EMOutgoingMessageImprovScan | EMOutgoingMessageImprovConfigureDevice;
+interface EMOutgoingMessageAddEntityTo extends EMMessage {
+    type: "entity/add_to";
+    payload: {
+        entity_id: string;
+        app_payload: string;
+    };
+}
+interface EMOutgoingMessageFocusElement extends EMMessage {
+    type: "focus_element";
+    payload: {
+        element_id: string;
+    };
+}
+type EMOutgoingMessageWithoutAnswer = EMMessageResultError | EMMessageResultSuccess | EMOutgoingMessageAppConfiguration | EMOutgoingMessageAssistShow | EMOutgoingMessageBarCodeClose | EMOutgoingMessageBarCodeNotify | EMOutgoingMessageBarCodeScan | EMOutgoingMessageConnectionStatus | EMOutgoingMessageExoplayerPlayHLS | EMOutgoingMessageExoplayerResize | EMOutgoingMessageExoplayerStop | EMOutgoingMessageHaptic | EMOutgoingMessageImportThreadCredentials | EMOutgoingMessageMatterCommission | EMOutgoingMessageSidebarShow | EMOutgoingMessageTagWrite | EMOutgoingMessageThemeUpdate | EMOutgoingMessageThreadStoreInPlatformKeychain | EMOutgoingMessageImprovScan | EMOutgoingMessageImprovConfigureDevice | EMOutgoingMessageAddEntityTo | EMOutgoingMessageFocusElement;
 export interface EMIncomingMessageRestart {
     id: number;
     type: "command";
@@ -203,22 +226,40 @@ export interface EMIncomingMessageImprovDeviceSetupDone extends EMMessage {
     type: "command";
     command: "improv/device_setup_done";
 }
-export type EMIncomingMessageCommands = EMIncomingMessageRestart | EMIncomingMessageNavigate | EMIncomingMessageShowNotifications | EMIncomingMessageToggleSidebar | EMIncomingMessageShowSidebar | EMIncomingMessageShowAutomationEditor | EMIncomingMessageBarCodeScanResult | EMIncomingMessageBarCodeScanAborted | EMIncomingMessageImprovDeviceDiscovered | EMIncomingMessageImprovDeviceSetupDone;
+export interface EMIncomingMessageKioskModeSet {
+    id: number;
+    type: "command";
+    command: "kiosk_mode/set";
+    payload: {
+        enable: boolean;
+    };
+}
+export type EMIncomingMessageCommands = EMIncomingMessageRestart | EMIncomingMessageNavigate | EMIncomingMessageShowNotifications | EMIncomingMessageToggleSidebar | EMIncomingMessageShowSidebar | EMIncomingMessageShowAutomationEditor | EMIncomingMessageBarCodeScanResult | EMIncomingMessageBarCodeScanAborted | EMIncomingMessageImprovDeviceDiscovered | EMIncomingMessageImprovDeviceSetupDone | EMIncomingMessageKioskModeSet;
 type EMIncomingMessage = EMMessageResultSuccess | EMMessageResultError | EMIncomingMessageCommands;
 type EMIncomingMessageHandler = (msg: EMIncomingMessageCommands) => boolean;
 export interface ExternalConfig {
-    hasSettingsScreen: boolean;
-    hasSidebar: boolean;
-    canWriteTag: boolean;
-    hasExoPlayer: boolean;
-    canCommissionMatter: boolean;
-    canImportThreadCredentials: boolean;
-    canTransferThreadCredentialsToKeychain: boolean;
-    hasAssist: boolean;
-    hasBarCodeScanner: number;
-    canSetupImprov: boolean;
-    downloadFileSupported: boolean;
-    appVersion: string;
+    hasSettingsScreen?: boolean;
+    hasSidebar?: boolean;
+    canWriteTag?: boolean;
+    hasExoPlayer?: boolean;
+    canCommissionMatter?: boolean;
+    canImportThreadCredentials?: boolean;
+    canTransferThreadCredentialsToKeychain?: boolean;
+    hasAssist?: boolean;
+    hasBarCodeScanner?: number;
+    canSetupImprov?: boolean;
+    appVersion?: string;
+    hasEntityAddTo?: boolean;
+}
+export interface ExternalEntityAddToAction {
+    enabled: boolean;
+    name: string;
+    details?: string;
+    mdi_icon: string;
+    app_payload: string;
+}
+export interface ExternalEntityAddToActions {
+    actions: ExternalEntityAddToAction[];
 }
 export declare class ExternalMessaging {
     config: ExternalConfig;

@@ -13,7 +13,7 @@ export declare class TTSTryDialog extends LitElement {
     showDialog(params: TTSTryDialogParams): void;
     closeDialog(): void;
     private get _defaultMessage();
-    protected render(): typeof nothing | import("lit-html").TemplateResult<1>;
+    protected render(): import("lit-html").TemplateResult<1> | typeof nothing;
     private _inputChanged;
     private _playExample;
     static styles: import("lit").CSSResult[];

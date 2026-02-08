@@ -1,6 +1,7 @@
 import { LitElement } from "lit";
 import type { NavigationSelector } from "../../data/selector";
 import type { HomeAssistant } from "../../types";
+import type { ActionRelatedContext } from "../../panels/lovelace/components/hui-action-editor";
 import "../ha-navigation-picker";
 export declare class HaNavigationSelector extends LitElement {
     hass: HomeAssistant;
@@ -10,6 +11,7 @@ export declare class HaNavigationSelector extends LitElement {
     helper?: string;
     disabled: boolean;
     required: boolean;
+    context?: ActionRelatedContext;
     protected render(): import("lit-html").TemplateResult<1>;
     private _valueChanged;
 }

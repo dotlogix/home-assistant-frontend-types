@@ -20,6 +20,7 @@ export interface TodoItem {
     status: TodoItemStatus | null;
     description?: string | null;
     due?: string | null;
+    completed?: string | null;
 }
 export declare const enum TodoListEntityFeature {
     CREATE_TODO_ITEM = 1,

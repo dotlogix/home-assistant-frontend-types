@@ -3,7 +3,7 @@ import type { HomeAssistant } from "../types";
 import "./ha-svg-icon";
 declare class HaTip extends LitElement {
     hass: HomeAssistant;
-    render(): typeof nothing | import("lit-html").TemplateResult<1>;
+    render(): import("lit-html").TemplateResult<1> | typeof nothing;
     static styles: import("lit").CSSResult;
 }
 declare global {

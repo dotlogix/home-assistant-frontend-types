@@ -10,9 +10,12 @@ declare class HaDomainIntegrations extends LitElement {
     domain: string;
     integration?: Brand | Integration;
     flowsInProgress?: DataEntryFlowProgress[];
+    navigateToResult: boolean;
+    showManageLink: boolean;
     protected render(): import("lit-html").TemplateResult<1>;
     private _integrationPicked;
     private _flowInProgressPicked;
+    private _manageDiscovered;
     private _standardPicked;
     static styles: import("lit").CSSResult[];
 }

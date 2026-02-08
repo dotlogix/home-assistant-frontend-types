@@ -12,7 +12,7 @@ declare class DialogZoneDetail extends LitElement {
     private _submitting;
     showDialog(params: ZoneDetailDialogParams): void;
     closeDialog(): void;
-    protected render(): typeof nothing | import("lit-html").TemplateResult<1>;
+    protected render(): import("lit-html").TemplateResult<1> | typeof nothing;
     private _schema;
     private _formData;
     private _valueChanged;

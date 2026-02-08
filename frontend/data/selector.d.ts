@@ -1,18 +1,21 @@
 import type { HassEntity, HassServiceTarget } from "home-assistant-js-websocket";
-import type { UiAction } from "../panels/lovelace/components/hui-action-editor";
-import type { HomeAssistant } from "../types";
-import { type DeviceRegistryEntry } from "./device_registry";
-import type { EntityRegistryDisplayEntry, EntityRegistryEntry } from "./entity_registry";
-import type { EntitySources } from "./entity_sources";
 import type { EntityNameItem } from "../common/entity/compute_entity_name_display";
-export type Selector = ActionSelector | AddonSelector | AreaSelector | AreasDisplaySelector | AttributeSelector | BooleanSelector | ButtonToggleSelector | ColorRGBSelector | ColorTempSelector | ConditionSelector | ConversationAgentSelector | ConfigEntrySelector | ConstantSelector | CountrySelector | DateSelector | DateTimeSelector | DeviceSelector | FloorSelector | LegacyDeviceSelector | DurationSelector | EntitySelector | EntityNameSelector | LegacyEntitySelector | FileSelector | IconSelector | LabelSelector | LanguageSelector | LocationSelector | MediaSelector | NavigationSelector | NumberSelector | ObjectSelector | AssistPipelineSelector | QRCodeSelector | SelectSelector | SelectorSelector | StateSelector | StatisticSelector | StringSelector | STTSelector | TargetSelector | TemplateSelector | ThemeSelector | TimeSelector | TriggerSelector | TTSSelector | TTSVoiceSelector | UiActionSelector | UiColorSelector | UiStateContentSelector | BackupLocationSelector;
+import type { ActionRelatedContext, UiAction } from "../panels/lovelace/components/hui-action-editor";
+import type { HomeAssistant } from "../types";
+import { type DeviceRegistryEntry } from "./device/device_registry";
+import type { EntityRegistryDisplayEntry, EntityRegistryEntry } from "./entity/entity_registry";
+import type { EntitySources } from "./entity/entity_sources";
+export type Selector = ActionSelector | AddonSelector | AppSelector | AreaSelector | AreasDisplaySelector | AttributeSelector | BooleanSelector | ButtonToggleSelector | ChooseSelector | ColorRGBSelector | ColorTempSelector | ConditionSelector | ConversationAgentSelector | ConfigEntrySelector | ConstantSelector | CountrySelector | DateSelector | DateTimeSelector | DeviceSelector | FloorSelector | LegacyDeviceSelector | DurationSelector | EntitySelector | EntityNameSelector | LegacyEntitySelector | FileSelector | IconSelector | LabelSelector | LanguageSelector | LocationSelector | MediaSelector | NavigationSelector | NumberSelector | ObjectSelector | AssistPipelineSelector | QRCodeSelector | SelectSelector | SelectorSelector | StateSelector | StatisticSelector | StringSelector | STTSelector | TargetSelector | TemplateSelector | ThemeSelector | TimeSelector | TimezoneSelector | TriggerSelector | TTSSelector | TTSVoiceSelector | UiActionSelector | UiColorSelector | UiStateContentSelector | BackupLocationSelector;
 export interface ActionSelector {
     action: {
         optionsInSidebar?: boolean;
     } | null;
 }
 export interface AddonSelector {
-    addon: {
+    addon: AppSelector["app"];
+}
+export interface AppSelector {
+    app: {
         name?: string;
         slug?: string;
     } | null;
@@ -42,6 +45,14 @@ export interface ButtonToggleSelector {
         translation_key?: string;
         sort?: boolean;
     } | null;
+}
+export interface ChooseSelector {
+    choose: {
+        choices: Record<string, {
+            selector: Selector;
+        }>;
+        translation_key?: string;
+    };
 }
 export interface ColorRGBSelector {
     color_rgb: {} | null;
@@ -129,6 +140,7 @@ export interface DurationSelector {
     duration: {
         enable_day?: boolean;
         enable_millisecond?: boolean;
+        allow_negative?: boolean;
     } | null;
 }
 interface EntitySelectorFilter {
@@ -191,6 +203,9 @@ export interface LanguageSelector {
         no_sort?: boolean;
     } | null;
 }
+export interface TimezoneSelector {
+    timezone: {} | null;
+}
 export interface LocationSelector {
     location: {
         radius?: boolean;
@@ -229,7 +244,7 @@ export interface MediaSelectorValue {
     };
 }
 export interface NavigationSelector {
-    navigation: {} | null;
+    navigation: ActionRelatedContext | null;
 }
 export interface NumberSelector {
     number: {
@@ -268,7 +283,7 @@ interface SelectBoxOptionImage {
     flip_rtl?: boolean;
 }
 export interface SelectOption {
-    value: any;
+    value: string;
     label: string;
     description?: string;
     image?: string | SelectBoxOptionImage;
@@ -334,7 +349,9 @@ export interface TargetSelector {
     } | null;
 }
 export interface TemplateSelector {
-    template: {} | null;
+    template: {
+        preview?: boolean;
+    } | null;
 }
 export interface ThemeSelector {
     theme: {
@@ -377,6 +394,7 @@ export interface UiStateContentSelector {
     ui_state_content: {
         entity_id?: string;
         allow_name?: boolean;
+        allow_context?: boolean;
     } | null;
 }
 export interface EntityNameSelector {
@@ -408,5 +426,5 @@ export declare const filterSelectorEntities: (filterEntity: EntitySelectorFilter
 export declare const handleLegacyEntitySelector: (selector: LegacyEntitySelector | EntitySelector) => EntitySelector;
 export declare const handleLegacyDeviceSelector: (selector: LegacyDeviceSelector | DeviceSelector) => DeviceSelector;
 export declare const computeCreateDomains: (selector: EntitySelector | TargetSelector) => undefined | string[];
-export declare const resolveEntityIDs: (hass: HomeAssistant, targetPickerValue: HassServiceTarget, entities: HomeAssistant["entities"], devices: HomeAssistant["devices"], areas: HomeAssistant["areas"]) => string[];
+export declare const resolveEntityIDs: (hass: HomeAssistant, targetPickerValue: HassServiceTarget, entities: HomeAssistant["entities"], devices: HomeAssistant["devices"], areas: HomeAssistant["areas"], targetSelector?: TargetSelector) => string[];
 export {};

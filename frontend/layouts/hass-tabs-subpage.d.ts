@@ -15,13 +15,14 @@ export interface PageNavigation {
     core?: boolean;
     advancedOnly?: boolean;
     iconPath?: string;
+    iconSecondaryPath?: string;
+    iconViewBox?: string;
     description?: string;
     iconColor?: string;
     info?: any;
 }
 declare class HassTabsSubpage extends LitElement {
     hass: HomeAssistant;
-    supervisor: boolean;
     localizeFunc?: LocalizeFunc;
     backPath?: string;
     backCallback?: () => void;

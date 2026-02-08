@@ -1,7 +1,8 @@
+import type { Condition } from "../../../panels/lovelace/common/validate-condition";
 import type { MediaSelectorValue } from "../../selector";
 import type { LovelaceBadgeConfig } from "./badge";
 import type { LovelaceCardConfig } from "./card";
-import type { LovelaceSectionRawConfig } from "./section";
+import type { LovelaceSectionConfig, LovelaceSectionRawConfig } from "./section";
 import type { LovelaceStrategyConfig } from "./strategy";
 export interface ShowViewConfig {
     user?: string;
@@ -20,11 +21,18 @@ export interface LovelaceViewHeaderConfig {
     badges_position?: "bottom" | "top";
     badges_wrap?: "wrap" | "scroll";
 }
+export interface LovelaceViewSidebarConfig {
+    sections?: LovelaceSectionConfig[];
+    content_label?: string;
+    sidebar_label?: string;
+    visibility?: Condition[];
+}
 export interface LovelaceBaseViewConfig {
     index?: number;
     title?: string;
     path?: string;
     icon?: string;
+    show_icon_and_title?: boolean;
     theme?: string;
     panel?: boolean;
     background?: string | LovelaceViewBackgroundConfig;
@@ -41,6 +49,7 @@ export interface LovelaceViewConfig extends LovelaceBaseViewConfig {
     cards?: LovelaceCardConfig[];
     sections?: LovelaceSectionRawConfig[];
     header?: LovelaceViewHeaderConfig;
+    sidebar?: LovelaceViewSidebarConfig;
 }
 export interface LovelaceStrategyViewConfig extends LovelaceBaseViewConfig {
     strategy: LovelaceStrategyConfig;

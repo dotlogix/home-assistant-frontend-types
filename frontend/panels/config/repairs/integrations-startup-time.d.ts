@@ -11,7 +11,7 @@ declare class IntegrationsStartupTime extends LitElement {
     private _manifests?;
     private _setups?;
     protected firstUpdated(changedProps: PropertyValues): void;
-    protected render(): typeof nothing | import("lit-html").TemplateResult<1>;
+    protected render(): import("lit-html").TemplateResult<1> | typeof nothing;
     private _fetchManifests;
     private _fetchSetups;
     static styles: import("lit").CSSResult;

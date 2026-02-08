@@ -28,7 +28,7 @@ export declare class HaYamlEditor extends LitElement {
     protected firstUpdated(): void;
     protected willUpdate(changedProperties: PropertyValues<this>): void;
     focus(): void;
-    protected render(): typeof nothing | import("lit-html").TemplateResult<1>;
+    protected render(): import("lit-html").TemplateResult<1> | typeof nothing;
     private _onChange;
     private _onBlur;
     get yaml(): string;

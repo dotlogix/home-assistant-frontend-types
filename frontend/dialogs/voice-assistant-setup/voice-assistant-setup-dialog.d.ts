@@ -2,7 +2,8 @@ import type { CSSResultGroup } from "lit";
 import { LitElement, nothing } from "lit";
 import "../../components/chips/ha-assist-chip";
 import "../../components/ha-dialog";
-import "../../components/ha-md-button-menu";
+import "../../components/ha-dropdown";
+import "../../components/ha-dropdown-item";
 import type { HomeAssistant } from "../../types";
 import type { VoiceAssistantSetupDialogParams } from "./show-voice-assistant-setup-dialog";
 import "./voice-assistant-setup-step-area";
@@ -43,7 +44,7 @@ export declare class HaVoiceAssistantSetupDialog extends LitElement {
     private _dialogClosed;
     private _deviceEntities;
     private _findDomainEntityId;
-    protected render(): typeof nothing | import("lit-html").TemplateResult<1>;
+    protected render(): import("lit-html").TemplateResult<1> | typeof nothing;
     private _getLanguages;
     private _fetchAssistConfiguration;
     private _handlePickLanguage;

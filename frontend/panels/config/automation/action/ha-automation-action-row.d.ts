@@ -1,21 +1,20 @@
+import "@home-assistant/webawesome/dist/components/divider/divider";
 import type { PropertyValues, TemplateResult } from "lit";
 import { LitElement, nothing } from "lit";
 import "../../../../components/ha-automation-row";
 import "../../../../components/ha-card";
+import "../../../../components/ha-dropdown";
+import "../../../../components/ha-dropdown-item";
 import "../../../../components/ha-expansion-panel";
 import "../../../../components/ha-icon-button";
-import "../../../../components/ha-md-button-menu";
-import "../../../../components/ha-md-divider";
-import "../../../../components/ha-md-menu-item";
 import "../../../../components/ha-service-icon";
 import "../../../../components/ha-tooltip";
 import type { AutomationClipboard } from "../../../../data/automation";
-import type { EntityRegistryEntry } from "../../../../data/entity_registry";
-import type { FloorRegistryEntry } from "../../../../data/floor_registry";
-import type { LabelRegistryEntry } from "../../../../data/label_registry";
+import type { EntityRegistryEntry } from "../../../../data/entity/entity_registry";
 import type { Action } from "../../../../data/script";
 import type { HomeAssistant } from "../../../../types";
 import "../ha-automation-editor-warning";
+import "../target/ha-automation-row-targets";
 import "./ha-automation-action-editor";
 import "./types/ha-automation-action-choose";
 import "./types/ha-automation-action-condition";
@@ -30,7 +29,7 @@ import "./types/ha-automation-action-set_conversation_response";
 import "./types/ha-automation-action-stop";
 import "./types/ha-automation-action-wait_for_trigger";
 import "./types/ha-automation-action-wait_template";
-export declare const getAutomationActionType: import("memoize-one").MemoizedFn<(action: Action | undefined) => "action" | "service" | "stop" | "parallel" | "device_id" | "play_media" | "delay" | "wait_template" | "wait_for_trigger" | "condition" | "event" | "repeat" | "repeat_count" | "repeat_while" | "repeat_until" | "repeat_for_each" | "choose" | "if" | "sequence" | "variables" | "set_conversation_response">;
+export declare const getAutomationActionType: import("memoize-one").MemoizedFn<(action: Action | undefined) => "action" | "service" | "parallel" | "device_id" | "play_media" | "delay" | "wait_template" | "wait_for_trigger" | "condition" | "event" | "repeat" | "repeat_count" | "repeat_while" | "repeat_until" | "repeat_for_each" | "choose" | "if" | "stop" | "sequence" | "variables" | "set_conversation_response">;
 export interface ActionElement extends LitElement {
     action: Action;
     expandAll?: () => void;
@@ -50,8 +49,6 @@ export default class HaAutomationActionRow extends LitElement {
     sortSelected: boolean;
     _clipboard?: AutomationClipboard;
     _entityReg: EntityRegistryEntry[];
-    _labelReg: LabelRegistryEntry[];
-    _floorReg: Record<string, FloorRegistryEntry>;
     private _uiModeAvailable;
     private _yamlMode;
     private _selected;
@@ -64,7 +61,8 @@ export default class HaAutomationActionRow extends LitElement {
     protected willUpdate(changedProperties: PropertyValues): void;
     private _renderOverflowLabel;
     private _renderRow;
-    protected render(): typeof nothing | TemplateResult<1>;
+    protected render(): TemplateResult<1> | typeof nothing;
+    private _renderTargets;
     private _onValueChange;
     private _setClipboard;
     private _onDisable;
@@ -90,6 +88,7 @@ export default class HaAutomationActionRow extends LitElement {
     private _uiSupported;
     private _toggleCollapse;
     focus(): void;
+    private _handleDropdownSelect;
     static styles: import("lit").CSSResult[];
 }
 declare global {

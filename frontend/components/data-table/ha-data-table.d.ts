@@ -1,10 +1,10 @@
 import type { CSSResultGroup, PropertyValues, TemplateResult } from "lit";
 import { LitElement, nothing } from "lit";
+import type { LocalizeFunc } from "../../common/translations/localize";
 import type { HomeAssistant } from "../../types";
 import "../ha-checkbox";
 import "../ha-svg-icon";
 import "../search-input";
-import type { LocalizeFunc } from "../../common/translations/localize";
 export interface RowClickedEvent {
     id: string;
 }

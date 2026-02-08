@@ -22,7 +22,7 @@ export declare const ACTION_ICONS: {
     readonly variables: string;
     readonly set_conversation_response: string;
 };
-export declare const YAML_ONLY_ACTION_TYPES: Set<"service" | "stop" | "parallel" | "device_id" | "play_media" | "delay" | "wait_template" | "wait_for_trigger" | "condition" | "event" | "repeat" | "repeat_count" | "repeat_while" | "repeat_until" | "repeat_for_each" | "choose" | "if" | "sequence" | "variables" | "set_conversation_response">;
+export declare const YAML_ONLY_ACTION_TYPES: Set<"service" | "parallel" | "device_id" | "play_media" | "delay" | "wait_template" | "wait_for_trigger" | "condition" | "event" | "repeat" | "repeat_count" | "repeat_while" | "repeat_until" | "repeat_for_each" | "choose" | "if" | "stop" | "sequence" | "variables" | "set_conversation_response">;
 export declare const ACTION_COLLECTIONS: AutomationElementGroupCollection[];
 export declare const ACTION_BUILDING_BLOCKS_GROUP: {
     condition: {};
@@ -41,9 +41,6 @@ export declare const ACTION_BUILDING_BLOCKS_GROUP: {
     variables: {};
 };
 export declare const VIRTUAL_ACTIONS: Partial<Record<keyof typeof ACTION_BUILDING_BLOCKS_GROUP, Action>>;
-export declare const SERVICE_PREFIX = "__SERVICE__";
-export declare const isService: (key: string | undefined) => boolean | undefined;
-export declare const getService: (key: string) => string;
 export declare const COLLAPSIBLE_ACTION_ELEMENTS: string[];
 export declare const ACTION_BUILDING_BLOCKS: string[];
 export declare const ACTION_COMBINED_BLOCKS: string[];

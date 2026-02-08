@@ -13,7 +13,7 @@ export declare class DialogForm extends LitElement implements HassDialog<FormDia
     private _submit;
     private _cancel;
     private _valueChanged;
-    protected render(): typeof nothing | import("lit-html").TemplateResult<1>;
+    protected render(): import("lit-html").TemplateResult<1> | typeof nothing;
     static styles: import("lit").CSSResult[];
 }
 declare global {

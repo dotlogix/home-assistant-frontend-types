@@ -2,11 +2,11 @@ import type { PropertyValues } from "lit";
 import { LitElement, nothing } from "lit";
 import "../../../components/ha-alert";
 import "../../../components/ha-button";
-import "../../../components/ha-button-menu";
 import "../../../components/ha-card";
+import "../../../components/ha-dropdown";
+import "../../../components/ha-dropdown-item";
 import "../../../components/ha-icon-button";
 import "../../../components/ha-icon-next";
-import "../../../components/ha-list-item";
 import "../../../components/ha-password-field";
 import "../../../components/ha-svg-icon";
 import type { BackupAgent, BackupConfig } from "../../../data/backup";
@@ -33,7 +33,7 @@ declare class HaConfigBackupSettings extends LitElement {
     private _scrollToSection;
     private _scrolltoHash;
     private _clearHash;
-    protected render(): typeof nothing | import("lit-html").TemplateResult<1>;
+    protected render(): import("lit-html").TemplateResult<1> | typeof nothing;
     private _changeLocalLocation;
     private _supervisorUpdateConfigChanged;
     private _scheduleConfigChanged;
@@ -45,6 +45,7 @@ declare class HaConfigBackupSettings extends LitElement {
     private _saveSupervisorUpdateConfig;
     private _debounceSave;
     private _save;
+    private _handleDropdownSelect;
     static styles: import("lit").CSSResult;
 }
 declare global {

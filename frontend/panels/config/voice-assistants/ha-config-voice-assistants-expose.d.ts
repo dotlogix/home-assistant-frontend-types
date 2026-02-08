@@ -1,7 +1,7 @@
 import type { CSSResultGroup, PropertyValues } from "lit";
 import { LitElement } from "lit";
-import "../../../components/ha-fab";
 import "../../../components/ha-button";
+import "../../../components/ha-fab";
 import "../../../components/ha-tooltip";
 import type { CloudStatus } from "../../../data/cloud";
 import type { ExposeEntitySettings } from "../../../data/expose";
@@ -27,10 +27,10 @@ export declare class VoiceAssistantsExpose extends LitElement {
     private _activeCollapsed?;
     private _activeColumnOrder?;
     private _activeHiddenColumns?;
+    private get _availableAssistants();
     private _dataTable;
     private _columns;
     private _getEntityFilterFuncs;
-    private _availableAssistants;
     private _filteredEntities;
     connectedCallback(): void;
     disconnectedCallback(): void;

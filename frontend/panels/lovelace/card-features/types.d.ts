@@ -148,15 +148,21 @@ export interface UpdateActionsCardFeatureConfig {
 export interface TrendGraphCardFeatureConfig {
     type: "trend-graph";
     hours_to_show?: number;
+    detail?: boolean;
 }
-export declare const AREA_CONTROLS: readonly ["light", "fan", "cover-shutter", "cover-blind", "cover-curtain", "cover-shade", "cover-awning", "cover-garage", "cover-gate", "cover-door", "cover-window", "cover-damper", "switch"];
-export type AreaControl = (typeof AREA_CONTROLS)[number];
+export declare const AREA_CONTROL_DOMAINS: readonly ["light", "fan", "cover-shutter", "cover-blind", "cover-curtain", "cover-shade", "cover-awning", "cover-garage", "cover-gate", "cover-door", "cover-window", "cover-damper", "switch"];
+export type AreaControlDomain = (typeof AREA_CONTROL_DOMAINS)[number];
+export type AreaControl = AreaControlDomain | {
+    entity_id: string;
+};
 export interface AreaControlsCardFeatureConfig {
     type: "area-controls";
     controls?: AreaControl[];
 }
 export interface BarGaugeCardFeatureConfig {
     type: "bar-gauge";
+    min?: number;
+    max?: number;
 }
 export type LovelaceCardFeaturePosition = "bottom" | "inline";
 export type LovelaceCardFeatureConfig = AlarmModesCardFeatureConfig | ButtonCardFeatureConfig | ClimateFanModesCardFeatureConfig | ClimateSwingModesCardFeatureConfig | ClimateSwingHorizontalModesCardFeatureConfig | ClimateHvacModesCardFeatureConfig | ClimatePresetModesCardFeatureConfig | CounterActionsCardFeatureConfig | CoverOpenCloseCardFeatureConfig | CoverPositionCardFeatureConfig | CoverTiltPositionCardFeatureConfig | CoverTiltCardFeatureConfig | DateSetCardFeatureConfig | FanDirectionCardFeatureConfig | FanOscillateCardFeatureConfig | FanPresetModesCardFeatureConfig | FanSpeedCardFeatureConfig | TrendGraphCardFeatureConfig | HumidifierToggleCardFeatureConfig | HumidifierModesCardFeatureConfig | LawnMowerCommandsCardFeatureConfig | LightBrightnessCardFeatureConfig | LightColorTempCardFeatureConfig | LockCommandsCardFeatureConfig | LockOpenDoorCardFeatureConfig | MediaPlayerPlaybackCardFeatureConfig | MediaPlayerVolumeButtonsCardFeatureConfig | MediaPlayerVolumeSliderCardFeatureConfig | NumericInputCardFeatureConfig | SelectOptionsCardFeatureConfig | TrendGraphCardFeatureConfig | TargetHumidityCardFeatureConfig | TargetTemperatureCardFeatureConfig | ToggleCardFeatureConfig | UpdateActionsCardFeatureConfig | VacuumCommandsCardFeatureConfig | ValveOpenCloseCardFeatureConfig | ValvePositionCardFeatureConfig | WaterHeaterOperationModesCardFeatureConfig | AreaControlsCardFeatureConfig | BarGaugeCardFeatureConfig;

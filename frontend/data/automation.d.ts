@@ -1,11 +1,17 @@
-import type { HassEntityAttributeBase, HassEntityBase } from "home-assistant-js-websocket";
+import type { HassEntityAttributeBase, HassEntityBase, HassServiceTarget } from "home-assistant-js-websocket";
+import type { WeekdayShort } from "../common/datetime/weekday";
 import type { LocalizeKeys } from "../common/translations/localize";
 import type { Context, HomeAssistant } from "../types";
 import type { BlueprintInput } from "./blueprint";
-import type { DeviceCondition, DeviceTrigger } from "./device_automation";
+import type { ConditionDescription } from "./condition";
+import type { DeviceCondition, DeviceTrigger } from "./device/device_automation";
 import type { Action, Field, MODES } from "./script";
+import type { TriggerDescription } from "./trigger";
 export declare const AUTOMATION_DEFAULT_MODE: (typeof MODES)[number];
 export declare const AUTOMATION_DEFAULT_MAX = 10;
+export declare const DYNAMIC_PREFIX = "__DYNAMIC__";
+export declare const isDynamic: (key: string | undefined) => boolean | undefined;
+export declare const getValueFromDynamic: (key: string) => string;
 export interface AutomationEntity extends HassEntityBase {
     attributes: HassEntityAttributeBase & {
         id?: string;
@@ -60,6 +66,11 @@ export interface BaseTrigger {
     id?: string;
     variables?: Record<string, unknown>;
     enabled?: boolean;
+    options?: Record<string, unknown>;
+}
+export interface PlatformTrigger extends BaseTrigger {
+    trigger: Exclude<string, LegacyTrigger["trigger"]>;
+    target?: HassServiceTarget;
 }
 export interface StateTrigger extends BaseTrigger {
     trigger: "state";
@@ -69,16 +80,16 @@ export interface StateTrigger extends BaseTrigger {
     to?: string | string[];
     for?: string | number | ForDict;
 }
-export interface MqttTrigger extends BaseTrigger {
-    trigger: "mqtt";
-    topic: string;
-    payload?: string;
-}
 export interface GeoLocationTrigger extends BaseTrigger {
     trigger: "geo_location";
     source: string;
     zone: string;
     event: "enter" | "leave";
+}
+export interface MqttTrigger extends BaseTrigger {
+    trigger: "mqtt";
+    topic: string;
+    payload?: string;
 }
 export interface HassTrigger extends BaseTrigger {
     trigger: "homeassistant";
@@ -155,11 +166,17 @@ export interface CalendarTrigger extends BaseTrigger {
     entity_id: string;
     offset: string;
 }
-export type Trigger = StateTrigger | MqttTrigger | GeoLocationTrigger | HassTrigger | NumericStateTrigger | SunTrigger | ConversationTrigger | TimePatternTrigger | WebhookTrigger | PersistentNotificationTrigger | ZoneTrigger | TagTrigger | TimeTrigger | TemplateTrigger | EventTrigger | DeviceTrigger | CalendarTrigger | TriggerList;
+export type LegacyTrigger = StateTrigger | MqttTrigger | GeoLocationTrigger | HassTrigger | NumericStateTrigger | SunTrigger | ConversationTrigger | TimePatternTrigger | WebhookTrigger | PersistentNotificationTrigger | ZoneTrigger | TagTrigger | TimeTrigger | TemplateTrigger | EventTrigger | DeviceTrigger | CalendarTrigger;
+export type Trigger = LegacyTrigger | TriggerList | PlatformTrigger;
 interface BaseCondition {
     condition: string;
     alias?: string;
     enabled?: boolean;
+    options?: Record<string, unknown>;
+}
+export interface PlatformCondition extends BaseCondition {
+    condition: Exclude<string, LegacyCondition["condition"]>;
+    target?: HassServiceTarget;
 }
 export interface LogicalCondition extends BaseCondition {
     condition: "and" | "not" | "or";
@@ -193,12 +210,11 @@ export interface ZoneCondition extends BaseCondition {
     entity_id: string;
     zone: string;
 }
-type Weekday = "sun" | "mon" | "tue" | "wed" | "thu" | "fri" | "sat";
 export interface TimeCondition extends BaseCondition {
     condition: "time";
     after?: string;
     before?: string;
-    weekday?: Weekday | Weekday[];
+    weekday?: WeekdayShort | WeekdayShort[];
 }
 export interface TemplateCondition extends BaseCondition {
     condition: "template";
@@ -229,7 +245,8 @@ export type AutomationElementGroup = Record<string, {
     icon?: string;
     members?: AutomationElementGroup;
 }>;
-export type Condition = StateCondition | NumericStateCondition | SunCondition | ZoneCondition | TimeCondition | TemplateCondition | DeviceCondition | LogicalCondition | TriggerCondition;
+export type LegacyCondition = StateCondition | NumericStateCondition | SunCondition | ZoneCondition | TimeCondition | TemplateCondition | DeviceCondition | LogicalCondition | TriggerCondition;
+export type Condition = LegacyCondition | PlatformCondition;
 export type ConditionWithShorthand = Condition | ShorthandAndConditionList | ShorthandAndCondition | ShorthandOrCondition | ShorthandNotCondition;
 export declare const expandConditionWithShorthand: (cond: ConditionWithShorthand) => Condition;
 export declare const triggerAutomationActions: (hass: HomeAssistant, entityId: string) => void;
@@ -277,6 +294,7 @@ export interface TriggerSidebarConfig extends BaseSidebarConfig {
     insertAfter: (value: Trigger | Trigger[]) => boolean;
     toggleYamlMode: () => void;
     config: Trigger;
+    description?: TriggerDescription;
     yamlMode: boolean;
     uiSupported: boolean;
 }
@@ -291,6 +309,7 @@ export interface ConditionSidebarConfig extends BaseSidebarConfig {
     insertAfter: (value: Condition | Condition[]) => boolean;
     toggleYamlMode: () => void;
     config: Condition;
+    description?: ConditionDescription;
     yamlMode: boolean;
     uiSupported: boolean;
 }

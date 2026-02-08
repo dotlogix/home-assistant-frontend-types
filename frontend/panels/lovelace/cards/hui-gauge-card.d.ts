@@ -20,7 +20,7 @@ declare class HuiGaugeCard extends LitElement implements LovelaceCard {
     private _config?;
     getCardSize(): number;
     setConfig(config: GaugeCardConfig): void;
-    protected render(): typeof nothing | import("lit-html").TemplateResult<1>;
+    protected render(): import("lit-html").TemplateResult<1> | typeof nothing;
     protected shouldUpdate(changedProps: PropertyValues): boolean;
     protected updated(changedProps: PropertyValues): void;
     private _computeSeverity;

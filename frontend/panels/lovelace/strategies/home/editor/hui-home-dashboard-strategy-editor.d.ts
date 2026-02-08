@@ -7,7 +7,7 @@ export declare class HuiHomeDashboardStrategyEditor extends LitElement implement
     hass?: HomeAssistant;
     private _config?;
     setConfig(config: HomeDashboardStrategyConfig): void;
-    protected render(): typeof nothing | import("lit-html").TemplateResult<1>;
+    protected render(): import("lit-html").TemplateResult<1> | typeof nothing;
     private _valueChanged;
 }
 declare global {

@@ -4,11 +4,11 @@ import "../../../../../components/ha-alert";
 import "../../../../../components/ha-button";
 import "../../../../../components/ha-dialog";
 import "../../../../../components/ha-dialog-header";
+import "../../../../../components/ha-icon-next";
+import "../../../../../components/ha-list-item";
 import "../../../../../components/ha-spinner";
 import type { HomeAssistant } from "../../../../../types";
 import type { ZWaveJSRemoveNodeDialogParams } from "./show-dialog-zwave_js-remove-node";
-import "../../../../../components/ha-list-item";
-import "../../../../../components/ha-icon-next";
 export interface ZWaveJSRemovedNode {
     node_id: number;
     manufacturer: string;
@@ -27,7 +27,7 @@ declare class DialogZWaveJSRemoveNode extends LitElement {
     private _error?;
     disconnectedCallback(): void;
     showDialog(params: ZWaveJSRemoveNodeDialogParams): Promise<void>;
-    protected render(): typeof nothing | TemplateResult<1>;
+    protected render(): TemplateResult<1> | typeof nothing;
     private _renderStepContent;
     private _renderAction;
     private _startExclusion;

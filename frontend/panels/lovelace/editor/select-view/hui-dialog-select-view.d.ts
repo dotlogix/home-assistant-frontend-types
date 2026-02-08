@@ -25,7 +25,7 @@ export declare class HuiDialogSelectView extends LitElement {
     private _selectedViewIdx;
     showDialog(params: SelectViewDialogParams): void;
     closeDialog(): void;
-    protected render(): typeof nothing | import("lit-html").TemplateResult<1>;
+    protected render(): import("lit-html").TemplateResult<1> | typeof nothing;
     private _getDashboards;
     private _dashboardChanged;
     private _viewChanged;

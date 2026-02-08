@@ -5,7 +5,7 @@ import "./ha-icon-button";
 declare class HaValveControls extends LitElement {
     hass: HomeAssistant;
     stateObj: ValveEntity;
-    protected render(): typeof nothing | import("lit-html").TemplateResult<1>;
+    protected render(): import("lit-html").TemplateResult<1> | typeof nothing;
     private _onOpenTap;
     private _onCloseTap;
     private _onStopTap;

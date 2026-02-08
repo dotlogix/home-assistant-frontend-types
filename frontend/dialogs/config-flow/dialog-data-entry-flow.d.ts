@@ -40,7 +40,7 @@ declare class DataEntryFlowDialog extends LitElement {
     private _devices;
     private _getDialogTitle;
     private _getDialogSubtitle;
-    protected render(): typeof nothing | TemplateResult<1>;
+    protected render(): TemplateResult<1> | typeof nothing;
     protected firstUpdated(changedProps: PropertyValues): void;
     willUpdate(changedProps: PropertyValues): void;
     private _processStep;

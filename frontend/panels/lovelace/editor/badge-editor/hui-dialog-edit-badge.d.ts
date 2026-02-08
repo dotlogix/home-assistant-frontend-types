@@ -39,7 +39,7 @@ export declare class HuiDialogEditBadge extends LitElement implements HassDialog
     protected updated(changedProps: PropertyValues): void;
     private _enableEscapeKeyClose;
     private _disableEscapeKeyClose;
-    protected render(): typeof nothing | import("lit-html").TemplateResult<1>;
+    protected render(): import("lit-html").TemplateResult<1> | typeof nothing;
     private _enlarge;
     private _ignoreKeydown;
     private _handleConfigChanged;

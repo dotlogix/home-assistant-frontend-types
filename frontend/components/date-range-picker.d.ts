@@ -6,5 +6,10 @@ declare global {
     interface HTMLElementTagNameMap {
         "date-range-picker": DateRangePickerElement;
     }
+    interface HASSDomEvents {
+        toggle: {
+            open: boolean;
+        };
+    }
 }
 export {};

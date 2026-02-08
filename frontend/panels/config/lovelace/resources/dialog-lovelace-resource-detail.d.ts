@@ -1,8 +1,8 @@
 import { LitElement, nothing } from "lit";
-import "../../../../components/ha-md-dialog";
-import "../../../../components/ha-dialog-header";
+import "../../../../components/ha-wa-dialog";
+import "../../../../components/ha-dialog-footer";
+import "../../../../components/ha-alert";
 import "../../../../components/ha-form/ha-form";
-import "../../../../components/ha-icon-button";
 import "../../../../components/ha-button";
 import type { HomeAssistant } from "../../../../types";
 import type { LovelaceResourceDetailsDialogParams } from "./show-dialog-lovelace-resource-detail";
@@ -12,11 +12,11 @@ export declare class DialogLovelaceResourceDetail extends LitElement {
     private _data?;
     private _error?;
     private _submitting;
-    private _dialog?;
+    private _open;
     showDialog(params: LovelaceResourceDetailsDialogParams): void;
-    private _dialogClosed;
     closeDialog(): void;
-    protected render(): typeof nothing | import("lit-html").TemplateResult<1>;
+    private _dialogClosed;
+    protected render(): import("lit-html").TemplateResult<1> | typeof nothing;
     private _schema;
     private _computeLabel;
     private _valueChanged;

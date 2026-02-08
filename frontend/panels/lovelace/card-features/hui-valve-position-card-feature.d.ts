@@ -2,7 +2,7 @@ import { LitElement, nothing } from "lit";
 import "../../../components/ha-control-slider";
 import type { HomeAssistant } from "../../../types";
 import type { LovelaceCardFeature } from "../types";
-import type { ValvePositionCardFeatureConfig, LovelaceCardFeatureContext } from "./types";
+import type { LovelaceCardFeatureContext, ValvePositionCardFeatureConfig } from "./types";
 export declare const supportsValvePositionCardFeature: (hass: HomeAssistant, context: LovelaceCardFeatureContext) => boolean;
 declare class HuiValvePositionCardFeature extends LitElement implements LovelaceCardFeature {
     hass?: HomeAssistant;
@@ -12,7 +12,7 @@ declare class HuiValvePositionCardFeature extends LitElement implements Lovelace
     private get _stateObj();
     static getStubConfig(): ValvePositionCardFeatureConfig;
     setConfig(config: ValvePositionCardFeatureConfig): void;
-    protected render(): typeof nothing | import("lit-html").TemplateResult<1>;
+    protected render(): import("lit-html").TemplateResult<1> | typeof nothing;
     private _valueChanged;
     static get styles(): import("lit").CSSResult;
 }

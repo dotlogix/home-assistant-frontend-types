@@ -3,8 +3,8 @@ import { LitElement } from "lit";
 import "../../../../../components/device/ha-device-picker";
 import "../../../../../components/device/ha-device-trigger-picker";
 import "../../../../../components/ha-form/ha-form";
-import type { DeviceTrigger } from "../../../../../data/device_automation";
-import type { EntityRegistryEntry } from "../../../../../data/entity_registry";
+import type { DeviceTrigger } from "../../../../../data/device/device_automation";
+import type { EntityRegistryEntry } from "../../../../../data/entity/entity_registry";
 import type { HomeAssistant } from "../../../../../types";
 export declare class HaDeviceTrigger extends LitElement {
     hass: HomeAssistant;

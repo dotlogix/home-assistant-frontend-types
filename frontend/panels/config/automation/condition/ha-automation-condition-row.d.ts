@@ -1,16 +1,19 @@
+import "@home-assistant/webawesome/dist/components/divider/divider";
 import type { CSSResultGroup, PropertyValues, TemplateResult } from "lit";
 import { LitElement, nothing } from "lit";
 import "../../../../components/ha-automation-row";
 import "../../../../components/ha-card";
+import "../../../../components/ha-condition-icon";
+import "../../../../components/ha-dropdown";
+import "../../../../components/ha-dropdown-item";
 import "../../../../components/ha-expansion-panel";
 import "../../../../components/ha-icon-button";
-import "../../../../components/ha-md-button-menu";
-import "../../../../components/ha-md-divider";
-import "../../../../components/ha-md-menu-item";
 import type { AutomationClipboard, Condition } from "../../../../data/automation";
-import type { EntityRegistryEntry } from "../../../../data/entity_registry";
+import type { ConditionDescriptions } from "../../../../data/condition";
+import type { EntityRegistryEntry } from "../../../../data/entity/entity_registry";
 import type { HomeAssistant } from "../../../../types";
 import "../ha-automation-editor-warning";
+import "../target/ha-automation-row-targets";
 import "./ha-automation-condition-editor";
 import type HaAutomationConditionEditor from "./ha-automation-condition-editor";
 import "./types/ha-automation-condition-and";
@@ -29,7 +32,6 @@ export interface ConditionElement extends LitElement {
     expandAll?: () => void;
     collapseAll?: () => void;
 }
-export declare const handleChangeEvent: (element: ConditionElement, ev: CustomEvent) => void;
 export default class HaAutomationConditionRow extends LitElement {
     hass: HomeAssistant;
     condition: Condition;
@@ -42,6 +44,7 @@ export default class HaAutomationConditionRow extends LitElement {
     sortSelected: boolean;
     private _collapsed;
     private _warnings?;
+    conditionDescriptions: ConditionDescriptions;
     optionsInSidebar: boolean;
     _clipboard?: AutomationClipboard;
     private _yamlMode;
@@ -54,7 +57,8 @@ export default class HaAutomationConditionRow extends LitElement {
     get selected(): boolean;
     private _renderOverflowLabel;
     private _renderRow;
-    protected render(): typeof nothing | TemplateResult<1>;
+    protected render(): TemplateResult<1> | typeof nothing;
+    private _renderTargets;
     protected firstUpdated(changedProperties: PropertyValues): void;
     protected willUpdate(changedProperties: any): void;
     private _onValueChange;
@@ -79,9 +83,11 @@ export default class HaAutomationConditionRow extends LitElement {
     private _handleUiModeNotAvailable;
     private _toggleSidebar;
     openSidebar(condition?: Condition): void;
+    private _getType;
     private _uiSupported;
     private _toggleCollapse;
     focus(): void;
+    private _handleDropdownSelect;
     static get styles(): CSSResultGroup;
 }
 declare global {

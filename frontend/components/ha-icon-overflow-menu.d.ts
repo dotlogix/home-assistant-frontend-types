@@ -1,12 +1,13 @@
+import "@home-assistant/webawesome/dist/components/divider/divider";
 import type { TemplateResult } from "lit";
 import { LitElement, nothing } from "lit";
 import type { HomeAssistant } from "../types";
-import "./ha-md-button-menu";
+import "./ha-dropdown";
+import "./ha-dropdown-item";
 import "./ha-icon-button";
+import "./ha-md-divider";
 import "./ha-svg-icon";
 import "./ha-tooltip";
-import "./ha-md-menu-item";
-import "./ha-md-divider";
 export interface IconOverflowMenuItem {
     [key: string]: any;
     path: string;

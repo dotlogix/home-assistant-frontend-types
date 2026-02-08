@@ -12,7 +12,7 @@ export declare class HuiFormEditor extends LitElement implements LovelaceGeneric
     private _config?;
     assertConfig(_config: LovelaceCardConfig): void;
     setConfig(config: LovelaceCardConfig): void;
-    protected render(): typeof nothing | import("lit-html").TemplateResult<1>;
+    protected render(): import("lit-html").TemplateResult<1> | typeof nothing;
     computeLabel: (_schema: HaFormSchema, _localize: LocalizeFunc) => string | undefined;
     computeHelper: (_schema: HaFormSchema, _localize: LocalizeFunc) => string | undefined;
     private _computeLabelCallback;

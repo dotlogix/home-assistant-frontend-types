@@ -12,7 +12,7 @@ export declare class HaSTTPicker extends LitElement {
     disabled: boolean;
     required: boolean;
     _engines?: STTEngine[];
-    protected render(): typeof nothing | import("lit-html").TemplateResult<1>;
+    protected render(): import("lit-html").TemplateResult<1> | typeof nothing;
     protected willUpdate(changedProperties: PropertyValues<this>): void;
     private _debouncedUpdateEngines;
     private _updateEngines;

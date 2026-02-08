@@ -17,7 +17,7 @@ import type { HomeAssistant } from "../../../types";
 declare class EntityPreviewRow extends LitElement {
     hass: HomeAssistant;
     private stateObj?;
-    protected render(): typeof nothing | TemplateResult<1>;
+    protected render(): TemplateResult<1> | typeof nothing;
     static styles: import("lit").CSSResult;
     private _renderEntityState;
 }

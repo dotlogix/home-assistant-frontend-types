@@ -2,6 +2,7 @@ import type { CSSResultGroup, PropertyValues } from "lit";
 import { LitElement, nothing } from "lit";
 import "../../../components/ha-alert";
 import "../../../components/ha-area-picker";
+import "../../../components/ha-color-picker";
 import "../../../components/ha-icon";
 import "../../../components/ha-icon-button-next";
 import "../../../components/ha-icon-picker";
@@ -14,7 +15,7 @@ import "../../../components/ha-state-icon";
 import "../../../components/ha-switch";
 import "../../../components/ha-textfield";
 import type { ConfigEntry } from "../../../data/config_entries";
-import type { ExtEntityRegistryEntry } from "../../../data/entity_registry";
+import type { ExtEntityRegistryEntry } from "../../../data/entity/entity_registry";
 import type { HomeAssistant } from "../../../types";
 export declare class EntityRegistrySettingsEditor extends LitElement {
     hass: HomeAssistant;
@@ -47,6 +48,7 @@ export declare class EntityRegistrySettingsEditor extends LitElement {
     private _sensorNumericalDeviceClasses?;
     private _weatherConvertibleUnits?;
     private _defaultCode?;
+    private _calendarColor?;
     private _noDeviceArea?;
     private _origEntityId;
     private _deviceClassOptions?;
@@ -54,7 +56,7 @@ export declare class EntityRegistrySettingsEditor extends LitElement {
     private _precisionLabel;
     private _isInvalidDefaultCode;
     protected updated(changedProps: PropertyValues): Promise<void>;
-    protected render(): typeof nothing | import("lit-html").TemplateResult<1>;
+    protected render(): import("lit-html").TemplateResult<1> | typeof nothing;
     updateEntry(): Promise<{
         close: boolean;
         entry: ExtEntityRegistryEntry;
@@ -68,6 +70,7 @@ export declare class EntityRegistrySettingsEditor extends LitElement {
     private _deviceClassChanged;
     private _unitChanged;
     private _defaultcodeChanged;
+    private _calendarColorChanged;
     private _precipitationUnitChanged;
     private _precisionChanged;
     private _pressureUnitChanged;

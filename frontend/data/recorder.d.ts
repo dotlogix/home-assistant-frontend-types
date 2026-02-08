@@ -11,6 +11,7 @@ export interface RecorderInfo {
     thread_running: boolean;
 }
 export type StatisticType = "change" | "state" | "sum" | "min" | "max" | "mean";
+export type StatisticPeriod = "5minute" | "hour" | "day" | "week" | "month";
 export type Statistics = Record<string, StatisticValue[]>;
 export interface StatisticValue {
     start: number;
@@ -102,7 +103,7 @@ export type StatisticsValidationResults = Record<string, StatisticsValidationRes
 export declare const getRecorderInfo: (conn: Connection) => Promise<RecorderInfo>;
 export declare const getStatisticIds: (hass: HomeAssistant, statistic_type?: "mean" | "sum") => Promise<StatisticsMetaData[]>;
 export declare const getStatisticMetadata: (hass: HomeAssistant, statistic_ids?: string[]) => Promise<StatisticsMetaData[]>;
-export declare const fetchStatistics: (hass: HomeAssistant, startTime: Date, endTime?: Date, statistic_ids?: string[], period?: "5minute" | "hour" | "day" | "week" | "month", units?: StatisticsUnitConfiguration, types?: StatisticsTypes) => Promise<Statistics>;
+export declare const fetchStatistics: (hass: HomeAssistant, startTime: Date, endTime?: Date, statistic_ids?: string[], period?: StatisticPeriod, units?: StatisticsUnitConfiguration, types?: StatisticsTypes) => Promise<Statistics>;
 export declare const fetchStatistic: (hass: HomeAssistant, statistic_id: string, period: {
     fixed_period?: {
         start: string | Date;

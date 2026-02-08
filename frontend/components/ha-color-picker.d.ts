@@ -1,23 +1,24 @@
 import { LitElement } from "lit";
 import type { HomeAssistant } from "../types";
-import "./ha-list-item";
-import "./ha-md-divider";
-import "./ha-select";
+import "./ha-generic-picker";
 export declare class HaColorPicker extends LitElement {
+    hass: HomeAssistant;
     label?: string;
     helper?: string;
-    hass: HomeAssistant;
     value?: string;
     defaultColor?: string;
     includeState: boolean;
     includeNone: boolean;
     disabled: boolean;
-    private _select?;
-    connectedCallback(): void;
-    private _valueSelected;
+    required: boolean;
     render(): import("lit-html").TemplateResult<1>;
+    private _getAdditionalItems;
+    private _getItems;
+    private _getColors;
+    private _rowRenderer;
+    private _valueRenderer;
     private _renderColorCircle;
-    static styles: import("lit").CSSResult;
+    private _valueChanged;
 }
 declare global {
     interface HTMLElementTagNameMap {

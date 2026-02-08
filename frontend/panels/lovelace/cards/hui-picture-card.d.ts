@@ -15,7 +15,7 @@ export declare class HuiPictureCard extends LitElement implements LovelaceCard {
     protected shouldUpdate(changedProps: PropertyValues): boolean;
     protected willUpdate(changedProps: PropertyValues): void;
     protected updated(changedProps: PropertyValues): void;
-    protected render(): typeof nothing | import("lit-html").TemplateResult<1>;
+    protected render(): import("lit-html").TemplateResult<1> | typeof nothing;
     static styles: import("lit").CSSResult;
     private _handleAction;
 }

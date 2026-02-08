@@ -15,7 +15,7 @@ declare class DialogMQTTDeviceDebugInfo extends LitElement {
     private _showAsYaml;
     private _showDeserialized;
     showDialog(params: MQTTDeviceDebugInfoDialogParams): Promise<void>;
-    protected render(): typeof nothing | TemplateResult<1>;
+    protected render(): TemplateResult<1> | typeof nothing;
     private _close;
     private _showAsYamlChanged;
     private _showDeserializedChanged;

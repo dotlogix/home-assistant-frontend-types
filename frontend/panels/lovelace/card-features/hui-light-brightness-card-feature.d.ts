@@ -11,7 +11,7 @@ declare class HuiLightBrightnessCardFeature extends LitElement implements Lovela
     private get _stateObj();
     static getStubConfig(): LightBrightnessCardFeatureConfig;
     setConfig(config: LightBrightnessCardFeatureConfig): void;
-    protected render(): typeof nothing | import("lit-html").TemplateResult<1>;
+    protected render(): import("lit-html").TemplateResult<1> | typeof nothing;
     private _valueChanged;
     static get styles(): import("lit").CSSResult;
 }

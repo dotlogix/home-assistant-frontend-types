@@ -1,10 +1,10 @@
 import type { PropertyValues } from "lit";
 import { LitElement } from "lit";
 import "../../../../components/ha-button";
-import "../../../../components/ha-button-menu";
+import "../../../../components/ha-dropdown";
+import "../../../../components/ha-dropdown-item";
 import "../../../../components/ha-grid-size-picker";
 import "../../../../components/ha-icon-button";
-import "../../../../components/ha-list-item";
 import "../../../../components/ha-settings-row";
 import "../../../../components/ha-slider";
 import "../../../../components/ha-svg-icon";

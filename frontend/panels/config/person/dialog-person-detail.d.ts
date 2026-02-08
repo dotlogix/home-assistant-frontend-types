@@ -25,7 +25,7 @@ declare class DialogPersonDetail extends LitElement implements HassDialog {
     private _deviceTrackersAvailable;
     showDialog(params: PersonDetailDialogParams): Promise<void>;
     closeDialog(): boolean;
-    protected render(): typeof nothing | import("lit-html").TemplateResult<1>;
+    protected render(): import("lit-html").TemplateResult<1> | typeof nothing;
     private _renderUserFields;
     private _nameChanged;
     private _adminChanged;

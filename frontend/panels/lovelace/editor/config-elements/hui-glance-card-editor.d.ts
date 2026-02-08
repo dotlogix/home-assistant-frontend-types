@@ -11,7 +11,7 @@ export declare class HuiGlanceCardEditor extends LitElement implements LovelaceC
     private _subElementEditorConfig?;
     private _configEntities?;
     setConfig(config: GlanceCardConfig): void;
-    protected render(): typeof nothing | import("lit-html").TemplateResult<1>;
+    protected render(): import("lit-html").TemplateResult<1> | typeof nothing;
     private _goBack;
     private _editDetailElement;
     private _handleSubEntityChanged;

@@ -16,7 +16,7 @@ export declare class DialogSupportPackage extends LitElement {
     showDialog(): void;
     private _dialogClosed;
     closeDialog(): boolean;
-    protected render(): typeof nothing | import("lit-html").TemplateResult<1>;
+    protected render(): import("lit-html").TemplateResult<1> | typeof nothing;
     private _loadSupportPackage;
     private _download;
     static styles: import("lit").CSSResult;

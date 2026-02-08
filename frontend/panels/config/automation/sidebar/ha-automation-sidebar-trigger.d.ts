@@ -1,4 +1,6 @@
+import "@home-assistant/webawesome/dist/components/divider/divider";
 import { LitElement } from "lit";
+import "../../../../components/ha-dropdown-item";
 import type { TriggerSidebarConfig } from "../../../../data/automation";
 import type { HomeAssistant } from "../../../../types";
 import "../trigger/ha-automation-trigger-editor";
@@ -22,6 +24,7 @@ export default class HaAutomationSidebarTrigger extends LitElement {
     private _yamlChangedSidebar;
     private _toggleYamlMode;
     private _showTriggerId;
+    private _handleDropdownSelect;
     static styles: import("lit").CSSResult[];
 }
 declare global {

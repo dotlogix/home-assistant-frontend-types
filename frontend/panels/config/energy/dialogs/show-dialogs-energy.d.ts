@@ -1,4 +1,4 @@
-import type { BatterySourceTypeEnergyPreference, DeviceConsumptionEnergyPreference, EnergyGasUnitClass, EnergyInfo, FlowFromGridSourceEnergyPreference, FlowToGridSourceEnergyPreference, GasSourceTypeEnergyPreference, GridSourceTypeEnergyPreference, SolarSourceTypeEnergyPreference, WaterSourceTypeEnergyPreference } from "../../../../data/energy";
+import type { BatterySourceTypeEnergyPreference, DeviceConsumptionEnergyPreference, EnergyGasUnitClass, EnergyInfo, FlowFromGridSourceEnergyPreference, FlowToGridSourceEnergyPreference, GasSourceTypeEnergyPreference, GridPowerSourceEnergyPreference, GridPowerSourceInput, GridSourceTypeEnergyPreference, SolarSourceTypeEnergyPreference, WaterSourceTypeEnergyPreference } from "../../../../data/energy";
 import type { StatisticsMetaData } from "../../../../data/recorder";
 export interface EnergySettingsGridFlowDialogParams {
     source?: FlowFromGridSourceEnergyPreference | FlowToGridSourceEnergyPreference;
@@ -18,6 +18,11 @@ export interface EnergySettingsGridFlowToDialogParams {
     metadata?: StatisticsMetaData;
     grid_source?: GridSourceTypeEnergyPreference;
     saveCallback: (source: FlowToGridSourceEnergyPreference) => Promise<void>;
+}
+export interface EnergySettingsGridPowerDialogParams {
+    source?: GridPowerSourceEnergyPreference;
+    grid_source?: GridSourceTypeEnergyPreference;
+    saveCallback: (source: GridPowerSourceInput) => Promise<void>;
 }
 export interface EnergySettingsSolarDialogParams {
     info: EnergyInfo;
@@ -49,6 +54,12 @@ export interface EnergySettingsDeviceDialogParams {
     statsMetadata?: Record<string, StatisticsMetaData>;
     saveCallback: (device: DeviceConsumptionEnergyPreference) => Promise<void>;
 }
+export interface EnergySettingsDeviceWaterDialogParams {
+    device?: DeviceConsumptionEnergyPreference;
+    device_consumptions: DeviceConsumptionEnergyPreference[];
+    statsMetadata?: Record<string, StatisticsMetaData>;
+    saveCallback: (device: DeviceConsumptionEnergyPreference) => Promise<void>;
+}
 export declare const showEnergySettingsDeviceDialog: (element: HTMLElement, dialogParams: EnergySettingsDeviceDialogParams) => void;
 export declare const showEnergySettingsBatteryDialog: (element: HTMLElement, dialogParams: EnergySettingsBatteryDialogParams) => void;
 export declare const showEnergySettingsSolarDialog: (element: HTMLElement, dialogParams: EnergySettingsSolarDialogParams) => void;
@@ -56,3 +67,5 @@ export declare const showEnergySettingsGasDialog: (element: HTMLElement, dialogP
 export declare const showEnergySettingsWaterDialog: (element: HTMLElement, dialogParams: EnergySettingsWaterDialogParams) => void;
 export declare const showEnergySettingsGridFlowFromDialog: (element: HTMLElement, dialogParams: EnergySettingsGridFlowFromDialogParams) => void;
 export declare const showEnergySettingsGridFlowToDialog: (element: HTMLElement, dialogParams: EnergySettingsGridFlowToDialogParams) => void;
+export declare const showEnergySettingsDeviceWaterDialog: (element: HTMLElement, dialogParams: EnergySettingsDeviceWaterDialogParams) => void;
+export declare const showEnergySettingsGridPowerDialog: (element: HTMLElement, dialogParams: EnergySettingsGridPowerDialogParams) => void;

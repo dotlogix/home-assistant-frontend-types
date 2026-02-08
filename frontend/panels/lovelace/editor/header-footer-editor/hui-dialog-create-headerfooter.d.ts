@@ -9,7 +9,7 @@ export declare class HuiCreateDialogHeaderFooter extends LitElement implements H
     private _params?;
     showDialog(params: CreateHeaderFooterDialogParams): Promise<void>;
     closeDialog(): boolean;
-    protected render(): typeof nothing | import("lit-html").TemplateResult<1>;
+    protected render(): import("lit-html").TemplateResult<1> | typeof nothing;
     private _handleHeaderFooterPicked;
     private _ignoreKeydown;
     private _cancel;

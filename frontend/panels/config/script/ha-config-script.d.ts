@@ -1,5 +1,6 @@
 import type { PropertyValues } from "lit";
-import type { EntityRegistryEntry } from "../../../data/entity_registry";
+import type { CloudStatus } from "../../../data/cloud";
+import type { EntityRegistryEntry } from "../../../data/entity/entity_registry";
 import type { ScriptEntity } from "../../../data/script";
 import type { RouterOptions } from "../../../layouts/hass-router-page";
 import { HassRouterPage } from "../../../layouts/hass-router-page";
@@ -11,6 +12,7 @@ declare class HaConfigScript extends HassRouterPage {
     narrow: boolean;
     isWide: boolean;
     showAdvanced: boolean;
+    cloudStatus?: CloudStatus;
     scripts: ScriptEntity[];
     _entityReg: EntityRegistryEntry[];
     protected routerOptions: RouterOptions;

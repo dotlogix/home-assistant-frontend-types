@@ -10,7 +10,7 @@ export declare class MoreInfoConfigurator extends LitElement {
     stateObj?: HassEntity;
     private _isConfiguring;
     private _fieldInput;
-    protected render(): typeof nothing | import("lit-html").TemplateResult<1>;
+    protected render(): import("lit-html").TemplateResult<1> | typeof nothing;
     private _fieldChanged;
     private _submitClicked;
     static styles: import("lit").CSSResult;

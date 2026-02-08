@@ -17,7 +17,7 @@ declare class DialogZHAReconfigureDevice extends LitElement {
     private _subscribed?;
     showDialog(params: ZHAReconfigureDeviceDialogParams): void;
     closeDialog(): void;
-    protected render(): typeof nothing | import("lit-html").TemplateResult<1>;
+    protected render(): import("lit-html").TemplateResult<1> | typeof nothing;
     private _startReconfiguration;
     private _handleMessage;
     private _unsubscribe;

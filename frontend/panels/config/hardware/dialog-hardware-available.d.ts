@@ -12,7 +12,7 @@ declare class DialogHardwareAvailable extends LitElement implements HassDialog {
     private _filter?;
     showDialog(): Promise<Promise<void>>;
     closeDialog(): boolean;
-    protected render(): typeof nothing | import("lit-html").TemplateResult<1>;
+    protected render(): import("lit-html").TemplateResult<1> | typeof nothing;
     private _handleSearchChange;
     static get styles(): CSSResultGroup;
 }

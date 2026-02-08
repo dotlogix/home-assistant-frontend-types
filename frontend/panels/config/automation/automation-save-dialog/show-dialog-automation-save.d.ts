@@ -1,6 +1,6 @@
 import type { AutomationConfig } from "../../../../data/automation";
+import type { EntityRegistryEntry } from "../../../../data/entity/entity_registry";
 import type { ScriptConfig } from "../../../../data/script";
-import type { EntityRegistryEntry } from "../../../../data/entity_registry";
 export declare const loadAutomationSaveDialog: () => Promise<typeof import("./dialog-automation-save")>;
 interface BaseRenameDialogParams {
     entityRegistryUpdate?: EntityRegistryUpdate;

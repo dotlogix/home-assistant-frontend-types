@@ -6,7 +6,7 @@ import "../../../components/ha-control-button-group";
 import "../../../components/ha-markdown";
 import "../../../components/ha-relative-time";
 import "../../../components/ha-service-control";
-import type { ExtEntityRegistryEntry } from "../../../data/entity_registry";
+import type { ExtEntityRegistryEntry } from "../../../data/entity/entity_registry";
 import type { ScriptEntity } from "../../../data/script";
 import type { HomeAssistant } from "../../../types";
 import "../components/ha-more-info-state-header";
@@ -20,7 +20,7 @@ declare class MoreInfoScript extends LitElement {
     private _unsubMediaQuery?;
     connectedCallback(): void;
     disconnectedCallback(): void;
-    protected render(): typeof nothing | import("lit-html").TemplateResult<1>;
+    protected render(): import("lit-html").TemplateResult<1> | typeof nothing;
     protected willUpdate(changedProperties: PropertyValues): void;
     private _cancelScript;
     private _runScript;

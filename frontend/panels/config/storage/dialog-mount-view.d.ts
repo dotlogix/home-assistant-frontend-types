@@ -17,7 +17,7 @@ declare class ViewMountDialog extends LitElement {
     private _reloadMounts?;
     showDialog(dialogParams: MountViewDialogParams): Promise<Promise<void>>;
     closeDialog(): void;
-    protected render(): typeof nothing | import("lit-html").TemplateResult<1>;
+    protected render(): import("lit-html").TemplateResult<1> | typeof nothing;
     private _computeLabelCallback;
     private _computeHelperCallback;
     private _computeErrorCallback;

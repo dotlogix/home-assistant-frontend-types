@@ -188,6 +188,8 @@ export interface PipelineRun {
     stage: "ready" | "wake_word" | "stt" | "intent" | "tts" | "done" | "error";
     run: PipelineRunStartEvent["data"];
     error?: PipelineErrorEvent["data"];
+    started: Date;
+    finished?: Date;
     wake_word?: PipelineWakeWordStartEvent["data"] & Partial<PipelineWakeWordEndEvent["data"]> & {
         done: boolean;
     };

@@ -1,7 +1,8 @@
 import type { CSSResultGroup, PropertyValues } from "lit";
 import { LitElement } from "lit";
 import "../../../../components/ha-button";
-import "../../../../components/ha-list-item";
+import "../../../../components/ha-dropdown";
+import "../../../../components/ha-dropdown-item";
 import "../../../../components/ha-svg-icon";
 import type { HomeAssistant } from "../../../../types";
 import type { Condition, LegacyCondition } from "../../common/validate-condition";
@@ -13,8 +14,8 @@ import "./types/ha-card-condition-numeric_state";
 import "./types/ha-card-condition-or";
 import "./types/ha-card-condition-screen";
 import "./types/ha-card-condition-state";
+import "./types/ha-card-condition-time";
 import "./types/ha-card-condition-user";
-export declare const PASTE_VALUE: "__paste__";
 export declare class HaCardConditionsEditor extends LitElement {
     hass: HomeAssistant;
     protected _clipboard?: Condition | LegacyCondition;

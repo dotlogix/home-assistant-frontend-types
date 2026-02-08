@@ -1,11 +1,11 @@
 import type { CSSResultGroup, PropertyValues, TemplateResult } from "lit";
 import { LitElement, nothing } from "lit";
 import "../../../../components/ha-button";
-import "../../../../components/ha-button-menu";
 import "../../../../components/ha-dialog";
 import "../../../../components/ha-dialog-header";
+import "../../../../components/ha-dropdown";
+import "../../../../components/ha-dropdown-item";
 import "../../../../components/ha-icon-button";
-import "../../../../components/ha-list-item";
 import "../../../../components/ha-tab-group";
 import "../../../../components/ha-tab-group-tab";
 import "../../../../components/ha-yaml-editor";
@@ -27,7 +27,7 @@ export declare class HuiDialogEditSection extends LitElement implements HassDial
     protected updated(changedProperties: PropertyValues): void;
     showDialog(params: EditSectionDialogParams): Promise<void>;
     closeDialog(): boolean;
-    protected render(): typeof nothing | TemplateResult<1>;
+    protected render(): TemplateResult<1> | typeof nothing;
     private _configChanged;
     private _handleTabChanged;
     private _handleAction;

@@ -36,7 +36,7 @@ export declare class HuiDialogEditCard extends LitElement implements HassDialog<
     showDialog(params: EditCardDialogParams): Promise<void>;
     closeDialog(): boolean;
     protected updated(changedProps: PropertyValues): void;
-    protected render(): typeof nothing | import("lit-html").TemplateResult<1>;
+    protected render(): import("lit-html").TemplateResult<1> | typeof nothing;
     private _enlarge;
     private _ignoreKeydown;
     private _handleConfigChanged;

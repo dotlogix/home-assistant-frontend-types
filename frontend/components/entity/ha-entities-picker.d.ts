@@ -1,5 +1,5 @@
 import { LitElement, nothing } from "lit";
-import type { HaEntityPickerEntityFilterFunc } from "../../data/entity";
+import type { HaEntityPickerEntityFilterFunc } from "../../data/entity/entity";
 import type { HomeAssistant } from "../../types";
 import "../ha-sortable";
 import "./ha-entity-picker";
@@ -50,7 +50,7 @@ declare class HaEntitiesPicker extends LitElement {
     entityFilter?: HaEntityPickerEntityFilterFunc;
     createDomains?: string[];
     reorder: boolean;
-    protected render(): typeof nothing | import("lit-html").TemplateResult<1>;
+    protected render(): import("lit-html").TemplateResult<1> | typeof nothing;
     private _entityMoved;
     private _excludeEntities;
     private get _currentEntities();

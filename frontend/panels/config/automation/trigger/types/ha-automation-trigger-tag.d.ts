@@ -12,7 +12,7 @@ export declare class HaTagTrigger extends LitElement implements TriggerElement {
     private _tags?;
     static get defaultConfig(): TagTrigger;
     protected firstUpdated(changedProperties: PropertyValues): void;
-    protected render(): typeof nothing | import("lit-html").TemplateResult<1>;
+    protected render(): import("lit-html").TemplateResult<1> | typeof nothing;
     private _fetchTags;
     private _tagChanged;
     static styles: import("lit").CSSResult;

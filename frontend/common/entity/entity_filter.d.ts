@@ -9,6 +9,7 @@ export interface EntityFilter {
     label?: string | string[];
     entity_category?: EntityCategory | EntityCategory[];
     hidden_platform?: string | string[];
+    hidden_domains?: string | string[];
 }
 export type EntityFilterFunc = (entityId: string) => boolean;
 export declare const generateEntityFilter: (hass: HomeAssistant, filter: EntityFilter) => EntityFilterFunc;

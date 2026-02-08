@@ -25,6 +25,9 @@ export declare class EnergyGridSettings extends LitElement {
     private _editToSource;
     private _deleteFromSource;
     private _deleteToSource;
+    private _addPowerSource;
+    private _editPowerSource;
+    private _deletePowerSource;
     private _removeEmptySources;
     private _savePreferences;
     static get styles(): CSSResultGroup;

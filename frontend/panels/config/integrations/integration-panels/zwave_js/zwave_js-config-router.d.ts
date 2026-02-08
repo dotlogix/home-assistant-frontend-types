@@ -10,7 +10,6 @@ declare class ZWaveJSConfigRouter extends HassRouterPage {
     private _configEntry;
     protected routerOptions: RouterOptions;
     protected updatePageEl(el: any): void;
-    private _fetchConfigEntries;
 }
 declare global {
     interface HTMLElementTagNameMap {

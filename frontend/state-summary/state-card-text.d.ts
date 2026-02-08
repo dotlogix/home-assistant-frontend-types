@@ -1,7 +1,7 @@
-import "../components/ha-textfield";
 import type { TemplateResult } from "lit";
 import { LitElement } from "lit";
 import "../components/entity/state-badge";
+import "../components/ha-textfield";
 import type { TextEntity } from "../data/text";
 import type { HomeAssistant } from "../types";
 declare class StateCardText extends LitElement {

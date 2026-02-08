@@ -8,7 +8,7 @@ declare class HuiTimerEntityRow extends LitElement {
     hass?: HomeAssistant;
     private _config?;
     setConfig(config: EntityConfig): void;
-    protected render(): typeof nothing | import("lit-html").TemplateResult<1>;
+    protected render(): import("lit-html").TemplateResult<1> | typeof nothing;
     protected shouldUpdate(changedProps: PropertyValues): boolean;
 }
 declare global {

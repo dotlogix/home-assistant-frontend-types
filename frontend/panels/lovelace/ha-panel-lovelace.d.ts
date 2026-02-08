@@ -1,10 +1,10 @@
 import type { PropertyValues, TemplateResult } from "lit";
 import { LitElement } from "lit";
+import "../../components/ha-button";
 import "../../layouts/hass-error-screen";
 import "../../layouts/hass-loading-screen";
 import type { HomeAssistant, PanelInfo, Route } from "../../types";
 import "./hui-root";
-import "../../components/ha-button";
 interface LovelacePanelConfig {
     mode: "yaml" | "storage";
 }
@@ -14,7 +14,7 @@ declare global {
     }
 }
 export declare class LovelacePanel extends LitElement {
-    panel?: PanelInfo<LovelacePanelConfig>;
+    panel?: PanelInfo<LovelacePanelConfig | undefined>;
     hass?: HomeAssistant;
     narrow: boolean;
     route?: Route;
@@ -37,7 +37,6 @@ export declare class LovelacePanel extends LitElement {
     private _askRegenerateStrategyConfig;
     private _regenerateStrategyConfig;
     private _handleConnectionStatus;
-    private _regenerateConfig;
     private _subscribeUpdates;
     private _closeEditor;
     private _lovelaceChanged;
@@ -46,6 +45,7 @@ export declare class LovelacePanel extends LitElement {
     private _fetchConfig;
     private _checkLovelaceConfig;
     private _setLovelaceConfig;
+    private _generateDefaultConfig;
     private _updateLovelace;
 }
 declare global {

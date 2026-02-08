@@ -12,7 +12,7 @@ export declare class CloudRemotePref extends LitElement {
     hass: HomeAssistant;
     cloudStatus?: CloudStatusLoggedIn;
     narrow: boolean;
-    protected render(): typeof nothing | import("lit-html").TemplateResult<1>;
+    protected render(): import("lit-html").TemplateResult<1> | typeof nothing;
     private _openCertInfo;
     private _toggleChanged;
     private _toggleAllowRemoteEnabledChanged;

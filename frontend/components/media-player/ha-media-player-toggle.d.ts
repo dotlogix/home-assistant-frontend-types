@@ -7,8 +7,8 @@ declare class HaMediaPlayerToggle extends LitElement {
     entityId: string;
     checked: boolean;
     disabled: boolean;
+    private _computeDisplayData;
     protected render(): import("lit-html").TemplateResult<1>;
-    private _formatSecondaryText;
     static get styles(): CSSResultGroup;
     private _handleChange;
 }

@@ -1,6 +1,6 @@
 import type { HassEntity } from "home-assistant-js-websocket";
 import { LitElement, type PropertyValues } from "lit";
-import { type DeviceRegistryEntry } from "../../data/device_registry";
+import type { DeviceRegistryEntry } from "../../data/device/device_registry";
 import type { HomeAssistant } from "../../types";
 import "../ha-generic-picker";
 export type HaDevicePickerDeviceFilterFunc = (device: DeviceRegistryEntry) => boolean;
@@ -54,6 +54,7 @@ export declare class HaDevicePicker extends LitElement {
     protected render(): import("lit-html").TemplateResult<1>;
     open(): Promise<void>;
     private _valueChanged;
+    private _notFoundLabel;
 }
 declare global {
     interface HTMLElementTagNameMap {

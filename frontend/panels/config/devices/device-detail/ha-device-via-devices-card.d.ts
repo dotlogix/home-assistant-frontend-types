@@ -8,7 +8,7 @@ export declare class HaDeviceViaDevicesCard extends LitElement {
     deviceId: string;
     _showAll: boolean;
     private _viaDevices;
-    protected render(): typeof nothing | import("lit-html").TemplateResult<1>;
+    protected render(): import("lit-html").TemplateResult<1> | typeof nothing;
     private _toggleShowAll;
     static styles: import("lit").CSSResult;
 }

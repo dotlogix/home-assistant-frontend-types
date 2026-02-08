@@ -5,7 +5,7 @@ export declare const actionConfigStructConfirmation: import("superstruct").Struc
     }[];
 }, null>;
 export declare const actionConfigStructType: import("superstruct").Struct<{
-    action: "none" | "url" | "toggle" | "assist" | "call-service" | "perform-action" | "more-info" | "navigate";
+    action: "toggle" | "none" | "url" | "assist" | "call-service" | "perform-action" | "more-info" | "navigate";
     confirmation: boolean | {
         text: string;
         excemptions: {
@@ -13,10 +13,10 @@ export declare const actionConfigStructType: import("superstruct").Struct<{
         }[];
     };
 }, {
-    action: import("superstruct").Struct<"none" | "url" | "toggle" | "assist" | "call-service" | "perform-action" | "more-info" | "navigate", {
+    action: import("superstruct").Struct<"toggle" | "none" | "url" | "assist" | "call-service" | "perform-action" | "more-info" | "navigate", {
+        toggle: "toggle";
         none: "none";
         url: "url";
-        toggle: "toggle";
         assist: "assist";
         "call-service": "call-service";
         "perform-action": "perform-action";

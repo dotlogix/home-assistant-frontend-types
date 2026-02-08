@@ -1,7 +1,9 @@
+import "@home-assistant/webawesome/dist/components/divider/divider";
 import { LitElement, nothing } from "lit";
 import "../../../../components/ha-button";
+import "../../../../components/ha-dropdown";
+import "../../../../components/ha-dropdown-item";
 import "../../../../components/ha-icon-button";
-import "../../../../components/ha-list-item";
 import "../../../../components/ha-sortable";
 import "../../../../components/ha-svg-icon";
 import type { HomeAssistant } from "../../../../types";
@@ -28,7 +30,7 @@ export declare class HuiCardFeaturesEditor extends LitElement {
     private _isFeatureTypeEditable;
     private _getFeatureTypeLabel;
     private _getKey;
-    protected render(): typeof nothing | import("lit-html").TemplateResult<1>;
+    protected render(): import("lit-html").TemplateResult<1> | typeof nothing;
     private _addFeature;
     private _featureMoved;
     private _removeFeature;

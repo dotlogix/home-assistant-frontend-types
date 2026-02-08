@@ -14,18 +14,24 @@ import "../components/hui-section-edit-mode";
 import type { HuiSection } from "../sections/hui-section";
 import type { Lovelace } from "../types";
 import "./hui-view-header";
+import "./hui-view-sidebar";
 export declare const DEFAULT_MAX_COLUMNS = 4;
 export declare class SectionsView extends LitElement implements LovelaceViewElement {
     hass: HomeAssistant;
     lovelace?: Lovelace;
     index?: number;
     isStrategy: boolean;
+    narrow: boolean;
     sections: HuiSection[];
     cards: HuiCard[];
     badges: HuiBadge[];
     private _config?;
     private _sectionColumnCount;
     _dragging: boolean;
+    private _sidebarTabActive;
+    private _sidebarVisible;
+    private _contentScrollTop;
+    private _sidebarScrollTop;
     private _columnsController;
     setConfig(config: LovelaceViewConfig): void;
     private _sectionConfigKeys;
@@ -35,12 +41,14 @@ export declare class SectionsView extends LitElement implements LovelaceViewElem
     connectedCallback(): void;
     disconnectedCallback(): void;
     willUpdate(changedProperties: PropertyValues<typeof this>): void;
-    protected render(): typeof nothing | import("lit-html").TemplateResult<1>;
-    private _defaultSection;
+    protected render(): import("lit-html").TemplateResult<1> | typeof nothing;
     private _handleCardAdded;
     private _importedCardSectionConfig;
     private _createSection;
     private _sectionMoved;
+    private _viewChanged;
+    private _toggleView;
+    private _handleSidebarVisibilityChanged;
     static styles: import("lit").CSSResult;
 }
 declare global {

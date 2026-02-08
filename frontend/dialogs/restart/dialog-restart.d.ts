@@ -5,7 +5,7 @@ import "../../components/ha-alert";
 import "../../components/ha-expansion-panel";
 import "../../components/ha-fade-in";
 import "../../components/ha-icon-next";
-import "../../components/ha-wa-dialog";
+import "../../components/ha-adaptive-dialog";
 import "../../components/ha-md-list";
 import "../../components/ha-md-list-item";
 import "../../components/ha-spinner";
@@ -21,7 +21,7 @@ declare class DialogRestart extends LitElement {
     private _loadBackupState;
     private _loadHostInfo;
     private _dialogClosed;
-    protected render(): typeof nothing | import("lit-html").TemplateResult<1>;
+    protected render(): import("lit-html").TemplateResult<1> | typeof nothing;
     private _reload;
     private _getBackupProgressMessage;
     private _restartAction;

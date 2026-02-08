@@ -7,7 +7,7 @@ declare class DialogThreadDataset extends LitElement implements HassDialog {
     private _params?;
     showDialog(params: DialogThreadDatasetParams): Promise<Promise<void>>;
     closeDialog(): boolean;
-    protected render(): typeof nothing | import("lit-html").TemplateResult<1>;
+    protected render(): import("lit-html").TemplateResult<1> | typeof nothing;
 }
 declare global {
     interface HTMLElementTagNameMap {

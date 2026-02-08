@@ -12,7 +12,7 @@ export declare class HuiPictureHeaderFooter extends LitElement implements Lovela
     getCardSize(): number;
     setConfig(config: PictureHeaderFooterConfig): void;
     protected shouldUpdate(changedProps: PropertyValues): boolean;
-    protected render(): typeof nothing | import("lit-html").TemplateResult<1>;
+    protected render(): import("lit-html").TemplateResult<1> | typeof nothing;
     static styles: import("lit").CSSResult;
     private _handleAction;
 }

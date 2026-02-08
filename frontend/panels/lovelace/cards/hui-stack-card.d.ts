@@ -1,6 +1,6 @@
 import { LitElement, nothing } from "lit";
 import type { HomeAssistant } from "../../../types";
-import type { LovelaceCard, LovelaceCardEditor } from "../types";
+import type { LovelaceCard, LovelaceCardEditor, LovelaceGridOptions } from "../types";
 import "./hui-card";
 import type { HuiCard } from "./hui-card";
 import type { StackCardConfig } from "./types";
@@ -15,9 +15,10 @@ export declare abstract class HuiStackCard<T extends StackCardConfig = StackCard
     protected _config?: T;
     layout?: string;
     getCardSize(): number | Promise<number>;
+    getGridOptions(): LovelaceGridOptions;
     setConfig(config: T): void;
     protected update(changedProperties: any): void;
     private _createCardElement;
-    protected render(): typeof nothing | import("lit-html").TemplateResult<1>;
+    protected render(): import("lit-html").TemplateResult<1> | typeof nothing;
     static sharedStyles: import("lit").CSSResult;
 }

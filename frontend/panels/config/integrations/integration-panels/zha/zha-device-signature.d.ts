@@ -8,7 +8,7 @@ declare class ZHADeviceZigbeeInfo extends LitElement {
     device?: ZHADevice;
     private _signature;
     protected updated(changedProperties: PropertyValues): void;
-    protected render(): typeof nothing | import("lit-html").TemplateResult<1>;
+    protected render(): import("lit-html").TemplateResult<1> | typeof nothing;
 }
 declare global {
     interface HTMLElementTagNameMap {

@@ -9,7 +9,7 @@ export declare class HuiGenericEntityRowEditor extends LitElement implements Lov
     private _config?;
     setConfig(config: EntitiesCardEntityConfig): void;
     private _schema;
-    protected render(): typeof nothing | import("lit-html").TemplateResult<1>;
+    protected render(): import("lit-html").TemplateResult<1> | typeof nothing;
     private _valueChanged;
     private _computeLabelCallback;
 }

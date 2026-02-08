@@ -5,7 +5,7 @@ export declare class HaTagImage extends LitElement {
     tag?: TagRowData;
     private _timeout?;
     protected updated(): void;
-    protected render(): typeof nothing | import("lit-html").TemplateResult<1>;
+    protected render(): import("lit-html").TemplateResult<1> | typeof nothing;
     static styles: import("lit").CSSResult;
 }
 declare global {

@@ -1,5 +1,5 @@
 import { LitElement } from "lit";
-import type { ExtEntityRegistryEntry } from "../../data/entity_registry";
+import type { ExtEntityRegistryEntry } from "../../data/entity/entity_registry";
 import type { HomeAssistant } from "../../types";
 import "./ha-more-info-history";
 import "./ha-more-info-logbook";

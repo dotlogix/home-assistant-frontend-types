@@ -38,7 +38,7 @@ declare class DialogMatterAddDevice extends LitElement {
     private _renderStep;
     private _addDevice;
     private _renderActions;
-    protected render(): typeof nothing | import("lit-html").TemplateResult<1>;
+    protected render(): import("lit-html").TemplateResult<1> | typeof nothing;
     static styles: import("lit").CSSResult[];
 }
 declare global {

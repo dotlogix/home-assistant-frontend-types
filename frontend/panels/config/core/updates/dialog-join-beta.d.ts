@@ -10,7 +10,7 @@ export declare class DialogJoinBeta extends LitElement implements HassDialog<Joi
     private _dialogParams?;
     showDialog(dialogParams: JoinBetaDialogParams): void;
     closeDialog(): boolean;
-    protected render(): typeof nothing | import("lit-html").TemplateResult<1>;
+    protected render(): import("lit-html").TemplateResult<1> | typeof nothing;
     private _cancel;
     private _join;
     static get styles(): CSSResultGroup;

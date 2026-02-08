@@ -16,7 +16,7 @@ export declare class HaFormString extends LitElement implements HaFormElement {
     private _input?;
     focus(): void;
     protected render(): TemplateResult;
-    protected renderIcon(): typeof nothing | TemplateResult<1>;
+    protected renderIcon(): TemplateResult<1> | typeof nothing;
     protected updated(changedProps: PropertyValues): void;
     protected toggleUnmaskedPassword(): void;
     protected _valueChanged(ev: Event): void;

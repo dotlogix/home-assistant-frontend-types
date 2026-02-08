@@ -20,7 +20,7 @@ declare class DialogUserDetail extends LitElement {
     private _params?;
     private _submitting;
     showDialog(params: UserDetailDialogParams): Promise<void>;
-    protected render(): typeof nothing | import("lit-html").TemplateResult<1>;
+    protected render(): import("lit-html").TemplateResult<1> | typeof nothing;
     private _nameChanged;
     private _adminChanged;
     private _localOnlyChanged;

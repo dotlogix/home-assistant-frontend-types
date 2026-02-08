@@ -23,7 +23,7 @@ declare class DialogZWaveJSUpdateFirmwareNode extends LitElement {
     private _cancelUpload?;
     showDialog(params: ZWaveJSUpdateFirmwareNodeDialogParams): void;
     closeDialog(): void;
-    protected render(): typeof nothing | import("lit-html").TemplateResult<1>;
+    protected render(): import("lit-html").TemplateResult<1> | typeof nothing;
     private _fetchData;
     private _beginFirmwareUpdate;
     private _abortFirmwareUpdate;

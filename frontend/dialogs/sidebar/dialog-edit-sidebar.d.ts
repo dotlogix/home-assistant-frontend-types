@@ -1,17 +1,20 @@
 import "@material/mwc-linear-progress/mwc-linear-progress";
-import { LitElement, nothing, type TemplateResult } from "lit";
+import { LitElement, type TemplateResult } from "lit";
 import "../../components/ha-alert";
-import "../../components/ha-dialog-header";
+import "../../components/ha-button";
+import "../../components/ha-dialog-footer";
+import "../../components/ha-dropdown";
+import "../../components/ha-dropdown-item";
 import "../../components/ha-fade-in";
 import "../../components/ha-icon-button";
 import "../../components/ha-items-display-editor";
-import "../../components/ha-md-dialog";
 import "../../components/ha-spinner";
+import "../../components/ha-svg-icon";
+import "../../components/ha-wa-dialog";
 import type { HomeAssistant } from "../../types";
 declare class DialogEditSidebar extends LitElement {
     hass: HomeAssistant;
     private _open;
-    private _dialog?;
     private _order?;
     private _hidden?;
     private _error?;
@@ -25,8 +28,9 @@ declare class DialogEditSidebar extends LitElement {
     closeDialog(): void;
     private _panels;
     private _renderContent;
-    protected render(): typeof nothing | TemplateResult<1>;
+    protected render(): TemplateResult<1>;
     private _changed;
+    private _resetToDefaults;
     private _save;
     static styles: import("lit").CSSResult;
 }

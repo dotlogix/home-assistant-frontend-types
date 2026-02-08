@@ -1,11 +1,11 @@
 import { LitElement, nothing } from "lit";
 import "../../../components/ha-control-button";
 import "../../../components/ha-control-button-group";
+import "../../../components/ha-control-switch";
 import "../../../components/ha-svg-icon";
 import type { HomeAssistant } from "../../../types";
 import type { LovelaceCardFeature } from "../types";
-import type { ValveOpenCloseCardFeatureConfig, LovelaceCardFeatureContext } from "./types";
-import "../../../components/ha-control-switch";
+import type { LovelaceCardFeatureContext, ValveOpenCloseCardFeatureConfig } from "./types";
 export declare const supportsValveOpenCloseCardFeature: (hass: HomeAssistant, context: LovelaceCardFeatureContext) => boolean;
 declare class HuiValveOpenCloseCardFeature extends LitElement implements LovelaceCardFeature {
     hass?: HomeAssistant;
@@ -20,7 +20,7 @@ declare class HuiValveOpenCloseCardFeature extends LitElement implements Lovelac
     private _onCloseTap;
     private _onStopTap;
     private _valueChanged;
-    protected render(): typeof nothing | import("lit-html").TemplateResult<1>;
+    protected render(): import("lit-html").TemplateResult<1> | typeof nothing;
     static get styles(): import("lit").CSSResult[];
 }
 declare global {

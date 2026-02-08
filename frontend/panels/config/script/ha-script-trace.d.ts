@@ -1,16 +1,17 @@
+import "@home-assistant/webawesome/dist/components/divider/divider";
 import type { CSSResultGroup, TemplateResult } from "lit";
 import { LitElement } from "lit";
-import "../../../components/ha-button-menu";
 import "../../../components/ha-button";
+import "../../../components/ha-dropdown";
+import "../../../components/ha-dropdown-item";
 import "../../../components/ha-icon-button";
-import "../../../components/ha-list-item";
 import "../../../components/trace/ha-trace-blueprint-config";
 import "../../../components/trace/ha-trace-config";
 import "../../../components/trace/ha-trace-logbook";
 import "../../../components/trace/ha-trace-path-details";
 import "../../../components/trace/ha-trace-timeline";
 import "../../../components/trace/hat-script-graph";
-import type { EntityRegistryEntry } from "../../../data/entity_registry";
+import type { EntityRegistryEntry } from "../../../data/entity/entity_registry";
 import type { ScriptEntity } from "../../../data/script";
 import "../../../layouts/hass-subpage";
 import type { HomeAssistant, Route } from "../../../types";
@@ -47,6 +48,8 @@ export declare class HaScriptTrace extends LitElement {
     private _showTab;
     private _timelinePathPicked;
     private _showInfo;
+    private _navigateToScript;
+    private _handleDropdownSelect;
     static get styles(): CSSResultGroup;
 }
 declare global {

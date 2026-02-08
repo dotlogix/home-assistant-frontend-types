@@ -17,7 +17,7 @@ declare class HuiToggleCardFeature extends LitElement implements LovelaceCardFea
     private _turnOn;
     private _turnOff;
     private _callService;
-    protected render(): typeof nothing | import("lit-html").TemplateResult<1>;
+    protected render(): import("lit-html").TemplateResult<1> | typeof nothing;
     static get styles(): import("lit").CSSResult[];
 }
 declare global {

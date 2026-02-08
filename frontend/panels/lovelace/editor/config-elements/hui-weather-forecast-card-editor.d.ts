@@ -12,7 +12,7 @@ export declare class HuiWeatherForecastCardEditor extends LitElement implements 
     private _forecastSupported;
     private _modernForecastSupported;
     private _schema;
-    protected render(): typeof nothing | import("lit-html").TemplateResult<1>;
+    protected render(): import("lit-html").TemplateResult<1> | typeof nothing;
     private _valueChanged;
     private _computeLabelCallback;
 }

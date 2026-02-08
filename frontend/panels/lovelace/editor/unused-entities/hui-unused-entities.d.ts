@@ -13,7 +13,7 @@ export declare class HuiUnusedEntities extends LitElement {
     private _selectedEntities;
     private get _config();
     protected updated(changedProperties: PropertyValues): void;
-    protected render(): typeof nothing | import("lit-html").TemplateResult<1>;
+    protected render(): import("lit-html").TemplateResult<1> | typeof nothing;
     private _getUnusedEntities;
     private _handleSelectedChanged;
     private _addToLovelaceView;

@@ -1,4 +1,4 @@
-import type { CSSResultGroup, TemplateResult } from "lit";
+import type { CSSResultGroup, PropertyValues, TemplateResult } from "lit";
 import { LitElement } from "lit";
 import "../../../components/ha-card";
 import "../../../components/ha-icon-next";
@@ -9,6 +9,8 @@ declare class HaConfigNavigation extends LitElement {
     hass: HomeAssistant;
     narrow: boolean;
     pages: PageNavigation[];
+    private _hasBluetoothConfigEntries;
+    protected firstUpdated(changedProps: PropertyValues): void;
     protected render(): TemplateResult;
     static styles: CSSResultGroup;
 }

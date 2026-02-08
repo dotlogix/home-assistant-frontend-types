@@ -11,7 +11,7 @@ declare class DialogZWaveJSReinterviewNode extends LitElement {
     private _stages?;
     private _subscribed?;
     showDialog(params: ZWaveJSReinterviewNodeDialogParams): Promise<void>;
-    protected render(): typeof nothing | import("lit-html").TemplateResult<1>;
+    protected render(): import("lit-html").TemplateResult<1> | typeof nothing;
     private _startReinterview;
     private _handleMessage;
     private _unsubscribe;

@@ -9,7 +9,7 @@ export declare class HuiNumericInputCardFeatureEditor extends LitElement impleme
     private _config?;
     setConfig(config: NumericInputCardFeatureConfig): void;
     private _schema;
-    protected render(): typeof nothing | import("lit-html").TemplateResult<1>;
+    protected render(): import("lit-html").TemplateResult<1> | typeof nothing;
     private _valueChanged;
     private _computeLabelCallback;
 }

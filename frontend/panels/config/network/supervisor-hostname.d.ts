@@ -16,7 +16,7 @@ export declare class HassioHostname extends LitElement {
     private _hostname?;
     protected firstUpdated(): void;
     private _fetchHostInfo;
-    protected render(): typeof nothing | import("lit-html").TemplateResult<1>;
+    protected render(): import("lit-html").TemplateResult<1> | typeof nothing;
     private _handleChange;
     private _save;
     static styles: CSSResultGroup;

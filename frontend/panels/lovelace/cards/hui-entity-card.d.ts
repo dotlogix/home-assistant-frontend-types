@@ -18,11 +18,11 @@ export declare class HuiEntityCard extends LitElement implements LovelaceCard {
     private _getStateColor;
     setConfig(config: EntityCardConfig): void;
     getCardSize(): Promise<number>;
-    protected render(): typeof nothing | import("lit-html").TemplateResult<1>;
+    protected render(): import("lit-html").TemplateResult<1> | typeof nothing;
     private _computeColor;
     protected shouldUpdate(changedProps: PropertyValues): boolean;
     protected updated(changedProps: PropertyValues): void;
-    private _handleClick;
+    private _handleAction;
     getGridOptions(): LovelaceGridOptions;
     static get styles(): CSSResultGroup;
 }

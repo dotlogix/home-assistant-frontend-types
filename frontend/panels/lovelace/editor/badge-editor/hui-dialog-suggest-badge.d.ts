@@ -14,7 +14,7 @@ export declare class HuiDialogSuggestBadge extends LitElement {
     showDialog(params: SuggestBadgeDialogParams): void;
     closeDialog(): void;
     private _renderPreview;
-    protected render(): typeof nothing | import("lit-html").TemplateResult<1>;
+    protected render(): import("lit-html").TemplateResult<1> | typeof nothing;
     static get styles(): CSSResultGroup;
     private _computeNewConfig;
     private _save;

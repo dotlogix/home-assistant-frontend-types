@@ -1,4 +1,4 @@
-import type { ExtEntityRegistryEntry } from "../../../data/entity_registry";
+import type { ExtEntityRegistryEntry } from "../../../data/entity/entity_registry";
 import type { ExposeEntitySettings } from "../../../data/expose";
 export interface VoiceSettingsDialogParams {
     entityId: string;

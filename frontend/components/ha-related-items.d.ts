@@ -25,7 +25,7 @@ export declare class HaRelatedItems extends LitElement {
     private _relatedScenes;
     private _toEntities;
     private _getConfigEntries;
-    protected render(): typeof nothing | import("lit-html").TemplateResult<1>;
+    protected render(): import("lit-html").TemplateResult<1> | typeof nothing;
     private _findRelated;
     private _openMoreInfo;
     static get styles(): CSSResultGroup;

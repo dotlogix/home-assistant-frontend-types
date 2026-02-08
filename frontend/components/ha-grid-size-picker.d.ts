@@ -14,6 +14,8 @@ export declare class HaGridSizeEditor extends LitElement {
     columnMax?: number;
     isDefault?: boolean;
     step: number;
+    rowsDisabled?: boolean;
+    columnsDisabled?: boolean;
     _localValue?: CardGridSize;
     protected willUpdate(changedProperties: any): void;
     protected render(): import("lit-html").TemplateResult<1>;

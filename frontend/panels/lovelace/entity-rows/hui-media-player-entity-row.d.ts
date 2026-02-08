@@ -17,7 +17,7 @@ declare class HuiMediaPlayerEntityRow extends LitElement implements LovelaceRow 
     willUpdate(): void;
     protected firstUpdated(): void;
     protected shouldUpdate(changedProps: PropertyValues): boolean;
-    protected render(): typeof nothing | import("lit-html").TemplateResult<1>;
+    protected render(): import("lit-html").TemplateResult<1> | typeof nothing;
     private _attachObserver;
     private _measureCard;
     private _computeControlButton;

@@ -1,6 +1,6 @@
-import type { MediaQueriesListener } from "../../../common/dom/media_query";
+import { type WeekdayShort } from "../../../common/datetime/weekday";
 import type { HomeAssistant } from "../../../types";
-export type Condition = LocationCondition | NumericStateCondition | StateCondition | ScreenCondition | UserCondition | OrCondition | AndCondition | NotCondition;
+export type Condition = LocationCondition | NumericStateCondition | StateCondition | ScreenCondition | TimeCondition | UserCondition | OrCondition | AndCondition | NotCondition;
 export interface LegacyCondition {
     entity?: string;
     state?: string | string[];
@@ -28,6 +28,12 @@ export interface StateCondition extends BaseCondition {
 export interface ScreenCondition extends BaseCondition {
     condition: "screen";
     media_query?: string;
+}
+export interface TimeCondition extends BaseCondition {
+    condition: "time";
+    after?: string;
+    before?: string;
+    weekdays?: WeekdayShort[];
 }
 export interface UserCondition extends BaseCondition {
     condition: "user";
@@ -66,6 +72,4 @@ export declare function validateConditionalConfig(conditions: (Condition | Legac
  * @returns a new condition with entity id
  */
 export declare function addEntityToCondition(condition: Condition, entityId: string): Condition;
-export declare function extractMediaQueries(conditions: Condition[]): string[];
-export declare function attachConditionMediaQueriesListeners(conditions: Condition[], onChange: (visibility: boolean) => void): MediaQueriesListener[];
 export {};

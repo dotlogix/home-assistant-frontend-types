@@ -17,7 +17,7 @@ declare class DialogTagDetail extends LitElement implements HassDialog<TagDetail
     private _submitting;
     showDialog(params: TagDetailDialogParams): void;
     closeDialog(): boolean;
-    protected render(): typeof nothing | import("lit-html").TemplateResult<1>;
+    protected render(): import("lit-html").TemplateResult<1> | typeof nothing;
     private _valueChanged;
     private _updateEntry;
     private _updateWriteEntry;

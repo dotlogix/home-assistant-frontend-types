@@ -8,7 +8,7 @@ export declare class DialogYamlIntegration extends LitElement {
     private _params?;
     showDialog(params: YamlIntegrationDialogParams): void;
     closeDialog(): void;
-    protected render(): typeof nothing | import("lit-html").TemplateResult<1>;
+    protected render(): import("lit-html").TemplateResult<1> | typeof nothing;
     static styles: import("lit").CSSResult;
 }
 declare global {

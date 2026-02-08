@@ -2,7 +2,7 @@ import type { PropertyValues, TemplateResult } from "lit";
 import { LitElement } from "lit";
 import "../../../../components/ha-control-slider";
 import "../../../../components/ha-sortable";
-import type { ExtEntityRegistryEntry } from "../../../../data/entity_registry";
+import type { ExtEntityRegistryEntry } from "../../../../data/entity/entity_registry";
 import type { LightEntity } from "../../../../data/light";
 import type { HomeAssistant } from "../../../../types";
 import "./ha-favorite-color-button";

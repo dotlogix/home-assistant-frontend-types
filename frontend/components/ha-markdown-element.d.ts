@@ -9,7 +9,9 @@ declare class HaMarkdownElement extends ReactiveElement {
     cache: boolean;
     disconnectedCallback(): void;
     protected createRenderRoot(): this;
+    private _renderPromise;
     protected update(changedProps: any): void;
+    protected getUpdateComplete(): Promise<boolean>;
     protected willUpdate(_changedProperties: PropertyValues): void;
     private _computeCacheKey;
     private _render;

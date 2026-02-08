@@ -20,7 +20,7 @@ declare class MoreInfoFan extends LitElement {
     private _handleOscillating;
     protected updated(changedProps: PropertyValues): void;
     private get _stateOverride();
-    protected render(): typeof nothing | import("lit-html").TemplateResult<1>;
+    protected render(): import("lit-html").TemplateResult<1> | typeof nothing;
     static get styles(): CSSResultGroup;
 }
 declare global {

@@ -4,7 +4,7 @@ import "../../../components/ha-card";
 import type { HomeAssistant } from "../../../types";
 import "../components/hui-entities-toggle";
 import type { EntityConfig, LovelaceRowConfig } from "../entity-rows/types";
-import type { LovelaceCard, LovelaceCardEditor } from "../types";
+import type { LovelaceCard, LovelaceCardEditor, LovelaceGridOptions } from "../types";
 import type { EntitiesCardConfig } from "./types";
 export declare const computeShowHeaderToggle: <T extends EntityConfig | LovelaceRowConfig>(config: EntitiesCardConfig, entities: T[]) => boolean;
 declare class HuiEntitiesCard extends LitElement implements LovelaceCard {
@@ -20,9 +20,10 @@ declare class HuiEntitiesCard extends LitElement implements LovelaceCard {
     disconnectedCallback(): void;
     set hass(hass: HomeAssistant);
     getCardSize(): Promise<number>;
+    getGridOptions(): LovelaceGridOptions;
     setConfig(config: EntitiesCardConfig): void;
     protected updated(changedProps: PropertyValues): void;
-    protected render(): typeof nothing | TemplateResult<1>;
+    protected render(): TemplateResult<1> | typeof nothing;
     static styles: import("lit").CSSResult;
     private _renderEntity;
     private _updateRowVisibility;

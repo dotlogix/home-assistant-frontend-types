@@ -1,4 +1,5 @@
 import type { HomeAssistant } from "../types";
+import type { EntityRegistryEntry } from "./entity/entity_registry";
 export interface Calendar {
     entity_id: string;
     name?: string;
@@ -24,6 +25,7 @@ export interface CalendarEventData {
     dtend: string;
     rrule?: string;
     description?: string;
+    location?: string;
 }
 export interface CalendarEventMutableParams {
     summary: string;
@@ -31,6 +33,7 @@ export interface CalendarEventMutableParams {
     dtend: string;
     rrule?: string;
     description?: string;
+    location?: string;
 }
 export declare enum RecurrenceRange {
     THISEVENT = "",
@@ -45,7 +48,7 @@ export declare const fetchCalendarEvents: (hass: HomeAssistant, start: Date, end
     events: CalendarEvent[];
     errors: string[];
 }>;
-export declare const getCalendars: (hass: HomeAssistant) => Calendar[];
+export declare const getCalendars: (hass: HomeAssistant, element: Element, entityRegistry?: EntityRegistryEntry[]) => Calendar[];
 export declare const createCalendarEvent: (hass: HomeAssistant, entityId: string, event: CalendarEventMutableParams) => Promise<undefined>;
 export declare const updateCalendarEvent: (hass: HomeAssistant, entityId: string, uid: string, event: CalendarEventMutableParams, recurrence_id?: string, recurrence_range?: RecurrenceRange) => Promise<undefined>;
 export declare const deleteCalendarEvent: (hass: HomeAssistant, entityId: string, uid: string, recurrence_id?: string, recurrence_range?: RecurrenceRange) => Promise<undefined>;

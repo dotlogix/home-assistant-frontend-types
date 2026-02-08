@@ -14,7 +14,7 @@ export declare class HaAssistPipelinePicker extends LitElement {
     _pipelines?: AssistPipeline[];
     _preferredPipeline: string | null;
     private get _default();
-    protected render(): typeof nothing | import("lit-html").TemplateResult<1>;
+    protected render(): import("lit-html").TemplateResult<1> | typeof nothing;
     protected firstUpdated(changedProperties: PropertyValueMap<any> | Map<PropertyKey, unknown>): void;
     static styles: import("lit").CSSResult;
     private _changed;

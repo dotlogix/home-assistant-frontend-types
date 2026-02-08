@@ -19,7 +19,7 @@ declare class LovelaceFullConfigEditor extends LitElement {
     static get styles(): CSSResultGroup;
     private _yamlChanged;
     private _closeEditor;
-    private _removeConfig;
+    private _resetConfig;
     private _handleSave;
     private get yamlEditor();
 }

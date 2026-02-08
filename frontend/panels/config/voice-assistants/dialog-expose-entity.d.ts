@@ -16,9 +16,10 @@ declare class DialogExposeEntity extends LitElement {
     private _params?;
     private _filter?;
     private _selected;
+    willUpdate(): void;
     showDialog(params: ExposeEntityDialogParams): Promise<void>;
     closeDialog(): void;
-    protected render(): typeof nothing | import("lit-html").TemplateResult<1>;
+    protected render(): import("lit-html").TemplateResult<1> | typeof nothing;
     private _handleSelected;
     private _itemClicked;
     private _filterChanged;

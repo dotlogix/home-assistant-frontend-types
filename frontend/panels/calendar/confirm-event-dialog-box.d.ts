@@ -10,7 +10,7 @@ declare class ConfirmEventDialogBox extends LitElement {
     private _params?;
     showDialog(params: ConfirmEventDialogBoxParams): Promise<void>;
     closeDialog(): boolean;
-    protected render(): typeof nothing | import("lit-html").TemplateResult<1>;
+    protected render(): import("lit-html").TemplateResult<1> | typeof nothing;
     private _dismiss;
     private _confirm;
     private _confirmFuture;

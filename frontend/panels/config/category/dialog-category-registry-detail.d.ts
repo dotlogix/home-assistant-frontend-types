@@ -1,8 +1,9 @@
 import type { CSSResultGroup } from "lit";
 import { LitElement, nothing } from "lit";
 import "../../../components/ha-alert";
+import "../../../components/ha-wa-dialog";
+import "../../../components/ha-dialog-footer";
 import "../../../components/ha-icon-picker";
-import "../../../components/ha-settings-row";
 import "../../../components/ha-button";
 import "../../../components/ha-textfield";
 import type { HomeAssistant } from "../../../types";
@@ -14,9 +15,11 @@ declare class DialogCategoryDetail extends LitElement {
     private _error?;
     private _params?;
     private _submitting?;
+    private _open;
     showDialog(params: CategoryRegistryDetailDialogParams): Promise<void>;
     closeDialog(): void;
-    protected render(): typeof nothing | import("lit-html").TemplateResult<1>;
+    private _dialogClosed;
+    protected render(): import("lit-html").TemplateResult<1> | typeof nothing;
     private _isNameValid;
     private _nameChanged;
     private _iconChanged;

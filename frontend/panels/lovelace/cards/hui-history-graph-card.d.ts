@@ -4,6 +4,7 @@ import "../../../components/chart/state-history-charts";
 import "../../../components/ha-alert";
 import "../../../components/ha-card";
 import "../../../components/ha-icon-next";
+import "../../../components/ha-tooltip";
 import type { HomeAssistant } from "../../../types";
 import type { LovelaceCard, LovelaceGridOptions } from "../types";
 import type { HistoryGraphCardConfig } from "./types";
@@ -19,6 +20,7 @@ export declare class HuiHistoryGraphCard extends LitElement implements LovelaceC
     private _names;
     private _entityIds;
     private _entities;
+    private _historyLinkId;
     private _hoursToShow;
     private _interval?;
     private _subscribed?;
@@ -38,7 +40,7 @@ export declare class HuiHistoryGraphCard extends LitElement implements LovelaceC
     private _unsubscribeHistory;
     protected shouldUpdate(changedProps: PropertyValues): boolean;
     protected updated(changedProps: PropertyValues): void;
-    protected render(): typeof nothing | import("lit-html").TemplateResult<1>;
+    protected render(): import("lit-html").TemplateResult<1> | typeof nothing;
     static styles: import("lit").CSSResult;
 }
 declare global {

@@ -1,9 +1,8 @@
 import { LitElement, nothing } from "lit";
 import "../../../components/ha-card";
-import "../../../components/ha-ripple";
 import "../../../components/ha-state-icon";
-import "../../../components/ha-svg-icon";
 import "../../../components/tile/ha-tile-badge";
+import "../../../components/tile/ha-tile-container";
 import "../../../components/tile/ha-tile-icon";
 import "../../../components/tile/ha-tile-info";
 import "../../../state-display/state-display";
@@ -29,8 +28,8 @@ export declare class HuiTileCard extends LitElement implements LovelaceCard {
     private get _hasIconAction();
     private _featurePosition;
     private _displayedFeatures;
-    protected render(): typeof nothing | import("lit-html").TemplateResult<1>;
-    static styles: import("lit").CSSResult;
+    protected render(): import("lit-html").TemplateResult<1> | typeof nothing;
+    static styles: import("lit").CSSResult[];
 }
 declare global {
     interface HTMLElementTagNameMap {

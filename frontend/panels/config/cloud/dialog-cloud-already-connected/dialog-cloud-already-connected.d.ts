@@ -11,7 +11,7 @@ declare class DialogCloudAlreadyConnected extends LitElement {
     private _obfuscateIp;
     showDialog(params: CloudAlreadyConnectedDialogParams): void;
     closeDialog(): void;
-    protected render(): typeof nothing | import("lit-html").TemplateResult<1>;
+    protected render(): import("lit-html").TemplateResult<1> | typeof nothing;
     private _toggleObfuscateIp;
     private _logInHere;
     static get styles(): CSSResultGroup;

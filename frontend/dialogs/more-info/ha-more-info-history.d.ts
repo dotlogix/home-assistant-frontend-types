@@ -19,14 +19,15 @@ export declare class MoreInfoHistory extends LitElement {
     private _subscribed?;
     private _error?;
     private _metadata?;
-    protected render(): typeof nothing | import("lit-html").TemplateResult<1>;
+    protected render(): import("lit-html").TemplateResult<1> | typeof nothing;
     protected willUpdate(changedProps: PropertyValues): void;
     connectedCallback(): void;
     disconnectedCallback(): void;
     private _unsubscribeHistory;
     private _redrawGraph;
-    private _setRedrawTimer;
+    private _setUpdateTimer;
     private _getStatisticsMetaData;
+    private _fetchStatistics;
     private _getStateHistory;
     static styles: import("lit").CSSResult[];
 }

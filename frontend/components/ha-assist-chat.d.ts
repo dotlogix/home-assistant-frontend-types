@@ -3,6 +3,7 @@ import { LitElement } from "lit";
 import { type AssistPipeline } from "../data/assist_pipeline";
 import type { HomeAssistant } from "../types";
 import "./ha-alert";
+import "./ha-markdown";
 import "./ha-textfield";
 export declare class HaAssistChat extends LitElement {
     hass: HomeAssistant;
@@ -10,7 +11,8 @@ export declare class HaAssistChat extends LitElement {
     disableSpeech: boolean;
     startListening?: boolean;
     private _messageInput;
-    private _scrollContainer;
+    private _lastChatMessage;
+    private _lastChatMessageImage;
     private _conversation;
     private _showSendButton;
     private _processing;

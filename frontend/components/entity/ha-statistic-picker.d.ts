@@ -4,7 +4,6 @@ import type { HomeAssistant } from "../../types";
 import "../ha-combo-box-item";
 import "../ha-generic-picker";
 import "../ha-icon-button";
-import "../ha-input-helper-text";
 import "../ha-svg-icon";
 import "./state-badge";
 export declare class HaStatisticPicker extends LitElement {
@@ -63,6 +62,7 @@ export declare class HaStatisticPicker extends LitElement {
     private _searchFn;
     private _valueChanged;
     open(): Promise<void>;
+    private _notFoundLabel;
 }
 declare global {
     interface HTMLElementTagNameMap {

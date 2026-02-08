@@ -1,6 +1,6 @@
 import { LitElement, nothing, type PropertyValues } from "lit";
-import type { HaEntityPickerEntityFilterFunc } from "../../data/entity";
-import type { LabelRegistryEntry } from "../../data/label_registry";
+import type { HaEntityPickerEntityFilterFunc } from "../../data/entity/entity";
+import type { LabelRegistryEntry } from "../../data/label/label_registry";
 import { type ExtractFromTargetResultReferenced, type TargetType } from "../../data/target";
 import type { HomeAssistant } from "../../types";
 import type { HaDevicePickerDeviceFilterFunc } from "../device/ha-device-picker";
@@ -41,7 +41,7 @@ export declare class HaTargetPickerItemRow extends LitElement {
     list?: HaMdList;
     itemRow?: HaTargetPickerItemRow;
     protected willUpdate(changedProps: PropertyValues): void;
-    protected render(): typeof nothing | import("lit-html").TemplateResult<1>;
+    protected render(): import("lit-html").TemplateResult<1> | typeof nothing;
     private _renderEntries;
     private _updateItemData;
     private _itemData;

@@ -2,6 +2,6 @@ export declare const loadAutomationSaveTimeoutDialog: () => Promise<typeof impor
 export interface AutomationSaveTimeoutDialogParams {
     onClose?: () => void;
     savedPromise: Promise<any>;
-    type: "automation" | "script";
+    type: "automation" | "script" | "scene";
 }
 export declare const showAutomationSaveTimeoutDialog: (element: HTMLElement, dialogParams: AutomationSaveTimeoutDialogParams) => Promise<void>;

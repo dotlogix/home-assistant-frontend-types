@@ -17,7 +17,7 @@ export declare class HuiNotificationDrawer extends LitElement {
         narrow: any;
     }): void;
     closeDialog: () => void;
-    protected render(): typeof nothing | import("lit-html").TemplateResult<1>;
+    protected render(): import("lit-html").TemplateResult<1> | typeof nothing;
     private _dialogClosed;
     private _dismissAll;
     static styles: import("lit").CSSResult;

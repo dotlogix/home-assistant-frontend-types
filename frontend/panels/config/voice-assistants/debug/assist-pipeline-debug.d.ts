@@ -10,7 +10,9 @@ export declare class AssistPipelineDebug extends LitElement {
     private _runId?;
     private _runs?;
     private _events?;
+    private _chatLog?;
     private _unsubRefreshEventsID?;
+    private _unsubChatLogUpdates?;
     protected render(): import("lit-html").TemplateResult<1>;
     protected willUpdate(changedProperties: any): void;
     disconnectedCallback(): void;

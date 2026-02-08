@@ -4,6 +4,7 @@ import "../../components/ha-icon-button-arrow-prev";
 import "../../components/ha-menu-button";
 import type { HomeAssistant } from "../../types";
 import "../lovelace/views/hui-view";
+import "../lovelace/views/hui-view-background";
 import "../lovelace/views/hui-view-container";
 declare class PanelClimate extends LitElement {
     hass: HomeAssistant;
@@ -12,6 +13,7 @@ declare class PanelClimate extends LitElement {
     private _lovelace?;
     private _searchParms;
     willUpdate(changedProps: PropertyValues): void;
+    private _setup;
     private _debounceRegistriesChanged;
     private _registriesChanged;
     private _back;

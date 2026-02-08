@@ -20,7 +20,7 @@ declare class ZHAConfigDashboard extends LitElement {
     route: Route;
     narrow: boolean;
     isWide: boolean;
-    configEntryId?: string;
+    private _configEntry?;
     private _configuration?;
     private _networkSettings?;
     private _totalDevices;
@@ -30,6 +30,7 @@ declare class ZHAConfigDashboard extends LitElement {
     private _configSaveButton?;
     protected firstUpdated(changedProperties: PropertyValues): void;
     protected render(): TemplateResult;
+    private _fetchConfigEntry;
     private _fetchConfiguration;
     private _fetchSettings;
     private _fetchDevicesAndUpdateStatus;

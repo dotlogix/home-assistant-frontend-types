@@ -1,15 +1,12 @@
 import type { TemplateResult } from "lit";
 import { LitElement } from "lit";
-import "../../../components/ha-alert";
-import "../../../components/ha-bar";
-import "../../../components/ha-button-menu";
 import "../../../components/ha-card";
-import "../../../components/ha-check-list-item";
-import "../../../components/ha-list-item";
-import "../../../components/ha-metric";
 import "../../../layouts/hass-subpage";
 import type { HomeAssistant } from "../../../types";
 import "../dashboard/ha-config-updates";
+import "../../../components/ha-dropdown";
+import "../../../components/ha-dropdown-item";
+import "@home-assistant/webawesome/dist/components/divider/divider";
 declare class HaConfigSectionUpdates extends LitElement {
     hass: HomeAssistant;
     narrow: boolean;
@@ -18,11 +15,11 @@ declare class HaConfigSectionUpdates extends LitElement {
     protected firstUpdated(changedProps: any): void;
     protected render(): TemplateResult;
     private _refreshSupervisorInfo;
-    private _toggleSkipped;
-    private _toggleBeta;
+    private _handleOverflowAction;
     private _setChannel;
     private _checkUpdates;
-    private _filterUpdateEntitiesWithInstall;
+    private _filterInstallableUpdateEntities;
+    private _filterNotInstallableUpdateEntities;
     static styles: import("lit").CSSResult;
 }
 declare global {

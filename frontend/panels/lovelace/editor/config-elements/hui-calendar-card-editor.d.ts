@@ -9,7 +9,7 @@ export declare class HuiCalendarCardEditor extends LitElement implements Lovelac
     private _config?;
     setConfig(config: CalendarCardConfig): void;
     private _schema;
-    protected render(): typeof nothing | import("lit-html").TemplateResult<1>;
+    protected render(): import("lit-html").TemplateResult<1> | typeof nothing;
     private _valueChanged;
     private _entitiesChanged;
     private _computeLabelCallback;

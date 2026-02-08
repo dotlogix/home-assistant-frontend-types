@@ -6,7 +6,7 @@ import type { HomeAssistant } from "../../../../../types";
 import "../ha-automation-action";
 import type { ActionElement } from "../ha-automation-action-row";
 import "../../../../../components/ha-form/ha-form";
-export declare const getRepeatType: (action: RepeatAction["repeat"]) => "until" | "count" | "while" | "for_each";
+export declare const getRepeatType: (action: RepeatAction["repeat"]) => "until" | "count" | "for_each" | "while";
 export declare class HaRepeatAction extends LitElement implements ActionElement {
     hass: HomeAssistant;
     disabled: boolean;

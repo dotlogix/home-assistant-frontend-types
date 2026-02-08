@@ -78,6 +78,7 @@ export declare class HaMap extends ReactiveElement {
     private _computePathTooltip;
     private _drawPaths;
     private _drawEntities;
+    private _getMarkerSize;
     private _attachObserver;
     static styles: import("lit").CSSResult;
 }

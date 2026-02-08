@@ -9,7 +9,7 @@ export declare class HuiPictureEntityCardEditor extends LitElement implements Lo
     private _config?;
     setConfig(config: PictureEntityCardConfig): void;
     private _schema;
-    protected render(): typeof nothing | import("lit-html").TemplateResult<1>;
+    protected render(): import("lit-html").TemplateResult<1> | typeof nothing;
     private _processData;
     private _valueChanged;
     private _computeLabelCallback;

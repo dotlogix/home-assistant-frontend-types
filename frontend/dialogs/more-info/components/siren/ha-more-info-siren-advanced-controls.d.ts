@@ -21,7 +21,7 @@ declare class MoreInfoSirenAdvancedControls extends LitElement {
     }): void;
     closeDialog(): void;
     private _dialogClosed;
-    render(): typeof nothing | import("lit-html").TemplateResult<1>;
+    render(): import("lit-html").TemplateResult<1> | typeof nothing;
     private _handleToneChange;
     private _handleVolumeChange;
     private _handleDurationChange;

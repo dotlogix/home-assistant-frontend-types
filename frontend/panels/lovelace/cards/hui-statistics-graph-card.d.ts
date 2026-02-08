@@ -1,6 +1,8 @@
 import type { PropertyValues } from "lit";
 import { LitElement, nothing } from "lit";
 import "../../../components/ha-card";
+import "../../../components/ha-icon-next";
+import "../../../components/ha-tooltip";
 import type { HomeAssistant } from "../../../types";
 import type { LovelaceCard, LovelaceGridOptions } from "../types";
 import type { StatisticsGraphCardConfig } from "./types";
@@ -15,6 +17,7 @@ export declare class HuiStatisticsGraphCard extends LitElement implements Lovela
     private _unit?;
     private _entities;
     private _entityIds;
+    private _historyLinkId;
     private _names;
     private _interval?;
     private _statTypes?;
@@ -33,7 +36,7 @@ export declare class HuiStatisticsGraphCard extends LitElement implements Lovela
     willUpdate(changedProps: PropertyValues): void;
     private _setFetchStatisticsTimer;
     private get _period();
-    protected render(): typeof nothing | import("lit-html").TemplateResult<1>;
+    protected render(): import("lit-html").TemplateResult<1> | typeof nothing;
     private get _intervalTimeout();
     private _getStatisticsMetaData;
     private _getStatistics;

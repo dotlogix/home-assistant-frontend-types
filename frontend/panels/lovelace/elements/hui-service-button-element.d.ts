@@ -11,7 +11,7 @@ export declare class HuiServiceButtonElement extends LitElement implements Lovel
     private _domain?;
     private _service?;
     setConfig(config: ServiceButtonElementConfig): void;
-    protected render(): typeof nothing | import("lit-html").TemplateResult<1>;
+    protected render(): import("lit-html").TemplateResult<1> | typeof nothing;
     static styles: import("lit").CSSResult;
 }
 declare global {

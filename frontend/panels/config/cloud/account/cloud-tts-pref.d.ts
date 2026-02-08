@@ -19,7 +19,7 @@ export declare class CloudTTSPref extends LitElement {
     narrow: boolean;
     private savingPreferences;
     private ttsInfo?;
-    protected render(): typeof nothing | import("lit-html").TemplateResult<1>;
+    protected render(): import("lit-html").TemplateResult<1> | typeof nothing;
     protected updated(changedProps: any): void;
     protected willUpdate(changedProps: any): void;
     private getLanguages;

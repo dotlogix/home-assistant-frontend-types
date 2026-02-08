@@ -23,7 +23,7 @@ declare class DialogSystemInformation extends LitElement {
     closeDialog(): void;
     private _subscribe;
     private _unsubscribe;
-    protected render(): typeof nothing | TemplateResult<1>;
+    protected render(): TemplateResult<1> | typeof nothing;
     private _unsupportedDialog;
     private _unhealthyDialog;
     private _getSections;

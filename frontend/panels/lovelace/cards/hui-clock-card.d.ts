@@ -12,7 +12,7 @@ export declare class HuiClockCard extends LitElement implements LovelaceCard {
     setConfig(config: ClockCardConfig): void;
     getCardSize(): number;
     getGridOptions(): LovelaceGridOptions;
-    protected render(): typeof nothing | import("lit-html").TemplateResult<1>;
+    protected render(): import("lit-html").TemplateResult<1> | typeof nothing;
     static styles: import("lit").CSSResult;
 }
 declare global {

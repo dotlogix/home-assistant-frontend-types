@@ -1,12 +1,12 @@
 import type { PropertyValues } from "lit";
 import { LitElement, nothing } from "lit";
+import "../../../components/ha-control-button";
+import "../../../components/ha-control-button-group";
+import "../../../components/ha-icon";
+import "../../../components/ha-icon-button";
 import type { HomeAssistant } from "../../../types";
 import type { LovelaceCardFeature } from "../types";
 import type { LovelaceCardFeatureContext, MediaPlayerPlaybackCardFeatureConfig } from "./types";
-import "../../../components/ha-control-button-group";
-import "../../../components/ha-control-button";
-import "../../../components/ha-icon-button";
-import "../../../components/ha-icon";
 export declare const supportsMediaPlayerPlaybackCardFeature: (hass: HomeAssistant, context: LovelaceCardFeatureContext) => boolean;
 declare class HuiMediaPlayerPlaybackCardFeature extends LitElement implements LovelaceCardFeature {
     hass?: HomeAssistant;
@@ -19,7 +19,7 @@ declare class HuiMediaPlayerPlaybackCardFeature extends LitElement implements Lo
     setConfig(config: MediaPlayerPlaybackCardFeatureConfig): void;
     willUpdate(): void;
     protected shouldUpdate(changedProps: PropertyValues): boolean;
-    protected render(): typeof nothing | import("lit-html").TemplateResult<1>;
+    protected render(): import("lit-html").TemplateResult<1> | typeof nothing;
     private _measureCard;
     private _computeControlButton;
     private _computeButtons;

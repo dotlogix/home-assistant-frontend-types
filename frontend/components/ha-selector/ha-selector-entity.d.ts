@@ -17,7 +17,7 @@ export declare class HaEntitySelector extends LitElement {
     private _createDomains;
     private _hasIntegration;
     protected willUpdate(changedProperties: PropertyValues): void;
-    protected render(): typeof nothing | import("lit-html").TemplateResult<1>;
+    protected render(): import("lit-html").TemplateResult<1> | typeof nothing;
     protected updated(changedProps: PropertyValues): void;
     private _filterEntities;
 }

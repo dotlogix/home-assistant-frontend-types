@@ -15,7 +15,7 @@ export declare class HuiClockCardAnalog extends LitElement {
     disconnectedCallback(): void;
     private _handleVisibilityChange;
     private _computeOffsets;
-    render(): typeof nothing | import("lit-html").TemplateResult<1>;
+    render(): import("lit-html").TemplateResult<1> | typeof nothing;
     static styles: import("lit").CSSResult;
 }
 declare global {

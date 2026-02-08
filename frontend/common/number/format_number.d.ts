@@ -1,5 +1,5 @@
 import type { HassEntity, HassEntityAttributeBase } from "home-assistant-js-websocket";
-import type { EntityRegistryDisplayEntry } from "../../data/entity_registry";
+import type { EntityRegistryDisplayEntry } from "../../data/entity/entity_registry";
 import type { FrontendLocaleData } from "../../data/translation";
 /**
  * Returns true if the entity is considered numeric based on the attributes it has

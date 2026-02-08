@@ -5,7 +5,7 @@ import "../../../components/ha-card";
 import "../../../components/ha-ripple";
 import "../../../components/ha-svg-icon";
 import "../../../components/ha-tooltip";
-import type { EntityRegistryEntry } from "../../../data/entity_registry";
+import type { EntityRegistryEntry } from "../../../data/entity/entity_registry";
 import type { IntegrationLogInfo, IntegrationManifest } from "../../../data/integration";
 import type { HomeAssistant } from "../../../types";
 import type { ConfigEntryExtended } from "./ha-config-integrations";

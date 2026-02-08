@@ -20,6 +20,7 @@ export declare class HuiLogbookCard extends LitElement implements LovelaceCard {
     private _config?;
     private _time?;
     private _targetPickerValue;
+    private _stateFilter?;
     getCardSize(): number;
     getGridOptions(): LovelaceGridOptions;
     validateTarget(config: LogbookCardConfig): HassServiceTarget | undefined;
@@ -28,7 +29,7 @@ export declare class HuiLogbookCard extends LitElement implements LovelaceCard {
     private _getMemoizedEntityIds;
     protected update(changedProperties: any): void;
     protected updated(changedProperties: PropertyValues): void;
-    protected render(): typeof nothing | import("lit-html").TemplateResult<1>;
+    protected render(): import("lit-html").TemplateResult<1> | typeof nothing;
     static get styles(): CSSResultGroup;
 }
 declare global {

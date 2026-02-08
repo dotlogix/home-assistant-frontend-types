@@ -10,7 +10,7 @@ export declare class HuiDialogDeleteCard extends LitElement {
     private _cardConfig?;
     showDialog(params: DeleteCardDialogParams): Promise<void>;
     closeDialog(): void;
-    protected render(): typeof nothing | import("lit-html").TemplateResult<1>;
+    protected render(): import("lit-html").TemplateResult<1> | typeof nothing;
     static get styles(): CSSResultGroup;
     private _delete;
 }

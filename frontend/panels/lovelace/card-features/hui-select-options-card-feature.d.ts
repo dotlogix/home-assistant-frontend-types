@@ -20,7 +20,7 @@ declare class HuiSelectOptionsCardFeature extends LitElement implements Lovelace
     protected updated(changedProps: PropertyValues): void;
     private _valueChanged;
     private _setOption;
-    protected render(): typeof nothing | import("lit-html").TemplateResult<1>;
+    protected render(): import("lit-html").TemplateResult<1> | typeof nothing;
     private _getOptions;
     static get styles(): import("lit").CSSResult;
 }

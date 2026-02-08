@@ -9,7 +9,7 @@ export declare class HuiServiceButtonElementEditor extends LitElement implements
     private _config?;
     setConfig(config: ServiceButtonElementConfig): void;
     private _serviceData;
-    protected render(): typeof nothing | import("lit-html").TemplateResult<1>;
+    protected render(): import("lit-html").TemplateResult<1> | typeof nothing;
     private _valueChanged;
     private _serviceDataChanged;
     private _computeLabelCallback;

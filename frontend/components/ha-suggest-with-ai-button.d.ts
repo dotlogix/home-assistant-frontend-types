@@ -22,7 +22,7 @@ export declare class HaSuggestWithAIButton extends LitElement {
     private _minWidth?;
     private _intervalId?;
     protected firstUpdated(_changedProperties: PropertyValues): void;
-    render(): typeof nothing | import("lit-html").TemplateResult<1>;
+    render(): import("lit-html").TemplateResult<1> | typeof nothing;
     private _suggest;
     static styles: import("lit").CSSResult;
 }

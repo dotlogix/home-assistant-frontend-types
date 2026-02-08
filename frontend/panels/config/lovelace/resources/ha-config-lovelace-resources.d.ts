@@ -2,6 +2,7 @@ import type { CSSResultGroup, PropertyValues, TemplateResult } from "lit";
 import { LitElement } from "lit";
 import "../../../../components/ha-card";
 import "../../../../components/ha-fab";
+import "../../../../components/ha-icon-button";
 import "../../../../components/ha-svg-icon";
 import "../../../../layouts/hass-loading-screen";
 import "../../../../layouts/hass-subpage";
@@ -13,6 +14,7 @@ export declare class HaConfigLovelaceResources extends LitElement {
     narrow: boolean;
     route: Route;
     private _resources;
+    private _lovelaceInfo?;
     private _filter;
     private _activeSorting?;
     private _activeColumnOrder?;
@@ -20,7 +22,7 @@ export declare class HaConfigLovelaceResources extends LitElement {
     private _columns;
     protected render(): TemplateResult;
     protected firstUpdated(changedProps: PropertyValues): void;
-    private _getResources;
+    private _fetchData;
     private _editResource;
     private _addResource;
     private _openDialog;
@@ -28,6 +30,7 @@ export declare class HaConfigLovelaceResources extends LitElement {
     private _handleSortingChanged;
     private _handleSearchChange;
     private _handleColumnsChanged;
+    private _handleReloadResources;
     static get styles(): CSSResultGroup;
 }
 declare global {

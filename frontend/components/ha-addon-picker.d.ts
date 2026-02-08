@@ -1,8 +1,8 @@
 import { LitElement, nothing } from "lit";
 import type { HomeAssistant } from "../types";
 import "./ha-alert";
-import "./ha-combo-box";
 import "./ha-combo-box-item";
+import "./ha-generic-picker";
 declare class HaAddonPicker extends LitElement {
     hass: HomeAssistant;
     label?: string;
@@ -11,16 +11,18 @@ declare class HaAddonPicker extends LitElement {
     private _addons?;
     disabled: boolean;
     required: boolean;
-    private _comboBox;
+    private _genericPicker;
     private _error?;
     open(): void;
     focus(): void;
     protected firstUpdated(): void;
-    protected render(): typeof nothing | import("lit-html").TemplateResult<1>;
-    private _getAddons;
+    protected render(): import("lit-html").TemplateResult<1> | typeof nothing;
+    private _getApps;
+    private _getItems;
     private get _value();
     private _addonChanged;
     private _setValue;
+    private _valueRenderer;
 }
 declare global {
     interface HTMLElementTagNameMap {

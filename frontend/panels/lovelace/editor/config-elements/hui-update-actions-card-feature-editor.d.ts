@@ -10,7 +10,7 @@ export declare class HuiUpdateActionsCardFeatureEditor extends LitElement implem
     setConfig(config: UpdateActionsCardFeatureConfig): void;
     private _schema;
     private get _stateObj();
-    protected render(): typeof nothing | import("lit-html").TemplateResult<1>;
+    protected render(): import("lit-html").TemplateResult<1> | typeof nothing;
     private _valueChanged;
     private _computeLabelCallback;
     private _computeHelperCallback;

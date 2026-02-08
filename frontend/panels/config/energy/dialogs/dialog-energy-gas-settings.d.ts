@@ -6,6 +6,7 @@ import "../../../../components/ha-dialog";
 import "../../../../components/ha-formfield";
 import "../../../../components/ha-radio";
 import "../../../../components/ha-button";
+import "../../../../components/ha-markdown";
 import "../../../../components/ha-textfield";
 import type { HassDialog } from "../../../../dialogs/make-dialog-manager";
 import type { HomeAssistant } from "../../../../types";
@@ -22,7 +23,7 @@ export declare class DialogEnergyGasSettings extends LitElement implements HassD
     private _excludeList?;
     showDialog(params: EnergySettingsGasDialogParams): Promise<void>;
     closeDialog(): boolean;
-    protected render(): typeof nothing | import("lit-html").TemplateResult<1>;
+    protected render(): import("lit-html").TemplateResult<1> | typeof nothing;
     private _handleCostChanged;
     private _numberPriceChanged;
     private _priceStatChanged;

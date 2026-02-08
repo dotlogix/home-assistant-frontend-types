@@ -4,7 +4,8 @@ import "../../../../components/ha-alert";
 import "../../../../components/ha-button";
 import "../../../../components/ha-dialog";
 import "../../../../components/ha-dialog-header";
-import "../../../../components/ha-list-item";
+import "../../../../components/ha-dropdown";
+import "../../../../components/ha-dropdown-item";
 import "../../../../components/ha-spinner";
 import "../../../../components/ha-tab-group";
 import "../../../../components/ha-tab-group-tab";
@@ -32,7 +33,7 @@ export declare class HuiDialogEditView extends LitElement {
     showDialog(params: EditViewDialogParams): void;
     closeDialog(): void;
     private get _viewConfigTitle();
-    protected render(): typeof nothing | import("lit-html").TemplateResult<1>;
+    protected render(): import("lit-html").TemplateResult<1> | typeof nothing;
     private _handleAction;
     private _openSelectDashboard;
     private _moveViewToDashboard;

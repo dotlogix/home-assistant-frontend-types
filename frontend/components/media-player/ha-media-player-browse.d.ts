@@ -5,7 +5,6 @@ import type { HomeAssistant } from "../../types";
 import "../entity/ha-entity-picker";
 import "../ha-alert";
 import "../ha-button";
-import "../ha-button-menu";
 import "../ha-card";
 import "../ha-fab";
 import "../ha-icon-button";

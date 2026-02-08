@@ -1,7 +1,6 @@
 import type { HassEntity } from "home-assistant-js-websocket";
 import type { PropertyValues } from "lit";
 import { LitElement, nothing } from "lit";
-import "../../../components/ha-attributes";
 import type { HomeAssistant } from "../../../types";
 import "../../../components/ha-assist-chat";
 import "../../../components/ha-spinner";
@@ -14,7 +13,7 @@ declare class MoreInfoConversation extends LitElement {
     private _errorLoadAssist?;
     protected willUpdate(changedProperties: PropertyValues): void;
     private _getPipeline;
-    protected render(): typeof nothing | import("lit-html").TemplateResult<1>;
+    protected render(): import("lit-html").TemplateResult<1> | typeof nothing;
     static styles: import("lit").CSSResult;
 }
 declare global {

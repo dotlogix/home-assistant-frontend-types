@@ -36,6 +36,7 @@ export declare class HaChartBase extends LitElement {
     private _isTouchDevice;
     private _lastTapTime?;
     private _shouldResizeChart;
+    private _resizeAnimationDuration?;
     private _resizeController;
     private _loading;
     private _reducedMotion;

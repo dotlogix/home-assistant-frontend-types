@@ -1,8 +1,6 @@
 import type { CSSResultGroup, TemplateResult } from "lit";
 import { LitElement } from "lit";
-import "../../../components/ha-button-menu";
 import "../../../components/ha-icon-button";
-import "../../../components/ha-list-item";
 import "../../../components/ha-svg-icon";
 import type { HomeAssistant } from "../../../types";
 import type { Lovelace } from "../types";

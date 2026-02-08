@@ -17,16 +17,19 @@ export declare class DialogEnergySolarSettings extends LitElement implements Has
     private _configEntries?;
     private _forecast?;
     private _energy_units?;
+    private _power_units?;
     private _error?;
     private _excludeList?;
+    private _excludeListPower?;
     showDialog(params: EnergySettingsSolarDialogParams): Promise<void>;
     closeDialog(): boolean;
-    protected render(): typeof nothing | import("lit-html").TemplateResult<1>;
+    protected render(): import("lit-html").TemplateResult<1> | typeof nothing;
     private _fetchSolarForecastConfigEntries;
     private _handleForecastChanged;
     private _forecastCheckChanged;
     private _addForecast;
     private _statisticChanged;
+    private _powerStatisticChanged;
     private _save;
     static get styles(): CSSResultGroup;
 }

@@ -7,7 +7,9 @@ export declare class HaMarkdown extends LitElement {
     breaks: boolean;
     lazyImages: boolean;
     cache: boolean;
-    protected render(): typeof nothing | import("lit-html").TemplateResult<1>;
+    private _markdownElement?;
+    protected getUpdateComplete(): Promise<boolean>;
+    protected render(): import("lit-html").TemplateResult<1> | typeof nothing;
     static styles: CSSResultGroup;
 }
 declare global {

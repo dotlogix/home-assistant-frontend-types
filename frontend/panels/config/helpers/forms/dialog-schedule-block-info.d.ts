@@ -13,7 +13,7 @@ declare class DialogScheduleBlockInfo extends LitElement {
     private _schema;
     showDialog(params: ScheduleBlockInfoDialogParams): void;
     closeDialog(): void;
-    protected render(): typeof nothing | import("lit-html").TemplateResult<1>;
+    protected render(): import("lit-html").TemplateResult<1> | typeof nothing;
     private _valueChanged;
     private _updateBlock;
     private _deleteBlock;

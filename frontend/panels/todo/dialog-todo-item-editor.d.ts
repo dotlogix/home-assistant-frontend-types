@@ -16,13 +16,14 @@ declare class DialogTodoItemEditor extends LitElement {
     private _summary;
     private _description?;
     private _due?;
+    private _completedTime?;
     private _checked;
     private _hasTime;
     private _submitting;
     private _timeZone?;
     showDialog(params: TodoItemEditDialogParams): void;
     closeDialog(): void;
-    protected render(): typeof nothing | import("lit-html").TemplateResult<1>;
+    protected render(): import("lit-html").TemplateResult<1> | typeof nothing;
     private _todoListSupportsFeature;
     private _getLocaleStrings;
     private _formatDate;

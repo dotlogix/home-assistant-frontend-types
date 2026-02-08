@@ -12,6 +12,7 @@ export declare class HaLogbook extends LitElement {
     };
     entityIds?: string[];
     deviceIds?: string[];
+    stateFilter?: string[];
     narrow: boolean;
     virtualize: boolean;
     noIcon: boolean;
@@ -28,7 +29,7 @@ export declare class HaLogbook extends LitElement {
     private _pendingStreamMessages;
     private _throttleGetLogbookEntries;
     private _logbookSubscriptionId;
-    protected render(): typeof nothing | import("lit-html").TemplateResult<1>;
+    protected render(): import("lit-html").TemplateResult<1> | typeof nothing;
     refresh(force?: boolean): Promise<void>;
     protected shouldUpdate(changedProps: PropertyValues): boolean;
     protected willUpdate(changedProps: PropertyValues): void;

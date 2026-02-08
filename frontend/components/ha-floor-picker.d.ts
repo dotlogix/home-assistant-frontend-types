@@ -54,6 +54,7 @@ export declare class HaFloorPicker extends LitElement {
     protected render(): TemplateResult;
     private _valueChanged;
     private _setValue;
+    private _notFoundLabel;
 }
 declare global {
     interface HTMLElementTagNameMap {

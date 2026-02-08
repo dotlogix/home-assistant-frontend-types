@@ -11,7 +11,7 @@ declare class DialogMatterOpenCommissioningWindow extends LitElement {
     private _status?;
     private _commissionParams?;
     showDialog(params: MatterOpenCommissioningWindowDialogParams): Promise<void>;
-    protected render(): typeof nothing | import("lit-html").TemplateResult<1>;
+    protected render(): import("lit-html").TemplateResult<1> | typeof nothing;
     private _start;
     private _copyCode;
     closeDialog(): void;

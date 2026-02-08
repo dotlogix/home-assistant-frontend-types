@@ -25,7 +25,7 @@ export declare class HuiConditionalCardEditor extends LitElement implements Love
     private _cardEditorEl?;
     setConfig(config: ConditionalCardConfig): void;
     focusYamlEditor(): void;
-    protected render(): typeof nothing | import("lit-html").TemplateResult<1>;
+    protected render(): import("lit-html").TemplateResult<1> | typeof nothing;
     private _selectTab;
     private _toggleMode;
     private _setMode;

@@ -14,6 +14,7 @@ export declare class HaLanguagePicker extends LitElement {
     hass?: HomeAssistant;
     disabled: boolean;
     required: boolean;
+    helper?: string;
     nativeName: boolean;
     buttonStyle: boolean;
     noSort: boolean;
@@ -30,6 +31,7 @@ export declare class HaLanguagePicker extends LitElement {
     private _openPicker;
     static styles: import("lit").CSSResult;
     private _changed;
+    private _notFoundLabel;
 }
 declare global {
     interface HTMLElementTagNameMap {

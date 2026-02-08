@@ -21,7 +21,7 @@ export declare class GridSection extends LitElement implements LovelaceSectionEl
     setConfig(config: LovelaceSectionConfig): void;
     private _cardConfigKeys;
     private _getKey;
-    render(): typeof nothing | import("lit-html").TemplateResult<1>;
+    render(): import("lit-html").TemplateResult<1> | typeof nothing;
     private _cardMoved;
     private _cardAdded;
     private _cardRemoved;

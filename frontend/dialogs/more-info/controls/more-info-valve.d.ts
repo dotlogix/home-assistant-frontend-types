@@ -1,6 +1,5 @@
 import type { CSSResultGroup, PropertyValues } from "lit";
 import { LitElement, nothing } from "lit";
-import "../../../components/ha-attributes";
 import "../../../components/ha-icon-button-group";
 import "../../../components/ha-icon-button-toggle";
 import type { ValveEntity } from "../../../data/valve";
@@ -16,7 +15,7 @@ declare class MoreInfoValve extends LitElement {
     private _setMode;
     protected willUpdate(changedProps: PropertyValues): void;
     private get _stateOverride();
-    protected render(): typeof nothing | import("lit-html").TemplateResult<1>;
+    protected render(): import("lit-html").TemplateResult<1> | typeof nothing;
     static get styles(): CSSResultGroup;
 }
 declare global {

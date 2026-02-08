@@ -44,6 +44,7 @@ export interface ForecastEvent {
 export interface WeatherEntity extends HassEntityBase {
     attributes: WeatherEntityAttributes;
 }
+export declare const WEATHER_TEMPERATURE_ATTRIBUTES: Set<string>;
 export declare const weatherSVGs: Set<string>;
 export declare const weatherIcons: {
     "clear-night": string;
@@ -77,7 +78,7 @@ export declare const weatherAttrIcons: {
 };
 export declare const getWind: (hass: HomeAssistant, stateObj: WeatherEntity, speed?: number, bearing?: number | string) => string;
 export declare const getWeatherUnit: (config: HassConfig, stateObj: WeatherEntity, measure: string) => string;
-export declare const getSecondaryWeatherAttribute: (hass: HomeAssistant, stateObj: WeatherEntity, forecast: ForecastAttribute[]) => TemplateResult | undefined;
+export declare const getSecondaryWeatherAttribute: (hass: HomeAssistant, stateObj: WeatherEntity, forecast: ForecastAttribute[], temperatureFractionDigits?: number) => TemplateResult | undefined;
 export declare const weatherSVGStyles: import("lit").CSSResult;
 export declare const getWeatherStateIcon: (state: string, element: HTMLElement, nightTime?: boolean) => TemplateResult | undefined;
 export interface WeatherUnits {

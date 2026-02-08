@@ -18,7 +18,7 @@ export declare class HuiAreaCardEditor extends LitElement implements LovelaceCar
     protected updated(): Promise<void>;
     private _featuresSchema;
     private _hasCompatibleFeatures;
-    protected render(): typeof nothing | import("lit-html").TemplateResult<1>;
+    protected render(): import("lit-html").TemplateResult<1> | typeof nothing;
     private _valueChanged;
     private _featuresChanged;
     private _editDetailElement;

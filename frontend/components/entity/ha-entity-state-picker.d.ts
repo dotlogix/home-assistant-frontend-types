@@ -1,12 +1,12 @@
-import type { PropertyValues } from "lit";
 import { LitElement, nothing } from "lit";
 import type { HomeAssistant } from "../../types";
-import "../ha-combo-box";
-declare class HaEntityStatePicker extends LitElement {
+import "../ha-generic-picker";
+import type { PickerComboBoxItem } from "../ha-picker-combo-box";
+export declare class HaEntityStatePicker extends LitElement {
     hass: HomeAssistant;
     entityId?: string | string[];
     attribute?: string;
-    extraOptions?: any[];
+    extraOptions?: PickerComboBoxItem[];
     autofocus: boolean;
     disabled: boolean;
     required: boolean;
@@ -15,13 +15,10 @@ declare class HaEntityStatePicker extends LitElement {
     label?: string;
     value?: string;
     helper?: string;
-    private _opened;
-    private _comboBox;
-    protected shouldUpdate(changedProps: PropertyValues): boolean;
-    protected updated(changedProps: PropertyValues): void;
-    protected render(): typeof nothing | import("lit-html").TemplateResult<1>;
-    private get _value();
-    private _openedChanged;
+    private _getItems;
+    private _getFilteredItems;
+    private _valueRenderer;
+    protected render(): import("lit-html").TemplateResult<1> | typeof nothing;
     private _valueChanged;
     private _setValue;
 }
@@ -30,4 +27,3 @@ declare global {
         "ha-entity-state-picker": HaEntityStatePicker;
     }
 }
-export {};

@@ -19,7 +19,7 @@ export declare class ZHAClusterAttributes extends LitElement {
     private _readingAttribute;
     private _setAttributeServiceData?;
     protected updated(changedProperties: PropertyValues): void;
-    protected render(): typeof nothing | TemplateResult<1>;
+    protected render(): TemplateResult<1> | typeof nothing;
     private _renderAttributeInteractions;
     private _fetchAttributesForCluster;
     private _computeReadAttributeServiceData;

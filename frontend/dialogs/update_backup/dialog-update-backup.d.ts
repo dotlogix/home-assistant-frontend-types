@@ -6,7 +6,7 @@ declare class DialogBox extends LitElement {
     hass: HomeAssistant;
     private _params?;
     showDialog(params: UpdateBackupDialogParams): Promise<void>;
-    protected render(): typeof nothing | import("lit-html").TemplateResult<1>;
+    protected render(): import("lit-html").TemplateResult<1> | typeof nothing;
     private _no;
     private _yes;
     private _cancel;

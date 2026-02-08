@@ -10,7 +10,7 @@ declare class HuiGroupEntityRow extends LitElement implements LovelaceRow {
     private _computeCanToggle;
     setConfig(config: EntityConfig): void;
     protected shouldUpdate(changedProps: PropertyValues): boolean;
-    protected render(): typeof nothing | import("lit-html").TemplateResult<1>;
+    protected render(): import("lit-html").TemplateResult<1> | typeof nothing;
 }
 declare global {
     interface HTMLElementTagNameMap {

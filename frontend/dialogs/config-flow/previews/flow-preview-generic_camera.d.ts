@@ -3,7 +3,7 @@ import { FlowPreviewGeneric } from "./flow-preview-generic";
 import "../../../components/ha-hls-player";
 import "../../../components/ha-spinner";
 declare class FlowPreviewGenericCamera extends FlowPreviewGeneric {
-    protected render(): typeof nothing | import("lit-html").TemplateResult<1>;
+    protected render(): import("lit-html").TemplateResult<1> | typeof nothing;
     private _videoLoaded;
 }
 declare global {

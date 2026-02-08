@@ -12,7 +12,7 @@ export declare class HuiEnergyDateSelectionCard extends LitElement implements Lo
     getGridOptions(): LovelaceGridOptions;
     setConfig(config: EnergyCardBaseConfig): void;
     protected shouldUpdate(changedProps: PropertyValues): boolean;
-    protected render(): typeof nothing | import("lit-html").TemplateResult<1>;
+    protected render(): import("lit-html").TemplateResult<1> | typeof nothing;
     static styles: import("lit").CSSResult;
 }
 declare global {

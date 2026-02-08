@@ -17,7 +17,10 @@ export declare class AssistPipelineRunDebug extends LitElement {
     private _audioBuffer?;
     private _finished;
     private _pipelineId?;
+    private _chatLog?;
+    private _chatLogSubscription;
     protected render(): TemplateResult;
+    disconnectedCallback(): void;
     private get conversationId();
     private _runTextPipeline;
     private _runAudioWakeWordPipeline;

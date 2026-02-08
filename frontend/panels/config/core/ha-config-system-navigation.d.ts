@@ -17,12 +17,14 @@ declare class HaConfigSystemNavigation extends LitElement {
     private _boardName?;
     private _storageInfo?;
     private _externalAccess;
+    private _labFeatures?;
     protected render(): TemplateResult;
     protected firstUpdated(_changedProperties: any): void;
     private _fetchBackupInfo;
     private _fetchHardwareInfo;
     private _fetchStorageInfo;
     private _fetchNetworkStatus;
+    private _fetchLabFeatures;
     private _showRestartDialog;
     static get styles(): CSSResultGroup;
 }

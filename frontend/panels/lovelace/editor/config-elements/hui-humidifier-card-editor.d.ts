@@ -11,7 +11,7 @@ export declare class HuiHumidifierCardEditor extends LitElement implements Lovel
     private _config?;
     setConfig(config: HumidifierCardConfig): void;
     private _featureContext;
-    protected render(): typeof nothing | import("lit-html").TemplateResult<1>;
+    protected render(): import("lit-html").TemplateResult<1> | typeof nothing;
     private _valueChanged;
     private _featuresChanged;
     private _editDetailElement;

@@ -17,7 +17,7 @@ declare class DialogZWaveJSNodeStatistics extends LitElement {
     private _subscribedDeviceRegistry?;
     showDialog(params: ZWaveJSNodeStatisticsDialogParams): void;
     closeDialog(): void;
-    protected render(): typeof nothing | TemplateResult<1>;
+    protected render(): TemplateResult<1> | typeof nothing;
     private _computeRSSI;
     private _computeDeviceNameById;
     private _subscribeNodeStatistics;

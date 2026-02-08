@@ -28,7 +28,7 @@ declare class DialogRestoreBackup extends LitElement implements HassDialog {
     closeDialog(): boolean;
     private _dialogClosed;
     private _fetchEncryptionKey;
-    protected render(): typeof nothing | import("lit-html").TemplateResult<1>;
+    protected render(): import("lit-html").TemplateResult<1> | typeof nothing;
     private _renderConfirm;
     private _renderEncryptionIntro;
     private _renderEncryption;

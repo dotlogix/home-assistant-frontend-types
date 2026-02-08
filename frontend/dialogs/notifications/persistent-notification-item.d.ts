@@ -9,7 +9,7 @@ import "./notification-item-template";
 export declare class HuiPersistentNotificationItem extends LitElement {
     hass?: HomeAssistant;
     notification?: PersistentNotification;
-    protected render(): typeof nothing | import("lit-html").TemplateResult<1>;
+    protected render(): import("lit-html").TemplateResult<1> | typeof nothing;
     static styles: import("lit").CSSResult;
     private _handleDismiss;
     private _computeTooltip;

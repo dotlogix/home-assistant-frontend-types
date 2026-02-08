@@ -22,7 +22,7 @@ export declare class DialogHelperDetail extends LitElement {
     private _params?;
     showDialog(params: ShowDialogHelperDetailParams): Promise<void>;
     closeDialog(): void;
-    protected render(): typeof nothing | TemplateResult<1>;
+    protected render(): TemplateResult<1> | typeof nothing;
     private _filterHelpers;
     private _filterChanged;
     private _valueChanged;

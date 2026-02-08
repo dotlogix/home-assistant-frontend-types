@@ -1,5 +1,6 @@
 import type { PropertyValues } from "lit";
 import type { AutomationEntity } from "../../../data/automation";
+import type { CloudStatus } from "../../../data/cloud";
 import type { RouterOptions } from "../../../layouts/hass-router-page";
 import { HassRouterPage } from "../../../layouts/hass-router-page";
 import type { HomeAssistant } from "../../../types";
@@ -10,6 +11,7 @@ declare class HaConfigAutomation extends HassRouterPage {
     narrow: boolean;
     isWide: boolean;
     showAdvanced: boolean;
+    cloudStatus?: CloudStatus;
     automations: AutomationEntity[];
     private _debouncedUpdateAutomations;
     protected routerOptions: RouterOptions;

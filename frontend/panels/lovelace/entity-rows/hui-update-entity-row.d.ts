@@ -9,7 +9,7 @@ declare class HuiUpdateEntityRow extends LitElement implements LovelaceRow {
     private _config?;
     setConfig(config: EntitiesCardEntityConfig): void;
     protected shouldUpdate(changedProps: PropertyValues): boolean;
-    protected render(): typeof nothing | import("lit-html").TemplateResult<1>;
+    protected render(): import("lit-html").TemplateResult<1> | typeof nothing;
     static styles: import("lit").CSSResult;
 }
 declare global {

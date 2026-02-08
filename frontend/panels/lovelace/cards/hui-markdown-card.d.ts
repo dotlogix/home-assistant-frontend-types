@@ -22,7 +22,7 @@ export declare class HuiMarkdownCard extends LitElement implements LovelaceCard 
     private _computeCacheKey;
     disconnectedCallback(): void;
     protected willUpdate(_changedProperties: PropertyValues): void;
-    protected render(): typeof nothing | import("lit-html").TemplateResult<1>;
+    protected render(): import("lit-html").TemplateResult<1> | typeof nothing;
     protected updated(changedProps: PropertyValues): void;
     private _tryConnect;
     private _tryDisconnect;

@@ -161,6 +161,7 @@ export interface StopAction extends BaseAction {
 }
 export interface SequenceAction extends BaseAction {
     sequence: (ManualScriptConfig | Action)[];
+    metadata?: {};
 }
 export interface ParallelAction extends BaseAction {
     parallel: ManualScriptConfig | Action | (ManualScriptConfig | Action)[];

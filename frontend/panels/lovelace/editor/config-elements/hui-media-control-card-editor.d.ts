@@ -7,7 +7,7 @@ export declare class HuiMediaControlCardEditor extends LitElement implements Lov
     hass?: HomeAssistant;
     private _config?;
     setConfig(config: MediaControlCardConfig): void;
-    protected render(): typeof nothing | import("lit-html").TemplateResult<1>;
+    protected render(): import("lit-html").TemplateResult<1> | typeof nothing;
     private _valueChanged;
     private _computeLabelCallback;
     static styles: import("lit").CSSResult;

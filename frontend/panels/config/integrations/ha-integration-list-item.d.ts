@@ -13,9 +13,9 @@ export declare class HaIntegrationListItem extends ListItemBase {
     graphic: GraphicType;
     hasMeta: boolean;
     brand: boolean;
-    protected renderSingleLine(): typeof nothing | import("lit-html").TemplateResult<1>;
-    protected renderGraphic(): typeof nothing | import("lit-html").TemplateResult<1>;
-    protected renderMeta(): typeof nothing | import("lit-html").TemplateResult<1>;
+    protected renderSingleLine(): import("lit-html").TemplateResult<1> | typeof nothing;
+    protected renderGraphic(): import("lit-html").TemplateResult<1> | typeof nothing;
+    protected renderMeta(): import("lit-html").TemplateResult<1> | typeof nothing;
     static get styles(): CSSResultGroup;
 }
 declare global {

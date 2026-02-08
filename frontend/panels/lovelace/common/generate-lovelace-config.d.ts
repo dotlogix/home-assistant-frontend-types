@@ -11,5 +11,5 @@ import type { EntitiesCardConfig } from "../cards/types";
 export declare const computeSection: (entityIds: string[], sectionOptions?: Partial<LovelaceSectionConfig>) => LovelaceSectionConfig;
 export declare const computeCards: (hass: HomeAssistant, entityIds: string[], entityCardOptions: Partial<EntitiesCardConfig>, renderFooterEntities?: boolean) => LovelaceCardConfig[];
 export declare const computeBadges: (_states: HassEntities, entityIds: string[]) => LovelaceBadgeConfig[];
-export declare const generateViewConfig: (hass: HomeAssistant, path: string, title: string | undefined, icon: string | undefined, entities: HassEntities) => LovelaceViewConfig;
+export declare const generateViewConfig: (hass: HomeAssistant, path: string, title: string | undefined, icon: string | undefined, show_icon_and_title: boolean | undefined, entities: HassEntities) => LovelaceViewConfig;
 export declare const generateDefaultViewConfig: (hass: HomeAssistant, localize: LocalizeFunc, energyPrefs?: EnergyPreferences, areasPrefs?: AreasDisplayValue, hideEntitiesWithoutAreas?: boolean, hideEnergy?: boolean) => LovelaceViewConfig;

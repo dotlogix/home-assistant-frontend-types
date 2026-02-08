@@ -9,7 +9,7 @@ declare class MoreInfoGroup extends LitElement {
     private _groupDomainStateObj?;
     private _moreInfoType?;
     protected updated(changedProperties: PropertyValues): void;
-    protected render(): typeof nothing | import("lit-html").TemplateResult<1>;
+    protected render(): import("lit-html").TemplateResult<1> | typeof nothing;
     static get styles(): CSSResultGroup;
 }
 declare global {

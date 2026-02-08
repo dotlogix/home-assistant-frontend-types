@@ -24,7 +24,7 @@ export declare class DialogAddUser extends LitElement {
     private _allowChangeName;
     showDialog(params: AddUserDialogParams): void;
     protected firstUpdated(changedProperties: PropertyValues): void;
-    protected render(): typeof nothing | import("lit-html").TemplateResult<1>;
+    protected render(): import("lit-html").TemplateResult<1> | typeof nothing;
     private _close;
     private _maybePopulateUsername;
     private _handleValueChanged;

@@ -14,7 +14,7 @@ declare class DialogZWaveJSRebuildNetworkRoutes extends LitElement {
     private _subscribed?;
     showDialog(params: ZWaveJSRebuildNetworkRoutesDialogParams): void;
     closeDialog(): void;
-    protected render(): typeof nothing | import("lit-html").TemplateResult<1>;
+    protected render(): import("lit-html").TemplateResult<1> | typeof nothing;
     private _fetchData;
     private _startRebuildingRoutes;
     private _stopRebuildingRoutes;

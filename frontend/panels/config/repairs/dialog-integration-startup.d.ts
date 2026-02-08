@@ -8,7 +8,7 @@ declare class DialogIntegrationStartup extends LitElement {
     private _opened;
     showDialog(): void;
     closeDialog(): void;
-    protected render(): typeof nothing | import("lit-html").TemplateResult<1>;
+    protected render(): import("lit-html").TemplateResult<1> | typeof nothing;
     static styles: CSSResultGroup;
 }
 declare global {

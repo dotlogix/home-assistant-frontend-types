@@ -2,7 +2,7 @@ import { LitElement, nothing } from "lit";
 import "../../../components/entity/ha-entity-picker";
 import "../../../components/ha-icon-button";
 import "../../../components/ha-sortable";
-import type { HaEntityPickerEntityFilterFunc } from "../../../data/entity";
+import type { HaEntityPickerEntityFilterFunc } from "../../../data/entity/entity";
 import type { HomeAssistant } from "../../../types";
 import type { EntityConfig } from "../entity-rows/types";
 export declare class HuiEntityEditor extends LitElement {
@@ -16,7 +16,7 @@ export declare class HuiEntityEditor extends LitElement {
     private _renderItem;
     private _editItem;
     private _deleteItem;
-    protected render(): typeof nothing | import("lit-html").TemplateResult<1>;
+    protected render(): import("lit-html").TemplateResult<1> | typeof nothing;
     private _addEntity;
     private _entityMoved;
     private _valueChanged;

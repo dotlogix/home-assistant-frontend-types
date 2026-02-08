@@ -3,7 +3,7 @@ import { LitElement, nothing } from "lit";
 import "../../../../components/ha-button";
 import "../../../../components/ha-dialog-header";
 import "../../../../components/ha-icon-button-toggle";
-import type { EntityRegistryEntry } from "../../../../data/entity_registry";
+import type { EntityRegistryEntry } from "../../../../data/entity/entity_registry";
 import type { LightColor, LightEntity } from "../../../../data/light";
 import type { HomeAssistant } from "../../../../types";
 import "./light-color-rgb-picker";
@@ -29,7 +29,7 @@ declare class DialogLightColorFavorite extends LitElement {
     private _dialogClosed;
     private _save;
     private _modeChanged;
-    protected render(): typeof nothing | import("lit-html").TemplateResult<1>;
+    protected render(): import("lit-html").TemplateResult<1> | typeof nothing;
     static get styles(): CSSResultGroup;
 }
 declare global {

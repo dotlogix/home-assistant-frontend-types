@@ -27,7 +27,8 @@ declare class HuiMapCard extends LitElement implements LovelaceCard {
     getCardSize(): number;
     static getConfigElement(): Promise<import("../editor/config-elements/hui-map-card-editor").HuiMapCardEditor>;
     static getStubConfig(hass: HomeAssistant, entities: string[], entitiesFallback: string[]): MapCardConfig;
-    protected render(): typeof nothing | import("lit-html").TemplateResult<1>;
+    protected firstUpdated(): void;
+    protected render(): import("lit-html").TemplateResult<1> | typeof nothing;
     protected shouldUpdate(changedProps: PropertyValues): boolean;
     protected willUpdate(changedProps: PropertyValues): void;
     connectedCallback(): void;

@@ -14,7 +14,7 @@ export declare class HuiGraphFooterEditor extends LitElement implements Lovelace
     get _entity(): string;
     get _detail(): number;
     get _hours_to_show(): number;
-    protected render(): typeof nothing | import("lit-html").TemplateResult<1>;
+    protected render(): import("lit-html").TemplateResult<1> | typeof nothing;
     private _change;
     private _valueChanged;
     static get styles(): CSSResultGroup;

@@ -19,5 +19,3 @@ export type WaterHeaterEntity = HassEntityBase & {
     };
 };
 export declare const compareWaterHeaterOperationMode: (mode1: OperationMode, mode2: OperationMode) => number;
-export declare const WATER_HEATER_OPERATION_MODE_ICONS: Record<OperationMode, string>;
-export declare const computeOperationModeIcon: (mode: OperationMode) => string;

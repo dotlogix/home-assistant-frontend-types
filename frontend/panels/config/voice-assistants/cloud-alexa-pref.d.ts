@@ -7,6 +7,7 @@ import "../../../components/ha-switch";
 import type { CloudStatusLoggedIn } from "../../../data/cloud";
 import type { ExposeEntitySettings } from "../../../data/expose";
 import type { HomeAssistant } from "../../../types";
+import "../../../components/voice-assistant-brand-icon";
 export declare class CloudAlexaPref extends LitElement {
     hass: HomeAssistant;
     exposedEntities?: Record<string, ExposeEntitySettings>;
@@ -14,7 +15,7 @@ export declare class CloudAlexaPref extends LitElement {
     private _exposeNew?;
     private _exposedEntitiesCount;
     protected willUpdate(): void;
-    protected render(): typeof nothing | import("lit-html").TemplateResult<1>;
+    protected render(): import("lit-html").TemplateResult<1> | typeof nothing;
     private _exposeNewToggleChanged;
     private _enabledToggleChanged;
     private _reportToggleChanged;

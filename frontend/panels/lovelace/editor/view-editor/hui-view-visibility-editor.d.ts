@@ -20,7 +20,7 @@ export declare class HuiViewVisibilityEditor extends LitElement {
     private _visible;
     private _sortedUsers;
     protected firstUpdated(changedProps: PropertyValues): void;
-    protected render(): typeof nothing | import("lit-html").TemplateResult<1>;
+    protected render(): import("lit-html").TemplateResult<1> | typeof nothing;
     protected checkUser(userId: string): boolean;
     private _valChange;
     static styles: import("lit").CSSResult;

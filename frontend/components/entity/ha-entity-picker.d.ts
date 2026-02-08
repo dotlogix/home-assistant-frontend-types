@@ -1,5 +1,5 @@
 import { LitElement, type PropertyValues } from "lit";
-import type { HaEntityPickerEntityFilterFunc } from "../../data/entity";
+import type { HaEntityPickerEntityFilterFunc } from "../../data/entity/entity";
 import type { HomeAssistant } from "../../types";
 import "../ha-combo-box-item";
 import "../ha-generic-picker";
@@ -71,6 +71,7 @@ export declare class HaEntityPicker extends LitElement {
     open(): Promise<void>;
     private _valueChanged;
     private _setValue;
+    private _notFoundLabel;
 }
 declare global {
     interface HTMLElementTagNameMap {

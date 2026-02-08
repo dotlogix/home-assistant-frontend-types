@@ -1,8 +1,9 @@
 import { type CSSResultGroup, LitElement, nothing } from "lit";
 import "../../../components/ha-alert";
 import "../../../components/ha-button";
-import "../../../components/ha-button-menu";
 import "../../../components/ha-card";
+import "../../../components/ha-dropdown";
+import "../../../components/ha-dropdown-item";
 import "../../../components/ha-expansion-panel";
 import "../../../components/ha-formfield";
 import "../../../components/ha-icon-button";
@@ -28,11 +29,12 @@ export declare class HassioNetwork extends LitElement {
     private _dnsMenuOpen;
     protected firstUpdated(): void;
     private _fetchNetworkInfo;
-    protected render(): typeof nothing | import("lit-html").TemplateResult<1>;
+    protected render(): import("lit-html").TemplateResult<1> | typeof nothing;
     private _renderTab;
     private _selectAP;
     private _scanForAP;
     private _renderIPConfiguration;
+    private _getPredefinedDnsName;
     private _updateNetwork;
     private _clear;
     private _handleTabActivated;
@@ -47,6 +49,7 @@ export declare class HassioNetwork extends LitElement {
     private _addPredefinedDNS;
     private _addCustomDNS;
     private _removeNameserver;
+    private _handleDropdownSelect;
     static get styles(): CSSResultGroup;
 }
 declare global {

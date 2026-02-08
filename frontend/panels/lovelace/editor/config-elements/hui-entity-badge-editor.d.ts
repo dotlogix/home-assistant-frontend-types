@@ -11,7 +11,7 @@ export declare class HuiEntityBadgeEditor extends LitElement implements Lovelace
     setConfig(config: EntityBadgeConfig): void;
     private _schema;
     _displayedElements: import("memoize-one").MemoizedFn<(config: EntityBadgeConfig) => string[]>;
-    protected render(): typeof nothing | import("lit-html").TemplateResult<1>;
+    protected render(): import("lit-html").TemplateResult<1> | typeof nothing;
     private _valueChanged;
     private _computeLabelCallback;
     private _computeHelperCallback;

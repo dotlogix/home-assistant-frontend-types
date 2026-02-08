@@ -1,8 +1,8 @@
 export declare const buttonEntityConfigStruct: import("superstruct").Struct<{
-    entity: string;
     image: string;
     name: string;
     icon: string;
+    entity: string;
     show_icon: boolean;
     show_name: boolean;
     double_tap_action?: any;

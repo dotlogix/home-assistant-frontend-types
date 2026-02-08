@@ -9,7 +9,7 @@ declare class DialogMatterReinterviewNode extends LitElement {
     private device_id?;
     private _status?;
     showDialog(params: MatterReinterviewNodeDialogParams): Promise<void>;
-    protected render(): typeof nothing | import("lit-html").TemplateResult<1>;
+    protected render(): import("lit-html").TemplateResult<1> | typeof nothing;
     private _startReinterview;
     closeDialog(): void;
     static get styles(): CSSResultGroup;

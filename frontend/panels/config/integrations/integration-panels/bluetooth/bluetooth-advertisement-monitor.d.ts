@@ -1,12 +1,10 @@
-import type { CSSResultGroup, TemplateResult, PropertyValues } from "lit";
+import type { CSSResultGroup, PropertyValues, TemplateResult } from "lit";
 import { LitElement } from "lit";
 import "../../../../../components/ha-fab";
 import "../../../../../components/ha-icon-button";
 import "../../../../../components/ha-relative-time";
 import "../../../../../layouts/hass-tabs-subpage-data-table";
 import type { HomeAssistant, Route } from "../../../../../types";
-import type { PageNavigation } from "../../../../../layouts/hass-tabs-subpage";
-export declare const bluetoothAdvertisementMonitorTabs: PageNavigation[];
 export declare class BluetoothAdvertisementMonitorPanel extends LitElement {
     hass: HomeAssistant;
     route: Route;

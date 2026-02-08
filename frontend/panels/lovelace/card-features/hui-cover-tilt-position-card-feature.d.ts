@@ -11,7 +11,7 @@ declare class HuiCoverTiltPositionCardFeature extends LitElement implements Love
     private get _stateObj();
     static getStubConfig(): CoverTiltPositionCardFeatureConfig;
     setConfig(config: CoverTiltPositionCardFeatureConfig): void;
-    protected render(): typeof nothing | import("lit-html").TemplateResult<1>;
+    protected render(): import("lit-html").TemplateResult<1> | typeof nothing;
     private _valueChanged;
     static get styles(): import("lit").CSSResult[];
 }

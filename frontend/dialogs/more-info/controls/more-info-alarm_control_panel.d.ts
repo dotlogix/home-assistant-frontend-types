@@ -10,7 +10,7 @@ declare class MoreInfoAlarmControlPanel extends LitElement {
     hass: HomeAssistant;
     stateObj?: AlarmControlPanelEntity;
     private _disarm;
-    protected render(): typeof nothing | import("lit-html").TemplateResult<1>;
+    protected render(): import("lit-html").TemplateResult<1> | typeof nothing;
     static get styles(): CSSResultGroup;
 }
 declare global {

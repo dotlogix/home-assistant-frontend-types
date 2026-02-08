@@ -20,7 +20,7 @@ export declare class ZHAClusterCommands extends LitElement {
     private _canIssueCommand;
     private _commandData;
     protected updated(changedProperties: PropertyValues): void;
-    protected render(): typeof nothing | import("lit-html").TemplateResult<1>;
+    protected render(): import("lit-html").TemplateResult<1> | typeof nothing;
     private _fetchCommandsForCluster;
     private _computeIssueClusterCommandServiceData;
     private _commandDataChanged;

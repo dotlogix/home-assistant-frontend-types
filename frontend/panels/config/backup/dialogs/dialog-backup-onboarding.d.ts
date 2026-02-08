@@ -31,7 +31,7 @@ declare class DialogBackupOnboarding extends LitElement implements HassDialog {
     private _previousStep;
     private _nextStep;
     protected updated(changedProps: PropertyValues): void;
-    protected render(): typeof nothing | import("lit-html").TemplateResult<1>;
+    protected render(): import("lit-html").TemplateResult<1> | typeof nothing;
     private get _defaultAgents();
     private _useRecommended;
     private get _stepTitle();

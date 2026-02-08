@@ -12,7 +12,7 @@ declare class HuiTimestampDisplay extends LitElement {
     private _interval?;
     connectedCallback(): void;
     disconnectedCallback(): void;
-    protected render(): typeof nothing | import("lit-html").TemplateResult<1>;
+    protected render(): import("lit-html").TemplateResult<1> | typeof nothing;
     protected updated(changedProperties: PropertyValues): void;
     private get _format();
     private _startInterval;

@@ -15,7 +15,7 @@ export declare class DialogTryTts extends LitElement {
     private _target;
     showDialog(params: TryTtsDialogParams): void;
     closeDialog(): void;
-    protected render(): typeof nothing | import("lit-html").TemplateResult<1>;
+    protected render(): import("lit-html").TemplateResult<1> | typeof nothing;
     private _handleTargetChanged;
     private _playExample;
     private _createAutomation;

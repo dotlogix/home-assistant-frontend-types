@@ -1,6 +1,6 @@
 import type { HassEntities, HassEntityAttributeBase, HassEntityBase } from "home-assistant-js-websocket";
 import type { HomeAssistant } from "../types";
-import type { EntitySources } from "./entity_sources";
+import type { EntitySources } from "./entity/entity_sources";
 export declare enum UpdateEntityFeature {
     INSTALL = 1,
     SPECIFIC_VERSION = 2,
@@ -24,13 +24,15 @@ export interface UpdateEntity extends HassEntityBase {
     attributes: UpdateEntityAttributes;
 }
 export declare const updateUsesProgress: (entity: UpdateEntity) => boolean;
+export declare const updateAvailable: (entity: UpdateEntity, showSkipped?: boolean) => boolean;
 export declare const updateCanInstall: (entity: UpdateEntity, showSkipped?: boolean) => boolean;
+export declare const updateCanNotInstall: (entity: UpdateEntity, showSkipped?: boolean) => boolean;
 export declare const latestVersionIsSkipped: (entity: UpdateEntity) => boolean;
 export declare const updateButtonIsDisabled: (entity: UpdateEntity) => boolean;
 export declare const updateIsInstalling: (entity: UpdateEntity) => boolean;
 export declare const updateReleaseNotes: (hass: HomeAssistant, entityId: string) => Promise<string>;
 export declare const filterUpdateEntities: (entities: HassEntities, language?: string) => UpdateEntity[];
-export declare const filterUpdateEntitiesWithInstall: (entities: HassEntities, showSkipped?: boolean) => UpdateEntity[];
+export declare const filterUpdateEntitiesParameterized: (entities: HassEntities, showSkipped?: boolean, showNotInstallable?: boolean) => UpdateEntity[];
 export declare const checkForEntityUpdates: (element: HTMLElement, hass: HomeAssistant) => Promise<void>;
 export declare const computeUpdateStateDisplay: (stateObj: UpdateEntity, hass: HomeAssistant) => string;
 export type UpdateType = "addon" | "home_assistant" | "home_assistant_os" | "generic";

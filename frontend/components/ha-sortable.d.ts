@@ -40,7 +40,7 @@ export declare class HaSortable extends LitElement {
     disconnectedCallback(): void;
     connectedCallback(): void;
     protected createRenderRoot(): this;
-    protected render(): typeof nothing | import("lit-html").TemplateResult<1>;
+    protected render(): import("lit-html").TemplateResult<1> | typeof nothing;
     private _createSortable;
     private _handleUpdate;
     private _handleAdd;

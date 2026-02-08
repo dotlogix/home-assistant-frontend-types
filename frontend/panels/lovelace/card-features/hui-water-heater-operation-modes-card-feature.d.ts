@@ -3,10 +3,11 @@ import { LitElement } from "lit";
 import "../../../components/ha-control-select";
 import "../../../components/ha-control-select-menu";
 import "../../../components/ha-list-item";
+import "../../../components/ha-attribute-icon";
 import type { OperationMode } from "../../../data/water_heater";
 import type { HomeAssistant } from "../../../types";
 import type { LovelaceCardFeature, LovelaceCardFeatureEditor } from "../types";
-import type { WaterHeaterOperationModesCardFeatureConfig, LovelaceCardFeatureContext } from "./types";
+import type { LovelaceCardFeatureContext, WaterHeaterOperationModesCardFeatureConfig } from "./types";
 export declare const supportsWaterHeaterOperationModesCardFeature: (hass: HomeAssistant, context: LovelaceCardFeatureContext) => boolean;
 declare class HuiWaterHeaterOperationModeCardFeature extends LitElement implements LovelaceCardFeature {
     hass?: HomeAssistant;

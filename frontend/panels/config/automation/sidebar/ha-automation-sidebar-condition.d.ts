@@ -1,5 +1,7 @@
+import "@home-assistant/webawesome/dist/components/divider/divider";
 import { LitElement } from "lit";
-import { type ConditionSidebarConfig } from "../../../../data/automation";
+import "../../../../components/ha-dropdown-item";
+import type { ConditionSidebarConfig } from "../../../../data/automation";
 import type { HomeAssistant } from "../../../../types";
 import "../condition/ha-automation-condition-editor";
 import type HaAutomationConditionEditor from "../condition/ha-automation-condition-editor";
@@ -23,6 +25,7 @@ export default class HaAutomationSidebarCondition extends LitElement {
     private _valueChangedSidebar;
     private _yamlChangedSidebar;
     private _toggleYamlMode;
+    private _handleDropdownSelect;
     static styles: import("lit").CSSResult[];
 }
 declare global {

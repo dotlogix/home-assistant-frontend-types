@@ -1,7 +1,6 @@
 import type { PropertyValues } from "lit";
 import { LitElement } from "lit";
 import "../../../components/ha-button";
-import "../../../components/ha-button-menu";
 import "../../../components/ha-svg-icon";
 import type { Fields } from "../../../data/script";
 import type { HomeAssistant } from "../../../types";

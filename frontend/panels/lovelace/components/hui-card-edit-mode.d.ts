@@ -1,8 +1,9 @@
+import "@home-assistant/webawesome/dist/components/divider/divider";
 import type { CSSResultGroup, TemplateResult } from "lit";
 import { LitElement } from "lit";
-import "../../../components/ha-button-menu";
+import "../../../components/ha-dropdown";
+import "../../../components/ha-dropdown-item";
 import "../../../components/ha-icon-button";
-import "../../../components/ha-list-item";
 import "../../../components/ha-svg-icon";
 import type { HomeAssistant } from "../../../types";
 import type { LovelaceCardPath } from "../editor/lovelace-path";
@@ -15,7 +16,6 @@ export declare class HuiCardEditMode extends LitElement {
     noEdit: boolean;
     noDuplicate: boolean;
     noMove: boolean;
-    _menuOpened: boolean;
     _hover: boolean;
     _focused: boolean;
     private _touchStarted;
@@ -23,10 +23,8 @@ export declare class HuiCardEditMode extends LitElement {
     disconnectedCallback(): void;
     private _documentClicked;
     protected render(): TemplateResult;
-    private _handleOpened;
-    private _handleClosed;
     private _handleOverlayClick;
-    private _handleAction;
+    private _handleDropdownSelect;
     private _duplicateCard;
     private _editCard;
     private _cutCard;

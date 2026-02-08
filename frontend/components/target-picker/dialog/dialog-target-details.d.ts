@@ -17,7 +17,7 @@ declare class DialogTargetDetails extends LitElement implements HassDialog {
     showDialog(params: TargetDetailsDialogParams): void;
     closeDialog(): boolean;
     private _dialogClosed;
-    protected render(): typeof nothing | import("lit-html").TemplateResult<1>;
+    protected render(): import("lit-html").TemplateResult<1> | typeof nothing;
 }
 declare global {
     interface HTMLElementTagNameMap {

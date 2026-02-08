@@ -24,12 +24,13 @@ export default class HaAutomationSidebar extends LitElement {
     protected updated(changedProperties: PropertyValues): void;
     disconnectedCallback(): void;
     private _renderContent;
-    protected render(): typeof nothing | import("lit-html").TemplateResult<1>;
+    protected render(): import("lit-html").TemplateResult<1> | typeof nothing;
     private _getType;
     triggerCloseSidebar(ev?: CustomEvent): void;
     private _closeSidebar;
     private _toggleYamlMode;
     private _handleMouseDown;
+    private _handleDoubleClick;
     private _startResizing;
     private _handleMouseMove;
     private _updateSize;
@@ -55,5 +56,6 @@ declare global {
             deltaInPx: number;
         };
         "sidebar-resizing-stopped": undefined;
+        "sidebar-reset-size": undefined;
     }
 }

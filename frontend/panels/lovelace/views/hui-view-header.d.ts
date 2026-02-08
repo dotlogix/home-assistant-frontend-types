@@ -32,7 +32,7 @@ export declare class HuiViewHeader extends LitElement {
     private _editCard;
     private _saveHeaderConfig;
     private _configure;
-    render(): typeof nothing | import("lit-html").TemplateResult<1>;
+    render(): import("lit-html").TemplateResult<1> | typeof nothing;
     static styles: import("lit").CSSResult;
 }
 declare global {

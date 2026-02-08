@@ -16,7 +16,7 @@ declare class MoveDatadiskDialog extends LitElement {
     private _moving;
     showDialog(dialogParams: MoveDatadiskDialogParams): Promise<Promise<void>>;
     closeDialog(): void;
-    protected render(): typeof nothing | import("lit-html").TemplateResult<1>;
+    protected render(): import("lit-html").TemplateResult<1> | typeof nothing;
     private _selectDevice;
     private _moveDatadisk;
     static get styles(): CSSResultGroup;

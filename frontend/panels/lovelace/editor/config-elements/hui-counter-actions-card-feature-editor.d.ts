@@ -9,7 +9,7 @@ export declare class HuiCounterActionsCardFeatureEditor extends LitElement imple
     private _config?;
     setConfig(config: CounterActionsCardFeatureConfig): void;
     private _schema;
-    protected render(): typeof nothing | import("lit-html").TemplateResult<1>;
+    protected render(): import("lit-html").TemplateResult<1> | typeof nothing;
     private _valueChanged;
     private _computeLabelCallback;
 }

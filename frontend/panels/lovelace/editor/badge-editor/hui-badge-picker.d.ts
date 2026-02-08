@@ -21,7 +21,7 @@ export declare class HuiBadgePicker extends LitElement {
     private _suggestedBadges;
     private _customBadges;
     private _otherBadges;
-    protected render(): typeof nothing | TemplateResult<1>;
+    protected render(): TemplateResult<1> | typeof nothing;
     protected shouldUpdate(changedProps: PropertyValues): boolean;
     protected firstUpdated(): void;
     private _loadBages;

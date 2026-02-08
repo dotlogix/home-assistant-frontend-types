@@ -2,8 +2,8 @@ import { LitElement, nothing } from "lit";
 import type { HomeAssistant } from "../types";
 import "./ha-alert";
 import "./ha-button";
-import "./ha-button-menu";
-import "./ha-list-item";
+import "./ha-dropdown";
+import "./ha-dropdown-item";
 import "./ha-spinner";
 import "./ha-textfield";
 declare class HaQrScanner extends LitElement {
@@ -15,6 +15,7 @@ declare class HaQrScanner extends LitElement {
     private _loading;
     private _error?;
     private _warning?;
+    private _selectedCamera?;
     private _qrScanner?;
     private _qrNotFoundCount;
     private _removeListener?;
@@ -24,7 +25,7 @@ declare class HaQrScanner extends LitElement {
     disconnectedCallback(): void;
     connectedCallback(): void;
     protected firstUpdated(): void;
-    protected render(): typeof nothing | import("lit-html").TemplateResult<1>;
+    protected render(): import("lit-html").TemplateResult<1> | typeof nothing;
     private get _nativeBarcodeScanner();
     private _loadQrScanner;
     private _listCameras;
@@ -33,7 +34,7 @@ declare class HaQrScanner extends LitElement {
     private _manualKeyup;
     private _manualPaste;
     private _manualSubmit;
-    private _cameraChanged;
+    private _handleDropdownSelect;
     private _openExternalScanner;
     private _closeExternalScanner;
     private _notifyExternalScanner;

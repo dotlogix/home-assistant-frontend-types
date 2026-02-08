@@ -8,6 +8,7 @@ import "./ha-icon-button-toolbar";
 declare global {
     interface HASSDomEvents {
         "editor-save": undefined;
+        "test-toggle": undefined;
     }
 }
 export declare class HaCodeEditor extends ReactiveElement {
@@ -22,6 +23,8 @@ export declare class HaCodeEditor extends ReactiveElement {
     error: boolean;
     disableFullscreen: boolean;
     hasToolbar: boolean;
+    hasTest: boolean;
+    testing: boolean;
     placeholder?: string;
     private _value;
     private _isFullscreen;
@@ -47,9 +50,11 @@ export declare class HaCodeEditor extends ReactiveElement {
     private _updateToolbarButtons;
     private _updateFullscreenState;
     private _handleClipboardClick;
+    private _handleTestClick;
     private _handleUndoClick;
     private _handleRedoClick;
     private _handleFullscreenClick;
+    private _handleFindReplaceClick;
     private _handleKeyDown;
     private _renderInfo;
     private _getStates;

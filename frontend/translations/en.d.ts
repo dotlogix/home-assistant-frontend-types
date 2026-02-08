@@ -1,5 +1,6 @@
-declare const _default: {
+declare const translations: {
     panel: {
+        apps: string;
         energy: string;
         calendar: string;
         config: string;
@@ -8,12 +9,12 @@ declare const _default: {
         logbook: string;
         history: string;
         todo: string;
-        developer_tools: string;
         media_browser: string;
         profile: string;
         light: string;
         security: string;
         climate: string;
+        home: string;
     };
     state: {
         default: {
@@ -213,6 +214,11 @@ declare const _default: {
                 no_media_playing: string;
                 count_media_playing: string;
             };
+            "discovered-devices": {
+                title: string;
+                count_devices: string;
+                no_devices: string;
+            };
             media_player: {
                 source: string;
                 sound_mode: string;
@@ -303,6 +309,7 @@ declare const _default: {
             };
             weather: {
                 attributes: {
+                    dew_point: string;
                     air_pressure: string;
                     humidity: string;
                     temperature: string;
@@ -430,6 +437,7 @@ declare const _default: {
             edit_item: string;
             submit: string;
             rename: string;
+            reset: string;
             search: string;
             ok: string;
             yes: string;
@@ -657,6 +665,7 @@ declare const _default: {
                     new_entity: string;
                     placeholder: string;
                     create_helper: string;
+                    unknown: string;
                 };
                 "entity-name-picker": {
                     types: {
@@ -669,6 +678,7 @@ declare const _default: {
                         device_missing: string;
                     };
                     add: string;
+                    search: string;
                     custom_name: string;
                 };
                 "entity-attribute-picker": {
@@ -677,9 +687,11 @@ declare const _default: {
                 };
                 "entity-state-picker": {
                     state: string;
+                    add_custom_state: string;
                 };
                 "entity-state-content-picker": {
                     add: string;
+                    custom_attribute: string;
                 };
             };
             "target-picker": {
@@ -751,6 +763,18 @@ declare const _default: {
             };
             "country-picker": {
                 country: string;
+                no_match: string;
+                no_countries: string;
+            };
+            "currency-picker": {
+                currency: string;
+                no_match: string;
+                no_currencies: string;
+            };
+            "timezone-picker": {
+                time_zone: string;
+                no_match: string;
+                no_timezones: string;
             };
             "pipeline-picker": {
                 pipeline: string;
@@ -778,6 +802,7 @@ declare const _default: {
                 no_match: string;
                 user: string;
                 add_user: string;
+                unknown: string;
             };
             "blueprint-picker": {
                 select_blueprint: string;
@@ -792,6 +817,7 @@ declare const _default: {
                 unnamed_device: string;
                 no_area: string;
                 placeholder: string;
+                unknown: string;
             };
             "category-picker": {
                 clear: string;
@@ -803,6 +829,7 @@ declare const _default: {
                 add_new: string;
                 no_categories: string;
                 no_match: string;
+                unknown: string;
                 add_dialog: {
                     title: string;
                     text: string;
@@ -829,8 +856,8 @@ declare const _default: {
                 add_new: string;
                 no_areas: string;
                 no_match: string;
-                unassigned_areas: string;
                 failed_create_area: string;
+                unknown: string;
             };
             "floor-picker": {
                 clear: string;
@@ -841,6 +868,7 @@ declare const _default: {
                 no_floors: string;
                 no_match: string;
                 failed_create_floor: string;
+                unknown: string;
             };
             "area-filter": {
                 title: string;
@@ -858,12 +886,13 @@ declare const _default: {
                 no_state: string;
                 missing_entity: string;
                 learn_more: string;
+                unknown: string;
             };
-            "addon-picker": {
-                addon: string;
+            "app-picker": {
+                app: string;
                 error: {
                     no_supervisor: string;
-                    fetch_addons: string;
+                    fetch_apps: string;
                 };
             };
             "mount-picker": {
@@ -907,9 +936,13 @@ declare const _default: {
                 default: string;
                 state: string;
                 none: string;
+                custom_color: string;
+                no_colors_found: string;
                 colors: {
                     primary: string;
                     accent: string;
+                    "primary-text": string;
+                    "secondary-text": string;
                     disabled: string;
                     inactive: string;
                     red: string;
@@ -998,6 +1031,7 @@ declare const _default: {
             "service-picker": {
                 action: string;
                 no_match: string;
+                unknown: string;
             };
             "service-control": {
                 required: string;
@@ -1090,6 +1124,7 @@ declare const _default: {
                     delete: string;
                     deleting: string;
                     deselect_all: string;
+                    select_all: string;
                     tip_media_storage: string;
                     tip_storage_panel: string;
                 };
@@ -1129,6 +1164,7 @@ declare const _default: {
                     edit: string;
                     save: string;
                     due: string;
+                    completed_time: string;
                     not_all_required_fields: string;
                     confirm_delete: {
                         delete: string;
@@ -1236,6 +1272,7 @@ declare const _default: {
                     };
                     summary: string;
                     description: string;
+                    location: string;
                 };
                 views: {
                     dayGridMonth: string;
@@ -1272,6 +1309,9 @@ declare const _default: {
                 error_location: string;
                 enter_fullscreen: string;
                 exit_fullscreen: string;
+                find_and_replace: string;
+                test_on: string;
+                test_off: string;
             };
             "state-content-picker": {
                 state: string;
@@ -1280,6 +1320,9 @@ declare const _default: {
                 last_updated: string;
                 remaining_time: string;
                 install_status: string;
+                device_name: string;
+                area_name: string;
+                floor_name: string;
             };
             "multi-textfield": {
                 add_item: string;
@@ -1293,6 +1336,10 @@ declare const _default: {
             };
             "combo-box": {
                 no_match: string;
+                no_items: string;
+                unknown_item: string;
+                search_or_custom: string;
+                add_custom_item: string;
             };
             suggest_with_ai: {
                 label: string;
@@ -1302,6 +1349,13 @@ declare const _default: {
                 done: string;
                 error: string;
             };
+            "navigation-picker": {
+                add_custom_path: string;
+                dashboards: string;
+                related: string;
+                views: string;
+                other_routes: string;
+            };
         };
         dialogs: {
             safe_mode: {
@@ -1309,6 +1363,8 @@ declare const _default: {
                 text: string;
             };
             "quick-bar": {
+                commands_title: string;
+                navigate_title: string;
                 commands: {
                     reload: {
                         all: string;
@@ -1346,7 +1402,7 @@ declare const _default: {
                         rpi_gpio: string;
                         themes: string;
                     };
-                    server_control: {
+                    home_assistant_control: {
                         perform_action: string;
                         restart: string;
                         stop: string;
@@ -1354,7 +1410,8 @@ declare const _default: {
                     types: {
                         reload: string;
                         navigation: string;
-                        server_control: string;
+                        app_settings: string;
+                        home_assistant_control: string;
                     };
                     navigation: {
                         logs: string;
@@ -1375,6 +1432,7 @@ declare const _default: {
                         info: string;
                         network: string;
                         updates: string;
+                        repairs: string;
                         hardware: string;
                         storage: string;
                         general: string;
@@ -1385,10 +1443,20 @@ declare const _default: {
                         blueprint: string;
                         server_control: string;
                         system: string;
-                        addon_dashboard: string;
-                        addon_store: string;
-                        addon_info: string;
+                        apps: string;
+                        app_store: string;
+                        app_info: string;
                         shortcuts: string;
+                        labs: string;
+                        "developer-tools": string;
+                        matter: string;
+                        zha: string;
+                        zwave_js: string;
+                        thread: string;
+                        bluetooth: string;
+                        knx: string;
+                        insteon: string;
+                        "voice-assistants": string;
                     };
                 };
                 filter_placeholder: string;
@@ -1434,6 +1502,8 @@ declare const _default: {
                 back_to_info: string;
                 info: string;
                 related: string;
+                add_entity_to: string;
+                attributes: string;
                 history: string;
                 aggregate: string;
                 logbook: string;
@@ -1449,6 +1519,10 @@ declare const _default: {
                 script: {
                     last_action: string;
                     last_triggered: string;
+                };
+                add_to: {
+                    no_actions: string;
+                    action_failed: string;
                 };
                 sun: {
                     azimuth: string;
@@ -1470,8 +1544,8 @@ declare const _default: {
                         automatic_description_none: string;
                         manual: string;
                         manual_description: string;
-                        addon: string;
-                        addon_description: string;
+                        app: string;
+                        app_description: string;
                         generic: string;
                     };
                 };
@@ -1574,6 +1648,7 @@ declare const _default: {
                     icon_error: string;
                     default_code: string;
                     default_code_error: string;
+                    calendar_color: string;
                     entity_id: string;
                     unit_of_measurement: string;
                     precipitation_unit: string;
@@ -2103,6 +2178,7 @@ declare const _default: {
                 enable_shortcuts_hint_user_profile: string;
                 keys: {
                     del: string;
+                    ctrl: string;
                 };
                 shortcuts: {
                     double_click: string;
@@ -2113,6 +2189,7 @@ declare const _default: {
                     title: string;
                     on_any_page: string;
                     on_pages_with_tables: string;
+                    search: string;
                     search_command: string;
                     search_entities: string;
                     search_devices: string;
@@ -2141,6 +2218,7 @@ declare const _default: {
                 other: {
                     title: string;
                     my_link: string;
+                    show_shortcuts: string;
                 };
             };
         };
@@ -2202,6 +2280,8 @@ declare const _default: {
             no_matching_link_found: string;
             new_version_available: string;
             reload: string;
+            theme_save_failed: string;
+            theme_preferences_unavailable: string;
         };
         sidebar: {
             external_app_configuration: string;
@@ -2209,8 +2289,48 @@ declare const _default: {
             edit_sidebar: string;
             edit_subtitle: string;
             migrate_to_user_data: string;
+            reset_to_defaults: string;
+            reset_confirmation: string;
         };
         panel: {
+            app: {
+                error_app_not_installed: string;
+                error_app_no_ingress: string;
+                error_app_not_running: string;
+                start_app: string;
+                app_starting: string;
+                error_starting_app: string;
+                error_creating_session: string;
+                error_app_not_ready: string;
+                retry: string;
+            };
+            home: {
+                editor: {
+                    title: string;
+                    description: string;
+                    favorite_entities_helper: string;
+                    save_failed: string;
+                    areas_hint: string;
+                    areas_page: string;
+                };
+                new_overview_dialog: {
+                    title: string;
+                    description: string;
+                    whats_new: string;
+                    automatic_organization: string;
+                    automatic_organization_description: string;
+                    favorites: string;
+                    favorites_description: string;
+                    existing_dashboards: string;
+                    existing_dashboards_description: string;
+                    dashboard_settings: string;
+                    ok_understood: string;
+                };
+                banner: {
+                    welcome_message: string;
+                    learn_more: string;
+                };
+            };
             my: {
                 not_supported: string;
                 component_not_loaded: string;
@@ -2244,7 +2364,7 @@ declare const _default: {
                         main: string;
                         secondary: string;
                     };
-                    supervisor: {
+                    apps: {
                         main: string;
                         secondary: string;
                     };
@@ -2280,11 +2400,43 @@ declare const _default: {
                         main: string;
                         secondary: string;
                     };
+                    developer_tools: {
+                        main: string;
+                        secondary: string;
+                    };
                     about: {
                         main: string;
                         secondary: string;
                     };
                     cloud: {
+                        secondary: string;
+                    };
+                    zwave_js: {
+                        main: string;
+                        secondary: string;
+                    };
+                    zha: {
+                        main: string;
+                        secondary: string;
+                    };
+                    matter: {
+                        main: string;
+                        secondary: string;
+                    };
+                    thread: {
+                        main: string;
+                        secondary: string;
+                    };
+                    bluetooth: {
+                        main: string;
+                        secondary: string;
+                    };
+                    knx: {
+                        main: string;
+                        secondary: string;
+                    };
+                    insteon: {
+                        main: string;
                         secondary: string;
                     };
                 };
@@ -2317,6 +2469,7 @@ declare const _default: {
                     updates_refreshed: string;
                     checking_updates: string;
                     title: string;
+                    title_not_installable: string;
                     unable_to_fetch: string;
                     more_updates: string;
                     show: string;
@@ -2361,6 +2514,7 @@ declare const _default: {
                         name: string;
                         icon: string;
                         level: string;
+                        level_helper: string;
                         name_required: string;
                         floor_id: string;
                         unknown_error: string;
@@ -2380,6 +2534,254 @@ declare const _default: {
                     gen_data_description: string;
                     gen_image_header: string;
                     gen_image_description: string;
+                };
+                apps: {
+                    caption: string;
+                    description: string;
+                    error_loading: string;
+                    state: {
+                        update_available: string;
+                        installed: string;
+                        not_installed: string;
+                        not_available: string;
+                    };
+                    installed: {
+                        search: string;
+                        no_apps: string;
+                        add_app: string;
+                        app_stopped: string;
+                        app_update_available: string;
+                        app_running: string;
+                    };
+                    store: {
+                        title: string;
+                        check_updates: string;
+                        repositories: string;
+                        registries: string;
+                        missing_apps: string;
+                        no_results_found: string;
+                    };
+                    dialog: {
+                        repositories: {
+                            title: string;
+                            add: string;
+                            remove: string;
+                            used: string;
+                            no_repositories: string;
+                        };
+                        registries: {
+                            title_add: string;
+                            title_manage: string;
+                            add_registry: string;
+                            add_new_registry: string;
+                            username: string;
+                            remove: string;
+                            no_registries: string;
+                            failed_to_add: string;
+                            failed_to_remove: string;
+                            registry: string;
+                            password: string;
+                        };
+                    };
+                    panel: {
+                        info: string;
+                        documentation: string;
+                        configuration: string;
+                        log: string;
+                    };
+                    dashboard: {
+                        cpu_usage: string;
+                        ram_usage: string;
+                        app_running: string;
+                        app_stopped: string;
+                        current_version: string;
+                        changelog: string;
+                        hostname: string;
+                        visit_app_page: string;
+                        start: string;
+                        stop: string;
+                        restart: string;
+                        rebuild: string;
+                        uninstall: string;
+                        install: string;
+                        open_web_ui: string;
+                        failed_to_save: string;
+                        failed_to_reset: string;
+                        failed_to_restart: string;
+                        protection_mode: {
+                            title: string;
+                            content: string;
+                            enable: string;
+                        };
+                        system_managed: {
+                            title: string;
+                            description: string;
+                            take_control: string;
+                            badge: string;
+                        };
+                        option: {
+                            boot: {
+                                title: string;
+                                description: string;
+                            };
+                            watchdog: {
+                                title: string;
+                                description: string;
+                            };
+                            auto_update: {
+                                title: string;
+                                description: string;
+                            };
+                            ingress_panel: {
+                                title: string;
+                                description: string;
+                            };
+                            protected: {
+                                title: string;
+                                description: string;
+                            };
+                        };
+                        capability: {
+                            stages: {
+                                experimental: string;
+                                deprecated: string;
+                            };
+                            label: {
+                                rating: string;
+                                host: string;
+                                hardware: string;
+                                core: string;
+                                docker: string;
+                                host_pid: string;
+                                apparmor: string;
+                                auth: string;
+                                ingress: string;
+                                signed: string;
+                            };
+                            role: {
+                                manager: string;
+                                default: string;
+                                homeassistant: string;
+                                backup: string;
+                                admin: string;
+                            };
+                            stage: {
+                                title: string;
+                                description: string;
+                            };
+                            rating: {
+                                title: string;
+                                description: string;
+                            };
+                            host_network: {
+                                title: string;
+                                description: string;
+                            };
+                            full_access: {
+                                title: string;
+                                description: string;
+                            };
+                            homeassistant_api: {
+                                title: string;
+                                description: string;
+                            };
+                            hassio_api: {
+                                title: string;
+                                description: string;
+                            };
+                            docker_api: {
+                                title: string;
+                                description: string;
+                            };
+                            host_pid: {
+                                title: string;
+                                description: string;
+                            };
+                            apparmor: {
+                                title: string;
+                                description: string;
+                            };
+                            auth_api: {
+                                title: string;
+                                description: string;
+                            };
+                            ingress: {
+                                title: string;
+                                description: string;
+                            };
+                            signed: {
+                                title: string;
+                                description: string;
+                            };
+                        };
+                        action_error: {
+                            install: string;
+                            start: string;
+                            stop: string;
+                            restart: string;
+                            rebuild: string;
+                            uninstall: string;
+                            get_changelog: string;
+                            start_invalid_config: string;
+                            go_to_config: string;
+                            validate_config: string;
+                        };
+                        uninstall_dialog: {
+                            title: string;
+                            remove_data: string;
+                            uninstall: string;
+                        };
+                        restart_dialog: {
+                            title: string;
+                            text: string;
+                            restart: string;
+                        };
+                        update_available: {
+                            update_name: string;
+                            no_update: string;
+                            description: string;
+                            updating: string;
+                            create_backup: {
+                                app: string;
+                                app_description: string;
+                                generic: string;
+                            };
+                        };
+                    };
+                    configuration: {
+                        no_configuration: string;
+                        reset_defaults: string;
+                        options: {
+                            header: string;
+                            edit_in_ui: string;
+                            edit_in_yaml: string;
+                            invalid_yaml: string;
+                            show_unused_optional: string;
+                        };
+                        network: {
+                            header: string;
+                            introduction: string;
+                            show_disabled: string;
+                            reset_defaults: string;
+                        };
+                        audio: {
+                            header: string;
+                            input: string;
+                            output: string;
+                            default: string;
+                            failed_to_load_hardware: string;
+                            failed_to_save: string;
+                        };
+                        confirm: {
+                            reset_options: {
+                                title: string;
+                                text: string;
+                            };
+                        };
+                    };
+                    documentation: {
+                        get_documentation: string;
+                    };
                 };
                 category: {
                     caption: string;
@@ -2440,7 +2842,7 @@ declare const _default: {
                         introduction2: string;
                         integrations_page: string;
                         no_areas: string;
-                        unassigned_areas: string;
+                        other_areas: string;
                         create_area: string;
                         create_floor: string;
                         floor: {
@@ -2449,6 +2851,18 @@ declare const _default: {
                             confirm_delete: string;
                             confirm_delete_text: string;
                         };
+                        area_reorder_failed: string;
+                        area_move_failed: string;
+                        floor_reorder_failed: string;
+                        reorder: string;
+                    };
+                    dialog: {
+                        reorder_areas_title: string;
+                        reorder_floors_areas_title: string;
+                        other_areas: string;
+                        reorder_failed: string;
+                        empty_floor: string;
+                        empty_unassigned: string;
                     };
                     editor: {
                         create_area: string;
@@ -2495,7 +2909,7 @@ declare const _default: {
                     type: {
                         manual: string;
                         automatic: string;
-                        addon_update: string;
+                        app_update: string;
                     };
                     locations: string;
                     create: {
@@ -2698,16 +3112,16 @@ declare const _default: {
                         media_description: string;
                         share_folder: string;
                         share_folder_description: string;
-                        local_addons: string;
-                        local_addons_description: string;
-                        addons: string;
-                        addons_description: string;
-                        addons_all: string;
-                        addons_none: string;
-                        addons_custom: string;
+                        local_apps: string;
+                        local_apps_description: string;
+                        apps: string;
+                        apps_description: string;
+                        apps_all: string;
+                        apps_none: string;
+                        apps_custom: string;
                         estimated_size: string;
                         estimated_size_disclaimer: string;
-                        estimated_size_disclaimer_addons_custom: string;
+                        estimated_size_disclaimer_apps_custom: string;
                         estimated_size_loading: string;
                     };
                     data_picker: {
@@ -2715,8 +3129,8 @@ declare const _default: {
                         settings_and_history: string;
                         media: string;
                         share_folder: string;
-                        local_addons: string;
-                        addons: string;
+                        local_apps: string;
+                        apps: string;
                         ssl: string;
                     };
                     schedule: {
@@ -2809,6 +3223,9 @@ declare const _default: {
                                     addon_repositories: string;
                                     addons: string;
                                     await_addon_restarts: string;
+                                    app_repositories: string;
+                                    apps: string;
+                                    await_app_restarts: string;
                                     docker_config: string;
                                     finishing_file: string;
                                     folders: string;
@@ -2819,6 +3236,9 @@ declare const _default: {
                                     addon_repositories: string;
                                     addons: string;
                                     await_addon_restarts: string;
+                                    app_repositories: string;
+                                    apps: string;
+                                    await_app_restarts: string;
                                     await_home_assistant_restart: string;
                                     check_home_assistant: string;
                                     docker_config: string;
@@ -2826,6 +3246,7 @@ declare const _default: {
                                     folders: string;
                                     home_assistant: string;
                                     remove_delta_addons: string;
+                                    remove_delta_apps: string;
                                 };
                                 receive_backup: {
                                     receive_file: string;
@@ -2842,12 +3263,12 @@ declare const _default: {
                             last_backup_failed_heading: string;
                             last_backup_failed_description: string;
                             last_backup_failed_locations_description: string;
-                            last_backup_failed_addons_description: string;
+                            last_backup_failed_apps_description: string;
                             last_backup_failed_folders_description: string;
-                            last_backup_failed_addons_folders_description: string;
-                            last_backup_failed_locations_addons_description: string;
+                            last_backup_failed_apps_folders_description: string;
+                            last_backup_failed_locations_apps_description: string;
                             last_backup_failed_locations_folders_description: string;
-                            last_backup_failed_locations_addons_folders_description: string;
+                            last_backup_failed_locations_apps_folders_description: string;
                             last_successful_backup_description: string;
                             no_backup_heading: string;
                             no_backup_description: string;
@@ -2859,7 +3280,7 @@ declare const _default: {
                             title: string;
                             automatic: string;
                             manual: string;
-                            addon_update: string;
+                            app_update: string;
                             total_size: string;
                             show_all: string;
                         };
@@ -2882,10 +3303,10 @@ declare const _default: {
                             data: string;
                             data_settings_history: string;
                             data_settings_only: string;
-                            addons: string;
-                            addons_all: string;
-                            addons_many: string;
-                            addons_none: string;
+                            apps: string;
+                            apps_all: string;
+                            apps_many: string;
+                            apps_none: string;
                             locations: string;
                             locations_one: string;
                             locations_many: string;
@@ -2946,7 +3367,7 @@ declare const _default: {
                             title: string;
                             description: string;
                         };
-                        addon_update_backup: {
+                        app_update_backup: {
                             title: string;
                             description: string;
                             local_only: string;
@@ -2967,7 +3388,7 @@ declare const _default: {
                             error: {
                                 title: string;
                                 failed_locations: string;
-                                failed_addons: string;
+                                failed_apps: string;
                                 failed_folders: string;
                             };
                         };
@@ -3049,6 +3470,289 @@ declare const _default: {
                         companion_apps: string;
                     };
                 };
+                "developer-tools": {
+                    tabs: {
+                        assist: {
+                            title: string;
+                            description: string;
+                            parse_sentences: string;
+                            sentences: string;
+                            download_results: string;
+                            no_match: string;
+                            language: string;
+                        };
+                        debug: {
+                            title: string;
+                            debug_connection: {
+                                title: string;
+                                description: string;
+                            };
+                            entity_diagnostic: {
+                                title: string;
+                                description: string;
+                                copy_to_clipboard: string;
+                            };
+                        };
+                        events: {
+                            title: string;
+                            description: string;
+                            documentation: string;
+                            type: string;
+                            data: string;
+                            fire_event: string;
+                            event_fired: string;
+                            active_listeners: string;
+                            count_listeners: string;
+                            listen_to_events: string;
+                            filter_events: string;
+                            filter_helper: string;
+                            filter_ignored: string;
+                            listening_to: string;
+                            subscribe_to: string;
+                            start_listening: string;
+                            stop_listening: string;
+                            clear_events: string;
+                            alert_event_type: string;
+                            notification_event_fired: string;
+                            subscribe_failed: string;
+                        };
+                        actions: {
+                            title: string;
+                            description: string;
+                            call_service: string;
+                            response: string;
+                            column_parameter: string;
+                            column_description: string;
+                            column_example: string;
+                            fill_example_data: string;
+                            yaml_mode: string;
+                            ui_mode: string;
+                            yaml_parameters: string;
+                            all_parameters: string;
+                            accepts_target: string;
+                            no_template_ui_support: string;
+                            copy_clipboard_template: string;
+                            open_media: string;
+                            errors: {
+                                ui: {
+                                    no_action: string;
+                                    invalid_action: string;
+                                    no_target: string;
+                                    missing_required_field: string;
+                                };
+                                yaml: {
+                                    invalid_yaml: string;
+                                    no_action: string;
+                                    invalid_action: string;
+                                    no_target: string;
+                                    missing_required_field: string;
+                                };
+                            };
+                        };
+                        states: {
+                            title: string;
+                            description1: string;
+                            description2: string;
+                            entity: string;
+                            state: string;
+                            attributes: string;
+                            state_attributes: string;
+                            set_state: string;
+                            current_entities: string;
+                            filter_entities: string;
+                            filter_states: string;
+                            filter_attributes: string;
+                            no_entities: string;
+                            more_info: string;
+                            alert_entity_field: string;
+                            last_updated: string;
+                            last_changed: string;
+                            copy_id: string;
+                        };
+                        templates: {
+                            title: string;
+                            description: string;
+                            editor: string;
+                            result: string;
+                            reset: string;
+                            confirm_reset: string;
+                            confirm_clear: string;
+                            result_type: string;
+                            jinja_documentation: string;
+                            template_extensions: string;
+                            unknown_error_template: string;
+                            time: string;
+                            all_listeners: string;
+                            no_listeners: string;
+                            listeners: string;
+                            entity: string;
+                            domain: string;
+                        };
+                        statistics: {
+                            title: string;
+                            entity: string;
+                            issue: string;
+                            no_issue: string;
+                            issues: {
+                                units_changed: string;
+                                mean_type_changed: string;
+                                state_class_removed: string;
+                                entity_not_recorded: string;
+                                entity_no_longer_recorded: string;
+                                no_state: string;
+                            };
+                            delete_selected: string;
+                            multi_delete: {
+                                title: string;
+                                info_text: string;
+                            };
+                            mean_type: {
+                                "0": string;
+                                "1": string;
+                                "2": string;
+                            };
+                            fix_issue: {
+                                fix: string;
+                                clearing_failed: string;
+                                clearing_timeout_title: string;
+                                clearing_timeout_text: string;
+                                fix_all: string;
+                                info: string;
+                                no_support: {
+                                    title: string;
+                                    info_text_1: string;
+                                };
+                                no_state: {
+                                    title: string;
+                                    info_text_1: string;
+                                    info_text_2: string;
+                                };
+                                entity_not_recorded: {
+                                    title: string;
+                                    info_text_1: string;
+                                    info_text_2: string;
+                                    info_text_3_link: string;
+                                };
+                                entity_no_longer_recorded: {
+                                    title: string;
+                                    info_text_1: string;
+                                    info_text_2: string;
+                                    info_text_3_link: string;
+                                    info_text_4: string;
+                                };
+                                state_class_removed: {
+                                    title: string;
+                                    info_text_1: string;
+                                    info_text_2: string;
+                                    info_text_3: string;
+                                    info_text_4: string;
+                                    info_text_4_link: string;
+                                    info_text_5: string;
+                                    info_text_6: string;
+                                };
+                                units_changed: {
+                                    title: string;
+                                    update: string;
+                                    clear: string;
+                                    how_to_fix: string;
+                                    info_text_1: string;
+                                    info_text_2: string;
+                                    info_text_3: string;
+                                };
+                                mean_type_changed: {
+                                    title: string;
+                                    info_text_1: string;
+                                    info_text_2: string;
+                                    info_text_3: string;
+                                };
+                                adjust_sum: {
+                                    title: string;
+                                    no_statistics_found: string;
+                                    info_text_1: string;
+                                    pick_a_time: string;
+                                    statistic: string;
+                                    start: string;
+                                    end: string;
+                                    new_value: string;
+                                    adjust: string;
+                                    outliers: string;
+                                    sum_adjusted: string;
+                                    error_sum_adjusted: string;
+                                };
+                            };
+                            adjust_sum: string;
+                            data_table: {
+                                select_all_issues: string;
+                                name: string;
+                                statistic_id: string;
+                                statistics_unit: string;
+                                source: string;
+                                issue: string;
+                                no_statistics: string;
+                            };
+                        };
+                        yaml: {
+                            title: string;
+                            section: {
+                                validation: {
+                                    heading: string;
+                                    introduction: string;
+                                    check_config: string;
+                                    valid: string;
+                                    invalid: string;
+                                    warnings: string;
+                                    errors: string;
+                                };
+                                reloading: {
+                                    all: string;
+                                    heading: string;
+                                    introduction: string;
+                                    reload: string;
+                                    core: string;
+                                    group: string;
+                                    automation: string;
+                                    script: string;
+                                    scene: string;
+                                    person: string;
+                                    zone: string;
+                                    input_boolean: string;
+                                    input_button: string;
+                                    input_text: string;
+                                    input_number: string;
+                                    input_datetime: string;
+                                    input_select: string;
+                                    template: string;
+                                    universal: string;
+                                    rest: string;
+                                    command_line: string;
+                                    filter: string;
+                                    statistics: string;
+                                    generic: string;
+                                    generic_thermostat: string;
+                                    homekit: string;
+                                    min_max: string;
+                                    history_stats: string;
+                                    trend: string;
+                                    ping: string;
+                                    filesize: string;
+                                    telegram: string;
+                                    smtp: string;
+                                    mqtt: string;
+                                    rpi_gpio: string;
+                                    timer: string;
+                                    themes: string;
+                                };
+                                server_management: {
+                                    heading: string;
+                                    restart: string;
+                                    stop: string;
+                                    confirm_stop: string;
+                                    restart_error: string;
+                                };
+                            };
+                        };
+                    };
+                };
                 energy: {
                     caption: string;
                     description: string;
@@ -3070,7 +3774,24 @@ declare const _default: {
                         grid_carbon_footprint: string;
                         remove_co2_signal: string;
                         add_co2_signal: string;
+                        grid_power: string;
+                        add_power: string;
+                        edit_power: string;
+                        delete_power: string;
+                        power_dialog: {
+                            header: string;
+                            sensor_type: string;
+                            type_standard: string;
+                            type_inverted: string;
+                            type_inverted_description: string;
+                            type_two_sensors: string;
+                            power_stat: string;
+                            power_helper: string;
+                            power_from_grid: string;
+                            power_to_grid: string;
+                        };
                         flow_dialog: {
+                            cost_entity_helper: string;
                             from: {
                                 header: string;
                                 paragraph: string;
@@ -3116,6 +3837,7 @@ declare const _default: {
                             header: string;
                             entity_para: string;
                             solar_production_energy: string;
+                            solar_production_power: string;
                             solar_production_forecast: string;
                             solar_production_forecast_description: string;
                             dont_forecast_production: string;
@@ -3133,9 +3855,20 @@ declare const _default: {
                         add_battery_system: string;
                         dialog: {
                             header: string;
-                            entity_para: string;
+                            energy_helper_into: string;
+                            energy_helper_out: string;
                             energy_into_battery: string;
                             energy_out_of_battery: string;
+                            power: string;
+                            power_helper: string;
+                            sensor_type: string;
+                            type_none: string;
+                            type_standard: string;
+                            type_inverted: string;
+                            type_inverted_description: string;
+                            type_two_sensors: string;
+                            power_discharge: string;
+                            power_charge: string;
                         };
                     };
                     gas: {
@@ -3157,6 +3890,9 @@ declare const _default: {
                             cost_stat_input: string;
                             cost_entity: string;
                             cost_entity_input: string;
+                            cost_entity_helper: string;
+                            cost_entity_helper_energy: string;
+                            cost_entity_helper_volume: string;
                             cost_number: string;
                             cost_number_input: string;
                             gas_usage: string;
@@ -3180,6 +3916,7 @@ declare const _default: {
                             cost_stat_input: string;
                             cost_entity: string;
                             cost_entity_input: string;
+                            cost_entity_helper: string;
                             cost_number: string;
                             cost_number_input: string;
                             water_usage: string;
@@ -3197,6 +3934,23 @@ declare const _default: {
                             header: string;
                             display_name: string;
                             device_consumption_energy: string;
+                            device_consumption_power: string;
+                            selected_stat_intro: string;
+                            included_in_device: string;
+                            included_in_device_helper: string;
+                            no_upstream_devices: string;
+                        };
+                    };
+                    device_consumption_water: {
+                        title: string;
+                        sub: string;
+                        learn_more: string;
+                        devices: string;
+                        add_device: string;
+                        dialog: {
+                            header: string;
+                            display_name: string;
+                            device_consumption_water: string;
                             selected_stat_intro: string;
                             included_in_device: string;
                             included_in_device_helper: string;
@@ -3226,11 +3980,15 @@ declare const _default: {
                             type: string;
                             editable: string;
                             category: string;
+                            area: string;
                         };
                         create_helper: string;
                         no_helpers: string;
                         search: string;
                         error_information: string;
+                        delete_confirm_title: string;
+                        delete_confirm_text: string;
+                        delete_failed: string;
                     };
                     dialog: {
                         create: string;
@@ -3432,19 +4190,7 @@ declare const _default: {
                                     title: string;
                                     description: string;
                                 };
-                                areas: {
-                                    title: string;
-                                    description: string;
-                                };
-                                default: {
-                                    title: string;
-                                    description: string;
-                                };
-                                overview: {
-                                    title: string;
-                                    description: string;
-                                };
-                                home: {
+                                "overview-legacy": {
                                     title: string;
                                     description: string;
                                 };
@@ -3470,6 +4216,7 @@ declare const _default: {
                             edit: string;
                             delete: string;
                             add_dashboard: string;
+                            set_as_default: string;
                             type: {
                                 user_created: string;
                                 built_in: string;
@@ -3478,7 +4225,7 @@ declare const _default: {
                         confirm_delete_title: string;
                         confirm_delete_text: string;
                         cant_edit_yaml: string;
-                        cant_edit_default: string;
+                        cant_edit_lovelace: string;
                         detail: {
                             edit_dashboard: string;
                             new_dashboard: string;
@@ -3494,6 +4241,8 @@ declare const _default: {
                             create: string;
                             set_default: string;
                             remove_default: string;
+                            set_default_confirm_title: string;
+                            set_default_confirm_text: string;
                         };
                     };
                     resources: {
@@ -3519,6 +4268,9 @@ declare const _default: {
                         confirm_delete_text: string;
                         refresh_header: string;
                         refresh_body: string;
+                        reload_resources: string;
+                        reload_refresh_header: string;
+                        reload_refresh_body: string;
                         cant_edit_yaml: string;
                         detail: {
                             new_resource: string;
@@ -3603,6 +4355,10 @@ declare const _default: {
                                 no_cloud_message: string;
                                 no_cloud_action: string;
                             };
+                            duplicate: {
+                                error_pipeline_not_found: string;
+                                name: string;
+                            };
                         };
                         cloud: {
                             title: string;
@@ -3631,6 +4387,36 @@ declare const _default: {
                         older_run: string;
                         newer_run: string;
                         start_debug_run: string;
+                        error: {
+                            code: string;
+                            fetch_events: string;
+                            fetch_runs: string;
+                            playing_audio: string;
+                            showing_run: string;
+                            title: string;
+                        };
+                        no_events: string;
+                        play_audio: string;
+                        raw: string;
+                        run: string;
+                        stages: {
+                            engine: string;
+                            input: string;
+                            language: string;
+                            model: string;
+                            natural_language_processing: string;
+                            output: string;
+                            pipeline: string;
+                            prefer_local: string;
+                            processed_locally: string;
+                            response_type: string;
+                            speech_to_text: string;
+                            text_to_speech: string;
+                            timestamp: string;
+                            voice: string;
+                            wake_word: string;
+                        };
+                        stop_audio: string;
                         pipeline: {
                             header: string;
                             run_text_pipeline: string;
@@ -3928,8 +4714,10 @@ declare const _default: {
                         switch_ui_yaml_error: string;
                         type_automation: string;
                         type_script: string;
+                        type_scene: string;
                         type_automation_plural: string;
                         type_script_plural: string;
+                        type_scene_plural: string;
                         new_automation_setup_failed_title: string;
                         new_automation_setup_failed_text: string;
                         new_automation_setup_keep_waiting: string;
@@ -3937,7 +4725,34 @@ declare const _default: {
                         item_pasted: string;
                         ctrl: string;
                         del: string;
+                        targets: string;
+                        select_target: string;
+                        home: string;
+                        unassigned: string;
                         blocks: string;
+                        show_more: string;
+                        unassigned_entities: string;
+                        unassigned_devices: string;
+                        empty_section_search: {
+                            block: string;
+                            entity: string;
+                            device: string;
+                            area: string;
+                            label: string;
+                        };
+                        load_target_items_failed: string;
+                        other_areas: string;
+                        services: string;
+                        helpers: string;
+                        entity_hidden: string;
+                        target_summary: {
+                            no_target: string;
+                            targets: string;
+                            invalid: string;
+                            all_entities: string;
+                            none_entities: string;
+                            template: string;
+                        };
                         triggers: {
                             name: string;
                             header: string;
@@ -3945,7 +4760,10 @@ declare const _default: {
                             learn_more: string;
                             triggered: string;
                             add: string;
-                            empty_search: string;
+                            empty_search: {
+                                global: string;
+                                item: string;
+                            };
                             id: string;
                             optional: string;
                             edit_id: string;
@@ -3966,11 +4784,16 @@ declare const _default: {
                             copied_to_clipboard: string;
                             cut_to_clipboard: string;
                             select: string;
+                            no_items_for_target: string;
+                            no_items_for_target_note: string;
                             groups: {
                                 device: {
                                     label: string;
                                 };
                                 entity: {
+                                    label: string;
+                                };
+                                helpers: {
                                     label: string;
                                 };
                                 time_location: {
@@ -4207,7 +5030,10 @@ declare const _default: {
                             description: string;
                             learn_more: string;
                             add: string;
-                            empty_search: string;
+                            empty_search: {
+                                global: string;
+                                item: string;
+                            };
                             add_building_block: string;
                             test: string;
                             testing_error: string;
@@ -4230,6 +5056,8 @@ declare const _default: {
                             copied_to_clipboard: string;
                             cut_to_clipboard: string;
                             select: string;
+                            no_items_for_target: string;
+                            no_items_for_target_note: string;
                             groups: {
                                 device: {
                                     label: string;
@@ -4238,6 +5066,9 @@ declare const _default: {
                                     label: string;
                                 };
                                 time_location: {
+                                    label: string;
+                                };
+                                helpers: {
                                     label: string;
                                 };
                                 other: {
@@ -4375,7 +5206,10 @@ declare const _default: {
                             description: string;
                             learn_more: string;
                             add: string;
-                            empty_search: string;
+                            empty_search: {
+                                global: string;
+                                item: string;
+                            };
                             add_building_block: string;
                             invalid_action: string;
                             run: string;
@@ -4400,6 +5234,7 @@ declare const _default: {
                             copied_to_clipboard: string;
                             cut_to_clipboard: string;
                             select: string;
+                            no_items_for_target: string;
                             groups: {
                                 device_id: {
                                     label: string;
@@ -4725,6 +5560,7 @@ declare const _default: {
                             name: string;
                             type: string;
                             file_name: string;
+                            usage_count: string;
                         };
                         types: {
                             automation: string;
@@ -4947,11 +5783,19 @@ declare const _default: {
                         load_error_not_editable: string;
                         load_error_unknown: string;
                         save: string;
+                        rename: string;
+                        missing_name: string;
                         unsaved_confirm_title: string;
                         unsaved_confirm_text: string;
                         name: string;
                         icon: string;
                         area: string;
+                        dialog: {
+                            add_icon: string;
+                            add_area: string;
+                            add_category: string;
+                            add_labels: string;
+                        };
                         devices: {
                             header: string;
                             introduction: string;
@@ -5340,6 +6184,11 @@ declare const _default: {
                             };
                         };
                     };
+                    esphome: {
+                        show_encryption_key: string;
+                        encryption_key_title: string;
+                        encryption_key_description: string;
+                    };
                 };
                 entities: {
                     caption: string;
@@ -5407,6 +6256,9 @@ declare const _default: {
                             button: string;
                         };
                     };
+                };
+                domains: {
+                    caption: string;
                 };
                 person: {
                     caption: string;
@@ -5479,6 +6331,9 @@ declare const _default: {
                     description: string;
                     integration: string;
                     discovered: string;
+                    discovered_devices: string;
+                    manage_discovered: string;
+                    manage_discovered_description: string;
                     disabled: string;
                     available_integrations: string;
                     new_flow: string;
@@ -5806,25 +6661,27 @@ declare const _default: {
                 };
                 bluetooth: {
                     title: string;
+                    tabs: {
+                        overview: string;
+                        advertisements: string;
+                        visualization: string;
+                        connections: string;
+                    };
                     settings_title: string;
                     option_flow: string;
-                    advertisement_monitor: string;
-                    advertisement_monitor_details: string;
-                    connection_slot_allocations_monitor: string;
-                    connection_slot_allocations_monitor_details: string;
-                    connection_monitor: string;
-                    visualization: string;
-                    used_connection_slot_allocations: string;
                     no_connections: string;
+                    active_connections: string;
                     no_advertisements_found: string;
                     no_connection_slot_allocations: string;
-                    no_active_connection_support: string;
+                    no_connection_slots: string;
                     no_scanner_state_available: string;
-                    current_scanning_mode: string;
-                    requested_scanning_mode: string;
+                    scanner_state_unknown: string;
                     scanning_mode_none: string;
                     scanning_mode_active: string;
                     scanning_mode_passive: string;
+                    scanning_mode_active_label: string;
+                    scanning_mode_passive_label: string;
+                    scanning_mode_none_label: string;
                     scanner_mode_mismatch: string;
                     scanner_mode_mismatch_remote: string;
                     scanner_mode_mismatch_usb: string;
@@ -5843,7 +6700,6 @@ declare const _default: {
                     service_uuids: string;
                     copy_to_clipboard: string;
                     area: string;
-                    core: string;
                     scanners: string;
                     known_devices: string;
                     unknown_devices: string;
@@ -6527,6 +7383,7 @@ declare const _default: {
                         status: string;
                         version: string;
                         data_rate: string;
+                        area: string;
                     };
                     node_status: {
                         "0": string;
@@ -6620,8 +7477,55 @@ declare const _default: {
                             };
                         };
                     };
+                    picker: {
+                        title: string;
+                        no_entries: string;
+                    };
                 };
                 matter: {
+                    panel: {
+                        thread_panel: string;
+                        add_device: string;
+                        status_title: string;
+                        status_online: string;
+                        status_offline: string;
+                        devices: string;
+                        developer_tools_title: string;
+                        developer_tools_description: string;
+                        developer_tools_info: string;
+                        mobile_app_commisioning: string;
+                        commission_device: string;
+                        add_shared_device: string;
+                        set_wifi_credentials: string;
+                        set_thread_credentials: string;
+                        prompts: {
+                            network_name: {
+                                title: string;
+                                input_label: string;
+                                confirm: string;
+                            };
+                            passcode: {
+                                title: string;
+                                input_label: string;
+                                confirm: string;
+                            };
+                            commission_device: {
+                                title: string;
+                                input_label: string;
+                                confirm: string;
+                            };
+                            add_shared_device: {
+                                title: string;
+                                input_label: string;
+                                confirm: string;
+                            };
+                            set_thread: {
+                                title: string;
+                                input_label: string;
+                                confirm: string;
+                            };
+                        };
+                    };
                     network_type: {
                         thread: string;
                         wifi: string;
@@ -6636,7 +7540,7 @@ declare const _default: {
                         unknown: string;
                     };
                     device_info: {
-                        device_info: string;
+                        matter_info: string;
                         node_id: string;
                         network_type: string;
                         node_type: string;
@@ -6706,6 +7610,7 @@ declare const _default: {
                 };
                 analytics: {
                     caption: string;
+                    header: string;
                     description: string;
                     preferences: {
                         base: {
@@ -6724,11 +7629,61 @@ declare const _default: {
                             title: string;
                             description: string;
                         };
+                        snapshots: {
+                            title: string;
+                            description: string;
+                            header: string;
+                            info: string;
+                            data_use_statement: string;
+                            alert: {
+                                title: string;
+                                content: string;
+                            };
+                        };
                     };
                     need_base_enabled: string;
                     learn_more: string;
                     intro: string;
                     download_device_info: string;
+                };
+                labs: {
+                    caption: string;
+                    custom_integration: string;
+                    description: string;
+                    description_enabled: string;
+                    intro_title: string;
+                    intro_subtitle: string;
+                    intro_description: string;
+                    intro_warning: string;
+                    empty: {
+                        title: string;
+                        description: string;
+                    };
+                    learn_more: string;
+                    provide_feedback: string;
+                    report_issue: string;
+                    enable: string;
+                    disable: string;
+                    enable_title: string;
+                    enable_confirmation: string;
+                    disable_title: string;
+                    disable_confirmation: string;
+                    enabled_success: string;
+                    disabled_success: string;
+                    enable_failed: string;
+                    disable_failed: string;
+                    progress: {
+                        creating_backup: string;
+                        backing_up_before_enabling: string;
+                        backing_up_before_disabling: string;
+                    };
+                    create_backup: {
+                        automatic: string;
+                        automatic_description_last: string;
+                        automatic_description_none: string;
+                        manual: string;
+                        manual_description: string;
+                    };
                 };
                 network: {
                     caption: string;
@@ -6796,8 +7751,8 @@ declare const _default: {
                         used: string;
                         free: string;
                         system: string;
-                        addons_data: string;
-                        addons_config: string;
+                        apps_data: string;
+                        apps_config: string;
                         media: string;
                         share: string;
                         backup: string;
@@ -6808,6 +7763,7 @@ declare const _default: {
                     lifetime_description: string;
                     lifetime_used_description: string;
                     disk_metrics: string;
+                    change_chart_type: string;
                     datadisk: {
                         title: string;
                         description: string;
@@ -6917,9 +7873,11 @@ declare const _default: {
                 strategy: {
                     "original-states": {
                         helpers: string;
+                        empty_state_title: string;
+                        empty_state_content: string;
+                        empty_state_action: string;
                     };
                     areas: {
-                        no_entities: string;
                         sensors: string;
                         sensors_description: string;
                         edit_the_area: string;
@@ -6938,14 +7896,26 @@ declare const _default: {
                     home: {
                         summary_list: {
                             media_players: string;
+                            other_devices: string;
+                            weather: string;
+                            energy: string;
                         };
                         welcome_user: string;
                         summaries: string;
                         areas: string;
                         other_areas: string;
+                        devices: string;
                         unamed_device: string;
                         others: string;
+                        scenes: string;
                         automations: string;
+                        for_you: string;
+                        home: string;
+                        favorites: string;
+                        welcome_title: string;
+                        welcome_content: string;
+                        welcome_add_device: string;
+                        welcome_edit_areas: string;
                     };
                     common_controls: {
                         not_loaded: string;
@@ -6967,6 +7937,19 @@ declare const _default: {
                         media_players: string;
                         other_media_players: string;
                     };
+                    "home-other-devices": {
+                        helpers: string;
+                        entities: string;
+                        assign_area: string;
+                        all_organized_title: string;
+                        all_organized_content: string;
+                    };
+                    "home-area": {
+                        no_devices_title: string;
+                        no_devices_content: string;
+                        no_devices_add_device: string;
+                        no_devices_assign_device: string;
+                    };
                 };
                 cards: {
                     confirm_delete: string;
@@ -6978,11 +7961,6 @@ declare const _default: {
                         no_navigation_path: string;
                         no_url: string;
                         no_action: string;
-                    };
-                    empty_state: {
-                        title: string;
-                        no_devices: string;
-                        go_to_integrations_page: string;
                     };
                     entities: {
                         never_triggered: string;
@@ -7032,6 +8010,7 @@ declare const _default: {
                         energy_usage_graph: {
                             total_consumed: string;
                             total_returned: string;
+                            total_usage: string;
                             combined_from_grid: string;
                             consumed_solar: string;
                             consumed_battery: string;
@@ -7101,12 +8080,31 @@ declare const _default: {
                         energy_devices_detail_graph: {
                             untracked_consumption: string;
                             untracked: string;
+                            other: string;
                         };
                         carbon_consumed_gauge: {
                             card_indicates_energy_used: string;
                             low_carbon_energy_consumed: string;
                             low_carbon_energy_not_calculated: string;
                         };
+                        power_graph: {
+                            grid: string;
+                            solar: string;
+                            battery: string;
+                            usage: string;
+                        };
+                        energy_compare: {
+                            info: string;
+                            compare_previous_year: string;
+                            compare_previous_period: string;
+                        };
+                    };
+                    distribution: {
+                        no_entities: string;
+                        domain_mismatch: string;
+                        device_class_mismatch: string;
+                        no_data: string;
+                        add_entities: string;
                     };
                     heading: {
                         default_heading: string;
@@ -7145,6 +8143,7 @@ declare const _default: {
                     search_entities: string;
                     assist: string;
                     assist_tooltip: string;
+                    search_home_assistant: string;
                     reload_resources: string;
                     exit_edit_mode: string;
                     close: string;
@@ -7157,6 +8156,8 @@ declare const _default: {
                     add_person_success: string;
                     add_person_action: string;
                     add_person: string;
+                    edit_overview: string;
+                    edit_area: string;
                 };
                 reload_resources: {
                     refresh_header: string;
@@ -7165,6 +8166,7 @@ declare const _default: {
                 editor: {
                     header: string;
                     yaml_unsupported: string;
+                    undo_redo_failed_to_apply_changes: string;
                     menu: {
                         open: string;
                         raw_editor: string;
@@ -7184,14 +8186,13 @@ declare const _default: {
                         saved: string;
                         reload: string;
                         lovelace_changed: string;
-                        confirm_delete_config_title: string;
-                        confirm_delete_config_text: string;
+                        confirm_reset_config_title: string;
+                        confirm_reset_config_text: string;
                         confirm_unsaved_changes: string;
                         confirm_unsaved_comments: string;
                         error_parse_yaml: string;
                         error_invalid_config: string;
                         error_save_yaml: string;
-                        error_remove: string;
                         resources_moved: string;
                     };
                     edit_lovelace: {
@@ -7268,6 +8269,7 @@ declare const _default: {
                             sidebar: string;
                             panel: string;
                         };
+                        show_icon_and_title: string;
                         subview: string;
                         max_columns: string;
                         section_specifics: string;
@@ -7275,6 +8277,7 @@ declare const _default: {
                         dense_section_placement_helper: string;
                         top_margin: string;
                         top_margin_helper: string;
+                        show_icon_and_title_helper: string;
                         subview_helper: string;
                         path_helper: string;
                         edit_ui: string;
@@ -7417,6 +8420,8 @@ declare const _default: {
                         strategy_type: string;
                     };
                     select_dashboard: {
+                        error_title: string;
+                        error_text: string;
                         header: string;
                         cannot_move_to_strategy: string;
                         get_config_failed: string;
@@ -7519,6 +8524,12 @@ declare const _default: {
                                 state_equal: string;
                                 state_not_equal: string;
                             };
+                            time: {
+                                label: string;
+                                after: string;
+                                before: string;
+                                weekdays: string;
+                            };
                             location: {
                                 label: string;
                                 locations: string;
@@ -7572,6 +8583,7 @@ declare const _default: {
                                 picture: string;
                                 camera: string;
                             };
+                            image_tap_action: string;
                         };
                         calendar: {
                             name: string;
@@ -7632,6 +8644,17 @@ declare const _default: {
                             name: string;
                             description: string;
                         };
+                        empty_state: {
+                            name: string;
+                            description: string;
+                            style: string;
+                            style_options: {
+                                card: string;
+                                "content-only": string;
+                            };
+                            content: string;
+                            buttons: string;
+                        };
                         button: {
                             name: string;
                             description: string;
@@ -7670,6 +8693,7 @@ declare const _default: {
                         logbook: {
                             name: string;
                             description: string;
+                            state_filter: string;
                         };
                         "history-graph": {
                             name: string;
@@ -7740,6 +8764,10 @@ declare const _default: {
                             title: string;
                             description: string;
                         };
+                        distribution: {
+                            name: string;
+                            description: string;
+                        };
                         humidifier: {
                             name: string;
                             description: string;
@@ -7748,6 +8776,8 @@ declare const _default: {
                         iframe: {
                             name: string;
                             description: string;
+                            hide_background: string;
+                            hide_background_helper: string;
                         };
                         light: {
                             name: string;
@@ -7805,6 +8835,7 @@ declare const _default: {
                             suggested_cards: string;
                             other_cards: string;
                             custom_cards: string;
+                            round_temperature: string;
                             features: string;
                             actions: string;
                             content: string;
@@ -7818,7 +8849,7 @@ declare const _default: {
                                 title: string;
                                 subtitle: string;
                             };
-                            entities: string;
+                            badges: string;
                             entity_config: {
                                 color: string;
                                 color_helper: string;
@@ -7832,6 +8863,12 @@ declare const _default: {
                                     icon: string;
                                     state: string;
                                 };
+                            };
+                            button_config: {
+                                text: string;
+                                color: string;
+                                visibility: string;
+                                visibility_explanation: string;
                             };
                             default_heading: string;
                         };
@@ -7960,6 +8997,7 @@ declare const _default: {
                             dark_mode_image: string;
                             state_filter: string;
                             dark_mode_filter: string;
+                            position_hint: string;
                             element_types: {
                                 "state-badge": string;
                                 "state-icon": string;
@@ -8108,6 +9146,11 @@ declare const _default: {
                         edit: string;
                         remove: string;
                         "form-label": string;
+                    };
+                    badges: {
+                        name: string;
+                        edit: string;
+                        remove: string;
                     };
                     features: {
                         name: string;
@@ -8331,6 +9374,10 @@ declare const _default: {
                                 label: string;
                                 customize_controls: string;
                                 controls: string;
+                                sections: {
+                                    domain: string;
+                                    entity: string;
+                                };
                                 controls_options: {
                                     light: string;
                                     fan: string;
@@ -8350,8 +9397,24 @@ declare const _default: {
                             };
                             "bar-gauge": {
                                 label: string;
+                                min: string;
+                                max: string;
                             };
                             "trend-graph": {
+                                label: string;
+                                detail: string;
+                            };
+                        };
+                    };
+                    "heading-badges": {
+                        add: string;
+                        no_entity: string;
+                        entity_not_found: string;
+                        types: {
+                            entity: {
+                                label: string;
+                            };
+                            button: {
                                 label: string;
                             };
                         };
@@ -8576,6 +9639,11 @@ declare const _default: {
                     error_no_theme: string;
                     link_promo: string;
                     dropdown_label: string;
+                    migrate_header: string;
+                    migrate_description: string;
+                    migrate_button: string;
+                    migrate_success: string;
+                    migrate_failed: string;
                     dark_mode: {
                         auto: string;
                         light: string;
@@ -8590,7 +9658,9 @@ declare const _default: {
                     header: string;
                     description: string;
                     dropdown_label: string;
-                    default_dashboard_label: string;
+                    lovelace: string;
+                    home: string;
+                    system: string;
                 };
                 change_password: {
                     header: string;
@@ -8855,281 +9925,6 @@ declare const _default: {
                     };
                 };
             };
-            "developer-tools": {
-                tabs: {
-                    assist: {
-                        title: string;
-                        description: string;
-                        parse_sentences: string;
-                        sentences: string;
-                        download_results: string;
-                        no_match: string;
-                        language: string;
-                    };
-                    debug: {
-                        title: string;
-                        debug_connection: {
-                            title: string;
-                            description: string;
-                        };
-                    };
-                    events: {
-                        title: string;
-                        description: string;
-                        documentation: string;
-                        type: string;
-                        data: string;
-                        fire_event: string;
-                        event_fired: string;
-                        active_listeners: string;
-                        count_listeners: string;
-                        listen_to_events: string;
-                        listening_to: string;
-                        subscribe_to: string;
-                        start_listening: string;
-                        stop_listening: string;
-                        clear_events: string;
-                        alert_event_type: string;
-                        notification_event_fired: string;
-                        subscribe_failed: string;
-                    };
-                    actions: {
-                        title: string;
-                        description: string;
-                        call_service: string;
-                        response: string;
-                        column_parameter: string;
-                        column_description: string;
-                        column_example: string;
-                        fill_example_data: string;
-                        yaml_mode: string;
-                        ui_mode: string;
-                        yaml_parameters: string;
-                        all_parameters: string;
-                        accepts_target: string;
-                        no_template_ui_support: string;
-                        copy_clipboard_template: string;
-                        open_media: string;
-                        errors: {
-                            ui: {
-                                no_action: string;
-                                invalid_action: string;
-                                no_target: string;
-                                missing_required_field: string;
-                            };
-                            yaml: {
-                                invalid_yaml: string;
-                                no_action: string;
-                                invalid_action: string;
-                                no_target: string;
-                                missing_required_field: string;
-                            };
-                        };
-                    };
-                    states: {
-                        title: string;
-                        description1: string;
-                        description2: string;
-                        entity: string;
-                        state: string;
-                        attributes: string;
-                        state_attributes: string;
-                        set_state: string;
-                        current_entities: string;
-                        filter_entities: string;
-                        filter_states: string;
-                        filter_attributes: string;
-                        no_entities: string;
-                        more_info: string;
-                        alert_entity_field: string;
-                        last_updated: string;
-                        last_changed: string;
-                        copy_id: string;
-                    };
-                    templates: {
-                        title: string;
-                        description: string;
-                        editor: string;
-                        result: string;
-                        reset: string;
-                        confirm_reset: string;
-                        confirm_clear: string;
-                        result_type: string;
-                        jinja_documentation: string;
-                        template_extensions: string;
-                        unknown_error_template: string;
-                        time: string;
-                        all_listeners: string;
-                        no_listeners: string;
-                        listeners: string;
-                        entity: string;
-                        domain: string;
-                    };
-                    statistics: {
-                        title: string;
-                        entity: string;
-                        issue: string;
-                        no_issue: string;
-                        issues: {
-                            units_changed: string;
-                            mean_type_changed: string;
-                            state_class_removed: string;
-                            entity_not_recorded: string;
-                            entity_no_longer_recorded: string;
-                            no_state: string;
-                        };
-                        delete_selected: string;
-                        multi_delete: {
-                            title: string;
-                            info_text: string;
-                        };
-                        mean_type: {
-                            "0": string;
-                            "1": string;
-                            "2": string;
-                        };
-                        fix_issue: {
-                            fix: string;
-                            clearing_failed: string;
-                            clearing_timeout_title: string;
-                            clearing_timeout_text: string;
-                            fix_all: string;
-                            info: string;
-                            no_support: {
-                                title: string;
-                                info_text_1: string;
-                            };
-                            no_state: {
-                                title: string;
-                                info_text_1: string;
-                                info_text_2: string;
-                            };
-                            entity_not_recorded: {
-                                title: string;
-                                info_text_1: string;
-                                info_text_2: string;
-                                info_text_3_link: string;
-                            };
-                            entity_no_longer_recorded: {
-                                title: string;
-                                info_text_1: string;
-                                info_text_2: string;
-                                info_text_3_link: string;
-                                info_text_4: string;
-                            };
-                            state_class_removed: {
-                                title: string;
-                                info_text_1: string;
-                                info_text_2: string;
-                                info_text_3: string;
-                                info_text_4: string;
-                                info_text_4_link: string;
-                                info_text_5: string;
-                                info_text_6: string;
-                            };
-                            units_changed: {
-                                title: string;
-                                update: string;
-                                clear: string;
-                                how_to_fix: string;
-                                info_text_1: string;
-                                info_text_2: string;
-                                info_text_3: string;
-                            };
-                            mean_type_changed: {
-                                title: string;
-                                info_text_1: string;
-                                info_text_2: string;
-                                info_text_3: string;
-                            };
-                            adjust_sum: {
-                                title: string;
-                                no_statistics_found: string;
-                                info_text_1: string;
-                                pick_a_time: string;
-                                statistic: string;
-                                start: string;
-                                end: string;
-                                new_value: string;
-                                adjust: string;
-                                outliers: string;
-                                sum_adjusted: string;
-                                error_sum_adjusted: string;
-                            };
-                        };
-                        adjust_sum: string;
-                        data_table: {
-                            select_all_issues: string;
-                            name: string;
-                            statistic_id: string;
-                            statistics_unit: string;
-                            source: string;
-                            issue: string;
-                            no_statistics: string;
-                        };
-                    };
-                    yaml: {
-                        title: string;
-                        section: {
-                            validation: {
-                                heading: string;
-                                introduction: string;
-                                check_config: string;
-                                valid: string;
-                                invalid: string;
-                                warnings: string;
-                                errors: string;
-                            };
-                            reloading: {
-                                all: string;
-                                heading: string;
-                                introduction: string;
-                                reload: string;
-                                core: string;
-                                group: string;
-                                automation: string;
-                                script: string;
-                                scene: string;
-                                person: string;
-                                zone: string;
-                                input_boolean: string;
-                                input_button: string;
-                                input_text: string;
-                                input_number: string;
-                                input_datetime: string;
-                                input_select: string;
-                                template: string;
-                                universal: string;
-                                rest: string;
-                                command_line: string;
-                                filter: string;
-                                statistics: string;
-                                generic: string;
-                                generic_thermostat: string;
-                                homekit: string;
-                                min_max: string;
-                                history_stats: string;
-                                trend: string;
-                                ping: string;
-                                filesize: string;
-                                telegram: string;
-                                smtp: string;
-                                mqtt: string;
-                                rpi_gpio: string;
-                                timer: string;
-                                themes: string;
-                            };
-                            server_management: {
-                                heading: string;
-                                restart: string;
-                                stop: string;
-                                confirm_stop: string;
-                                restart_error: string;
-                            };
-                        };
-                    };
-                };
-            };
             "page-onboarding": {
                 intro: string;
                 back: string;
@@ -9233,7 +10028,7 @@ declare const _default: {
                     uploading: string;
                     details: {
                         home_assistant_missing: string;
-                        addons_unsupported: string;
+                        apps_unsupported: string;
                         summary: {
                             created: string;
                             content: string;
@@ -9255,8 +10050,8 @@ declare const _default: {
                         settings_and_history: string;
                         media: string;
                         share_folder: string;
-                        local_addons: string;
-                        addons: string;
+                        local_apps: string;
+                        apps: string;
                         ssl: string;
                     };
                     restore_no_home_assistant: string;
@@ -9275,7 +10070,7 @@ declare const _default: {
                     name: string;
                     select_type: string;
                     folders: string;
-                    addons: string;
+                    apps: string;
                     password_protection: string;
                     password: string;
                     confirm_password: string;
@@ -9351,13 +10146,15 @@ declare const _default: {
                 };
             };
             energy: {
+                title: {
+                    overview: string;
+                    electricity: string;
+                    gas: string;
+                    water: string;
+                    now: string;
+                };
                 download_data: string;
                 configure: string;
-                compare: {
-                    info: string;
-                    compare_previous_year: string;
-                    compare_previous_period: string;
-                };
                 setup: {
                     next: string;
                     back: string;
@@ -9381,6 +10178,10 @@ declare const _default: {
                     energy_devices_graph_title: string;
                     energy_devices_detail_graph_title: string;
                     energy_sankey_title: string;
+                    water_sankey_title: string;
+                    energy_top_consumers_title: string;
+                    power_sankey_title: string;
+                    power_sources_graph_title: string;
                 };
             };
             history: {
@@ -9400,6 +10201,7 @@ declare const _default: {
             key_e_tip: string;
             key_m_tip: string;
             key_a_tip: string;
+            key_shortcut_quick_search: string;
         };
     };
     "landing-page": {
@@ -9447,594 +10249,6 @@ declare const _default: {
             };
         };
     };
-    supervisor: {
-        addon: {
-            failed_to_reset: string;
-            failed_to_save: string;
-            state: {
-                installed: string;
-                not_installed: string;
-                not_available: string;
-            };
-            panel: {
-                configuration: string;
-                documentation: string;
-                info: string;
-                log: string;
-            };
-            configuration: {
-                no_configuration: string;
-                audio: {
-                    header: string;
-                    default: string;
-                    input: string;
-                    output: string;
-                };
-                options: {
-                    header: string;
-                    edit_in_ui: string;
-                    edit_in_yaml: string;
-                    invalid_yaml: string;
-                    show_unused_optional: string;
-                };
-                network: {
-                    container: string;
-                    disabled: string;
-                    header: string;
-                    show_disabled: string;
-                    introduction: string;
-                };
-            };
-            dashboard: {
-                changelog: string;
-                current_version: string;
-                cpu_usage: string;
-                ram_usage: string;
-                hostname: string;
-                new_update_available: string;
-                not_available_arch: string;
-                not_available_version: string;
-                visit_addon_page: string;
-                restart: string;
-                start: string;
-                stop: string;
-                install: string;
-                uninstall: string;
-                rebuild: string;
-                open_web_ui: string;
-                protection_mode: {
-                    title: string;
-                    content: string;
-                    enable: string;
-                };
-                capability: {
-                    stage: {
-                        title: string;
-                        description: string;
-                    };
-                    rating: {
-                        title: string;
-                        description: string;
-                    };
-                    host_network: {
-                        title: string;
-                        description: string;
-                    };
-                    homeassistant_api: {
-                        title: string;
-                        description: string;
-                    };
-                    full_access: {
-                        title: string;
-                        description: string;
-                    };
-                    hassio_api: {
-                        title: string;
-                        description: string;
-                    };
-                    docker_api: {
-                        title: string;
-                        description: string;
-                    };
-                    host_pid: {
-                        title: string;
-                        description: string;
-                    };
-                    apparmor: {
-                        title: string;
-                        description: string;
-                    };
-                    auth_api: {
-                        title: string;
-                        description: string;
-                    };
-                    ingress: {
-                        title: string;
-                        description: string;
-                    };
-                    signed: {
-                        title: string;
-                        description: string;
-                    };
-                    label: {
-                        core: string;
-                        rating: string;
-                        hardware: string;
-                        host: string;
-                        hassio: string;
-                        docker: string;
-                        host_pid: string;
-                        apparmor: string;
-                        auth: string;
-                        ingress: string;
-                        signed: string;
-                    };
-                    stages: {
-                        experimental: string;
-                        deprecated: string;
-                    };
-                    role: {
-                        manager: string;
-                        default: string;
-                        homeassistant: string;
-                        backup: string;
-                        admin: string;
-                    };
-                };
-                option: {
-                    boot: {
-                        title: string;
-                        description: string;
-                    };
-                    watchdog: {
-                        title: string;
-                        description: string;
-                    };
-                    auto_update: {
-                        title: string;
-                        description: string;
-                    };
-                    ingress_panel: {
-                        title: string;
-                        description: string;
-                    };
-                    protected: {
-                        title: string;
-                        description: string;
-                    };
-                };
-                action_error: {
-                    uninstall: string;
-                    install: string;
-                    stop: string;
-                    rebuild: string;
-                    restart: string;
-                    start: string;
-                    go_to_config: string;
-                    start_invalid_config: string;
-                    validate_config: string;
-                    get_changelog: string;
-                };
-            };
-            documentation: {
-                get_documentation: string;
-            };
-            logs: {
-                get_logs: string;
-            };
-            system_managed: {
-                badge: string;
-                title: string;
-                description: string;
-                managed_by: string;
-                take_control: string;
-            };
-        };
-        common: {
-            cancel: string;
-            yes: string;
-            no: string;
-            add: string;
-            failed_to_restart_name: string;
-            failed_to_update_name: string;
-            learn_more: string;
-            new_version_available: string;
-            newest_version: string;
-            refresh: string;
-            release_notes: string;
-            reload: string;
-            reset_defaults: string;
-            reset_options: string;
-            restart_name: string;
-            restart: string;
-            running_version: string;
-            save: string;
-            close: string;
-            back: string;
-            menu: string;
-            show: string;
-            show_more: string;
-            update_available: string;
-            update: string;
-            version: string;
-            error: {
-                unknown: string;
-                update_failed: string;
-            };
-        };
-        update_available: {
-            update_name: string;
-            open_release_notes: string;
-            description: string;
-            updating: string;
-            no_update: string;
-            create_backup: {
-                addon: string;
-                addon_description: string;
-                generic: string;
-            };
-        };
-        confirm: {
-            restart: {
-                title: string;
-                text: string;
-            };
-            reset_options: {
-                title: string;
-                text: string;
-            };
-        };
-        dashboard: {
-            addon_new_version: string;
-            addon_running: string;
-            addon_stopped: string;
-            addons: string;
-            no_addons: string;
-            search_addons: string;
-        };
-        store: {
-            missing_addons: string;
-            no_results_found: string;
-            registries: string;
-            repositories: string;
-            check_updates: string;
-        };
-        panel: {
-            addons: string;
-            dashboard: string;
-            backups: string;
-            store: string;
-            system: string;
-        };
-        my: {
-            not_supported: string;
-            faq_link: string;
-            add_addon_repository_title: string;
-            add_addon_repository_description: string;
-            error: string;
-            error_addon_not_found: string;
-            error_repository_not_found: string;
-            error_addon_not_installed: string;
-            error_addon_no_ingress: string;
-        };
-        ingress: {
-            error_addon_info: string;
-            error_addon_not_installed: string;
-            error_addon_not_supported: string;
-            error_addon_not_running: string;
-            start_addon: string;
-            addon_starting: string;
-            error_starting_addon: string;
-            error_creating_session: string;
-            error_addon_not_ready: string;
-            retry: string;
-        };
-        system: {
-            log: {
-                log_provider: string;
-                get_logs: string;
-            };
-            supervisor: {
-                cpu_usage: string;
-                ram_usage: string;
-                failed_to_set_option: string;
-                failed_to_reload: string;
-                failed_to_update: string;
-                unsupported_title: string;
-                unsupported_description: string;
-                unhealthy_title: string;
-                unhealthy_description: string;
-                update_supervisor: string;
-                channel: string;
-                leave_beta_action: string;
-                leave_beta_description: string;
-                join_beta_action: string;
-                join_beta_description: string;
-                share_diagnostics: string;
-                share_diagnostics_description: string;
-                reload_supervisor: string;
-                warning: string;
-                search: string;
-                share_diagonstics_title: string;
-                share_diagonstics_description: string;
-                unsupported_reason: {
-                    apparmor: string;
-                    content_trust: string;
-                    dbus: string;
-                    docker_configuration: string;
-                    docker_version: string;
-                    job_conditions: string;
-                    lxc: string;
-                    network_manager: string;
-                    os: string;
-                    os_agent: string;
-                    privileged: string;
-                    software: string;
-                    source_mods: string;
-                    systemd: string;
-                    systemd_resolved: string;
-                };
-                unhealthy_reason: {
-                    docker: string;
-                    duplicate_os_installation: string;
-                    oserror_bad_message: string;
-                    privileged: string;
-                    setup: string;
-                    supervisor: string;
-                    untrusted: string;
-                };
-            };
-            host: {
-                failed_to_get_hardware_list: string;
-                failed_to_reboot: string;
-                failed_to_shutdown: string;
-                failed_to_set_hostname: string;
-                failed_to_import_from_usb: string;
-                failed_to_move: string;
-                used_space: string;
-                hostname: string;
-                change_hostname: string;
-                new_hostname: string;
-                ip_address: string;
-                change: string;
-                operating_system: string;
-                docker_version: string;
-                deployment: string;
-                lifetime_used: string;
-                reboot_host: string;
-                confirm_reboot: string;
-                confirm_shutdown: string;
-                shutdown_host: string;
-                hardware: string;
-                import_from_usb: string;
-                move_datadisk: string;
-            };
-            core: {
-                cpu_usage: string;
-                ram_usage: string;
-            };
-        };
-        backup: {
-            search: string;
-            loading_backups: string;
-            no_backups: string;
-            create_blocked_not_running: string;
-            restore_blocked_not_running: string;
-            delete_selected: string;
-            delete_backup_title: string;
-            delete_backup_text: string;
-            delete_backup_confirm: string;
-            selected: string;
-            failed_to_delete: string;
-            could_not_create: string;
-            could_not_restore: string;
-            upload_backup: string;
-            download_backup: string;
-            create_backup: string;
-            create: string;
-            location: string;
-            data_disk: string;
-            created: string;
-            name: string;
-            type: string;
-            select_type: string;
-            full_backup: string;
-            partial_backup: string;
-            addons: string;
-            folders: string;
-            size: string;
-            password: string;
-            confirm_password: string;
-            password_protection: string;
-            enter_password: string;
-            passwords_not_matching: string;
-            backup_already_running: string;
-            confirm_restore_partial_backup_title: string;
-            confirm_restore_partial_backup_text: string;
-            confirm_restore_full_backup_title: string;
-            confirm_restore_full_backup_text: string;
-            confirm_delete_title: string;
-            confirm_delete_text: string;
-            restore: string;
-            close: string;
-            cancel: string;
-            delete: string;
-            download: string;
-            more_actions: string;
-            remote_download_title: string;
-            remote_download_text: string;
-            restore_start_failed: string;
-            no_backup_found: string;
-            restore_no_home_assistant: string;
-            unnamed_backup: string;
-        };
-        dialog: {
-            network: {
-                title: string;
-                connected_to: string;
-                scan_ap: string;
-                signal_strength: string;
-                open: string;
-                wep: string;
-                wpa: string;
-                wifi: string;
-                wifi_password: string;
-                warning: string;
-                static: string;
-                auto: string;
-                disabled: string;
-                ip_netmask: string;
-                netmask: string;
-                gateway: string;
-                dns_servers: string;
-                unsaved: string;
-                failed_to_change: string;
-            };
-            registries: {
-                title_add: string;
-                title_manage: string;
-                registry: string;
-                username: string;
-                password: string;
-                no_registries: string;
-                add_registry: string;
-                add_new_registry: string;
-                remove: string;
-                failed_to_add: string;
-                failed_to_remove: string;
-            };
-            repositories: {
-                title: string;
-                add: string;
-                remove: string;
-                used: string;
-                no_repositories: string;
-            };
-            restart_addon: {
-                title: string;
-                text: string;
-                restart: string;
-            };
-            uninstall_addon: {
-                title: string;
-                remove_data: string;
-                uninstall: string;
-            };
-            hardware: {
-                title: string;
-                search: string;
-                subsystem: string;
-                id: string;
-                attributes: string;
-                device_path: string;
-            };
-            backup_location: {
-                title: string;
-                options: {
-                    default_backup_mount: {
-                        name: string;
-                        description: string;
-                    };
-                };
-            };
-            datadisk_move: {
-                title: string;
-                description: string;
-                select_device: string;
-                no_devices: string;
-                moving_desc: string;
-                moving: string;
-                loading_devices: string;
-                cancel: string;
-                move: string;
-            };
-        };
-        ui: {
-            components: {
-                "subpage-data-table": {
-                    filters: string;
-                    show_results: string;
-                    clear_filter: string;
-                    close_filter: string;
-                    exit_selection_mode: string;
-                    enter_selection_mode: string;
-                    sort_by: string;
-                    group_by: string;
-                    dont_group_by: string;
-                    collapse_all_groups: string;
-                    expand_all_groups: string;
-                    select: string;
-                    selected: string;
-                    select_all: string;
-                    select_none: string;
-                    settings: string;
-                };
-                "data-table": {
-                    settings: {
-                        header: string;
-                        hide: string;
-                        show: string;
-                        done: string;
-                        restore: string;
-                    };
-                };
-            };
-            panel: {
-                config: {
-                    logs: {
-                        caption: string;
-                        description: string;
-                        details: string;
-                        search: string;
-                        failed_get_logs: string;
-                        no_issues_search: string;
-                        load_logs: string;
-                        nr_of_lines: string;
-                        loading_log: string;
-                        no_errors: string;
-                        no_issues: string;
-                        clear: string;
-                        refresh: string;
-                        copy: string;
-                        log_provider: string;
-                        multiple_messages: string;
-                        level: {
-                            critical: string;
-                            error: string;
-                            warning: string;
-                            info: string;
-                            debug: string;
-                        };
-                        custom_integration: string;
-                        error_from_custom_integration: string;
-                        show_full_logs: string;
-                        select_number_of_lines: string;
-                        lines: string;
-                        download_logs: string;
-                        scroll_down_button: string;
-                        provider_not_found: string;
-                        provider_not_available: string;
-                        haos_boots_title: string;
-                        show_haos_boots: string;
-                        hide_haos_boots: string;
-                        full_width: string;
-                        wrap_lines: string;
-                        current: string;
-                        previous: string;
-                        startups_ago: string;
-                        detail: {
-                            logger: string;
-                            source: string;
-                            integration: string;
-                            documentation: string;
-                            issues: string;
-                            first_occurred: string;
-                            last_logged: string;
-                        };
-                    };
-                };
-            };
-        };
-    };
 };
-export default _default;
+export default translations;
+export type TranslationDict = typeof translations;

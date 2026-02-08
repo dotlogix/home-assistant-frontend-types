@@ -1,11 +1,11 @@
 import type { HassEntity } from "home-assistant-js-websocket";
 import { LitElement, nothing } from "lit";
-import type { HomeAssistant } from "../../../types";
 import "../../../components/ha-button";
+import type { HomeAssistant } from "../../../types";
 declare class MoreInfoCounter extends LitElement {
     hass: HomeAssistant;
     stateObj?: HassEntity;
-    protected render(): typeof nothing | import("lit-html").TemplateResult<1>;
+    protected render(): import("lit-html").TemplateResult<1> | typeof nothing;
     private _handleActionClick;
     static styles: import("lit").CSSResult;
 }

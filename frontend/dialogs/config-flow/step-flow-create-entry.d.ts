@@ -3,7 +3,7 @@ import { LitElement } from "lit";
 import "../../components/ha-area-picker";
 import "../../components/ha-button";
 import type { DataEntryFlowStepCreateEntry } from "../../data/data_entry_flow";
-import type { DeviceRegistryEntry } from "../../data/device_registry";
+import type { DeviceRegistryEntry } from "../../data/device/device_registry";
 import type { HomeAssistant } from "../../types";
 import type { FlowConfig } from "./show-dialog-data-entry-flow";
 declare class StepFlowCreateEntry extends LitElement {

@@ -13,7 +13,7 @@ export declare class DialogPickConfigEntry extends LitElement {
     showDialog(params: PickConfigEntryDialogParams): void;
     private _dialogClosed;
     closeDialog(): boolean;
-    protected render(): typeof nothing | import("lit-html").TemplateResult<1>;
+    protected render(): import("lit-html").TemplateResult<1> | typeof nothing;
     private _itemPicked;
     static styles: import("lit").CSSResult;
 }

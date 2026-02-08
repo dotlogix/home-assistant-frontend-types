@@ -3,6 +3,8 @@ import { LitElement } from "lit";
 import "../../../components/ha-fab";
 import "../../../components/ha-icon";
 import "../../../components/ha-icon-button";
+import "../../../components/ha-md-menu";
+import "../../../components/ha-md-menu-item";
 import "../../../components/ha-svg-icon";
 import "../../../layouts/hass-tabs-subpage-data-table";
 import type { HomeAssistant, Route } from "../../../types";

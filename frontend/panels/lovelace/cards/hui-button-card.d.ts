@@ -4,7 +4,7 @@ import { LitElement, nothing } from "lit";
 import type { LocalizeFunc } from "../../../common/translations/localize";
 import "../../../components/ha-card";
 import "../../../components/ha-ripple";
-import type { EntityRegistryDisplayEntry } from "../../../data/entity_registry";
+import type { EntityRegistryDisplayEntry } from "../../../data/entity/entity_registry";
 import type { FrontendLocaleData } from "../../../data/translation";
 import type { Themes } from "../../../data/ws-themes";
 import type { HomeAssistant } from "../../../types";
@@ -25,7 +25,7 @@ export declare class HuiButtonCard extends LitElement implements LovelaceCard {
     getCardSize(): number;
     getGridOptions(): LovelaceGridOptions;
     setConfig(config: ButtonCardConfig): void;
-    protected render(): typeof nothing | import("lit-html").TemplateResult<1>;
+    protected render(): import("lit-html").TemplateResult<1> | typeof nothing;
     protected updated(changedProps: PropertyValues): void;
     static get styles(): CSSResultGroup;
     private _computeColor;

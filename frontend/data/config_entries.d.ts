@@ -39,6 +39,10 @@ export interface ConfigEntryUpdate {
     type: null | "added" | "removed" | "updated";
     entry: ConfigEntry;
 }
+export declare const subscribeAndProcessConfigEntries: (hass: HomeAssistant, callbackFunction: (entries: ConfigEntry[]) => void, filters?: {
+    type?: IntegrationType[];
+    domain?: string;
+}) => Promise<UnsubscribeFunc>;
 export declare const subscribeConfigEntries: (hass: HomeAssistant, callbackFunction: (message: ConfigEntryUpdate[]) => void, filters?: {
     type?: IntegrationType[];
     domain?: string;
@@ -68,3 +72,7 @@ export declare const enableConfigEntry: (hass: HomeAssistant, configEntryId: str
     require_restart: boolean;
 }>;
 export declare const sortConfigEntries: (configEntries: ConfigEntry[], primaryConfigEntry: string | null) => ConfigEntry[];
+export declare class ConfigEntryStream {
+    private _entries;
+    processMessage(message: ConfigEntryUpdate[]): ConfigEntry[];
+}

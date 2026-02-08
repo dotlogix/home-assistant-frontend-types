@@ -37,7 +37,7 @@ export declare class HuiStackCardEditor extends LitElement implements LovelaceCa
     setConfig(config: Readonly<StackCardConfig>): void;
     focusYamlEditor(): void;
     protected formData(): object;
-    protected render(): typeof nothing | import("lit-html").TemplateResult<1>;
+    protected render(): import("lit-html").TemplateResult<1> | typeof nothing;
     private _getKey;
     protected _handleAddCard(): Promise<void>;
     protected _handleSelectedCard(ev: any): void;

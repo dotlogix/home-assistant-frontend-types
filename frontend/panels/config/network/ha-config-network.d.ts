@@ -11,7 +11,7 @@ declare class ConfigNetwork extends LitElement {
     hass: HomeAssistant;
     private _networkConfig?;
     private _error?;
-    protected render(): typeof nothing | import("lit-html").TemplateResult<1>;
+    protected render(): import("lit-html").TemplateResult<1> | typeof nothing;
     protected firstUpdated(changedProps: PropertyValues): void;
     private _load;
     private _save;

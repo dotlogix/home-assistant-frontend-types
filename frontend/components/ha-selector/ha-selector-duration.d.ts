@@ -6,11 +6,12 @@ import "../ha-duration-input";
 export declare class HaTimeDuration extends LitElement {
     hass: HomeAssistant;
     selector: DurationSelector;
-    value?: HaDurationData;
+    value?: HaDurationData | string | number;
     label?: string;
     helper?: string;
     disabled: boolean;
     required: boolean;
+    private _data;
     protected render(): import("lit-html").TemplateResult<1>;
 }
 declare global {

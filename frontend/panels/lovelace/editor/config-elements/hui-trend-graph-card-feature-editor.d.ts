@@ -8,7 +8,7 @@ export declare class HuiTrendGraphCardFeatureEditor extends LitElement implement
     context?: LovelaceCardFeatureContext;
     private _config?;
     setConfig(config: TrendGraphCardFeatureConfig): void;
-    protected render(): typeof nothing | import("lit-html").TemplateResult<1>;
+    protected render(): import("lit-html").TemplateResult<1> | typeof nothing;
     private _valueChanged;
     private _computeLabelCallback;
 }

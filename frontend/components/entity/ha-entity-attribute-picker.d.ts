@@ -1,7 +1,6 @@
-import type { PropertyValues } from "lit";
 import { LitElement, nothing } from "lit";
 import type { HomeAssistant } from "../../types";
-import "../ha-combo-box";
+import "../ha-generic-picker";
 declare class HaEntityAttributePicker extends LitElement {
     hass: HomeAssistant;
     entityId?: string | string[];
@@ -18,15 +17,10 @@ declare class HaEntityAttributePicker extends LitElement {
     label?: string;
     value?: string;
     helper?: string;
-    private _opened;
-    private _comboBox;
-    protected shouldUpdate(changedProps: PropertyValues): boolean;
-    protected updated(changedProps: PropertyValues): void;
-    protected render(): typeof nothing | import("lit-html").TemplateResult<1>;
-    private get _value();
-    private _openedChanged;
+    private _getItemsMemoized;
+    private _getItems;
+    protected render(): import("lit-html").TemplateResult<1> | typeof nothing;
     private _valueChanged;
-    private _setValue;
 }
 declare global {
     interface HTMLElementTagNameMap {

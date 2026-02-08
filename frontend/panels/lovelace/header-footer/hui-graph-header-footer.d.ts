@@ -17,7 +17,7 @@ export declare class HuiGraphHeaderFooter extends LitElement implements Lovelace
     private _subscribed?;
     getCardSize(): number;
     setConfig(config: GraphHeaderFooterConfig): void;
-    protected render(): typeof nothing | import("lit-html").TemplateResult<1>;
+    protected render(): import("lit-html").TemplateResult<1> | typeof nothing;
     connectedCallback(): void;
     disconnectedCallback(): void;
     private _subscribeHistory;

@@ -1,0 +1,41 @@
+import type { HassEntity } from "home-assistant-js-websocket";
+import { LitElement, nothing } from "lit";
+import type { HomeAssistant } from "../types";
+import type { PickerComboBoxItem } from "./ha-picker-combo-box";
+import "./ha-combo-box-item";
+import "./ha-domain-icon";
+import "./ha-generic-picker";
+import "./ha-state-icon";
+export interface AreaControlPickerItem extends PickerComboBoxItem {
+    type?: "domain" | "entity";
+    stateObj?: HassEntity;
+    domain?: string;
+    deviceClass?: string;
+}
+export declare class HaAreaControlsPicker extends LitElement {
+    hass: HomeAssistant;
+    areaId: string;
+    excludeEntities?: string[];
+    value?: string;
+    excludeValues?: string[];
+    label?: string;
+    placeholder?: string;
+    helper?: string;
+    disabled: boolean;
+    required: boolean;
+    addButtonLabel?: string;
+    private _domainSearchKeys;
+    private _entitySearchKeys;
+    private _createFuseIndex;
+    private _domainFuseIndex;
+    private _entityFuseIndex;
+    private _getItems;
+    private _rowRenderer;
+    protected render(): import("lit-html").TemplateResult<1> | typeof nothing;
+    static styles: import("lit").CSSResult;
+}
+declare global {
+    interface HTMLElementTagNameMap {
+        "ha-area-controls-picker": HaAreaControlsPicker;
+    }
+}

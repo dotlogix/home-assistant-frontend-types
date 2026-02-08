@@ -1,5 +1,5 @@
 import type { HassEntities, HassEntity } from "home-assistant-js-websocket";
-import type { HomeAssistant } from "../types";
+import type { HomeAssistant, ValuePart } from "../types";
 import type { Entity } from "./entity";
 type MockRestCallback = (hass: MockHomeAssistant, method: string, path: string, parameters: Record<string, any> | undefined) => any;
 export interface MockHomeAssistant extends HomeAssistant {
@@ -15,6 +15,7 @@ export interface MockHomeAssistant extends HomeAssistant {
     mockTheme(theme: Record<string, string> | null): any;
     formatEntityState(stateObj: HassEntity, state?: string): string;
     formatEntityAttributeValue(stateObj: HassEntity, attribute: string, value?: any): string;
+    formatEntityAttributeValueToParts(stateObj: HassEntity, attribute: string, value?: any): ValuePart[];
     formatEntityAttributeName(stateObj: HassEntity, attribute: string): string;
 }
 export declare const provideHass: (elements: any, overrideData?: Partial<HomeAssistant>) => MockHomeAssistant;

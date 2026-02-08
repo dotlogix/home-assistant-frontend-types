@@ -19,7 +19,7 @@ declare class HaTimerForm extends LitElement {
     private _restore;
     set item(item: Timer);
     focus(): void;
-    protected render(): typeof nothing | import("lit-html").TemplateResult<1>;
+    protected render(): import("lit-html").TemplateResult<1> | typeof nothing;
     private _valueChanged;
     private _toggleRestore;
     private _setDurationData;

@@ -4,6 +4,7 @@ import { LitElement } from "lit";
 import type { HomeAssistant } from "../types";
 import "./ha-checkbox";
 import "./ha-icon-button";
+import "./ha-markdown";
 import "./ha-selector/ha-selector";
 import "./ha-service-picker";
 import "./ha-service-section-icon";

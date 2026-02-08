@@ -1,8 +1,8 @@
 import { LitElement } from "lit";
-import type { DeviceRegistryEntry } from "../../../../../../data/device_registry";
-import type { HomeAssistant } from "../../../../../../types";
 import "../../../../../../components/ha-alert";
 import "../../../../../../components/ha-spinner";
+import type { DeviceRegistryEntry } from "../../../../../../data/device/device_registry";
+import type { HomeAssistant } from "../../../../../../types";
 import "./zwave_js-capability-control-multilevel-switch";
 declare class ZWaveJSCapabilityColorSwitch extends LitElement {
     hass: HomeAssistant;

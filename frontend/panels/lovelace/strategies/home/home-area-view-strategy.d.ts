@@ -4,6 +4,7 @@ import type { HomeAssistant } from "../../../../types";
 export interface HomeAreaViewStrategyConfig {
     type: "home-area";
     area?: string;
+    home_panel?: boolean;
 }
 export declare class HomeAreaViewStrategy extends ReactiveElement {
     static generate(config: HomeAreaViewStrategyConfig, hass: HomeAssistant): Promise<LovelaceViewConfig>;

@@ -12,7 +12,7 @@ declare class HaBluePrintPicker extends LitElement {
     disabled: boolean;
     open(): void;
     private _processedBlueprints;
-    protected render(): typeof nothing | import("lit-html").TemplateResult<1>;
+    protected render(): import("lit-html").TemplateResult<1> | typeof nothing;
     protected firstUpdated(changedProps: any): void;
     private _blueprintChanged;
     static styles: import("lit").CSSResult;

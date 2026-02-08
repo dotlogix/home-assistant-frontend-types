@@ -17,7 +17,7 @@ declare class MoreInfoClimate extends LitElement {
     stateObj?: ClimateEntity;
     private _mainControl;
     protected willUpdate(changedProps: PropertyValues): void;
-    protected render(): typeof nothing | import("lit-html").TemplateResult<1>;
+    protected render(): import("lit-html").TemplateResult<1> | typeof nothing;
     private _setMainControl;
     private _handleFanModeChanged;
     private _handleOperationModeChanged;

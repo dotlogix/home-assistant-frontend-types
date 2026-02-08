@@ -4,8 +4,10 @@ import "../../../../components/ha-textfield";
 import "../../../../components/ha-yaml-editor";
 import type { HaYamlEditor } from "../../../../components/ha-yaml-editor";
 import type { Trigger } from "../../../../data/automation";
+import type { TriggerDescription } from "../../../../data/trigger";
 import type { HomeAssistant } from "../../../../types";
 import "../ha-automation-editor-warning";
+import "./types/ha-automation-trigger-platform";
 export default class HaAutomationTriggerEditor extends LitElement {
     hass: HomeAssistant;
     trigger: Trigger;
@@ -14,6 +16,7 @@ export default class HaAutomationTriggerEditor extends LitElement {
     uiSupported: boolean;
     inSidebar: boolean;
     showId: boolean;
+    description?: TriggerDescription;
     yamlEditor?: HaYamlEditor;
     protected render(): import("lit-html").TemplateResult<1>;
     private _idChanged;

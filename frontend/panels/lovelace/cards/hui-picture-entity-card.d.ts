@@ -16,7 +16,7 @@ declare class HuiPictureEntityCard extends LitElement implements LovelaceCard {
     setConfig(config: PictureEntityCardConfig): void;
     protected shouldUpdate(changedProps: PropertyValues): boolean;
     protected updated(changedProps: PropertyValues): void;
-    protected render(): typeof nothing | TemplateResult<1>;
+    protected render(): TemplateResult<1> | typeof nothing;
     static styles: import("lit").CSSResult;
     private _handleAction;
 }

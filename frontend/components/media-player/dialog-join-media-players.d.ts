@@ -16,7 +16,7 @@ declare class DialogJoinMediaPlayers extends LitElement {
     private _error?;
     showDialog(params: JoinMediaPlayersDialogParams): void;
     closeDialog(): void;
-    protected render(): typeof nothing | import("lit-html").TemplateResult<1>;
+    protected render(): import("lit-html").TemplateResult<1> | typeof nothing;
     private _mediaPlayerEntities;
     private _selectAll;
     private _handleSelectedChange;

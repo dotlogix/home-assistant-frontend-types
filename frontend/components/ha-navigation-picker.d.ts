@@ -1,29 +1,36 @@
-import type { PropertyValues, TemplateResult } from "lit";
-import { LitElement } from "lit";
+import { LitElement, type PropertyValues } from "lit";
 import type { HomeAssistant } from "../types";
-import "./ha-combo-box";
-import "./ha-combo-box-item";
+import type { ActionRelatedContext } from "../panels/lovelace/components/hui-action-editor";
+import "./ha-generic-picker";
+import "./ha-domain-icon";
 import "./ha-icon";
 export declare class HaNavigationPicker extends LitElement {
-    hass?: HomeAssistant;
+    hass: HomeAssistant;
     label?: string;
     value?: string;
     helper?: string;
     disabled: boolean;
     required: boolean;
-    private _opened;
-    private navigationItemsLoaded;
-    private navigationItems;
-    private comboBox;
-    protected render(): TemplateResult;
-    private _openedChanged;
+    private _loading;
+    context?: ActionRelatedContext;
+    protected firstUpdated(): void;
+    private _navigationItems;
+    private _configEntryLookup;
+    private _navigationGroups;
+    private _getRelatedItems;
+    protected render(): import("lit-html").TemplateResult<1>;
+    private _valueRenderer;
+    private _rowRenderer;
+    private _fuseIndexes;
+    private _getItems;
+    private _sortBySortingLabel;
     private _loadNavigationItems;
-    protected shouldUpdate(changedProps: PropertyValues): boolean;
+    protected updated(changedProps: PropertyValues): void;
+    private _loadRelatedItems;
+    private _fetchRelatedItems;
+    private _loadConfigEntries;
     private _valueChanged;
     private _setValue;
-    private _filterChanged;
-    private get _value();
-    static styles: import("lit").CSSResult;
 }
 declare global {
     interface HTMLElementTagNameMap {

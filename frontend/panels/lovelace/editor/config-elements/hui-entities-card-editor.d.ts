@@ -21,7 +21,7 @@ export declare class HuiEntitiesCardEditor extends LitElement implements Lovelac
     private _showHeaderToggle;
     get _title(): string;
     get _theme(): string;
-    protected render(): typeof nothing | import("lit-html").TemplateResult<1>;
+    protected render(): import("lit-html").TemplateResult<1> | typeof nothing;
     private _valueChanged;
     private _handleSubElementChanged;
     private _editDetailElement;

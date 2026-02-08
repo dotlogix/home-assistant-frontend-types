@@ -2,8 +2,10 @@ import { LitElement } from "lit";
 import "../../../../components/ha-yaml-editor";
 import type { HaYamlEditor } from "../../../../components/ha-yaml-editor";
 import type { Condition } from "../../../../data/automation";
+import type { ConditionDescription } from "../../../../data/condition";
 import type { HomeAssistant } from "../../../../types";
 import "../ha-automation-editor-warning";
+import "./types/ha-automation-condition-platform";
 export default class HaAutomationConditionEditor extends LitElement {
     hass: HomeAssistant;
     condition: Condition;
@@ -14,6 +16,7 @@ export default class HaAutomationConditionEditor extends LitElement {
     inSidebar: boolean;
     selected: boolean;
     uiSupported: boolean;
+    description?: ConditionDescription;
     yamlEditor?: HaYamlEditor;
     private _collapsibleElement?;
     private _processedCondition;

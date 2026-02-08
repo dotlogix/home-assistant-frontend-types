@@ -14,7 +14,7 @@ declare class HuiLockCommandsCardFeature extends LitElement implements LovelaceC
     static getStubConfig(): LockCommandsCardFeatureConfig;
     setConfig(config: LockCommandsCardFeatureConfig): void;
     private _onTap;
-    protected render(): typeof nothing | import("lit-html").TemplateResult<1>;
+    protected render(): import("lit-html").TemplateResult<1> | typeof nothing;
     static get styles(): CSSResultGroup;
 }
 declare global {

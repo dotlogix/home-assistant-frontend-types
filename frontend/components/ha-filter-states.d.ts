@@ -19,7 +19,7 @@ export declare class HaFilterStates extends LitElement {
     expanded: boolean;
     private _shouldRender;
     private _list;
-    protected render(): typeof nothing | import("lit-html").TemplateResult<1>;
+    protected render(): import("lit-html").TemplateResult<1> | typeof nothing;
     protected willUpdate(changed: any): void;
     protected updated(changed: any): void;
     private _expandedWillChange;

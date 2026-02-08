@@ -20,7 +20,7 @@ declare class HuiPictureGlanceCard extends LitElement implements LovelaceCard {
     setConfig(config: PictureGlanceCardConfig): void;
     protected shouldUpdate(changedProps: PropertyValues): boolean;
     protected updated(changedProps: PropertyValues): void;
-    protected render(): typeof nothing | TemplateResult<1>;
+    protected render(): TemplateResult<1> | typeof nothing;
     private _renderEntity;
     private _handleAction;
     static styles: import("lit").CSSResult;

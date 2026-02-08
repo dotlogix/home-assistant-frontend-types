@@ -13,6 +13,7 @@ export declare const integrationsWithPanel: {
     zwave_js: string;
 };
 export type IntegrationType = "device" | "helper" | "hub" | "service" | "hardware" | "entity" | "system";
+export type DomainManifestLookup = Record<string, IntegrationManifest>;
 export interface IntegrationManifest {
     is_built_in: boolean;
     overwrites_built_in?: boolean;

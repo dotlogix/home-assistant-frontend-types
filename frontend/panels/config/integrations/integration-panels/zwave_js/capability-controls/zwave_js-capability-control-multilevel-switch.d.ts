@@ -1,13 +1,13 @@
 import { LitElement } from "lit";
 import "../../../../../../components/buttons/ha-progress-button";
-import type { DeviceRegistryEntry } from "../../../../../../data/device_registry";
-import type { HomeAssistant } from "../../../../../../types";
-import "../../../../../../components/ha-textfield";
-import "../../../../../../components/ha-select";
-import "../../../../../../components/ha-list-item";
 import "../../../../../../components/ha-alert";
 import "../../../../../../components/ha-formfield";
+import "../../../../../../components/ha-list-item";
+import "../../../../../../components/ha-select";
 import "../../../../../../components/ha-switch";
+import "../../../../../../components/ha-textfield";
+import type { DeviceRegistryEntry } from "../../../../../../data/device/device_registry";
+import type { HomeAssistant } from "../../../../../../types";
 declare class ZWaveJSCapabilityMultiLevelSwitch extends LitElement {
     hass: HomeAssistant;
     device: DeviceRegistryEntry;

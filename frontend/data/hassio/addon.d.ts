@@ -3,7 +3,7 @@ import type { HomeAssistant, TranslationDict } from "../../types";
 import type { StoreAddonDetails } from "../supervisor/store";
 import type { Supervisor, SupervisorArch } from "../supervisor/supervisor";
 import type { HassioResponse } from "./common";
-export type AddonCapability = Exclude<keyof TranslationDict["supervisor"]["addon"]["dashboard"]["capability"], "label" | "role" | "stages">;
+export type AddonCapability = Exclude<keyof TranslationDict["ui"]["panel"]["config"]["apps"]["dashboard"]["capability"], "label" | "role" | "stages">;
 export type AddonStage = "stable" | "experimental" | "deprecated";
 export type AddonAppArmour = "disable" | "default" | "profile";
 export type AddonRole = "default" | "homeassistant" | "manager" | "admin";

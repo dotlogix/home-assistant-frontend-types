@@ -15,6 +15,7 @@ export interface DisplayItem {
     label: string;
     description?: string;
     disableSorting?: boolean;
+    disableHiding?: boolean;
 }
 export interface DisplayValue {
     order: string[];

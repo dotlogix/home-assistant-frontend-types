@@ -5,9 +5,8 @@ import "../../../components/ha-control-button";
 import "../../../components/ha-control-button-group";
 import "../../../components/ha-domain-icon";
 import "../../../components/ha-icon";
-import "../../../components/ha-ripple";
-import "../../../components/ha-svg-icon";
 import "../../../components/tile/ha-tile-badge";
+import "../../../components/tile/ha-tile-container";
 import "../../../components/tile/ha-tile-icon";
 import "../../../components/tile/ha-tile-info";
 import type { HomeAssistant } from "../../../types";
@@ -21,6 +20,10 @@ export declare const DEVICE_CLASSES: {
     binary_sensor: string[];
 };
 export declare const SUM_DEVICE_CLASSES: string[];
+export declare const SENSOR_ATTRIBUTE_SOURCES: Record<string, {
+    domain: string;
+    attribute: string;
+}[]>;
 export interface AreaCardFeatureContext extends LovelaceCardFeatureContext {
     exclude_entities?: string[];
 }
@@ -36,22 +39,25 @@ export declare class HuiAreaCard extends LitElement implements LovelaceCard {
     getCardSize(): number;
     getGridOptions(): LovelaceGridOptions;
     private get _hasCardAction();
+    private get _hasImageAction();
     private _handleAction;
+    private _handleImageAction;
     private _groupEntitiesByDeviceClass;
     private _groupedSensorEntityIds;
     private _groupedBinarySensorEntityIds;
     private _getCameraEntity;
+    private _domainEntityIds;
     private _computeActiveAlertStates;
     private _renderAlertSensorBadge;
     private _renderAlertSensors;
     private _computeSensorsDisplay;
-    private _computeSumState;
-    private _computeMedianState;
+    private _getAttributeUnit;
+    private _computeMedianValue;
     private _featurePosition;
     private _displayedFeatures;
     willUpdate(changedProps: PropertyValues): void;
-    protected render(): typeof nothing | TemplateResult<1>;
-    static styles: import("lit").CSSResult;
+    protected render(): TemplateResult<1> | typeof nothing;
+    static styles: import("lit").CSSResult[];
 }
 declare global {
     interface HTMLElementTagNameMap {

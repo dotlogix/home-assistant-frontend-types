@@ -3,7 +3,7 @@ import { LitElement } from "lit";
 import "../../../../components/ha-button";
 import "../../../../components/ha-sortable";
 import "../../../../components/ha-svg-icon";
-import type { AutomationClipboard } from "../../../../data/automation";
+import { type AutomationClipboard } from "../../../../data/automation";
 import type { Action } from "../../../../data/script";
 import type { HomeAssistant } from "../../../../types";
 export default class HaAutomationAction extends LitElement {

@@ -10,6 +10,7 @@ export interface Node {
     label?: string;
     color?: string;
     passThrough?: boolean;
+    entityId?: string;
 }
 export interface Link {
     source: string;
@@ -29,6 +30,7 @@ export declare class HaSankeyChart extends LitElement {
     private _sizeController;
     render(): import("lit-html").TemplateResult<1>;
     private _renderTooltip;
+    private _handleChartClick;
     private _createData;
     private _processLinks;
     private _findParentIndex;
@@ -37,5 +39,10 @@ export declare class HaSankeyChart extends LitElement {
 declare global {
     interface HTMLElementTagNameMap {
         "ha-sankey-chart": HaSankeyChart;
+    }
+    interface HASSDomEvents {
+        "node-click": {
+            node: Node;
+        };
     }
 }

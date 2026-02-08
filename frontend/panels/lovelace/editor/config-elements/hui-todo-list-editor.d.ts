@@ -11,7 +11,7 @@ export declare class HuiTodoListEditor extends LitElement implements LovelaceCar
     private _schema;
     private _data;
     setConfig(config: TodoListCardConfig): void;
-    protected render(): typeof nothing | import("lit-html").TemplateResult<1>;
+    protected render(): import("lit-html").TemplateResult<1> | typeof nothing;
     private _valueChanged;
     private _todoListSupportsFeature;
     private _computeLabelCallback;

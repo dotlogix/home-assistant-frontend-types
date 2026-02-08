@@ -9,5 +9,5 @@ import type { Schedule } from "../../../data/schedule";
 import type { Timer } from "../../../data/timer";
 export declare const HELPER_DOMAINS: readonly ["input_boolean", "input_button", "input_text", "input_number", "input_datetime", "input_select", "counter", "timer", "schedule"];
 export type HelperDomain = (typeof HELPER_DOMAINS)[number];
-export declare const isHelperDomain: (searchElement: unknown, fromIndex?: number) => searchElement is "schedule" | "input_text" | "input_number" | "input_select" | "input_boolean" | "input_button" | "input_datetime" | "counter" | "timer";
+export declare const isHelperDomain: (searchElement: unknown, fromIndex?: number) => searchElement is "schedule" | "input_boolean" | "input_button" | "input_text" | "input_number" | "input_datetime" | "input_select" | "timer" | "counter";
 export type Helper = InputBoolean | InputButton | InputText | InputNumber | InputSelect | InputDateTime | Counter | Timer | Schedule;

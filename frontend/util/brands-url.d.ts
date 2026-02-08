@@ -1,7 +1,6 @@
 export interface BrandsOptions {
     domain: string;
     type: "icon" | "logo" | "icon@2x" | "logo@2x";
-    useFallback?: boolean;
     darkOptimized?: boolean;
     brand?: boolean;
 }

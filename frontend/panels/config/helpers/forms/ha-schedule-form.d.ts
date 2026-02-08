@@ -23,7 +23,7 @@ declare class HaScheduleForm extends LitElement {
     disconnectedCallback(): void;
     connectedCallback(): void;
     focus(): void;
-    protected render(): typeof nothing | import("lit-html").TemplateResult<1>;
+    protected render(): import("lit-html").TemplateResult<1> | typeof nothing;
     willUpdate(changedProps: PropertyValues): void;
     protected firstUpdated(): void;
     private _setupCalendar;

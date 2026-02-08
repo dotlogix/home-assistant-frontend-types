@@ -1,4 +1,4 @@
-import type { Collection } from "home-assistant-js-websocket";
+import type { Collection, HassEntity } from "home-assistant-js-websocket";
 import type { HomeAssistant } from "../types";
 import type { Statistics, StatisticsMetaData } from "./recorder";
 export declare const emptyFlowFromGridSourceEnergyPreference: () => FlowFromGridSourceEnergyPreference;
@@ -14,6 +14,7 @@ interface EnergySolarForecast {
 export type EnergySolarForecasts = Record<string, EnergySolarForecast>;
 export interface DeviceConsumptionEnergyPreference {
     stat_consumption: string;
+    stat_rate?: string;
     name?: string;
     included_in_stat?: string;
 }
@@ -29,21 +30,43 @@ export interface FlowToGridSourceEnergyPreference {
     entity_energy_price: string | null;
     number_energy_price: number | null;
 }
+export interface PowerConfig {
+    stat_rate?: string;
+    stat_rate_inverted?: string;
+    stat_rate_from?: string;
+    stat_rate_to?: string;
+}
+export interface GridPowerSourceEnergyPreference {
+    stat_rate: string;
+    power_config?: PowerConfig;
+}
+/**
+ * Input type for saving grid power sources.
+ * Core requires EITHER stat_rate (legacy) OR power_config (new format).
+ * When reading from backend, stat_rate is always populated.
+ */
+export type GridPowerSourceInput = Omit<GridPowerSourceEnergyPreference, "stat_rate"> & {
+    stat_rate?: string;
+};
 export interface GridSourceTypeEnergyPreference {
     type: "grid";
     flow_from: FlowFromGridSourceEnergyPreference[];
     flow_to: FlowToGridSourceEnergyPreference[];
+    power?: GridPowerSourceEnergyPreference[];
     cost_adjustment_day: number;
 }
 export interface SolarSourceTypeEnergyPreference {
     type: "solar";
     stat_energy_from: string;
+    stat_rate?: string;
     config_entry_solar_forecast: string[] | null;
 }
 export interface BatterySourceTypeEnergyPreference {
     type: "battery";
     stat_energy_from: string;
     stat_energy_to: string;
+    stat_rate?: string;
+    power_config?: PowerConfig;
 }
 export interface GasSourceTypeEnergyPreference {
     type: "gas";
@@ -65,6 +88,7 @@ export type EnergySource = SolarSourceTypeEnergyPreference | GridSourceTypeEnerg
 export interface EnergyPreferences {
     energy_sources: EnergySource[];
     device_consumption: DeviceConsumptionEnergyPreference[];
+    device_consumption_water: DeviceConsumptionEnergyPreference[];
 }
 export interface EnergyInfo {
     cost_sensors: Record<string, string>;
@@ -78,6 +102,7 @@ export interface EnergyValidationIssue {
 export interface EnergyPreferencesValidation {
     energy_sources: EnergyValidationIssue[][];
     device_consumption: EnergyValidationIssue[][];
+    device_consumption_water: EnergyValidationIssue[][];
 }
 export declare const getEnergyInfo: (hass: HomeAssistant) => Promise<EnergyInfo>;
 export declare const getEnergyPreferenceValidation: (hass: HomeAssistant) => Promise<EnergyPreferencesValidation>;
@@ -111,6 +136,7 @@ export interface EnergyData {
     gasUnit: string;
 }
 export declare const getReferencedStatisticIds: (prefs: EnergyPreferences, info: EnergyInfo, includeTypes?: string[]) => string[];
+export declare const getReferencedStatisticIdsPower: (prefs: EnergyPreferences) => string[];
 export declare const enum CompareMode {
     NONE = "",
     PREVIOUS = "previous",
@@ -198,4 +224,18 @@ export declare const computeConsumptionSingle: (data: {
 };
 export declare const formatConsumptionShort: (hass: HomeAssistant, consumption: number | null, unit: string, targetUnit?: string) => string;
 export declare const calculateSolarConsumedGauge: (hasBattery: boolean, data: EnergySumData) => number | undefined;
+/**
+ * Get current power value from entity state, normalized to watts (W)
+ * @param stateObj - The entity state object to get power value from
+ * @returns Power value in W (watts), or undefined if entity not found or invalid
+ */
+export declare const getPowerFromState: (stateObj: HassEntity) => number | undefined;
+/**
+ * Format power value in watts (W) to a short string with the appropriate unit
+ * @param hass - The HomeAssistant instance
+ * @param powerWatts - The power value in watts (W)
+ * @returns A string with the formatted power value and unit
+ */
+export declare const formatPowerShort: (hass: HomeAssistant, powerWatts: number) => string;
+export declare function getSuggestedPeriod(start: Date, end?: Date, fine?: boolean): "5minute" | "hour" | "day" | "month";
 export {};

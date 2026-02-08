@@ -1,12 +1,12 @@
 import { LitElement } from "lit";
-import type { DeviceRegistryEntry } from "../../../../../../data/device_registry";
-import type { HomeAssistant } from "../../../../../../types";
-import "../../../../../../components/ha-button";
 import "../../../../../../components/buttons/ha-progress-button";
-import "../../../../../../components/ha-textfield";
-import "../../../../../../components/ha-select";
-import "../../../../../../components/ha-list-item";
 import "../../../../../../components/ha-alert";
+import "../../../../../../components/ha-button";
+import "../../../../../../components/ha-list-item";
+import "../../../../../../components/ha-select";
+import "../../../../../../components/ha-textfield";
+import type { DeviceRegistryEntry } from "../../../../../../data/device/device_registry";
+import type { HomeAssistant } from "../../../../../../types";
 declare class ZWaveJSCapabilityThermostatSetback extends LitElement {
     hass: HomeAssistant;
     device: DeviceRegistryEntry;

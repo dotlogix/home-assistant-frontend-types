@@ -2,7 +2,8 @@ import type { CSSResultGroup } from "lit";
 import { LitElement, nothing } from "lit";
 import "../../../../components/ha-alert";
 import "../../../../components/ha-area-picker";
-import "../../../../components/ha-dialog";
+import "../../../../components/ha-wa-dialog";
+import "../../../../components/ha-dialog-footer";
 import "../../../../components/ha-button";
 import "../../../../components/ha-labels-picker";
 import "../../../../components/ha-textfield";
@@ -10,6 +11,7 @@ import type { HomeAssistant } from "../../../../types";
 import type { DeviceRegistryDetailDialogParams } from "./show-dialog-device-registry-detail";
 declare class DialogDeviceRegistryDetail extends LitElement {
     hass: HomeAssistant;
+    private _open;
     private _nameByUser;
     private _error?;
     private _params?;
@@ -19,7 +21,8 @@ declare class DialogDeviceRegistryDetail extends LitElement {
     private _submitting;
     showDialog(params: DeviceRegistryDetailDialogParams): Promise<void>;
     closeDialog(): void;
-    protected render(): typeof nothing | import("lit-html").TemplateResult<1>;
+    private _dialogClosed;
+    protected render(): import("lit-html").TemplateResult<1> | typeof nothing;
     private _nameChanged;
     private _areaPicked;
     private _labelsChanged;

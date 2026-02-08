@@ -11,7 +11,7 @@ export declare class HaLongLivedAccessTokenDialog extends LitElement {
     private _qrCode?;
     showDialog(params: LongLivedAccessTokenDialogParams): void;
     closeDialog(): void;
-    protected render(): typeof nothing | TemplateResult<1>;
+    protected render(): TemplateResult<1> | typeof nothing;
     private _copyToken;
     private _generateQR;
     static get styles(): CSSResultGroup;

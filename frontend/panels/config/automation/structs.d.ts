@@ -1,7 +1,7 @@
 export declare const baseTriggerStruct: import("superstruct").Struct<{
     enabled: boolean;
-    id: string;
     trigger: string;
+    id: string;
 }, {
     trigger: import("superstruct").Struct<string, null>;
     id: import("superstruct").Struct<string, null>;

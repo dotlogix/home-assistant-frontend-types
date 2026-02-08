@@ -30,7 +30,7 @@ declare class HaBackupConfigRetention extends LitElement {
     private _configLoaded;
     private presetOptions;
     willUpdate(): void;
-    protected render(): typeof nothing | import("lit-html").TemplateResult<1>;
+    protected render(): import("lit-html").TemplateResult<1> | typeof nothing;
     private _retentionPresetChanged;
     private _retentionValueChanged;
     private _retentionTypeChanged;

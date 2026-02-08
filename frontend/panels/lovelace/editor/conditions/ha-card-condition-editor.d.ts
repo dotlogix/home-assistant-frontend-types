@@ -1,11 +1,12 @@
+import "@home-assistant/webawesome/dist/components/divider/divider";
 import type { PropertyValues } from "lit";
 import { LitElement, nothing } from "lit";
 import "../../../../components/ha-alert";
-import "../../../../components/ha-button-menu";
 import "../../../../components/ha-card";
+import "../../../../components/ha-dropdown";
+import "../../../../components/ha-dropdown-item";
 import "../../../../components/ha-expansion-panel";
 import "../../../../components/ha-icon-button";
-import "../../../../components/ha-list-item";
 import "../../../../components/ha-svg-icon";
 import "../../../../components/ha-yaml-editor";
 import type { HomeAssistant } from "../../../../types";
@@ -22,7 +23,7 @@ export declare class HaCardConditionEditor extends LitElement {
     private get _editor();
     expand(): void;
     protected willUpdate(changedProperties: PropertyValues): void;
-    protected render(): typeof nothing | import("lit-html").TemplateResult<1>;
+    protected render(): import("lit-html").TemplateResult<1> | typeof nothing;
     private _handleAction;
     private _timeout?;
     private _testCondition;

@@ -21,7 +21,7 @@ declare class ZHADeviceNeighbors extends LitElement {
     protected updated(changedProperties: PropertyValues): void;
     private _deviceNeighbors;
     private _columns;
-    protected render(): typeof nothing | import("lit-html").TemplateResult<1>;
+    protected render(): import("lit-html").TemplateResult<1> | typeof nothing;
     private _fetchData;
 }
 declare global {

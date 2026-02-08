@@ -6,6 +6,8 @@ interface PassThroughNode {
     id: string;
     value: number;
     depth: number;
+    sourceId: string;
+    targetId: string;
 }
 type Node = GraphNode | PassThroughNode;
 interface SectionNode {
@@ -35,6 +37,7 @@ export declare function getEdgeValue(edge: GraphEdge): number;
 export declare function getPassThroughSections(sourceDepthIndex: number, targetDepthIndex: number, depths: number[]): number[];
 export declare function createPassThroughNode(sourceId: string, targetId: string, depth: number, value: number): PassThroughNode;
 export declare function groupNodesBySection(nodes: GraphNode[], passThroughNodes: PassThroughNode[]): Record<number, Node[]>;
+export declare function sortNodesInSections(nodesPerSection: Record<number, Node[]>, depths: number[]): Record<number, Node[]>;
 export declare function createSectionNodes(nodes: Node[]): SectionNode[];
 export declare function calculateSectionDimensions(orient: "vertical" | "horizontal", width: number, height: number, depths: number[], nodeGap: number): {
     sectionSize: number;

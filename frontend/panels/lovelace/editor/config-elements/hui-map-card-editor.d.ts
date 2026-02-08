@@ -7,10 +7,11 @@ import "../../../../components/ha-switch";
 import type { HomeAssistant } from "../../../../types";
 import type { MapCardConfig } from "../../cards/types";
 import "../../components/hui-entity-editor";
+import "../hui-sub-element-editor";
 import type { LovelaceCardEditor } from "../../types";
 export declare const mapEntitiesConfigStruct: import("superstruct").Struct<string | {
-    entity: string;
     name: string;
+    entity: string;
     attribute: string;
     unit: string;
     focus: boolean;
@@ -19,13 +20,17 @@ export declare const mapEntitiesConfigStruct: import("superstruct").Struct<strin
 export declare class HuiMapCardEditor extends LitElement implements LovelaceCardEditor {
     hass?: HomeAssistant;
     private _config?;
+    private _subElementEditorConfig?;
     private _configEntities?;
     private _possibleGeoSources?;
     private _schema;
     setConfig(config: MapCardConfig): void;
     private _geoSourcesStrings;
     get _geo_location_sources(): string[];
-    protected render(): typeof nothing | import("lit-html").TemplateResult<1>;
+    protected render(): import("lit-html").TemplateResult<1> | typeof nothing;
+    private _goBack;
+    private _editDetailElement;
+    private _handleSubEntityChanged;
     private _selectSchema;
     private _entitiesValueChanged;
     private _geoSourcesChanged;

@@ -1,4 +1,5 @@
 import { LitElement } from "lit";
+import "../../../../components/ha-dropdown-item";
 import type { ScriptFieldSidebarConfig } from "../../../../data/automation";
 import type { HomeAssistant } from "../../../../types";
 import "../../script/ha-script-field-selector-editor";
@@ -19,6 +20,7 @@ export default class HaAutomationSidebarScriptFieldSelector extends LitElement {
     private _valueChangedSidebar;
     private _yamlChangedSidebar;
     private _toggleYamlMode;
+    private _handleDropdownSelect;
     static styles: import("lit").CSSResult;
 }
 declare global {

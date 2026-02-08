@@ -33,7 +33,7 @@ export declare class HuiStatisticCard extends LitElement implements LovelaceCard
     private _unsubscribeEnergy;
     setConfig(config: StatisticCardConfig): void;
     getCardSize(): Promise<number>;
-    protected render(): typeof nothing | import("lit-html").TemplateResult<1>;
+    protected render(): import("lit-html").TemplateResult<1> | typeof nothing;
     protected shouldUpdate(changedProps: PropertyValues): boolean;
     protected willUpdate(changedProps: PropertyValues): void;
     protected firstUpdated(): void;

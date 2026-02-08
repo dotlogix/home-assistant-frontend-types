@@ -13,7 +13,7 @@ declare class DialogMatterPingNode extends LitElement {
     private _pingResultEntries?;
     showDialog(params: MatterPingNodeDialogParams): Promise<void>;
     private _copyIpToClipboard;
-    protected render(): typeof nothing | import("lit-html").TemplateResult<1>;
+    protected render(): import("lit-html").TemplateResult<1> | typeof nothing;
     private _startPing;
     closeDialog(): void;
     static get styles(): CSSResultGroup;

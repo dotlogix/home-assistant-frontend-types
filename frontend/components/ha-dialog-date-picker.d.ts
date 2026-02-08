@@ -13,7 +13,7 @@ export declare class HaDialogDatePicker extends LitElement {
     private _value?;
     showDialog(params: DatePickerDialogParams): Promise<void>;
     closeDialog(): void;
-    render(): typeof nothing | import("lit-html").TemplateResult<1>;
+    render(): import("lit-html").TemplateResult<1> | typeof nothing;
     private _valueChanged;
     private _clear;
     private _setToday;

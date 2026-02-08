@@ -26,7 +26,7 @@ export declare class HuiCreateDialogBadge extends LitElement implements HassDial
     private _currTab;
     showDialog(params: CreateBadgeDialogParams): Promise<void>;
     closeDialog(): boolean;
-    protected render(): typeof nothing | import("lit-html").TemplateResult<1>;
+    protected render(): import("lit-html").TemplateResult<1> | typeof nothing;
     private _ignoreKeydown;
     static get styles(): CSSResultGroup;
     private _handleBadgePicked;

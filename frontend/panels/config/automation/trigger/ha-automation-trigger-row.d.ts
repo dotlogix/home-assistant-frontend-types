@@ -1,18 +1,20 @@
+import "@home-assistant/webawesome/dist/components/divider/divider";
 import type { CSSResultGroup, PropertyValues, TemplateResult } from "lit";
 import { LitElement, nothing } from "lit";
 import "../../../../components/ha-alert";
 import "../../../../components/ha-automation-row";
 import "../../../../components/ha-card";
+import "../../../../components/ha-dropdown";
+import "../../../../components/ha-dropdown-item";
 import "../../../../components/ha-expansion-panel";
 import "../../../../components/ha-icon-button";
-import "../../../../components/ha-md-button-menu";
-import "../../../../components/ha-md-divider";
-import "../../../../components/ha-md-menu-item";
 import "../../../../components/ha-svg-icon";
 import type { AutomationClipboard, Trigger } from "../../../../data/automation";
-import type { EntityRegistryEntry } from "../../../../data/entity_registry";
+import type { EntityRegistryEntry } from "../../../../data/entity/entity_registry";
+import type { TriggerDescriptions } from "../../../../data/trigger";
 import type { HomeAssistant } from "../../../../types";
 import "../ha-automation-editor-warning";
+import "../target/ha-automation-row-targets";
 import "./ha-automation-trigger-editor";
 import type HaAutomationTriggerEditor from "./ha-automation-trigger-editor";
 import "./types/ha-automation-trigger-calendar";
@@ -22,9 +24,9 @@ import "./types/ha-automation-trigger-event";
 import "./types/ha-automation-trigger-geo_location";
 import "./types/ha-automation-trigger-homeassistant";
 import "./types/ha-automation-trigger-list";
-import "./types/ha-automation-trigger-mqtt";
 import "./types/ha-automation-trigger-numeric_state";
 import "./types/ha-automation-trigger-persistent_notification";
+import "./types/ha-automation-trigger-platform";
 import "./types/ha-automation-trigger-state";
 import "./types/ha-automation-trigger-sun";
 import "./types/ha-automation-trigger-tag";
@@ -51,6 +53,7 @@ export default class HaAutomationTriggerRow extends LitElement {
     private _triggerColor;
     private _selected;
     private _warnings?;
+    triggerDescriptions: TriggerDescriptions;
     narrow: boolean;
     triggerEditor?: HaAutomationTriggerEditor;
     private _automationRowElement?;
@@ -60,7 +63,8 @@ export default class HaAutomationTriggerRow extends LitElement {
     private _triggerUnsub?;
     private _renderOverflowLabel;
     private _renderRow;
-    protected render(): typeof nothing | TemplateResult<1>;
+    protected render(): TemplateResult<1> | typeof nothing;
+    private _renderTargets;
     protected willUpdate(changedProperties: any): void;
     protected updated(changedProps: PropertyValues<this>): void;
     connectedCallback(): void;
@@ -88,6 +92,7 @@ export default class HaAutomationTriggerRow extends LitElement {
     private _getType;
     private _uiSupported;
     focus(): void;
+    private _handleDropdownSelect;
     static get styles(): CSSResultGroup;
 }
 declare global {

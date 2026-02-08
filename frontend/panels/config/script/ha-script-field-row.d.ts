@@ -2,8 +2,8 @@ import type { CSSResultGroup } from "lit";
 import { LitElement } from "lit";
 import "../../../components/ha-automation-row";
 import "../../../components/ha-card";
-import "../../../components/ha-md-button-menu";
-import "../../../components/ha-md-menu-item";
+import "../../../components/ha-dropdown";
+import "../../../components/ha-dropdown-item";
 import type { Field } from "../../../data/script";
 import type { HomeAssistant } from "../../../types";
 import "./ha-script-field-selector-editor";
@@ -40,6 +40,7 @@ export default class HaScriptFieldRow extends LitElement {
     private _onDelete;
     focus(): void;
     focusSelector(): void;
+    private _handleDropdownSelect;
     static get styles(): CSSResultGroup;
 }
 declare global {

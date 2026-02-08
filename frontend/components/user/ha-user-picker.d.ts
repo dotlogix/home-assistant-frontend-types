@@ -22,6 +22,7 @@ declare class HaUserPicker extends LitElement {
     private _getItems;
     protected render(): TemplateResult;
     private _valueChanged;
+    private _notFoundLabel;
 }
 declare global {
     interface HTMLElementTagNameMap {

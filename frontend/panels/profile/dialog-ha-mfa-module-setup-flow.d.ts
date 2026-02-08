@@ -21,7 +21,7 @@ declare class HaMfaModuleSetupFlow extends LitElement {
         dialogClosedCallback: any;
     }): void;
     closeDialog(): void;
-    protected render(): typeof nothing | import("lit-html").TemplateResult<1>;
+    protected render(): import("lit-html").TemplateResult<1> | typeof nothing;
     static get styles(): CSSResultGroup;
     protected firstUpdated(changedProperties: any): void;
     private _stepDataChanged;

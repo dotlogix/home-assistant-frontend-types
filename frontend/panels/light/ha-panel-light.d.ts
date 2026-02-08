@@ -5,6 +5,7 @@ import "../../components/ha-menu-button";
 import type { HomeAssistant } from "../../types";
 import "../lovelace/views/hui-view";
 import "../lovelace/views/hui-view-container";
+import "../lovelace/views/hui-view-background";
 declare class PanelLight extends LitElement {
     hass: HomeAssistant;
     narrow: boolean;
@@ -12,6 +13,7 @@ declare class PanelLight extends LitElement {
     private _lovelace?;
     private _searchParms;
     willUpdate(changedProps: PropertyValues): void;
+    private _setup;
     private _debounceRegistriesChanged;
     private _registriesChanged;
     private _back;

@@ -1,17 +1,23 @@
-import type { TemplateResult } from "lit";
-import { LitElement } from "lit";
+import type { CSSResultGroup, PropertyValues, TemplateResult } from "lit";
+import { LitElement, nothing } from "lit";
 import "../../../../../components/ha-alert";
-import "../../../../../components/ha-card";
 import "../../../../../components/ha-button";
-import "../../../../../layouts/hass-subpage";
+import "../../../../../components/ha-card";
+import "../../../../../components/ha-expansion-panel";
+import "../../../../../components/ha-fab";
+import "../../../../../components/ha-svg-icon";
 import type { HomeAssistant } from "../../../../../types";
+import "../../../../../layouts/hass-subpage";
 export declare class MatterConfigDashboard extends LitElement {
     hass: HomeAssistant;
     narrow: boolean;
+    private _configEntry?;
     private _error?;
     private _unsub?;
     disconnectedCallback(): void;
-    protected render(): TemplateResult;
+    protected firstUpdated(changedProperties: PropertyValues): void;
+    private _matterDeviceCount;
+    protected render(): TemplateResult | typeof nothing;
     private _redirectOnNewMatterDevice;
     private _stopRedirect;
     private _startMobileCommissioning;
@@ -19,7 +25,8 @@ export declare class MatterConfigDashboard extends LitElement {
     private _commission;
     private _acceptSharedDevice;
     private _setThread;
-    static styles: import("lit").CSSResult[];
+    private _fetchConfigEntry;
+    static get styles(): CSSResultGroup;
 }
 declare global {
     interface HTMLElementTagNameMap {

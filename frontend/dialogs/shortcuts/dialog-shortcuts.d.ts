@@ -1,14 +1,16 @@
-import { LitElement, nothing } from "lit";
+import { LitElement } from "lit";
 import "../../components/ha-alert";
 import "../../components/ha-svg-icon";
+import "../../components/ha-wa-dialog";
 import type { HomeAssistant } from "../../types";
 declare class DialogShortcuts extends LitElement {
     hass: HomeAssistant;
-    private _opened;
+    private _open;
     showDialog(): Promise<void>;
-    closeDialog(): Promise<void>;
+    private _dialogClosed;
+    closeDialog(): Promise<boolean>;
     private _renderShortcut;
-    protected render(): typeof nothing | import("lit-html").TemplateResult<1>;
+    protected render(): import("lit-html").TemplateResult<1>;
     static styles: import("lit").CSSResult[];
 }
 declare global {

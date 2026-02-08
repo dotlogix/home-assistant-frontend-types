@@ -19,7 +19,7 @@ export declare class HaDeviceSelector extends LitElement {
     private _hasIntegration;
     protected willUpdate(changedProperties: PropertyValues): void;
     protected updated(changedProperties: PropertyValues): void;
-    protected render(): typeof nothing | import("lit-html").TemplateResult<1>;
+    protected render(): import("lit-html").TemplateResult<1> | typeof nothing;
     private _filterDevices;
     private _filterEntities;
 }

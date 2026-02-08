@@ -20,7 +20,7 @@ export declare class HuiCardPicker extends LitElement {
     private _suggestedCards;
     private _customCards;
     private _otherCards;
-    protected render(): typeof nothing | TemplateResult<1>;
+    protected render(): TemplateResult<1> | typeof nothing;
     protected shouldUpdate(changedProps: PropertyValues): boolean;
     protected firstUpdated(): void;
     protected updated(changedProps: any): void;

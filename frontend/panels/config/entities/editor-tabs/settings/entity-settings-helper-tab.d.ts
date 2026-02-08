@@ -1,7 +1,7 @@
 import type { CSSResultGroup, PropertyValues } from "lit";
 import { LitElement, nothing } from "lit";
 import "../../../../../components/ha-button";
-import type { ExtEntityRegistryEntry } from "../../../../../data/entity_registry";
+import type { ExtEntityRegistryEntry } from "../../../../../data/entity/entity_registry";
 import type { HomeAssistant } from "../../../../../types";
 import "../../../helpers/forms/ha-counter-form";
 import "../../../helpers/forms/ha-input_boolean-form";
@@ -24,7 +24,7 @@ export declare class EntitySettingsHelperTab extends LitElement {
     private _registryEditor?;
     protected firstUpdated(changedProperties: PropertyValues): void;
     protected updated(changedProperties: PropertyValues): void;
-    protected render(): typeof nothing | import("lit-html").TemplateResult<1>;
+    protected render(): import("lit-html").TemplateResult<1> | typeof nothing;
     private _entityRegistryChanged;
     private _valueChanged;
     private _getItem;

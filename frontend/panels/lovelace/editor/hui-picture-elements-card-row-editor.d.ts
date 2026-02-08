@@ -16,7 +16,7 @@ export declare class HuiPictureElementsCardRowEditor extends LitElement {
     hass?: HomeAssistant;
     elements?: LovelaceElementConfig[];
     private _select;
-    protected render(): typeof nothing | import("lit-html").TemplateResult<1>;
+    protected render(): import("lit-html").TemplateResult<1> | typeof nothing;
     private _getSecondaryDescription;
     private _addElement;
     private _removeRow;

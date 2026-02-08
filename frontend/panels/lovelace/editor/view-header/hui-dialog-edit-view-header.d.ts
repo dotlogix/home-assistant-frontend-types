@@ -3,7 +3,8 @@ import { LitElement, nothing } from "lit";
 import "../../../../components/ha-button";
 import "../../../../components/ha-dialog";
 import "../../../../components/ha-dialog-header";
-import "../../../../components/ha-list-item";
+import "../../../../components/ha-dropdown";
+import "../../../../components/ha-dropdown-item";
 import "../../../../components/ha-spinner";
 import "../../../../components/ha-yaml-editor";
 import type { HomeAssistant } from "../../../../types";
@@ -20,7 +21,7 @@ export declare class HuiDialogEditViewHeader extends LitElement {
     protected updated(changedProperties: PropertyValues): void;
     showDialog(params: EditViewHeaderDialogParams): void;
     closeDialog(): void;
-    protected render(): typeof nothing | import("lit-html").TemplateResult<1>;
+    protected render(): import("lit-html").TemplateResult<1> | typeof nothing;
     private _handleAction;
     private _configChanged;
     private _viewYamlChanged;

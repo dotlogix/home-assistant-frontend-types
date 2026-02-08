@@ -13,7 +13,7 @@ declare global {
 }
 export interface HassDialog<T = HASSDomEvents[ValidHassDomEvent]> extends HTMLElement {
     showDialog(params: T): any;
-    closeDialog?: () => boolean;
+    closeDialog?: (historyState?: any) => boolean;
 }
 interface ShowDialogParams<T> {
     dialogTag: keyof HTMLElementTagNameMap;
@@ -34,8 +34,8 @@ export interface DialogState {
 }
 export declare const FOCUS_TARGET: unique symbol;
 export declare const showDialog: (element: HTMLElement & ProvideHassElement, root: ShadowRoot | HTMLElement, dialogTag: string, dialogParams: unknown, dialogImport?: () => Promise<unknown>, addHistory?: boolean) => Promise<boolean>;
-export declare const closeDialog: (dialogTag: string) => Promise<boolean>;
-export declare const closeLastDialog: () => Promise<boolean>;
+export declare const closeDialog: (dialogTag: string, historyState?: any) => Promise<boolean>;
+export declare const closeLastDialog: (historyState?: any) => Promise<boolean>;
 export declare const closeAllDialogs: () => Promise<boolean>;
 export declare const makeDialogManager: (element: HTMLElement & ProvideHassElement, root: ShadowRoot | HTMLElement) => void;
 export {};

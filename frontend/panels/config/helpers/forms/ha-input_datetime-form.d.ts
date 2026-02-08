@@ -16,7 +16,7 @@ declare class HaInputDateTimeForm extends LitElement {
     private _mode;
     set item(item: InputDateTime);
     focus(): void;
-    protected render(): typeof nothing | import("lit-html").TemplateResult<1>;
+    protected render(): import("lit-html").TemplateResult<1> | typeof nothing;
     private _modeChanged;
     private _valueChanged;
     static get styles(): CSSResultGroup;

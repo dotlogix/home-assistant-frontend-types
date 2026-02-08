@@ -1,0 +1,10 @@
+import { nothing, type TemplateResult } from "lit";
+import "../../../../components/ha-domain-icon";
+import "../../../../components/ha-floor-icon";
+import "../../../../components/ha-icon";
+import "../../../../components/ha-state-icon";
+import "../../../../components/ha-svg-icon";
+import type { ConfigEntry } from "../../../../data/config_entries";
+import type { LabelRegistryEntry } from "../../../../data/label/label_registry";
+import type { HomeAssistant } from "../../../../types";
+export declare const getTargetIcon: (hass: HomeAssistant, targetType: string, targetId: string | undefined, configEntryLookup: Record<string, ConfigEntry>, getLabel?: (id: string) => LabelRegistryEntry | undefined) => TemplateResult | typeof nothing;

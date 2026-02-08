@@ -16,7 +16,7 @@ declare class HuiCoverOpenCloseCardFeature extends LitElement implements Lovelac
     private _onOpenTap;
     private _onCloseTap;
     private _onStopTap;
-    protected render(): typeof nothing | import("lit-html").TemplateResult<1>;
+    protected render(): import("lit-html").TemplateResult<1> | typeof nothing;
     static get styles(): import("lit").CSSResult;
 }
 declare global {

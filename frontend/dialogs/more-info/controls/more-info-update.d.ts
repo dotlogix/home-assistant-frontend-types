@@ -1,8 +1,8 @@
 import "@material/mwc-linear-progress/mwc-linear-progress";
 import { LitElement, nothing } from "lit";
+import "../../../components/buttons/ha-progress-button";
 import "../../../components/ha-alert";
 import "../../../components/ha-button";
-import "../../../components/buttons/ha-progress-button";
 import "../../../components/ha-checkbox";
 import "../../../components/ha-faded";
 import "../../../components/ha-markdown";
@@ -26,7 +26,7 @@ declare class MoreInfoUpdate extends LitElement {
     private _fetchEntitySources;
     private _isHaOrOsUpdate;
     private _computeCreateBackupTexts;
-    protected render(): typeof nothing | import("lit-html").TemplateResult<1>;
+    protected render(): import("lit-html").TemplateResult<1> | typeof nothing;
     private _renderLoader;
     protected firstUpdated(): void;
     private _markdownLoaded;

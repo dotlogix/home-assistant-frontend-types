@@ -8,6 +8,15 @@ import "../../../components/ha-service-control";
 import type { ActionConfig } from "../../../data/lovelace/config/action";
 import type { HomeAssistant } from "../../../types";
 export type UiAction = Exclude<ActionConfig["action"], "fire-dom-event">;
+export interface ActionRelatedContext {
+    entity_id?: string;
+    area_id?: string;
+}
+export declare const ACTION_RELATED_CONTEXT: {
+    readonly entity_id: "entity";
+    readonly area_id: "area";
+};
+export declare const supportedActions: (struct: any, supported_actions: UiAction[]) => import("superstruct").Struct<any, unknown>;
 export declare class HuiActionEditor extends LitElement {
     config?: ActionConfig;
     label?: string;
@@ -15,13 +24,15 @@ export declare class HuiActionEditor extends LitElement {
     defaultAction?: UiAction;
     tooltipText?: string;
     hass?: HomeAssistant;
+    context?: ActionRelatedContext;
     private _select;
     get _navigation_path(): string;
     get _url_path(): string;
     get _service(): string;
     private _serviceAction;
+    private _navigateSchema;
     protected updated(changedProperties: PropertyValues<typeof this>): void;
-    protected render(): typeof nothing | import("lit-html").TemplateResult<1>;
+    protected render(): import("lit-html").TemplateResult<1> | typeof nothing;
     private _actionPicked;
     private _valueChanged;
     private _formValueChanged;

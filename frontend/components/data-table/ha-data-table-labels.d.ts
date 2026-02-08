@@ -1,18 +1,17 @@
 import type { TemplateResult } from "lit";
 import { LitElement } from "lit";
-import type { LabelRegistryEntry } from "../../data/label_registry";
-import "../ha-label";
+import type { LabelRegistryEntry } from "../../data/label/label_registry";
 import "../chips/ha-chip-set";
-import "../ha-button-menu";
+import "../ha-dropdown";
+import "../ha-dropdown-item";
 import "../ha-icon";
-import "../ha-list-item";
+import "../ha-label";
 declare class HaDataTableLabels extends LitElement {
     labels: LabelRegistryEntry[];
     protected render(): TemplateResult;
     private _renderLabel;
     private _labelClicked;
-    protected _handleIconOverflowMenuOpened(e: any): void;
-    protected _handleIconOverflowMenuClosed(): void;
+    private _handleDropdownSelect;
     static styles: import("lit").CSSResult;
 }
 declare global {

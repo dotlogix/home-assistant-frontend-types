@@ -1,10 +1,10 @@
 import type { CSSResultGroup } from "lit";
 import { LitElement, nothing } from "lit";
 import "../../../components/ha-alert";
-import "../../../components/ha-md-dialog";
+import "../../../components/ha-wa-dialog";
 import "../../../components/ha-button";
 import "../../../components/ha-svg-icon";
-import "../../../components/ha-dialog-header";
+import "../../../components/ha-dialog-footer";
 import "./dialog-repairs-issue-subtitle";
 import "../../../components/ha-markdown";
 import type { HomeAssistant } from "../../../types";
@@ -13,11 +13,11 @@ declare class DialogRepairsIssue extends LitElement {
     hass: HomeAssistant;
     private _issue?;
     private _params?;
-    private _dialog?;
+    private _open;
     showDialog(params: RepairsIssueDialogParams): void;
     private _dialogClosed;
     closeDialog(): void;
-    protected render(): typeof nothing | import("lit-html").TemplateResult<1>;
+    protected render(): import("lit-html").TemplateResult<1> | typeof nothing;
     private _ignoreIssue;
     private _clickHandler;
     static styles: CSSResultGroup;

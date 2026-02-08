@@ -6,7 +6,7 @@ import type { HomeAssistant } from "../../../types";
 declare class MoreInfoLawnMower extends LitElement {
     hass: HomeAssistant;
     stateObj?: LawnMowerEntity;
-    protected render(): typeof nothing | import("lit-html").TemplateResult<1>;
+    protected render(): import("lit-html").TemplateResult<1> | typeof nothing;
     private _deviceEntities;
     private _renderBattery;
     private _callService;

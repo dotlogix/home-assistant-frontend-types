@@ -11,7 +11,7 @@ export declare class HuiViewBackgroundEditor extends LitElement {
     private _localizeValueCallback;
     private _schema;
     protected updated(changedProps: PropertyValues): void;
-    protected render(): typeof nothing | import("lit-html").TemplateResult<1>;
+    protected render(): import("lit-html").TemplateResult<1> | typeof nothing;
     private _backgroundData;
     private _valueChanged;
     private _computeLabelCallback;

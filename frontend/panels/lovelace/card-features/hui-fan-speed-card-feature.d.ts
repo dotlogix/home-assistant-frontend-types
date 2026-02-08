@@ -13,7 +13,7 @@ declare class HuiFanSpeedCardFeature extends LitElement implements LovelaceCardF
     static getStubConfig(): FanSpeedCardFeatureConfig;
     setConfig(config: FanSpeedCardFeatureConfig): void;
     private _localizeSpeed;
-    protected render(): typeof nothing | import("lit-html").TemplateResult<1>;
+    protected render(): import("lit-html").TemplateResult<1> | typeof nothing;
     private _speedValueChanged;
     private _valueChanged;
     static get styles(): import("lit").CSSResult[];

@@ -11,7 +11,7 @@ declare class DialogVoiceSettings extends LitElement {
     showDialog(params: VoiceSettingsDialogParams): void;
     closeDialog(): void;
     private _viewMoreInfo;
-    protected render(): typeof nothing | import("lit-html").TemplateResult<1>;
+    protected render(): import("lit-html").TemplateResult<1> | typeof nothing;
     private _entityEntryUpdated;
     private _exposedEntitiesChanged;
     static get styles(): CSSResultGroup;
