@@ -1,4 +1,4 @@
-import type { LovelaceSectionConfig, LovelaceStrategySectionConfig } from "../../../data/lovelace/config/section";
+import { type LovelaceSectionConfig, type LovelaceStrategySectionConfig } from "../../../data/lovelace/config/section";
 import type { LovelaceConfig, LovelaceDashboardStrategyConfig, LovelaceRawConfig } from "../../../data/lovelace/config/types";
 import type { LovelaceStrategyViewConfig, LovelaceViewConfig } from "../../../data/lovelace/config/view";
 import type { HomeAssistant } from "../../../types";

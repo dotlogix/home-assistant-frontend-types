@@ -14,6 +14,7 @@ export type CustomLegendOption = ECOption["legend"] & {
         id?: string;
         secondaryIds?: string[];
         name: string;
+        value?: string;
         itemStyle?: Record<string, any>;
     }[];
 };
@@ -37,11 +38,14 @@ export declare class HaChartBase extends LitElement {
     private _lastTapTime?;
     private _shouldResizeChart;
     private _resizeAnimationDuration?;
+    private _suspendResize;
+    private _layoutTransitionActive;
     private _resizeController;
     private _loading;
     private _reducedMotion;
     private _listeners;
     private _originalZrFlush?;
+    private _pendingSetup;
     disconnectedCallback(): void;
     connectedCallback(): void;
     protected firstUpdated(): void;
@@ -53,6 +57,7 @@ export declare class HaChartBase extends LitElement {
     private _getAllIdsFromLegend;
     private _updateHiddenStatsFromOptions;
     private _getDataZoomConfig;
+    private _getDataZoomFilterMode;
     private _createOptions;
     private _createTheme;
     private _getSeries;
@@ -65,6 +70,7 @@ export declare class HaChartBase extends LitElement {
     private _legendClick;
     private _toggleExpandedLegend;
     private _handleChartRenderFinished;
+    private _resizeChartIfNeeded;
     private _compareCustomLegendOptions;
     static styles: import("lit").CSSResult;
 }

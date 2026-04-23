@@ -1,7 +1,7 @@
 import { LitElement } from "lit";
 import type { HomeAssistant } from "../../types";
-import "./ha-form";
 import "../ha-expansion-panel";
+import "./ha-form";
 import type { HaFormDataContainer, HaFormElement, HaFormExpandableSchema, HaFormSchema } from "./types";
 export declare class HaFormExpandable extends LitElement implements HaFormElement {
     hass: HomeAssistant;
@@ -15,6 +15,8 @@ export declare class HaFormExpandable extends LitElement implements HaFormElemen
         path?: string[];
     }) => string;
     localizeValue?: (key: string) => string;
+    private _form?;
+    reportValidity(): boolean;
     private _renderDescription;
     private _computeLabel;
     private _computeHelper;

@@ -14,7 +14,7 @@ declare class LightColorTempPicker extends LitElement {
     stateObj: LightEntity;
     private _ctPickerValue?;
     private _isInteracting?;
-    protected render(): import("lit-html").TemplateResult<1> | typeof nothing;
+    protected render(): typeof nothing | import("lit-html").TemplateResult<1>;
     private _generateTemperatureGradient;
     private _updateSliderValues;
     willUpdate(changedProps: PropertyValues): void;

@@ -10,7 +10,7 @@ declare class MoreInfoCamera extends LitElement {
     private _waiting;
     connectedCallback(): void;
     disconnectedCallback(): void;
-    protected render(): import("lit-html").TemplateResult<1> | typeof nothing;
+    protected render(): typeof nothing | import("lit-html").TemplateResult<1>;
     private _downloadSnapshot;
     static styles: import("lit").CSSResult;
 }

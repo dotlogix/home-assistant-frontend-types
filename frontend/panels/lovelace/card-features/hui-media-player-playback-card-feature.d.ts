@@ -19,7 +19,7 @@ declare class HuiMediaPlayerPlaybackCardFeature extends LitElement implements Lo
     setConfig(config: MediaPlayerPlaybackCardFeatureConfig): void;
     willUpdate(): void;
     protected shouldUpdate(changedProps: PropertyValues): boolean;
-    protected render(): import("lit-html").TemplateResult<1> | typeof nothing;
+    protected render(): typeof nothing | import("lit-html").TemplateResult<1>;
     private _measureCard;
     private _computeControlButton;
     private _computeButtons;

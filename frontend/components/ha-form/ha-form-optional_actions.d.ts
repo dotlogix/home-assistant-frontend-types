@@ -19,6 +19,7 @@ export declare class HaFormOptionalActions extends LitElement implements HaFormE
     localizeValue?: (key: string) => string;
     private _displayActions?;
     focus(): Promise<void>;
+    reportValidity(): boolean;
     protected updated(changedProps: PropertyValues): void;
     private _hiddenActions;
     private _displaySchema;

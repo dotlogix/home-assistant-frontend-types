@@ -13,13 +13,12 @@ declare class HuiHumidifierModesCardFeature extends LitElement implements Lovela
     context?: LovelaceCardFeatureContext;
     private _config?;
     _currentMode?: string;
+    private _renderModeIcon;
     private get _stateObj();
-    private _haSelect?;
     static getStubConfig(): HumidifierModesCardFeatureConfig;
     static getConfigElement(): Promise<LovelaceCardFeatureEditor>;
     setConfig(config: HumidifierModesCardFeatureConfig): void;
     protected willUpdate(changedProp: PropertyValues): void;
-    protected updated(changedProps: PropertyValues): void;
     private _valueChanged;
     private _setMode;
     protected render(): TemplateResult | null;

@@ -7,7 +7,7 @@ export declare class HuiStateIconElementEditor extends LitElement implements Lov
     hass?: HomeAssistant;
     private _config?;
     setConfig(config: StateIconElementConfig): void;
-    protected render(): import("lit-html").TemplateResult<1> | typeof nothing;
+    protected render(): typeof nothing | import("lit-html").TemplateResult<1>;
     private _valueChanged;
     private _computeLabelCallback;
 }

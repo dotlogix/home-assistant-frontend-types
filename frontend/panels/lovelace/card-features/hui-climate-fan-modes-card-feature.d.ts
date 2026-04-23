@@ -13,13 +13,12 @@ declare class HuiClimateFanModesCardFeature extends LitElement implements Lovela
     context?: LovelaceCardFeatureContext;
     private _config?;
     _currentFanMode?: string;
-    private _haSelect?;
+    private _renderFanModeIcon;
     private get _stateObj();
     static getStubConfig(): ClimateFanModesCardFeatureConfig;
     static getConfigElement(): Promise<LovelaceCardFeatureEditor>;
     setConfig(config: ClimateFanModesCardFeatureConfig): void;
     protected willUpdate(changedProp: PropertyValues): void;
-    protected updated(changedProps: PropertyValues): void;
     private _valueChanged;
     private _setMode;
     protected render(): TemplateResult | null;

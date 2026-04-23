@@ -16,6 +16,7 @@ export declare class HaYamlEditor extends LitElement {
     autoUpdate: boolean;
     readOnly: boolean;
     disableFullscreen: boolean;
+    inDialog: boolean;
     required: boolean;
     copyClipboard: boolean;
     hasExtraActions: boolean;
@@ -28,7 +29,8 @@ export declare class HaYamlEditor extends LitElement {
     protected firstUpdated(): void;
     protected willUpdate(changedProperties: PropertyValues<this>): void;
     focus(): void;
-    protected render(): import("lit-html").TemplateResult<1> | typeof nothing;
+    disableCodeEditorFullscreen(): void;
+    protected render(): typeof nothing | import("lit-html").TemplateResult<1>;
     private _onChange;
     private _onBlur;
     get yaml(): string;

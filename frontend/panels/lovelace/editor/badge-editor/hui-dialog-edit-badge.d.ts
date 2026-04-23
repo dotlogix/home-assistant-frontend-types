@@ -1,11 +1,11 @@
 import type { CSSResultGroup, PropertyValues } from "lit";
 import { LitElement, nothing } from "lit";
 import type { HASSDomEvent } from "../../../../common/dom/fire_event";
+import "../../../../components/ha-button";
+import "../../../../components/ha-dialog-footer";
 import "../../../../components/ha-dialog";
-import "../../../../components/ha-dialog-header";
 import "../../../../components/ha-icon-button";
 import "../../../../components/ha-spinner";
-import "../../../../components/ha-button";
 import type { HassDialog } from "../../../../dialogs/make-dialog-manager";
 import type { HomeAssistant } from "../../../../types";
 import "../../badges/hui-badge";
@@ -24,6 +24,7 @@ export declare class HuiDialogEditBadge extends LitElement implements HassDialog
     hass: HomeAssistant;
     large: boolean;
     private _params?;
+    private _open;
     private _badgeConfig?;
     private _containerConfig;
     private _saving;
@@ -33,13 +34,11 @@ export declare class HuiDialogEditBadge extends LitElement implements HassDialog
     private _GUImode;
     private _documentationURL?;
     private _dirty;
-    private _isEscapeEnabled;
     showDialog(params: EditBadgeDialogParams): Promise<void>;
     closeDialog(): boolean;
+    private _dialogClosed;
     protected updated(changedProps: PropertyValues): void;
-    private _enableEscapeKeyClose;
-    private _disableEscapeKeyClose;
-    protected render(): import("lit-html").TemplateResult<1> | typeof nothing;
+    protected render(): typeof nothing | import("lit-html").TemplateResult<1>;
     private _enlarge;
     private _ignoreKeydown;
     private _handleConfigChanged;

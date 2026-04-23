@@ -1,6 +1,5 @@
 import type { CSSResultGroup } from "lit";
 import { LitElement } from "lit";
-import "../../../../../components/ha-textfield";
 import type { IfAction } from "../../../../../data/script";
 import type { HomeAssistant } from "../../../../../types";
 import "../ha-automation-action";

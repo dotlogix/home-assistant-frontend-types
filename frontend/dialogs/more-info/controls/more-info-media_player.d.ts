@@ -24,12 +24,12 @@ declare class MoreInfoMediaPlayer extends LitElement {
     disconnectedCallback(): void;
     protected firstUpdated(_changedProperties: PropertyValues): void;
     private _formatDuration;
-    protected _renderVolumeControl(): import("lit-html").TemplateResult<1> | typeof nothing;
-    protected _renderSourceControl(): import("lit-html").TemplateResult<1> | typeof nothing;
-    protected _renderSoundMode(): import("lit-html").TemplateResult<1> | typeof nothing;
-    protected _renderGrouping(): import("lit-html").TemplateResult<1> | typeof nothing;
+    protected _renderVolumeControl(): typeof nothing | import("lit-html").TemplateResult<1>;
+    protected _renderSourceControl(): typeof nothing | import("lit-html").TemplateResult<1>;
+    protected _renderSoundMode(): typeof nothing | import("lit-html").TemplateResult<1>;
+    protected _renderGrouping(): typeof nothing | import("lit-html").TemplateResult<1>;
     protected _renderEmptyCover(title: string, icon?: string): import("lit-html").TemplateResult<1>;
-    protected render(): import("lit-html").TemplateResult<1> | typeof nothing;
+    protected render(): typeof nothing | import("lit-html").TemplateResult<1>;
     static styles: import("lit").CSSResult;
     private _handleClick;
     protected updated(changedProps: PropertyValues): void;
@@ -43,6 +43,10 @@ declare class MoreInfoMediaPlayer extends LitElement {
     private _showBrowseMedia;
     private _showGroupMediaPlayers;
     private _handleMediaSeekChanged;
+    private _handleVolumePointerDown;
+    private _handleVolumePointerUp;
+    private _handleVolumeInput;
+    private _handleVolumeChange;
 }
 declare global {
     interface HTMLElementTagNameMap {

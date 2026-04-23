@@ -30,8 +30,9 @@ export declare abstract class HuiElementEditor<T extends object = object, C = an
     hass: HomeAssistant;
     lovelace?: LovelaceConfig;
     context?: C;
+    inDialog: boolean;
     private _config?;
-    private _configElement?;
+    protected _configElement?: LovelaceGenericElementEditor;
     private _subElementEditorConfig?;
     private _guiMode;
     private _errors?;

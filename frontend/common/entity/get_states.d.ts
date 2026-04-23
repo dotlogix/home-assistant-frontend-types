@@ -13,6 +13,7 @@ export declare const FIXED_DOMAIN_STATES: {
     readonly device_tracker: readonly ["home", "not_home"];
     readonly fan: readonly ["on", "off"];
     readonly humidifier: readonly ["on", "off"];
+    readonly infrared: readonly [];
     readonly input_boolean: readonly ["on", "off"];
     readonly input_button: readonly [];
     readonly lawn_mower: readonly ["error", "paused", "mowing", "returning", "docked"];

@@ -4,7 +4,6 @@ import type { HomeAssistant } from "../types";
 import "./ha-expansion-panel";
 import "./ha-items-display-editor";
 import "./ha-svg-icon";
-import "./ha-textfield";
 export interface AreasDisplayValue {
     hidden?: string[];
     order?: string[];

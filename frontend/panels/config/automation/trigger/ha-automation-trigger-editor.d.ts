@@ -1,8 +1,8 @@
 import type { CSSResultGroup } from "lit";
 import { LitElement } from "lit";
-import "../../../../components/ha-textfield";
 import "../../../../components/ha-yaml-editor";
 import type { HaYamlEditor } from "../../../../components/ha-yaml-editor";
+import "../../../../components/input/ha-input";
 import type { Trigger } from "../../../../data/automation";
 import type { TriggerDescription } from "../../../../data/trigger";
 import type { HomeAssistant } from "../../../../types";

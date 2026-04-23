@@ -8,7 +8,7 @@ export declare class HaMoreInfoSettings extends LitElement {
     entityId: string;
     private entry?;
     private _settingsElementTag?;
-    protected render(): import("lit-html").TemplateResult<1> | typeof nothing;
+    protected render(): typeof nothing | import("lit-html").TemplateResult<1>;
     willUpdate(changedProps: PropertyValues): void;
     private _loadPlatformSettingTabs;
     static get styles(): CSSResultGroup;

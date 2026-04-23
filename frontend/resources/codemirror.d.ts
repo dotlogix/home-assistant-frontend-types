@@ -1,12 +1,12 @@
 import { StreamLanguage } from "@codemirror/language";
 import { Compartment } from "@codemirror/state";
 import type { KeyBinding } from "@codemirror/view";
-export { autocompletion } from "@codemirror/autocomplete";
+export { autocompletion, selectedCompletion } from "@codemirror/autocomplete";
 export { defaultKeymap, history, historyKeymap } from "@codemirror/commands";
 export { highlightingFor, foldGutter } from "@codemirror/language";
 export { closeSearchPanel, highlightSelectionMatches, openSearchPanel, search, searchKeymap, } from "@codemirror/search";
 export { EditorState } from "@codemirror/state";
-export { crosshairCursor, drawSelection, EditorView, highlightActiveLine, keymap, lineNumbers, rectangularSelection, dropCursor, } from "@codemirror/view";
+export { crosshairCursor, drawSelection, EditorView, highlightActiveLine, keymap, lineNumbers, rectangularSelection, dropCursor, tooltips, } from "@codemirror/view";
 export { indentationMarkers } from "@replit/codemirror-indentation-markers";
 export { tags } from "@lezer/highlight";
 export declare const langs: {

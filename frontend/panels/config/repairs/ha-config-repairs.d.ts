@@ -8,7 +8,7 @@ declare class HaConfigRepairs extends LitElement {
     narrow: boolean;
     repairsIssues?: RepairsIssue[];
     total?: number;
-    protected render(): import("lit-html").TemplateResult<1> | typeof nothing;
+    protected render(): typeof nothing | import("lit-html").TemplateResult<1>;
     private _openShowMoreDialog;
     static styles: import("lit").CSSResult;
 }

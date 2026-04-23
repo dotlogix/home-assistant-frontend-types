@@ -21,7 +21,7 @@ declare class HaInputNumberForm extends LitElement {
     private _unit_of_measurement?;
     set item(item: InputNumber);
     focus(): void;
-    protected render(): import("lit-html").TemplateResult<1> | typeof nothing;
+    protected render(): typeof nothing | import("lit-html").TemplateResult<1>;
     private _modeChanged;
     private _valueChanged;
     static get styles(): CSSResultGroup;

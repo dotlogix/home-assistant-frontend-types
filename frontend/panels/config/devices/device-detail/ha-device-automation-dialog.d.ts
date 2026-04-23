@@ -3,7 +3,7 @@ import { LitElement, nothing } from "lit";
 import "../../../../components/ha-icon-next";
 import "../../../../components/ha-list";
 import "../../../../components/ha-list-item";
-import "../../../../components/ha-wa-dialog";
+import "../../../../components/ha-dialog";
 import type { HomeAssistant } from "../../../../types";
 import type { DeviceAutomationDialogParams } from "./show-dialog-device-automation";
 export declare class DialogDeviceAutomation extends LitElement {
@@ -19,7 +19,7 @@ export declare class DialogDeviceAutomation extends LitElement {
     protected firstUpdated(changedProps: any): void;
     protected updated(changedProps: any): void;
     private _handleRowClick;
-    protected render(): import("lit-html").TemplateResult<1> | typeof nothing;
+    protected render(): typeof nothing | import("lit-html").TemplateResult<1>;
     static get styles(): CSSResultGroup;
 }
 declare global {

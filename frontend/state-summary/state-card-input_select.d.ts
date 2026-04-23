@@ -1,8 +1,7 @@
 import type { TemplateResult } from "lit";
 import { LitElement } from "lit";
 import "../components/entity/state-badge";
-import "../components/ha-list-item";
-import "../components/ha-select";
+import "../components/ha-control-select-menu";
 import type { InputSelectEntity } from "../data/input_select";
 import type { HomeAssistant } from "../types";
 declare class StateCardInputSelect extends LitElement {

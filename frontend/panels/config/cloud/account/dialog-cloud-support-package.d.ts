@@ -1,9 +1,9 @@
-import { LitElement, nothing } from "lit";
+import { LitElement } from "lit";
 import "../../../../components/ha-alert";
 import "../../../../components/ha-button";
-import "../../../../components/ha-dialog-header";
+import "../../../../components/ha-dialog-footer";
 import "../../../../components/ha-markdown-element";
-import "../../../../components/ha-md-dialog";
+import "../../../../components/ha-dialog";
 import "../../../../components/ha-select";
 import "../../../../components/ha-spinner";
 import "../../../../components/ha-textarea";
@@ -12,11 +12,10 @@ export declare class DialogSupportPackage extends LitElement {
     hass: HomeAssistant;
     private _open;
     private _supportPackage?;
-    private _dialog?;
     showDialog(): void;
     private _dialogClosed;
     closeDialog(): boolean;
-    protected render(): import("lit-html").TemplateResult<1> | typeof nothing;
+    protected render(): import("lit-html").TemplateResult<1>;
     private _loadSupportPackage;
     private _download;
     static styles: import("lit").CSSResult;

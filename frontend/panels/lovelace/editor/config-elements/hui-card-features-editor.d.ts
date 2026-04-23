@@ -30,7 +30,7 @@ export declare class HuiCardFeaturesEditor extends LitElement {
     private _isFeatureTypeEditable;
     private _getFeatureTypeLabel;
     private _getKey;
-    protected render(): import("lit-html").TemplateResult<1> | typeof nothing;
+    protected render(): typeof nothing | import("lit-html").TemplateResult<1>;
     private _addFeature;
     private _featureMoved;
     private _removeFeature;

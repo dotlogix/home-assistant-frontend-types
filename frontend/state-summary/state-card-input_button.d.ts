@@ -3,7 +3,7 @@ import type { CSSResultGroup } from "lit";
 import { LitElement } from "lit";
 import "../components/entity/ha-entity-toggle";
 import "../components/entity/state-info";
-import "../components/ha-button";
+import "../components/ha-control-button";
 import type { HomeAssistant } from "../types";
 declare class StateCardInputButton extends LitElement {
     hass: HomeAssistant;

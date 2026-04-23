@@ -20,7 +20,7 @@ declare class MoreInfoScript extends LitElement {
     private _unsubMediaQuery?;
     connectedCallback(): void;
     disconnectedCallback(): void;
-    protected render(): import("lit-html").TemplateResult<1> | typeof nothing;
+    protected render(): typeof nothing | import("lit-html").TemplateResult<1>;
     protected willUpdate(changedProperties: PropertyValues): void;
     private _cancelScript;
     private _runScript;

@@ -16,7 +16,7 @@ declare class HuiWeatherEntityRow extends LitElement implements LovelaceRow {
     setConfig(config: EntitiesCardEntityConfig): void;
     protected shouldUpdate(changedProps: PropertyValues): boolean;
     protected updated(changedProps: PropertyValues): void;
-    protected render(): import("lit-html").TemplateResult<1> | typeof nothing;
+    protected render(): typeof nothing | import("lit-html").TemplateResult<1>;
     private _handleAction;
     static get styles(): CSSResultGroup;
 }

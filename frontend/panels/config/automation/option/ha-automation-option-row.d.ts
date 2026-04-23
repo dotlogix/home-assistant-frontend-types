@@ -36,7 +36,7 @@ export default class HaAutomationOptionRow extends LitElement {
     private _renderOverflowLabel;
     private _renderRow;
     private _renderContent;
-    protected render(): TemplateResult<1> | typeof nothing;
+    protected render(): typeof nothing | TemplateResult<1>;
     private _duplicateOption;
     private _moveUp;
     private _moveDown;

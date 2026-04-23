@@ -5,7 +5,7 @@ import type { HomeAssistant } from "../types";
 import "./ha-check-list-item";
 import "./ha-expansion-panel";
 import "./ha-list";
-import "./search-input-outlined";
+import "./input/ha-input-search";
 export declare class HaFilterDevices extends LitElement {
     hass: HomeAssistant;
     value?: string[];

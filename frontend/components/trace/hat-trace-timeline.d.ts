@@ -12,7 +12,7 @@ export declare class HaAutomationTracer extends LitElement {
     selectedPath?: string;
     allowPick: boolean;
     _entityReg: EntityRegistryEntry[];
-    protected render(): TemplateResult<1> | typeof nothing;
+    protected render(): typeof nothing | TemplateResult<1>;
     protected updated(props: PropertyValues): void;
     static get styles(): CSSResultGroup;
 }

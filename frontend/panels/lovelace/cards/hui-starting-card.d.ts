@@ -10,7 +10,7 @@ export declare class HuiStartingCard extends LitElement implements LovelaceCard 
     getCardSize(): number;
     setConfig(_config: LovelaceCardConfig): void;
     protected updated(changedProperties: PropertyValues): void;
-    protected render(): import("lit-html").TemplateResult<1> | typeof nothing;
+    protected render(): typeof nothing | import("lit-html").TemplateResult<1>;
     static styles: import("lit").CSSResult;
 }
 declare global {

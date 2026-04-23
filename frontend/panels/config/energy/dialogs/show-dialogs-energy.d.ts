@@ -1,28 +1,9 @@
-import type { BatterySourceTypeEnergyPreference, DeviceConsumptionEnergyPreference, EnergyGasUnitClass, EnergyInfo, FlowFromGridSourceEnergyPreference, FlowToGridSourceEnergyPreference, GasSourceTypeEnergyPreference, GridPowerSourceEnergyPreference, GridPowerSourceInput, GridSourceTypeEnergyPreference, SolarSourceTypeEnergyPreference, WaterSourceTypeEnergyPreference } from "../../../../data/energy";
+import type { BatterySourceTypeEnergyPreference, DeviceConsumptionEnergyPreference, EnergyGasUnitClass, EnergyInfo, GasSourceTypeEnergyPreference, GridSourceTypeEnergyPreference, SolarSourceTypeEnergyPreference, WaterSourceTypeEnergyPreference } from "../../../../data/energy";
 import type { StatisticsMetaData } from "../../../../data/recorder";
-export interface EnergySettingsGridFlowDialogParams {
-    source?: FlowFromGridSourceEnergyPreference | FlowToGridSourceEnergyPreference;
-    metadata?: StatisticsMetaData;
-    direction: "from" | "to";
-    grid_source?: GridSourceTypeEnergyPreference;
-    saveCallback: (source: FlowFromGridSourceEnergyPreference | FlowToGridSourceEnergyPreference) => Promise<void>;
-}
-export interface EnergySettingsGridFlowFromDialogParams {
-    source?: FlowFromGridSourceEnergyPreference;
-    metadata?: StatisticsMetaData;
-    grid_source?: GridSourceTypeEnergyPreference;
-    saveCallback: (source: FlowFromGridSourceEnergyPreference) => Promise<void>;
-}
-export interface EnergySettingsGridFlowToDialogParams {
-    source?: FlowToGridSourceEnergyPreference;
-    metadata?: StatisticsMetaData;
-    grid_source?: GridSourceTypeEnergyPreference;
-    saveCallback: (source: FlowToGridSourceEnergyPreference) => Promise<void>;
-}
-export interface EnergySettingsGridPowerDialogParams {
-    source?: GridPowerSourceEnergyPreference;
-    grid_source?: GridSourceTypeEnergyPreference;
-    saveCallback: (source: GridPowerSourceInput) => Promise<void>;
+export interface EnergySettingsGridDialogParams {
+    source?: GridSourceTypeEnergyPreference;
+    grid_sources: GridSourceTypeEnergyPreference[];
+    saveCallback: (source: GridSourceTypeEnergyPreference) => Promise<void>;
 }
 export interface EnergySettingsSolarDialogParams {
     info: EnergyInfo;
@@ -65,7 +46,5 @@ export declare const showEnergySettingsBatteryDialog: (element: HTMLElement, dia
 export declare const showEnergySettingsSolarDialog: (element: HTMLElement, dialogParams: EnergySettingsSolarDialogParams) => void;
 export declare const showEnergySettingsGasDialog: (element: HTMLElement, dialogParams: EnergySettingsGasDialogParams) => void;
 export declare const showEnergySettingsWaterDialog: (element: HTMLElement, dialogParams: EnergySettingsWaterDialogParams) => void;
-export declare const showEnergySettingsGridFlowFromDialog: (element: HTMLElement, dialogParams: EnergySettingsGridFlowFromDialogParams) => void;
-export declare const showEnergySettingsGridFlowToDialog: (element: HTMLElement, dialogParams: EnergySettingsGridFlowToDialogParams) => void;
 export declare const showEnergySettingsDeviceWaterDialog: (element: HTMLElement, dialogParams: EnergySettingsDeviceWaterDialogParams) => void;
-export declare const showEnergySettingsGridPowerDialog: (element: HTMLElement, dialogParams: EnergySettingsGridPowerDialogParams) => void;
+export declare const showEnergySettingsGridDialog: (element: HTMLElement, dialogParams: EnergySettingsGridDialogParams) => void;

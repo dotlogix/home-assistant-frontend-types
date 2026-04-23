@@ -32,7 +32,7 @@ export declare class HuiImage extends LitElement {
     disconnectedCallback(): void;
     protected handleIntersectionCallback(entries: IntersectionObserverEntry[]): void;
     willUpdate(changedProps: PropertyValues): void;
-    protected render(): import("lit-html").TemplateResult<1> | typeof nothing;
+    protected render(): typeof nothing | import("lit-html").TemplateResult<1>;
     protected _shouldStartCameraUpdates(oldHass?: HomeAssistant): boolean;
     private _startIntersectionObserverOrUpdates;
     private _stopIntersectionObserver;

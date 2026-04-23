@@ -15,6 +15,8 @@ export declare class HaSelector extends LitElement {
     disabled: boolean;
     required: boolean;
     context?: Record<string, any>;
+    private _selectorElement?;
+    reportValidity(): boolean;
     focus(): Promise<void>;
     private get _type();
     protected willUpdate(changedProps: PropertyValues): void;

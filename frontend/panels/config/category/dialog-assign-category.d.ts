@@ -2,7 +2,7 @@ import type { CSSResultGroup } from "lit";
 import { LitElement, nothing } from "lit";
 import "../../../components/ha-alert";
 import "../../../components/ha-button";
-import "../../../components/ha-wa-dialog";
+import "../../../components/ha-dialog";
 import "../../../components/ha-dialog-footer";
 import type { HomeAssistant } from "../../../types";
 import "./ha-category-picker";
@@ -18,7 +18,7 @@ declare class DialogAssignCategory extends LitElement {
     showDialog(params: AssignCategoryDialogParams): void;
     closeDialog(): void;
     private _dialogClosed;
-    protected render(): import("lit-html").TemplateResult<1> | typeof nothing;
+    protected render(): typeof nothing | import("lit-html").TemplateResult<1>;
     private _categoryChanged;
     private _updateEntry;
     static get styles(): CSSResultGroup;

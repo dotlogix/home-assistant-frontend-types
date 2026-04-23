@@ -5,6 +5,7 @@ import "./ha-svg-icon";
 export interface ControlSelectOption {
     value: string;
     label?: string;
+    ariaLabel?: string;
     icon?: TemplateResult;
     path?: string;
 }

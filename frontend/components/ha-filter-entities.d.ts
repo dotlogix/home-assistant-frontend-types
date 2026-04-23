@@ -6,7 +6,7 @@ import "./ha-check-list-item";
 import "./ha-expansion-panel";
 import "./ha-list";
 import "./ha-state-icon";
-import "./search-input-outlined";
+import "./input/ha-input-search";
 export declare class HaFilterEntities extends LitElement {
     hass: HomeAssistant;
     value?: string[];

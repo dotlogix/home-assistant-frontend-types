@@ -1,6 +1,7 @@
 import type { CSSResultGroup, PropertyValues, TemplateResult } from "lit";
 import { LitElement, nothing } from "lit";
 import "../../../../components/ha-spinner";
+import "../../../../components/ha-dialog-footer";
 import "../../../../components/ha-dialog";
 import "../../../../components/ha-button";
 import "../../../../components/ha-form/ha-form";
@@ -14,6 +15,7 @@ import type { DialogStatisticsAdjustSumParams } from "./show-dialog-statistics-a
 export declare class DialogStatisticsFixUnsupportedUnitMetadata extends LitElement {
     hass: HomeAssistant;
     private _params?;
+    private _open;
     private _busy;
     private _moment?;
     private _stats5min?;
@@ -25,7 +27,8 @@ export declare class DialogStatisticsFixUnsupportedUnitMetadata extends LitEleme
     private _amountSelector;
     showDialog(params: DialogStatisticsAdjustSumParams): void;
     closeDialog(): void;
-    protected render(): TemplateResult<1> | typeof nothing;
+    private _dialogClosed;
+    protected render(): typeof nothing | TemplateResult<1>;
     protected shouldUpdate(changedProps: PropertyValues): boolean;
     private _renderPickStatistic;
     private _clearChosenStatistic;

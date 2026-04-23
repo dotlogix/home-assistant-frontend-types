@@ -7,7 +7,7 @@ declare class MoreInfoPerson extends LitElement {
     hass: HomeAssistant;
     stateObj?: HassEntity;
     private _entityArray;
-    protected render(): import("lit-html").TemplateResult<1> | typeof nothing;
+    protected render(): typeof nothing | import("lit-html").TemplateResult<1>;
     private _handleAction;
     static styles: import("lit").CSSResult;
 }

@@ -30,6 +30,7 @@ export declare const enum STEP {
 export declare class HaVoiceAssistantSetupDialog extends LitElement {
     hass: HomeAssistant;
     private _params?;
+    private _open;
     private _step;
     private _assistConfiguration?;
     private _error?;
@@ -39,12 +40,12 @@ export declare class HaVoiceAssistantSetupDialog extends LitElement {
     private _previousSteps;
     private _nextStep?;
     showDialog(params: VoiceAssistantSetupDialogParams): Promise<void>;
-    closeDialog(): Promise<void>;
+    closeDialog(): void;
     protected willUpdate(changedProps: any): void;
     private _dialogClosed;
     private _deviceEntities;
     private _findDomainEntityId;
-    protected render(): import("lit-html").TemplateResult<1> | typeof nothing;
+    protected render(): typeof nothing | import("lit-html").TemplateResult<1>;
     private _getLanguages;
     private _fetchAssistConfiguration;
     private _handlePickLanguage;

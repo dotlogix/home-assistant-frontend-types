@@ -19,7 +19,7 @@ declare class HuiTargetHumidityCardFeature extends LitElement implements Lovelac
     private get _max();
     private _valueChanged;
     private _callService;
-    protected render(): import("lit-html").TemplateResult<1> | typeof nothing;
+    protected render(): typeof nothing | import("lit-html").TemplateResult<1>;
     static get styles(): import("lit").CSSResult;
 }
 declare global {

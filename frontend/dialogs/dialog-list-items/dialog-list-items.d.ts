@@ -4,16 +4,19 @@ import "../../components/ha-icon";
 import "../../components/ha-md-list";
 import "../../components/ha-md-list-item";
 import "../../components/ha-svg-icon";
+import "../../components/ha-dialog";
 import type { HomeAssistant } from "../../types";
 import type { HassDialog } from "../make-dialog-manager";
 import type { ListItemsDialogParams } from "./show-list-items-dialog";
 export declare class ListItemsDialog extends LitElement implements HassDialog<ListItemsDialogParams> {
     hass?: HomeAssistant;
     private _params?;
+    private _open;
     showDialog(params: ListItemsDialogParams): Promise<void>;
+    closeDialog(_historyState?: any): boolean;
     private _dialogClosed;
     private _itemClicked;
-    protected render(): import("lit-html").TemplateResult<1> | typeof nothing;
+    protected render(): typeof nothing | import("lit-html").TemplateResult<1>;
     static styles: import("lit").CSSResult;
 }
 declare global {

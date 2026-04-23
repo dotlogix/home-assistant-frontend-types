@@ -25,3 +25,5 @@ export declare const UNIT_C = "\u00B0C";
 export declare const UNIT_F = "\u00B0F";
 /** Entity ID of the default view. */
 export declare const DEFAULT_VIEW_ENTITY_ID = "group.default_view";
+/** String to visually separate labels on UI */
+export declare const STRINGS_SEPARATOR_DOT = " \u00B7 ";

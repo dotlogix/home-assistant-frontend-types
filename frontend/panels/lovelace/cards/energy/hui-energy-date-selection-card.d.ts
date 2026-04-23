@@ -4,15 +4,17 @@ import "../../../../components/ha-card";
 import type { HomeAssistant } from "../../../../types";
 import "../../components/hui-energy-period-selector";
 import type { LovelaceCard, LovelaceGridOptions } from "../../types";
-import type { EnergyCardBaseConfig } from "../types";
+import type { EnergyDateSelectorCardConfig } from "../types";
 export declare class HuiEnergyDateSelectionCard extends LitElement implements LovelaceCard {
+    static getConfigElement(): Promise<import("../../editor/config-elements/hui-energy-date-selection-card-editor").HuiEnergyDateSelectionCardEditor>;
     hass: HomeAssistant;
     private _config?;
+    static getStubConfig(_hass: HomeAssistant, _entities: string[], _entitiesFill: string[]): EnergyDateSelectorCardConfig;
     getCardSize(): Promise<number> | number;
     getGridOptions(): LovelaceGridOptions;
-    setConfig(config: EnergyCardBaseConfig): void;
+    setConfig(config: EnergyDateSelectorCardConfig): void;
     protected shouldUpdate(changedProps: PropertyValues): boolean;
-    protected render(): import("lit-html").TemplateResult<1> | typeof nothing;
+    protected render(): typeof nothing | import("lit-html").TemplateResult<1>;
     static styles: import("lit").CSSResult;
 }
 declare global {

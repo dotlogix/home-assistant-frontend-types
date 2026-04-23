@@ -1,6 +1,5 @@
 import { LitElement, nothing } from "lit";
-import "../../../../../components/ha-dialog-header";
-import "../../../../../components/ha-icon-button";
+import "../../../../../components/ha-dialog-footer";
 import "../../../../../components/ha-icon-button-arrow-prev";
 import "../../../../../components/ha-button";
 import "../../../../../components/ha-dialog";
@@ -32,13 +31,14 @@ declare class DialogMatterAddDevice extends LitElement {
     private _unsub?;
     showDialog(): void;
     closeDialog(): void;
+    private _dialogClosed;
     private _handleStepSelected;
     private _handlePairingCodeChanged;
     private _back;
     private _renderStep;
     private _addDevice;
     private _renderActions;
-    protected render(): import("lit-html").TemplateResult<1> | typeof nothing;
+    protected render(): typeof nothing | import("lit-html").TemplateResult<1>;
     static styles: import("lit").CSSResult[];
 }
 declare global {

@@ -56,7 +56,7 @@ export declare class HuiAreaCard extends LitElement implements LovelaceCard {
     private _featurePosition;
     private _displayedFeatures;
     willUpdate(changedProps: PropertyValues): void;
-    protected render(): TemplateResult<1> | typeof nothing;
+    protected render(): typeof nothing | TemplateResult<1>;
     static styles: import("lit").CSSResult[];
 }
 declare global {

@@ -40,7 +40,7 @@ export declare class HuiHistoryGraphCard extends LitElement implements LovelaceC
     private _unsubscribeHistory;
     protected shouldUpdate(changedProps: PropertyValues): boolean;
     protected updated(changedProps: PropertyValues): void;
-    protected render(): import("lit-html").TemplateResult<1> | typeof nothing;
+    protected render(): typeof nothing | import("lit-html").TemplateResult<1>;
     static styles: import("lit").CSSResult;
 }
 declare global {

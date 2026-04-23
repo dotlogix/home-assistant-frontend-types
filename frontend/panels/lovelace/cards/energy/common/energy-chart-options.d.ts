@@ -3,7 +3,7 @@ import type { BarSeriesOption, LineSeriesOption } from "echarts/types/dist/share
 import type { FrontendLocaleData } from "../../../../../data/translation";
 import type { ECOption } from "../../../../../resources/echarts/echarts";
 import type { StatisticPeriod } from "../../../../../data/recorder";
-export declare function getSuggestedMax(period: StatisticPeriod, end: Date): number;
+export declare function getSuggestedMax(period: StatisticPeriod, end: Date, noRounding: boolean): Date;
 export declare function getCommonOptions(start: Date, end: Date, locale: FrontendLocaleData, config: HassConfig, unit?: string, compareStart?: Date, compareEnd?: Date, formatTotal?: (total: number) => string, detailedDailyData?: boolean): ECOption;
 export declare function fillDataGapsAndRoundCaps(datasets: BarSeriesOption[]): void;
 export declare function fillLineGaps(datasets: LineSeriesOption[]): LineSeriesOption[];

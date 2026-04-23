@@ -12,7 +12,7 @@ export declare class HuiEmptyStateCard extends LitElement implements LovelaceCar
     private _config?;
     getCardSize(): number;
     setConfig(config: EmptyStateCardConfig): void;
-    protected render(): import("lit-html").TemplateResult<1> | typeof nothing;
+    protected render(): typeof nothing | import("lit-html").TemplateResult<1>;
     private _handleButtonAction;
     static styles: import("lit").CSSResult;
 }

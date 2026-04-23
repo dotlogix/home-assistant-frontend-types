@@ -3,8 +3,9 @@ import { LitElement, nothing } from "lit";
 import type { HomeAssistant } from "../../types";
 import "../ha-alert";
 import "../ha-button";
-import "../ha-dialog";
+import "../ha-dialog-footer";
 import "../ha-dialog-header";
+import "../ha-dialog";
 import "./ha-media-player-toggle";
 import type { JoinMediaPlayersDialogParams } from "./show-join-media-players-dialog";
 declare class DialogJoinMediaPlayers extends LitElement {
@@ -14,9 +15,11 @@ declare class DialogJoinMediaPlayers extends LitElement {
     private _selectedEntities;
     private _submitting?;
     private _error?;
+    private _open;
     showDialog(params: JoinMediaPlayersDialogParams): void;
     closeDialog(): void;
-    protected render(): import("lit-html").TemplateResult<1> | typeof nothing;
+    private _dialogClosed;
+    protected render(): typeof nothing | import("lit-html").TemplateResult<1>;
     private _mediaPlayerEntities;
     private _selectAll;
     private _handleSelectedChange;

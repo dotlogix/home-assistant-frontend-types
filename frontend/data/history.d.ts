@@ -53,8 +53,16 @@ export interface HistoryStreamMessage {
 export declare const entityIdHistoryNeedsAttributes: (hass: HomeAssistant, entityId: string) => boolean;
 export declare const fetchDateWS: (hass: HomeAssistant, startTime: Date, endTime: Date, entityIds: string[]) => Promise<HistoryStates>;
 export declare const subscribeHistory: (hass: HomeAssistant, callbackFunction: (data: HistoryStates) => void, startTime: Date, endTime: Date, entityIds: string[]) => Promise<() => Promise<void>>;
+export declare class HistoryStream {
+    hass: HomeAssistant;
+    hoursToShow?: number;
+    combinedHistory: HistoryStates;
+    constructor(hass: HomeAssistant, hoursToShow?: number);
+    processMessage(streamMessage: HistoryStreamMessage): HistoryStates;
+}
 export declare const subscribeHistoryStatesTimeWindow: (hass: HomeAssistant, callbackFunction: (data: HistoryStates) => void, hoursToShow: number, entityIds: string[], noAttributes?: boolean, minimalResponse?: boolean, significantChangesOnly?: boolean) => Promise<() => Promise<void>>;
 export declare const convertStatisticsToHistory: (hass: HomeAssistant, statistics: Statistics, statisticIds: string[], sensorNumericDeviceClasses: string[], splitDeviceClasses?: boolean) => HistoryResult;
+export declare const limitedHistoryFromStateObj: (state: HassEntity) => EntityHistoryState[];
 export declare const computeHistory: (hass: HomeAssistant, stateHistory: HistoryStates, entityIds: string[], localize: LocalizeFunc, sensorNumericalDeviceClasses: string[], splitDeviceClasses?: boolean, forceNumeric?: boolean) => HistoryResult;
 export declare const computeGroupKey: (unit: string | undefined, device_class: string | undefined, splitDeviceClasses: boolean) => string;
 export declare const isNumericEntity: (domain: string, currentState: HassEntity | undefined, numericStateFromHistory: EntityHistoryState | undefined, sensorNumericalDeviceClasses: string[], forceNumeric?: boolean) => boolean;

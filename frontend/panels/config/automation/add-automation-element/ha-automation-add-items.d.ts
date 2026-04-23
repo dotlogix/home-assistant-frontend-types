@@ -32,7 +32,7 @@ export declare class HaAutomationAddItems extends LitElement {
     private _onItemsScroll;
     scrollTo(options?: ScrollToOptions): void;
     scrollTo(x: number, y: number): void;
-    static styles: import("lit").CSSResult;
+    static styles: import("lit").CSSResult[];
 }
 declare global {
     interface HTMLElementTagNameMap {

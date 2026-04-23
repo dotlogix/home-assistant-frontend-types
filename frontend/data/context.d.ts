@@ -53,3 +53,8 @@ export declare const labelsContext: {
 export declare const configEntriesContext: {
     __context__: ConfigEntry[];
 };
+export declare const authContext: {
+    __context__: import("home-assistant-js-websocket").Auth & {
+        external?: import("../external_app/external_messaging").ExternalMessaging;
+    };
+};

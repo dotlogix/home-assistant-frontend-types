@@ -3,7 +3,6 @@ import { LitElement, nothing } from "lit";
 import "../../../../../components/buttons/ha-call-service-button";
 import "../../../../../components/buttons/ha-progress-button";
 import "../../../../../components/ha-card";
-import "../../../../../components/ha-list-item";
 import "../../../../../components/ha-select";
 import "../../../../../components/ha-textfield";
 import type { Cluster, ZHADevice } from "../../../../../data/zha";
@@ -19,7 +18,7 @@ export declare class ZHAClusterAttributes extends LitElement {
     private _readingAttribute;
     private _setAttributeServiceData?;
     protected updated(changedProperties: PropertyValues): void;
-    protected render(): TemplateResult<1> | typeof nothing;
+    protected render(): typeof nothing | TemplateResult<1>;
     private _renderAttributeInteractions;
     private _fetchAttributesForCluster;
     private _computeReadAttributeServiceData;

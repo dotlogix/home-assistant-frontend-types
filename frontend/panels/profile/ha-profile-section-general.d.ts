@@ -2,6 +2,8 @@ import type { CSSResultGroup, TemplateResult } from "lit";
 import { LitElement } from "lit";
 import "../../components/ha-button";
 import "../../components/ha-card";
+import "../../components/ha-md-list";
+import "../../components/ha-md-list-item";
 import "../../layouts/hass-tabs-subpage";
 import type { HomeAssistant, Route } from "../../types";
 import "./ha-advanced-mode-row";

@@ -19,7 +19,8 @@ declare class HaEntityAttributePicker extends LitElement {
     helper?: string;
     private _getItemsMemoized;
     private _getItems;
-    protected render(): import("lit-html").TemplateResult<1> | typeof nothing;
+    protected render(): typeof nothing | import("lit-html").TemplateResult<1>;
+    private _valueRenderer;
     private _valueChanged;
 }
 declare global {

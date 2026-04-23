@@ -13,7 +13,7 @@ export declare class HaTimeTrigger extends LitElement implements TriggerElement 
     private _schema;
     willUpdate(changedProperties: PropertyValues): void;
     private _data;
-    protected render(): import("lit-html").TemplateResult<1> | typeof nothing;
+    protected render(): typeof nothing | import("lit-html").TemplateResult<1>;
     private _valueChanged;
     private _computeLabelCallback;
 }

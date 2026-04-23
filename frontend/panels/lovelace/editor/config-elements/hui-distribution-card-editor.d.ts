@@ -13,7 +13,7 @@ export declare class HuiDistributionCardEditor extends LitElement implements Lov
     setConfig(config: DistributionCardConfig): void;
     private _schema;
     private _entityFilter;
-    protected render(): import("lit-html").TemplateResult<1> | typeof nothing;
+    protected render(): typeof nothing | import("lit-html").TemplateResult<1>;
     private _valueChanged;
     private _entitiesChanged;
     private _editDetailElement;

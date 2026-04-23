@@ -1,8 +1,10 @@
 import type { CSSResultGroup } from "lit";
 import { LitElement, nothing } from "lit";
 import "../../../components/buttons/ha-progress-button";
+import "../../../components/ha-dialog-footer";
 import "../../../components/ha-form/ha-form";
 import "../../../components/ha-icon-button";
+import "../../../components/ha-dialog";
 import type { HomeAssistant } from "../../../types";
 import type { MountViewDialogParams } from "./show-dialog-view-mount";
 declare class ViewMountDialog extends LitElement {
@@ -15,9 +17,11 @@ declare class ViewMountDialog extends LitElement {
     private _existing?;
     private _showCIFSVersion?;
     private _reloadMounts?;
+    private _open;
     showDialog(dialogParams: MountViewDialogParams): Promise<Promise<void>>;
     closeDialog(): void;
-    protected render(): import("lit-html").TemplateResult<1> | typeof nothing;
+    private _dialogClosed;
+    protected render(): typeof nothing | import("lit-html").TemplateResult<1>;
     private _computeLabelCallback;
     private _computeHelperCallback;
     private _computeErrorCallback;

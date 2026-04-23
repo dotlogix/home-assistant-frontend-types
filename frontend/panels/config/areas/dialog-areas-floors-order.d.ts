@@ -8,7 +8,7 @@ import "../../../components/ha-md-list";
 import "../../../components/ha-md-list-item";
 import "../../../components/ha-sortable";
 import "../../../components/ha-svg-icon";
-import "../../../components/ha-wa-dialog";
+import "../../../components/ha-dialog";
 import type { HomeAssistant } from "../../../types";
 import type { AreasFloorsOrderDialogParams } from "./show-dialog-areas-floors-order";
 declare class DialogAreasFloorsOrder extends LitElement {
@@ -20,7 +20,7 @@ declare class DialogAreasFloorsOrder extends LitElement {
     private _computeHierarchy;
     closeDialog(): void;
     private _dialogClosed;
-    protected render(): import("lit-html").TemplateResult<1> | typeof nothing;
+    protected render(): typeof nothing | import("lit-html").TemplateResult<1>;
     private _renderFloor;
     private _renderUnassignedAreas;
     private _renderArea;

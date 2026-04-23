@@ -1,11 +1,10 @@
 import type { CSSResultGroup, TemplateResult } from "lit";
 import { LitElement } from "lit";
+import "../../../../../components/ha-button";
 import "../../../../../components/ha-card";
 import "../../../../../components/ha-code-editor";
 import "../../../../../components/ha-formfield";
-import "../../../../../components/ha-list-item";
 import "../../../../../components/ha-switch";
-import "../../../../../components/ha-button";
 import "../../../../../layouts/hass-subpage";
 import type { HomeAssistant } from "../../../../../types";
 import "./mqtt-subscribe-card";

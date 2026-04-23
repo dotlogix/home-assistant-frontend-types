@@ -7,10 +7,14 @@ declare class ZWaveJSProvisioned extends LitElement {
     narrow: boolean;
     configEntryId: string;
     private _provisioningEntries;
+    private _nodeIdToDevice;
     protected render(): import("lit-html").TemplateResult<1>;
     private _columns;
+    private _getData;
     protected firstUpdated(changedProps: any): void;
     private _fetchData;
+    private _buildNodeIdToDeviceMap;
+    private _fetchProvisioningEntries;
     private _unprovision;
 }
 declare global {

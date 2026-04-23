@@ -6,7 +6,7 @@ import "../ha-dialog-header";
 import "../ha-dropdown";
 import "../ha-dropdown-item";
 import "../ha-icon-button-arrow-prev";
-import "../ha-wa-dialog";
+import "../ha-dialog";
 import "./ha-media-manage-button";
 import "./ha-media-player-browse";
 import type { MediaPlayerBrowseDialogParams } from "./show-media-browser-dialog";
@@ -20,7 +20,7 @@ declare class DialogMediaPlayerBrowse extends LitElement {
     private _browser;
     showDialog(params: MediaPlayerBrowseDialogParams): void;
     closeDialog(): void;
-    protected render(): import("lit-html").TemplateResult<1> | typeof nothing;
+    protected render(): typeof nothing | import("lit-html").TemplateResult<1>;
     private _dialogOpened;
     private _handleMenuAction;
     private _goBack;

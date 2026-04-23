@@ -1,10 +1,11 @@
 import type { CSSResultGroup } from "lit";
 import { LitElement, nothing } from "lit";
 import "../../../../components/ha-button";
-import "../../../../components/ha-dialog";
 import "../../../../components/ha-dialog-header";
+import "../../../../components/ha-dialog-footer";
 import "../../../../components/ha-tab-group";
 import "../../../../components/ha-tab-group-tab";
+import "../../../../components/ha-dialog";
 import type { HassDialog } from "../../../../dialogs/make-dialog-manager";
 import type { HomeAssistant } from "../../../../types";
 import "./hui-card-picker";
@@ -21,13 +22,15 @@ interface SelectedChangedEvent {
 export declare class HuiCreateDialogCard extends LitElement implements HassDialog<CreateCardDialogParams> {
     hass: HomeAssistant;
     private _params?;
+    private _open;
     private _containerConfig;
     private _selectedEntities;
     private _currTab;
     private _narrow;
     showDialog(params: CreateCardDialogParams): Promise<void>;
     closeDialog(): boolean;
-    protected render(): import("lit-html").TemplateResult<1> | typeof nothing;
+    private _dialogClosed;
+    protected render(): typeof nothing | import("lit-html").TemplateResult<1>;
     private _ignoreKeydown;
     static get styles(): CSSResultGroup;
     private _handleCardPicked;

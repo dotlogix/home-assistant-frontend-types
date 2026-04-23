@@ -1,10 +1,9 @@
 import { LitElement } from "lit";
 import type { StringSelector } from "../../data/selector";
 import type { HomeAssistant } from "../../types";
-import "../ha-icon-button";
-import "../ha-multi-textfield";
 import "../ha-textarea";
-import "../ha-textfield";
+import "../input/ha-input";
+import "../input/ha-input-multi";
 export declare class HaTextSelector extends LitElement {
     hass?: HomeAssistant;
     value?: any;
@@ -15,10 +14,10 @@ export declare class HaTextSelector extends LitElement {
     selector: StringSelector;
     disabled: boolean;
     required: boolean;
-    private _unmaskedPassword;
+    private _input?;
     focus(): Promise<void>;
+    reportValidity(): boolean;
     protected render(): import("lit-html").TemplateResult<1>;
-    private _toggleUnmaskedPassword;
     private _handleChange;
     static styles: import("lit").CSSResult;
 }

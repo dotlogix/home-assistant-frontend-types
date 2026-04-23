@@ -1,9 +1,8 @@
 import { LitElement } from "lit";
 import "../../../components/ha-alert";
 import "../../../components/ha-button";
-import "../../../components/ha-password-field";
 import "../../../components/ha-svg-icon";
-import "../../../components/ha-textfield";
+import "../../../components/input/ha-input";
 import type { HomeAssistant } from "../../../types";
 export declare class CloudStepSignin extends LitElement {
     hass: HomeAssistant;

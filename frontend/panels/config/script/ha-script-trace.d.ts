@@ -22,7 +22,7 @@ export declare class HaScriptTrace extends LitElement {
     isWide: boolean;
     narrow: boolean;
     route: Route;
-    entityRegistry: EntityRegistryEntry[];
+    _entityRegistry: EntityRegistryEntry[];
     private _entityId?;
     private _traces?;
     private _runId?;

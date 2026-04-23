@@ -30,7 +30,7 @@ declare class HaStatisticsPicker extends LitElement {
      * @attr ignore-restrictions-on-first-statistic
      */
     ignoreRestrictionsOnFirstStatistic: boolean;
-    protected render(): import("lit-html").TemplateResult<1> | typeof nothing;
+    protected render(): typeof nothing | import("lit-html").TemplateResult<1>;
     private get _currentStatistics();
     private _updateStatistics;
     private _statisticChanged;

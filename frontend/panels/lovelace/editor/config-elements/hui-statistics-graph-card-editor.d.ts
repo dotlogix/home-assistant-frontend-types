@@ -14,9 +14,10 @@ export declare class HuiStatisticsGraphCardEditor extends LitElement implements 
     private _getStatisticsMetaData;
     willUpdate(changedProps: PropertyValues): void;
     private _schema;
-    protected render(): import("lit-html").TemplateResult<1> | typeof nothing;
+    protected render(): typeof nothing | import("lit-html").TemplateResult<1>;
     private _valueChanged;
     private _entitiesChanged;
+    private _computeHelperCallback;
     private _computeLabelCallback;
     static styles: CSSResultGroup;
 }

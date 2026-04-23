@@ -16,8 +16,12 @@ declare class MoreInfoClimate extends LitElement {
     hass: HomeAssistant;
     stateObj?: ClimateEntity;
     private _mainControl;
+    private _renderPresetModeIcon;
+    private _renderFanModeIcon;
+    private _renderSwingModeIcon;
+    private _renderSwingHorizontalModeIcon;
     protected willUpdate(changedProps: PropertyValues): void;
-    protected render(): import("lit-html").TemplateResult<1> | typeof nothing;
+    protected render(): typeof nothing | import("lit-html").TemplateResult<1>;
     private _setMainControl;
     private _handleFanModeChanged;
     private _handleOperationModeChanged;

@@ -19,7 +19,7 @@ export declare class HaCameraStream extends LitElement {
     willUpdate(changedProps: PropertyValues): void;
     connectedCallback(): void;
     disconnectedCallback(): void;
-    protected render(): import("lit-html").TemplateResult<1> | typeof nothing;
+    protected render(): typeof nothing | import("lit-html").TemplateResult<1>;
     private _renderStream;
     private _getCapabilities;
     private _getPosterUrl;

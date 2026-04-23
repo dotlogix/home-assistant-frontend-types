@@ -14,7 +14,7 @@ export declare class HuiErrorHeadingBadge extends LitElement implements Lovelace
     private _config?;
     setConfig(config: ErrorBadgeConfig): void;
     private _viewDetail;
-    protected render(): import("lit-html").TemplateResult<1> | typeof nothing;
+    protected render(): typeof nothing | import("lit-html").TemplateResult<1>;
     static styles: import("lit").CSSResult;
 }
 declare global {

@@ -5,7 +5,7 @@ declare class HuiDividerRow extends LitElement implements LovelaceRow {
     hass?: HomeAssistant;
     private _config?;
     setConfig(config: any): void;
-    protected render(): import("lit-html").TemplateResult<1> | typeof nothing;
+    protected render(): typeof nothing | import("lit-html").TemplateResult<1>;
     static styles: import("lit").CSSResult;
 }
 declare global {

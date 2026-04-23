@@ -8,7 +8,7 @@ export declare class VoiceAssistantExposeAssistantIcon extends LitElement {
     unsupported: boolean;
     manual: boolean;
     assistant?: "conversation" | "cloud.alexa" | "cloud.google_assistant";
-    render(): import("lit-html").TemplateResult<1> | typeof nothing;
+    render(): typeof nothing | import("lit-html").TemplateResult<1>;
     static styles: import("lit").CSSResult;
 }
 declare global {

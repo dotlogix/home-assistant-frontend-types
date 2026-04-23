@@ -25,10 +25,12 @@ declare class NotificationManager extends LitElement {
     hass: HomeAssistant;
     private _parameters?;
     private _toast;
+    private _showDialogId;
     showDialog(parameters: ShowToastParams): Promise<void>;
     private _toastClosed;
-    protected render(): import("lit-html").TemplateResult<1> | typeof nothing;
+    protected render(): typeof nothing | import("lit-html").TemplateResult<1>;
     private _buttonClicked;
+    private _dismissClicked;
 }
 declare global {
     interface HTMLElementTagNameMap {

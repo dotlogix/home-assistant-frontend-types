@@ -11,7 +11,7 @@ declare class HaMenuButton extends LitElement {
     private _unsubNotifications?;
     connectedCallback(): void;
     disconnectedCallback(): void;
-    protected render(): import("lit-html").TemplateResult<1> | typeof nothing;
+    protected render(): typeof nothing | import("lit-html").TemplateResult<1>;
     protected willUpdate(changedProps: any): void;
     private _subscribeNotifications;
     private _toggleMenu;

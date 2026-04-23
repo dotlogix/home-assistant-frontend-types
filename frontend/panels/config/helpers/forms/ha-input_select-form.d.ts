@@ -21,7 +21,7 @@ declare class HaInputSelectForm extends LitElement {
     private _optionMoved;
     set item(item: InputSelect);
     focus(): void;
-    protected render(): import("lit-html").TemplateResult<1> | typeof nothing;
+    protected render(): typeof nothing | import("lit-html").TemplateResult<1>;
     private _handleKeyAdd;
     private _addOption;
     private _removeOption;

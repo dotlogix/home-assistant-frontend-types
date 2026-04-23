@@ -17,7 +17,7 @@ export declare class HaSunburstChart extends LitElement {
     valueFormatter?: (value: number) => string;
     chart?: EChartsType;
     constructor();
-    render(): import("lit-html").TemplateResult<1> | typeof nothing;
+    render(): typeof nothing | import("lit-html").TemplateResult<1>;
     private _renderTooltip;
     private _createData;
     private _getMaxDepth;

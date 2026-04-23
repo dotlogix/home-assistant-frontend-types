@@ -9,7 +9,7 @@ export interface HaDurationData {
     seconds?: number;
     milliseconds?: number;
 }
-declare class HaDurationInput extends LitElement {
+export declare class HaDurationInput extends LitElement {
     data?: HaDurationData;
     label?: string;
     helper?: string;
@@ -17,8 +17,19 @@ declare class HaDurationInput extends LitElement {
     enableMillisecond: boolean;
     enableDay: boolean;
     allowNegative: boolean;
+    enableSecond: boolean;
     disabled: boolean;
+    private _input?;
     private _toggleNegative;
+    static shadowRootOptions: {
+        delegatesFocus: boolean;
+        clonable?: boolean;
+        customElementRegistry?: CustomElementRegistry;
+        mode: ShadowRootMode;
+        serializable?: boolean;
+        slotAssignment?: SlotAssignmentMode;
+    };
+    reportValidity(): boolean;
     protected render(): TemplateResult;
     private get _negative();
     private get _days();
@@ -35,4 +46,3 @@ declare global {
         "ha-duration-input": HaDurationInput;
     }
 }
-export {};

@@ -4,12 +4,12 @@ export declare const entitiesConfigStruct: import("superstruct").Struct<string |
         type: "text";
         text: string;
     } | {
-        type: "device" | "area" | "entity" | "floor";
+        type: "device" | "entity" | "area" | "floor";
     } | (string | {
         type: "text";
         text: string;
     } | {
-        type: "device" | "area" | "entity" | "floor";
+        type: "device" | "entity" | "area" | "floor";
     })[];
     icon: string;
     entity: string;

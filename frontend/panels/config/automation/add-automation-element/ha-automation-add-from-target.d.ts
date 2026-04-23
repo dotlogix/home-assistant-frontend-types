@@ -33,7 +33,7 @@ export default class HaAutomationAddFromTarget extends LitElement {
     protected updated(changedProps: PropertyValues): void;
     private _initialDataLoad;
     private _setShowTargetShowMoreButton;
-    protected render(): TemplateResult<1> | typeof nothing;
+    protected render(): typeof nothing | TemplateResult<1>;
     private _renderNarrow;
     private _renderFloors;
     private _renderLabels;

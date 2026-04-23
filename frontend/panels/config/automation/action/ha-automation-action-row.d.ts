@@ -53,6 +53,7 @@ export default class HaAutomationActionRow extends LitElement {
     private _yamlMode;
     private _selected;
     private _collapsed;
+    private _isNew;
     private _warnings?;
     private _actionEditor?;
     private _automationRowElement?;
@@ -61,11 +62,12 @@ export default class HaAutomationActionRow extends LitElement {
     protected willUpdate(changedProperties: PropertyValues): void;
     private _renderOverflowLabel;
     private _renderRow;
-    protected render(): TemplateResult<1> | typeof nothing;
+    protected render(): typeof nothing | TemplateResult<1>;
     private _renderTargets;
     private _onValueChange;
     private _setClipboard;
     private _onDisable;
+    private _continueOnError;
     private _runAction;
     private _onDelete;
     private _switchUiMode;
@@ -79,7 +81,9 @@ export default class HaAutomationActionRow extends LitElement {
     private _moveDown;
     private _toggleYamlMode;
     private _handleUiModeNotAvailable;
+    private _expansionPanelChanged;
     private _toggleSidebar;
+    markAsNew(): void;
     openSidebar(action?: Action): void;
     expand(): void;
     collapse(): void;

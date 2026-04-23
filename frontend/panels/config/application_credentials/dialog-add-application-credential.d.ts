@@ -2,14 +2,13 @@ import type { CSSResultGroup } from "lit";
 import { LitElement, nothing } from "lit";
 import "../../../components/ha-alert";
 import "../../../components/ha-button";
+import "../../../components/ha-dialog";
 import "../../../components/ha-dialog-footer";
 import "../../../components/ha-fade-in";
 import "../../../components/ha-generic-picker";
 import "../../../components/ha-markdown";
-import "../../../components/ha-password-field";
 import "../../../components/ha-spinner";
-import "../../../components/ha-textfield";
-import "../../../components/ha-wa-dialog";
+import "../../../components/input/ha-input";
 import type { HomeAssistant } from "../../../types";
 import type { AddApplicationCredentialDialogParams } from "./show-dialog-add-application-credential";
 export declare class DialogAddApplicationCredential extends LitElement {
@@ -29,7 +28,7 @@ export declare class DialogAddApplicationCredential extends LitElement {
     private _invalid;
     showDialog(params: AddApplicationCredentialDialogParams): void;
     private _fetchConfig;
-    protected render(): import("lit-html").TemplateResult<1> | typeof nothing;
+    protected render(): typeof nothing | import("lit-html").TemplateResult<1>;
     private _closeDialog;
     closeDialog(): void;
     private _handleDomainPicked;

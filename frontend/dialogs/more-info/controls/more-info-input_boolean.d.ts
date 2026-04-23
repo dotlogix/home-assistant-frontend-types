@@ -7,7 +7,7 @@ import "../components/ha-more-info-state-header";
 declare class MoreInfoInputBoolean extends LitElement {
     hass: HomeAssistant;
     stateObj?: HassEntity;
-    protected render(): import("lit-html").TemplateResult<1> | typeof nothing;
+    protected render(): typeof nothing | import("lit-html").TemplateResult<1>;
     static get styles(): CSSResultGroup;
 }
 declare global {

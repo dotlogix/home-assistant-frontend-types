@@ -9,7 +9,7 @@ export declare class HaVoiceAssistantSetupStepUpdate extends LitElement {
     private _updated;
     private _refreshTimeout?;
     protected willUpdate(changedProperties: PropertyValues): void;
-    protected render(): import("lit-html").TemplateResult<1> | typeof nothing;
+    protected render(): typeof nothing | import("lit-html").TemplateResult<1>;
     private _tryUpdate;
     private _nextStep;
     static styles: (import("lit").CSSResult | import("lit").CSSResult[])[];

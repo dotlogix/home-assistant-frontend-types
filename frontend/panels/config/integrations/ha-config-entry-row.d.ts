@@ -1,15 +1,15 @@
 import type { PropertyValues, TemplateResult } from "lit";
 import { LitElement } from "lit";
+import "../../../components/ha-dropdown";
+import "../../../components/ha-dropdown-item";
 import type { ConfigEntry } from "../../../data/config_entries";
 import type { DiagnosticInfo } from "../../../data/diagnostics";
 import type { EntityRegistryEntry } from "../../../data/entity/entity_registry";
 import type { IntegrationManifest } from "../../../data/integration";
-import "../../../components/ha-dropdown";
-import "../../../components/ha-dropdown-item";
 import type { HomeAssistant } from "../../../types";
 import "./ha-config-entry-device-row";
 import "./ha-config-sub-entry-row";
-declare class HaConfigEntryRow extends LitElement {
+export declare class HaConfigEntryRow extends LitElement {
     hass: HomeAssistant;
     narrow: boolean;
     manifest?: IntegrationManifest;
@@ -49,4 +49,3 @@ declare global {
         "ha-config-entry-row": HaConfigEntryRow;
     }
 }
-export {};

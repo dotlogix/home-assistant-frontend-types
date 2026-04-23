@@ -13,6 +13,7 @@ export declare const mapEntitiesConfigStruct: import("superstruct").Struct<strin
     name: string;
     entity: string;
     attribute: string;
+    color: string;
     unit: string;
     focus: boolean;
     label_mode: string;
@@ -21,13 +22,16 @@ export declare class HuiMapCardEditor extends LitElement implements LovelaceCard
     hass?: HomeAssistant;
     private _config?;
     private _subElementEditorConfig?;
-    private _configEntities?;
+    private _shouldDisableOptions;
     private _possibleGeoSources?;
+    private _locationEntities;
     private _schema;
+    private _subForm;
     setConfig(config: MapCardConfig): void;
     private _geoSourcesStrings;
     get _geo_location_sources(): string[];
-    protected render(): import("lit-html").TemplateResult<1> | typeof nothing;
+    protected firstUpdated(changedProperties: any): void;
+    protected render(): typeof nothing | import("lit-html").TemplateResult<1>;
     private _goBack;
     private _editDetailElement;
     private _handleSubEntityChanged;
@@ -37,6 +41,9 @@ export declare class HuiMapCardEditor extends LitElement implements LovelaceCard
     private _valueChanged;
     protected willUpdate(): void;
     private _computeLabelCallback;
+    private _computeHelperCallback;
+    private _deleteOptions;
+    private _orderProperties;
     static get styles(): CSSResultGroup;
 }
 declare global {

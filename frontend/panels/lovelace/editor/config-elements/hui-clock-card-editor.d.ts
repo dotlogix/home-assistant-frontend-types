@@ -9,7 +9,7 @@ export declare class HuiClockCardEditor extends LitElement implements LovelaceCa
     private _schema;
     private _data;
     setConfig(config: ClockCardConfig): void;
-    protected render(): import("lit-html").TemplateResult<1> | typeof nothing;
+    protected render(): typeof nothing | import("lit-html").TemplateResult<1>;
     private _valueChanged;
     private _computeLabelCallback;
     private _computeHelperCallback;

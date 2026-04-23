@@ -1,11 +1,11 @@
 import type { CSSResultGroup, PropertyValues, TemplateResult } from "lit";
 import { LitElement } from "lit";
+import "../../components/ha-button";
 import "../../components/ha-code-editor";
 import "../../components/ha-icon-button";
-import "../../components/ha-button";
+import "../../components/ha-top-app-bar-fixed";
 import type { HomeAssistant } from "../../types";
 import type { Lovelace } from "./types";
-import "../../components/ha-top-app-bar-fixed";
 declare class LovelaceFullConfigEditor extends LitElement {
     narrow: boolean;
     hass: HomeAssistant;

@@ -12,7 +12,7 @@ export declare class HuiThermostatCardEditor extends LitElement implements Lovel
     setConfig(config: ThermostatCardConfig): void;
     private _featureContext;
     private _schema;
-    protected render(): import("lit-html").TemplateResult<1> | typeof nothing;
+    protected render(): typeof nothing | import("lit-html").TemplateResult<1>;
     private _valueChanged;
     private _featuresChanged;
     private _editDetailElement;

@@ -1,10 +1,10 @@
 import "@material/mwc-linear-progress/mwc-linear-progress";
 import type { PropertyValues, TemplateResult } from "lit";
 import { LitElement } from "lit";
+import type { LocalizeFunc } from "../common/translations/localize";
 import type { HomeAssistant } from "../types";
 import "./ha-button";
 import "./ha-icon-button";
-import type { LocalizeFunc } from "../common/translations/localize";
 declare global {
     interface HASSDomEvents {
         "file-picked": {

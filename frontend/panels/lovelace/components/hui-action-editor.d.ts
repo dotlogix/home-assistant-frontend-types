@@ -1,8 +1,6 @@
-import type { PropertyValues } from "lit";
 import { LitElement, nothing } from "lit";
 import "../../../components/ha-assist-pipeline-picker";
 import "../../../components/ha-help-tooltip";
-import "../../../components/ha-list-item";
 import "../../../components/ha-navigation-picker";
 import "../../../components/ha-service-control";
 import type { ActionConfig } from "../../../data/lovelace/config/action";
@@ -25,14 +23,12 @@ export declare class HuiActionEditor extends LitElement {
     tooltipText?: string;
     hass?: HomeAssistant;
     context?: ActionRelatedContext;
-    private _select;
     get _navigation_path(): string;
     get _url_path(): string;
     get _service(): string;
     private _serviceAction;
     private _navigateSchema;
-    protected updated(changedProperties: PropertyValues<typeof this>): void;
-    protected render(): import("lit-html").TemplateResult<1> | typeof nothing;
+    protected render(): typeof nothing | import("lit-html").TemplateResult<1>;
     private _actionPicked;
     private _valueChanged;
     private _formValueChanged;

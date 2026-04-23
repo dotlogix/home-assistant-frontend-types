@@ -7,6 +7,7 @@ import "../../../components/ha-card";
 import "../../../components/ha-dropdown";
 import "../../../components/ha-dropdown-item";
 import "../../../components/ha-icon-button";
+import "../../../components/ha-md-list-item";
 import "../../../components/ha-list";
 import "../../../components/ha-list-item";
 import "../../../components/ha-svg-icon";

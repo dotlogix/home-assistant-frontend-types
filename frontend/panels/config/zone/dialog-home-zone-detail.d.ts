@@ -1,5 +1,7 @@
 import type { CSSResultGroup } from "lit";
 import { LitElement, nothing } from "lit";
+import "../../../components/ha-dialog-footer";
+import "../../../components/ha-dialog";
 import "../../../components/ha-form/ha-form";
 import "../../../components/ha-button";
 import type { HomeAssistant } from "../../../types";
@@ -9,10 +11,12 @@ declare class DialogHomeZoneDetail extends LitElement {
     private _error?;
     private _data?;
     private _params?;
+    private _open;
     private _submitting;
     showDialog(params: HomeZoneDetailDialogParams): void;
     closeDialog(): void;
-    protected render(): import("lit-html").TemplateResult<1> | typeof nothing;
+    private _dialogClosed;
+    protected render(): typeof nothing | import("lit-html").TemplateResult<1>;
     private _formData;
     private _valueChanged;
     private _computeLabel;

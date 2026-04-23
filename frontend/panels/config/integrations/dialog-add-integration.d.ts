@@ -1,9 +1,10 @@
 import type { PropertyValues, TemplateResult } from "lit";
 import { LitElement, nothing } from "lit";
+import "../../../components/ha-dialog";
 import "../../../components/ha-icon-button-prev";
 import "../../../components/ha-list";
 import "../../../components/ha-spinner";
-import "../../../components/search-input";
+import "../../../components/input/ha-input-search";
 import type { HomeAssistant } from "../../../types";
 import "./ha-domain-integrations";
 import "./ha-integration-list-item";
@@ -42,11 +43,13 @@ declare class AddIntegrationDialog extends LitElement {
     private _height?;
     showDialog(params?: AddIntegrationDialogParams): Promise<void>;
     closeDialog(): void;
+    private _dialogClosed;
     willUpdate(changedProps: PropertyValues): void;
     private _filterIntegrations;
     private _getIntegrations;
-    protected render(): TemplateResult<1> | typeof nothing;
+    protected render(): typeof nothing | TemplateResult<1>;
     private _getFlowsForCurrentView;
+    private _getBrandHeading;
     private _renderBrandView;
     private _handleSelectBrandEvent;
     private _handleSupportedByEvent;

@@ -23,7 +23,7 @@ declare class HuiTargetTemperatureCardFeature extends LitElement implements Love
     private _callService;
     private _supportsTarget;
     private _supportsTargetRange;
-    protected render(): import("lit-html").TemplateResult<1> | typeof nothing;
+    protected render(): typeof nothing | import("lit-html").TemplateResult<1>;
     static get styles(): import("lit").CSSResult;
 }
 declare global {

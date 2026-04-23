@@ -4,6 +4,8 @@ import "../../../../../components/ha-spinner";
 import "../../../../../components/ha-svg-icon";
 import "../../../../../components/ha-tooltip";
 import "../../../../../components/ha-button";
+import "../../../../../components/ha-dialog-footer";
+import "../../../../../components/ha-dialog";
 import type { HomeAssistant } from "../../../../../types";
 import type { ZHAReconfigureDeviceDialogParams } from "./show-dialog-zha-reconfigure-device";
 declare class DialogZHAReconfigureDevice extends LitElement {
@@ -14,10 +16,12 @@ declare class DialogZHAReconfigureDevice extends LitElement {
     private _params;
     private _allSuccessful;
     private _showDetails;
+    private _open;
     private _subscribed?;
     showDialog(params: ZHAReconfigureDeviceDialogParams): void;
     closeDialog(): void;
-    protected render(): import("lit-html").TemplateResult<1> | typeof nothing;
+    private _dialogClosed;
+    protected render(): typeof nothing | import("lit-html").TemplateResult<1>;
     private _startReconfiguration;
     private _handleMessage;
     private _unsubscribe;

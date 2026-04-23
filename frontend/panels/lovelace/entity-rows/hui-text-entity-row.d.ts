@@ -9,7 +9,7 @@ declare class HuiTextEntityRow extends LitElement implements LovelaceRow {
     private _config?;
     setConfig(config: EntityConfig): void;
     protected shouldUpdate(changedProps: PropertyValues): boolean;
-    protected render(): import("lit-html").TemplateResult<1> | typeof nothing;
+    protected render(): typeof nothing | import("lit-html").TemplateResult<1>;
     private _valueChanged;
     static styles: import("lit").CSSResult;
 }

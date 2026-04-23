@@ -21,6 +21,11 @@ export interface LovelaceViewHeaderConfig {
     badges_position?: "bottom" | "top";
     badges_wrap?: "wrap" | "scroll";
 }
+export declare const DEFAULT_FOOTER_MAX_WIDTH_PX = 600;
+export interface LovelaceViewFooterConfig {
+    card?: LovelaceCardConfig;
+    max_width?: number;
+}
 export interface LovelaceViewSidebarConfig {
     sections?: LovelaceSectionConfig[];
     content_label?: string;
@@ -49,6 +54,7 @@ export interface LovelaceViewConfig extends LovelaceBaseViewConfig {
     cards?: LovelaceCardConfig[];
     sections?: LovelaceSectionRawConfig[];
     header?: LovelaceViewHeaderConfig;
+    footer?: LovelaceViewFooterConfig;
     sidebar?: LovelaceViewSidebarConfig;
 }
 export interface LovelaceStrategyViewConfig extends LovelaceBaseViewConfig {

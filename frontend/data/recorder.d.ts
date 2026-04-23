@@ -111,7 +111,7 @@ export declare const fetchStatistic: (hass: HomeAssistant, statistic_id: string,
     };
     calendar?: {
         period: string;
-        offset: number;
+        offset?: number;
     };
     rolling_window?: {
         duration: HaDurationData;

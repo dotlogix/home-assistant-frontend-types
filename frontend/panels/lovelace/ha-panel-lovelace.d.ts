@@ -34,7 +34,6 @@ export declare class LovelacePanel extends LitElement {
     private _debounceRegistriesChanged;
     private _registriesChanged;
     private _strategyConfigChanged;
-    private _askRegenerateStrategyConfig;
     private _regenerateStrategyConfig;
     private _handleConnectionStatus;
     private _subscribeUpdates;

@@ -1,5 +1,6 @@
+import "@home-assistant/webawesome/dist/components/popup/popup";
 import type { EditorView } from "@codemirror/view";
-import type { PropertyValues } from "lit";
+import type { CSSResultGroup, PropertyValues } from "lit";
 import { ReactiveElement } from "lit";
 import type { HomeAssistant } from "../types";
 import "./ha-code-editor-completion-items";
@@ -22,6 +23,7 @@ export declare class HaCodeEditor extends ReactiveElement {
     autocompleteIcons: boolean;
     error: boolean;
     disableFullscreen: boolean;
+    inDialog: boolean;
     hasToolbar: boolean;
     hasTest: boolean;
     testing: boolean;
@@ -32,6 +34,12 @@ export declare class HaCodeEditor extends ReactiveElement {
     private _canRedo;
     private _canCopy;
     private _loadedCodeMirror?;
+    private _completionInfoPopover?;
+    private _completionInfoContainer?;
+    private _completionInfoDestroy?;
+    private _completionInfoRequest;
+    private _completionInfoKey?;
+    private _completionInfoFrame?;
     private _editorToolbar?;
     private _iconList?;
     set value(value: string);
@@ -57,13 +65,19 @@ export declare class HaCodeEditor extends ReactiveElement {
     private _handleFindReplaceClick;
     private _handleKeyDown;
     private _renderInfo;
+    private _getCompletionInfo;
+    private _ensureCompletionInfoPopover;
+    private _clearCompletionInfo;
+    private _renderCompletionInfoContent;
+    private _syncCompletionInfoPopover;
+    private _syncCompletionInfoPopoverNow;
     private _getStates;
     private _entityCompletions;
     private _getIconItems;
     private _mdiCompletions;
     private _onUpdate;
     private _getFoldingExtensions;
-    static styles: import("lit").CSSResult;
+    static get styles(): CSSResultGroup;
 }
 declare global {
     interface HTMLElementTagNameMap {

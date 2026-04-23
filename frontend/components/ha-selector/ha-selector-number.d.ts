@@ -1,12 +1,10 @@
 import type { PropertyValues } from "lit";
 import { LitElement } from "lit";
 import type { NumberSelector } from "../../data/selector";
-import type { HomeAssistant } from "../../types";
 import "../ha-input-helper-text";
 import "../ha-slider";
-import "../ha-textfield";
+import "../input/ha-input";
 export declare class HaNumberSelector extends LitElement {
-    hass: HomeAssistant;
     selector: NumberSelector;
     value?: number;
     placeholder?: number;
@@ -15,7 +13,9 @@ export declare class HaNumberSelector extends LitElement {
     localizeValue?: (key: string) => string;
     required: boolean;
     disabled: boolean;
+    private _input?;
     private _valueStr;
+    reportValidity(): boolean;
     protected willUpdate(changedProps: PropertyValues): void;
     protected render(): import("lit-html").TemplateResult<1>;
     private _handleInputChange;

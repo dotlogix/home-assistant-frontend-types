@@ -1,8 +1,8 @@
+import "@home-assistant/webawesome/dist/components/divider/divider";
 import type { CSSResultGroup, PropertyValues, TemplateResult } from "lit";
 import { LitElement } from "lit";
-import "../../components/ha-divider";
+import "../../components/ha-dropdown-item";
 import "../../components/ha-icon";
-import "../../components/ha-list-item";
 import "../../components/ha-select";
 import "../../components/ha-settings-row";
 import "../../components/ha-spinner";
@@ -16,6 +16,7 @@ declare class HaPickDashboardRow extends LitElement {
     protected render(): TemplateResult;
     private _getDashboards;
     private _dashboardChanged;
+    private _valueLabel;
     static get styles(): CSSResultGroup;
 }
 declare global {

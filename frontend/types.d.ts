@@ -95,6 +95,8 @@ export interface PanelInfo<T = Record<string, any> | null> {
     url_path: string;
     config_panel_domain?: string;
     default_visible?: boolean;
+    require_admin?: boolean;
+    show_in_sidebar?: boolean;
 }
 export type Panels = Record<string, PanelInfo>;
 export interface CalendarViewChanged {
@@ -103,7 +105,8 @@ export interface CalendarViewChanged {
     view: string;
 }
 export type FullCalendarView = "dayGridMonth" | "dayGridWeek" | "dayGridDay" | "listWeek";
-export type ThemeMode = "auto" | "light" | "dark";
+export declare const THEME_MODES: readonly ["auto", "light", "dark"];
+export type ThemeMode = (typeof THEME_MODES)[number];
 export interface ToggleButton {
     label: string;
     iconPath?: string;
@@ -198,10 +201,11 @@ export interface HomeAssistant {
     loadBackendTranslation(category: Parameters<typeof getHassTranslations>[2], integrations?: Parameters<typeof getHassTranslations>[3], configFlow?: Parameters<typeof getHassTranslations>[4]): Promise<LocalizeFunc>;
     loadFragmentTranslation(fragment: string): Promise<LocalizeFunc | undefined>;
     formatEntityState(stateObj: HassEntity, state?: string): string;
+    formatEntityStateToParts(stateObj: HassEntity, state?: string): ValuePart[];
     formatEntityAttributeValue(stateObj: HassEntity, attribute: string, value?: any): string;
     formatEntityAttributeValueToParts(stateObj: HassEntity, attribute: string, value?: any): ValuePart[];
     formatEntityAttributeName(stateObj: HassEntity, attribute: string): string;
-    formatEntityName(stateObj: HassEntity, type: EntityNameItem | EntityNameItem[], separator?: EntityNameOptions): string;
+    formatEntityName(stateObj: HassEntity, type: string | EntityNameItem | EntityNameItem[] | undefined, separator?: EntityNameOptions): string;
 }
 export interface Route {
     prefix: string;

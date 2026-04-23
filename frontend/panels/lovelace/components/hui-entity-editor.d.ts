@@ -10,13 +10,14 @@ export declare class HuiEntityEditor extends LitElement {
     entities?: EntityConfig[];
     entityFilter?: HaEntityPickerEntityFilterFunc;
     label?: string;
+    required: boolean;
     canEdit?: any;
     private _entityKeys;
     private _getKey;
     private _renderItem;
     private _editItem;
     private _deleteItem;
-    protected render(): import("lit-html").TemplateResult<1> | typeof nothing;
+    protected render(): typeof nothing | import("lit-html").TemplateResult<1>;
     private _addEntity;
     private _entityMoved;
     private _valueChanged;

@@ -15,7 +15,7 @@ export declare class StateBadge extends LitElement {
     connectedCallback(): void;
     disconnectedCallback(): void;
     private get _stateColor();
-    protected render(): import("lit-html").TemplateResult<1> | typeof nothing;
+    protected render(): typeof nothing | import("lit-html").TemplateResult<1>;
     willUpdate(changedProps: PropertyValues<this>): void;
     protected getClass(): Map<string, boolean>;
     static get styles(): CSSResultGroup;

@@ -1,8 +1,9 @@
 import type { CSSResultGroup, TemplateResult } from "lit";
 import { LitElement, nothing } from "lit";
-import "../../../../../../components/ha-dialog";
+import "../../../../../../components/ha-dialog-footer";
 import "../../../../../../components/ha-formfield";
 import "../../../../../../components/ha-switch";
+import "../../../../../../components/ha-dialog";
 import "../../../../../../components/ha-button";
 import type { HomeAssistant } from "../../../../../../types";
 import "./mqtt-discovery-payload";
@@ -12,11 +13,13 @@ declare class DialogMQTTDeviceDebugInfo extends LitElement {
     hass: HomeAssistant;
     private _params?;
     private _debugInfo?;
+    private _open;
     private _showAsYaml;
     private _showDeserialized;
     showDialog(params: MQTTDeviceDebugInfoDialogParams): Promise<void>;
-    protected render(): TemplateResult<1> | typeof nothing;
+    protected render(): typeof nothing | TemplateResult<1>;
     private _close;
+    private _dialogClosed;
     private _showAsYamlChanged;
     private _showDeserializedChanged;
     private _renderEntities;

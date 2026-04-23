@@ -1,9 +1,10 @@
-import type { HaFormSchema } from "../../../components/ha-form/types";
+import type { PropertyValues } from "lit";
 import type { LovelaceConfigForm } from "../types";
 import { HuiElementEditor } from "./hui-element-editor";
 export declare class HuiFormElementEditor extends HuiElementEditor {
-    schema: HaFormSchema[];
+    form: LovelaceConfigForm;
     protected getConfigForm(): Promise<LovelaceConfigForm | undefined>;
+    protected updated(changedProperties: PropertyValues): void;
 }
 declare global {
     interface HTMLElementTagNameMap {

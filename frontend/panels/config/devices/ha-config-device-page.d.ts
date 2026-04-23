@@ -65,7 +65,7 @@ export declare class HaConfigDevicePage extends LitElement {
     protected firstUpdated(changedProps: PropertyValues): void;
     protected updated(changedProps: any): void;
     disconnectedCallback(): void;
-    protected render(): TemplateResult<1> | typeof nothing;
+    protected render(): typeof nothing | TemplateResult<1>;
     private _fetchData;
     private _getDiagnosticButtons;
     private _getDeleteActions;

@@ -24,7 +24,7 @@ declare class HaConfigBackupDetails extends LitElement {
     private _agents;
     private _error?;
     protected firstUpdated(changedProps: any): void;
-    protected render(): import("lit-html").TemplateResult<1> | typeof nothing;
+    protected render(): typeof nothing | import("lit-html").TemplateResult<1>;
     private _restore;
     private _fetchBackup;
     private _handleAction;

@@ -1,6 +1,7 @@
 import type { CSSResultGroup } from "lit";
 import { LitElement, nothing } from "lit";
 import "../../components/ha-button";
+import "../../components/ha-dialog-footer";
 import "../../components/ha-dialog";
 import "../../components/ha-form/ha-form";
 import "../../components/ha-markdown";
@@ -11,7 +12,7 @@ declare class HaMfaModuleSetupFlow extends LitElement {
     private _dialogClosedCallback?;
     private _instance?;
     private _loading;
-    private _opened;
+    private _open;
     private _stepData;
     private _step?;
     private _errorMessage?;
@@ -21,13 +22,18 @@ declare class HaMfaModuleSetupFlow extends LitElement {
         dialogClosedCallback: any;
     }): void;
     closeDialog(): void;
-    protected render(): import("lit-html").TemplateResult<1> | typeof nothing;
+    private _dialogClosed;
+    protected render(): typeof nothing | import("lit-html").TemplateResult<1>;
     static get styles(): CSSResultGroup;
     protected firstUpdated(changedProperties: any): void;
     private _stepDataChanged;
     private _submitStep;
+    private _isSubmitDisabled;
+    private _hasMissingRequiredFields;
+    private _isEmptyValue;
     private _processStep;
     private _flowDone;
+    private _resetDialogState;
     private _computeStepTitle;
     private _computeLabel;
     private _computeError;

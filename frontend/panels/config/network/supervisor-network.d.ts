@@ -9,12 +9,11 @@ import "../../../components/ha-formfield";
 import "../../../components/ha-icon-button";
 import "../../../components/ha-list";
 import "../../../components/ha-list-item";
-import "../../../components/ha-password-field";
 import "../../../components/ha-radio";
 import "../../../components/ha-spinner";
 import "../../../components/ha-tab-group";
 import "../../../components/ha-tab-group-tab";
-import "../../../components/ha-textfield";
+import "../../../components/input/ha-input";
 import type { HomeAssistant } from "../../../types";
 export declare class HassioNetwork extends LitElement {
     hass: HomeAssistant;
@@ -29,7 +28,7 @@ export declare class HassioNetwork extends LitElement {
     private _dnsMenuOpen;
     protected firstUpdated(): void;
     private _fetchNetworkInfo;
-    protected render(): import("lit-html").TemplateResult<1> | typeof nothing;
+    protected render(): typeof nothing | import("lit-html").TemplateResult<1>;
     private _renderTab;
     private _selectAP;
     private _scanForAP;

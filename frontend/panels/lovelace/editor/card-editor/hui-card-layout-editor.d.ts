@@ -1,11 +1,12 @@
 import type { PropertyValues } from "lit";
 import { LitElement } from "lit";
+import "../../../../components/ha-alert";
 import "../../../../components/ha-button";
 import "../../../../components/ha-dropdown";
 import "../../../../components/ha-dropdown-item";
 import "../../../../components/ha-grid-size-picker";
 import "../../../../components/ha-icon-button";
-import "../../../../components/ha-settings-row";
+import "../../../../components/ha-md-list-item";
 import "../../../../components/ha-slider";
 import "../../../../components/ha-svg-icon";
 import "../../../../components/ha-switch";
@@ -35,6 +36,7 @@ export declare class HuiCardLayoutEditor extends LitElement {
     private _gridSizeChanged;
     private _yamlChanged;
     private _fullWidthChanged;
+    private _autoHeightChanged;
     private _preciseModeChanged;
     private _updateGridOptions;
     static styles: import("lit").CSSResult[];

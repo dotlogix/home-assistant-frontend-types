@@ -1,15 +1,13 @@
 import type { CSSResultGroup, PropertyValues } from "lit";
-import { LitElement, nothing } from "lit";
+import { LitElement } from "lit";
 import "../../components/ha-alert";
 import "../../components/ha-icon-button-arrow-prev";
 import "../../components/ha-menu-button";
 import "../../components/ha-top-app-bar-fixed";
 import type { HomeAssistant, PanelInfo } from "../../types";
-import "../lovelace/components/hui-energy-period-selector";
 import "../lovelace/hui-root";
 import "../lovelace/views/hui-view";
 import "../lovelace/views/hui-view-container";
-export declare const DEFAULT_ENERGY_COLLECTION_KEY = "energy_dashboard";
 declare class PanelEnergy extends LitElement {
     hass: HomeAssistant;
     narrow: boolean;
@@ -19,18 +17,14 @@ declare class PanelEnergy extends LitElement {
         path: string;
         prefix: string;
     };
-    private _prefs?;
     private _searchParms;
     private _error?;
-    private get _extraActionItems();
     willUpdate(changedProps: PropertyValues): void;
-    private _fetchEnergyPrefs;
+    private _setup;
     private _loadConfig;
     private _setLovelace;
-    protected render(): import("lit-html").TemplateResult<1> | typeof nothing;
-    private _generateLovelaceConfig;
+    protected render(): import("lit-html").TemplateResult<1>;
     private _navigateConfig;
-    private _dumpCSV;
     private _reloadConfig;
     static get styles(): CSSResultGroup;
 }

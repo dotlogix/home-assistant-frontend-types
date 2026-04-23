@@ -5,6 +5,7 @@ import type { HomeAssistant } from "../../../../types";
 export declare class HaAutomationRowTargets extends LitElement {
     hass: HomeAssistant;
     target?: HassServiceTarget;
+    targetRequired: boolean;
     private localize;
     private floors;
     private areas;

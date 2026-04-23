@@ -14,6 +14,7 @@ declare class HaPanelApp extends LitElement {
     private _addon?;
     private _loadingMessage?;
     private _kioskMode;
+    private _iframeLoaded;
     private _enabledKioskMode;
     private _sessionKeepAlive?;
     private _fetchDataTimeout?;

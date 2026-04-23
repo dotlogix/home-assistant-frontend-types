@@ -1,9 +1,9 @@
 import { type CSSResultGroup, LitElement, type TemplateResult } from "lit";
 import "../../../../../components/ha-spinner";
+import "../../../../../components/input/ha-input-search";
 import type { HassioAddonDetails } from "../../../../../data/hassio/addon";
 import type { HomeAssistant } from "../../../../../types";
 import "../../../logs/error-log-card";
-import "../../../../../components/search-input";
 declare class SupervisorAppLogDashboard extends LitElement {
     hass: HomeAssistant;
     addon?: HassioAddonDetails;

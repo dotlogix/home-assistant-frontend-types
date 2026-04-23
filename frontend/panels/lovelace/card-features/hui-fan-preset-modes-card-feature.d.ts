@@ -13,13 +13,12 @@ declare class HuiFanPresetModesCardFeature extends LitElement implements Lovelac
     context?: LovelaceCardFeatureContext;
     private _config?;
     _currentPresetMode?: string;
-    private _haSelect?;
+    private _renderPresetModeIcon;
     private get _stateObj();
     static getStubConfig(): FanPresetModesCardFeatureConfig;
     static getConfigElement(): Promise<LovelaceCardFeatureEditor>;
     setConfig(config: FanPresetModesCardFeatureConfig): void;
     protected willUpdate(changedProp: PropertyValues): void;
-    protected updated(changedProps: PropertyValues): void;
     private _valueChanged;
     private _setMode;
     protected render(): TemplateResult | null;

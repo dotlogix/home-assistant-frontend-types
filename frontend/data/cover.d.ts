@@ -10,6 +10,11 @@ export declare const enum CoverEntityFeature {
     STOP_TILT = 64,
     SET_TILT_POSITION = 128
 }
+export declare const DEFAULT_COVER_FAVORITE_POSITIONS: number[];
+export declare const coverSupportsPosition: (stateObj: CoverEntity) => boolean;
+export declare const coverSupportsTiltPosition: (stateObj: CoverEntity) => boolean;
+export declare const coverSupportsAnyPosition: (stateObj: CoverEntity) => boolean;
+export declare const normalizeCoverFavoritePositions: (positions?: number[]) => number[];
 export declare function isFullyOpen(stateObj: CoverEntity): boolean;
 export declare function isFullyClosed(stateObj: CoverEntity): boolean;
 export declare function isFullyOpenTilt(stateObj: CoverEntity): boolean;

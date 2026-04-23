@@ -21,7 +21,7 @@ declare class LightRgbColorPicker extends LitElement {
     private _brightnessAdjusted?;
     private _hsPickerValue?;
     private _isInteracting?;
-    protected render(): import("lit-html").TemplateResult<1> | typeof nothing;
+    protected render(): typeof nothing | import("lit-html").TemplateResult<1>;
     private _updateSliderValues;
     willUpdate(changedProps: PropertyValues): void;
     private _hsColorCursorMoved;

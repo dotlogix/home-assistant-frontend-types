@@ -1,7 +1,6 @@
 import type { CSSResultGroup, PropertyValues } from "lit";
 import { LitElement, nothing } from "lit";
 import "../../../../../components/ha-card";
-import "../../../../../components/ha-list-item";
 import "../../../../../components/ha-select";
 import "../../../../../components/ha-tab-group";
 import "../../../../../components/ha-tab-group-tab";
@@ -27,7 +26,7 @@ export declare class ZHAManageClusters extends LitElement {
     private _clustersLoaded;
     protected willUpdate(changedProps: PropertyValues): void;
     protected updated(changedProperties: PropertyValues): void;
-    protected render(): import("lit-html").TemplateResult<1> | typeof nothing;
+    protected render(): typeof nothing | import("lit-html").TemplateResult<1>;
     private _fetchClustersForZhaDevice;
     private _handleTabChanged;
     private _selectedClusterChanged;

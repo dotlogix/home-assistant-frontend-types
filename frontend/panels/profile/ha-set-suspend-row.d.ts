@@ -1,7 +1,7 @@
 import type { TemplateResult } from "lit";
 import { LitElement } from "lit";
 import type { HASSDomEvent } from "../../common/dom/fire_event";
-import "../../components/ha-settings-row";
+import "../../components/ha-md-list-item";
 import "../../components/ha-switch";
 import type { HomeAssistant } from "../../types";
 declare global {
@@ -18,7 +18,6 @@ declare global {
 }
 declare class HaSetSuspendRow extends LitElement {
     hass: HomeAssistant;
-    narrow: boolean;
     protected render(): TemplateResult;
     private _checkedChanged;
 }

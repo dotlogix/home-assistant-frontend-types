@@ -18,7 +18,7 @@ export declare class HuiGlanceCard extends LitElement implements LovelaceCard {
     getCardSize(): number;
     setConfig(config: GlanceCardConfig): void;
     protected shouldUpdate(changedProps: PropertyValues): boolean;
-    protected render(): TemplateResult<1> | typeof nothing;
+    protected render(): typeof nothing | TemplateResult<1>;
     protected updated(changedProps: PropertyValues): void;
     static styles: import("lit").CSSResult;
     private _renderEntity;

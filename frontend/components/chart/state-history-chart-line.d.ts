@@ -38,6 +38,7 @@ export declare class StateHistoryChartLine extends LitElement {
     zoom(start: number, end: number): void;
     private _handleDataZoom;
     willUpdate(changedProps: PropertyValues): void;
+    private _hasEntityStatesChanged;
     private _generateData;
     private _formatYAxisLabel;
     private _clampYAxis;

@@ -4,7 +4,7 @@ import { LitElement } from "lit";
 import "../../../../../components/ha-dropdown";
 import "../../../../../components/ha-dropdown-item";
 import "../../../../../components/ha-icon-button";
-import "../../../../../components/ha-textfield";
+import "../../../../../components/input/ha-input";
 import type { WebhookTrigger } from "../../../../../data/automation";
 import type { HomeAssistant } from "../../../../../types";
 export declare class HaWebhookTrigger extends LitElement {

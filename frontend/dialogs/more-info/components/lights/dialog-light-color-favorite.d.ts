@@ -1,8 +1,9 @@
 import type { CSSResultGroup } from "lit";
 import { LitElement, nothing } from "lit";
 import "../../../../components/ha-button";
-import "../../../../components/ha-dialog-header";
+import "../../../../components/ha-dialog-footer";
 import "../../../../components/ha-icon-button-toggle";
+import "../../../../components/ha-dialog";
 import type { EntityRegistryEntry } from "../../../../data/entity/entity_registry";
 import type { LightColor, LightEntity } from "../../../../data/light";
 import type { HomeAssistant } from "../../../../types";
@@ -17,19 +18,17 @@ declare class DialogLightColorFavorite extends LitElement {
     _color?: LightColor;
     private _mode?;
     private _modes;
-    private _dialog?;
+    private _open;
     showDialog(dialogParams: LightColorFavoriteDialogParams): Promise<void>;
     closeDialog(): void;
     private _updateModes;
     private _computeCurrentColor;
     private _colorChanged;
     get stateObj(): LightEntity;
-    private _cancel;
-    private _cancelDialog;
     private _dialogClosed;
     private _save;
     private _modeChanged;
-    protected render(): import("lit-html").TemplateResult<1> | typeof nothing;
+    protected render(): typeof nothing | import("lit-html").TemplateResult<1>;
     static get styles(): CSSResultGroup;
 }
 declare global {

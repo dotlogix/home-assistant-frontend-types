@@ -7,7 +7,6 @@ import type { HomeAssistant } from "../../../../types";
 export declare class HuiEntityPickerTable extends LitElement {
     hass: HomeAssistant;
     narrow: boolean;
-    noLabelFloat?: boolean;
     entities?: string[];
     protected firstUpdated(_changedProperties: PropertyValues): void;
     private _data;

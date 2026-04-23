@@ -1,4 +1,5 @@
-import type { HASSDomEvent, ValidHassDomEvent } from "../common/dom/fire_event";
+import type { LitElement } from "lit";
+import type { HASSDomEvent } from "../common/dom/fire_event";
 import type { ProvideHassElement } from "../mixins/provide-hass-lit-mixin";
 declare global {
     interface HASSDomEvents {
@@ -11,31 +12,47 @@ declare global {
         "dialog-closed": HASSDomEvent<DialogClosedParams>;
     }
 }
-export interface HassDialog<T = HASSDomEvents[ValidHassDomEvent]> extends HTMLElement {
+export interface HassDialog<T = unknown> extends HTMLElement {
     showDialog(params: T): any;
-    closeDialog?: (historyState?: any) => boolean;
+    closeDialog?: (historyState?: any) => Promise<boolean> | boolean;
 }
-interface ShowDialogParams<T> {
+export interface HassDialogNext<T = unknown> extends HTMLElement {
+    dialogNext: true;
+    params?: T;
+    closeDialog?: (historyState?: any) => Promise<boolean> | boolean;
+}
+export interface ShowDialogParams<T> {
     dialogTag: keyof HTMLElementTagNameMap;
     dialogImport: () => Promise<unknown>;
-    dialogParams: T;
+    dialogParams?: T;
     addHistory?: boolean;
+    parentElement?: LitElement;
 }
 export interface DialogClosedParams {
     dialog: string;
 }
 export interface DialogState {
     element: HTMLElement & ProvideHassElement;
-    root: ShadowRoot | HTMLElement;
     dialogTag: string;
     dialogParams: unknown;
     dialogImport?: () => Promise<unknown>;
     addHistory?: boolean;
 }
 export declare const FOCUS_TARGET: unique symbol;
-export declare const showDialog: (element: HTMLElement & ProvideHassElement, root: ShadowRoot | HTMLElement, dialogTag: string, dialogParams: unknown, dialogImport?: () => Promise<unknown>, addHistory?: boolean) => Promise<boolean>;
+/**
+ * Shows a dialog element, lazy-loading it if needed, and optionally integrates
+ * dialog open/close behavior with browser history.
+ *
+ * @param element The host element that can provide `hass` and receives the dialog by default.
+ * @param dialogTag The custom element tag name of the dialog.
+ * @param dialogParams The params passed to the dialog via `showDialog()` or `params`.
+ * @param dialogImport Optional lazy import used when the dialog has not been loaded yet.
+ * @param parentElement Optional parent to append the dialog to instead of root element.
+ * @param addHistory Whether to add/update browser history so back navigation closes dialogs.
+ * @returns `true` if the dialog was shown (or could be shown), `false` if it could not be loaded.
+ */
+export declare const showDialog: (element: LitElement & ProvideHassElement, dialogTag: string, dialogParams: unknown, dialogImport?: () => Promise<unknown>, parentElement?: LitElement, addHistory?: boolean) => Promise<boolean>;
 export declare const closeDialog: (dialogTag: string, historyState?: any) => Promise<boolean>;
 export declare const closeLastDialog: (historyState?: any) => Promise<boolean>;
 export declare const closeAllDialogs: () => Promise<boolean>;
-export declare const makeDialogManager: (element: HTMLElement & ProvideHassElement, root: ShadowRoot | HTMLElement) => void;
-export {};
+export declare const makeDialogManager: (element: LitElement & ProvideHassElement) => void;

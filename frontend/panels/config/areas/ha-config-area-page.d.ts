@@ -27,7 +27,7 @@ declare class HaConfigAreaPage extends LitElement {
     private _allEntities;
     protected firstUpdated(changedProps: any): void;
     protected updated(changedProps: any): void;
-    protected render(): import("lit-html").TemplateResult<1> | typeof nothing;
+    protected render(): typeof nothing | import("lit-html").TemplateResult<1>;
     private _prepareEntities;
     private _renderScene;
     private _renderAutomation;

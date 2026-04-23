@@ -3,7 +3,7 @@ import { LitElement, nothing } from "lit";
 import type { HomeAssistant } from "../../types";
 import "../ha-button";
 import "../ha-check-list-item";
-import "../ha-wa-dialog";
+import "../ha-dialog";
 import "../ha-dialog-header";
 import "../ha-dialog-footer";
 import "../ha-icon-button";
@@ -28,7 +28,7 @@ declare class DialogMediaManage extends LitElement {
     closeDialog(): boolean;
     private _dialogClosed;
     protected willUpdate(): void;
-    protected render(): import("lit-html").TemplateResult<1> | typeof nothing;
+    protected render(): typeof nothing | import("lit-html").TemplateResult<1>;
     private _handleSelected;
     private _startUploading;
     private _doneUploading;

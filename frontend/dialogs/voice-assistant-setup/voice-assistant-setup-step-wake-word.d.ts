@@ -20,7 +20,7 @@ export declare class HaVoiceAssistantSetupStepWakeWord extends LitElement {
     protected willUpdate(changedProperties: PropertyValues): void;
     private _startTimeOut;
     private _activeWakeWord;
-    protected render(): import("lit-html").TemplateResult<1> | typeof nothing;
+    protected render(): typeof nothing | import("lit-html").TemplateResult<1>;
     private _listenWakeWord;
     private _stopListeningWakeWord;
     private _nextStep;

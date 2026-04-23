@@ -19,6 +19,7 @@ declare global {
 export declare class HAFullCalendar extends LitElement {
     hass: HomeAssistant;
     narrow: boolean;
+    addFab: boolean;
     events: CalendarEvent[];
     calendars: CalendarData[];
     views: FullCalendarView[];
@@ -26,6 +27,7 @@ export declare class HAFullCalendar extends LitElement {
     eventDisplay: string;
     error?: string;
     private calendar?;
+    private _midnightRefreshTimeout?;
     private _viewButtons?;
     private _activeView;
     private _resizeController;
@@ -44,6 +46,11 @@ export declare class HAFullCalendar extends LitElement {
     private _handleToday;
     private _handleView;
     private _fireViewChanged;
+    private _scheduleMidnightRefresh;
+    private _clearMidnightRefreshTimeout;
+    private _isShowingToday;
+    private _calendarTimeZone;
+    private _formatDateInCalendarTimeZone;
     private _viewToggleButtons;
     static get styles(): CSSResultGroup;
 }

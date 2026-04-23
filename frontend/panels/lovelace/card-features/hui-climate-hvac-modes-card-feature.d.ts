@@ -13,13 +13,11 @@ declare class HuiClimateHvacModesCardFeature extends LitElement implements Lovel
     context?: LovelaceCardFeatureContext;
     private _config?;
     _currentHvacMode?: HvacMode;
-    private _haSelect?;
     private get _stateObj();
     static getStubConfig(): ClimateHvacModesCardFeatureConfig;
     static getConfigElement(): Promise<LovelaceCardFeatureEditor>;
     setConfig(config: ClimateHvacModesCardFeatureConfig): void;
     protected willUpdate(changedProp: PropertyValues): void;
-    protected updated(changedProps: PropertyValues): void;
     private _valueChanged;
     private _setMode;
     protected render(): TemplateResult | null;

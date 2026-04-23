@@ -1,10 +1,9 @@
-import type { TemplateResult } from "lit";
 import { HaFormString } from "../components/ha-form/ha-form-string";
 import "../components/ha-icon-button";
-import "./ha-auth-textfield";
+import "../components/input/ha-input";
 export declare class HaAuthFormString extends HaFormString {
     protected createRenderRoot(): this;
-    protected render(): TemplateResult;
+    connectedCallback(): void;
 }
 declare global {
     interface HTMLElementTagNameMap {

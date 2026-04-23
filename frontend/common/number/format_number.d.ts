@@ -17,6 +17,13 @@ export declare const numberFormatToLocale: (localeOptions: FrontendLocaleData) =
  */
 export declare const formatNumber: (num: string | number, localeOptions?: FrontendLocaleData, options?: Intl.NumberFormatOptions) => string;
 /**
+ * Returns an array of objects containing the formatted number in parts
+ * Similar to Intl.NumberFormat.prototype.formatToParts()
+ *
+ * Input params - same as for formatNumber()
+ */
+export declare const formatNumberToParts: (num: string | number, localeOptions?: FrontendLocaleData, options?: Intl.NumberFormatOptions) => any[];
+/**
  * Checks if the current entity state should be formatted as an integer based on the `state` and `step` attribute and returns the appropriate `Intl.NumberFormatOptions` object with `maximumFractionDigits` set
  * @param entityState The state object of the entity
  * @returns An `Intl.NumberFormatOptions` object with `maximumFractionDigits` set to 0, or `undefined`

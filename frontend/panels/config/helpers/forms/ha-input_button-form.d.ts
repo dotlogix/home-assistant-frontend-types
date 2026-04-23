@@ -13,7 +13,7 @@ declare class HaInputButtonForm extends LitElement {
     private _item?;
     set item(item: InputButton);
     focus(): void;
-    protected render(): import("lit-html").TemplateResult<1> | typeof nothing;
+    protected render(): typeof nothing | import("lit-html").TemplateResult<1>;
     private _valueChanged;
     static get styles(): CSSResultGroup;
 }

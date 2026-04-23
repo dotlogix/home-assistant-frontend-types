@@ -18,7 +18,7 @@ export declare class HuiEntitiesCardRowEditor extends LitElement {
     label?: string;
     private _entityKeys;
     private _getKey;
-    protected render(): import("lit-html").TemplateResult<1> | typeof nothing;
+    protected render(): typeof nothing | import("lit-html").TemplateResult<1>;
     private _addEntity;
     private _rowMoved;
     private _removeRow;

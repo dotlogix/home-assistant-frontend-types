@@ -39,13 +39,11 @@ declare class HUIRoot extends LitElement {
     private _curView?;
     private _resourceMode;
     private _configChangedByUndo;
-    private _viewCache?;
+    private _viewCache;
     private _viewScrollPositions;
     private _restoreScroll;
     private _undoRedoController;
-    private _debouncedConfigChanged;
     private _conversation;
-    constructor();
     private _renderActionItems;
     protected render(): TemplateResult;
     private _handleWindowScroll;
@@ -76,7 +74,6 @@ declare class HUIRoot extends LitElement {
     private _handleManageResources;
     private _handleUnusedEntities;
     private _showVoiceCommandDialog;
-    private _showMoreInfoDialog;
     private _enableEditMode;
     private _editModeDisable;
     private _editDashboard;
@@ -86,6 +83,7 @@ declare class HUIRoot extends LitElement {
     private _moveViewRight;
     private _addView;
     private _handleViewSelected;
+    private _cleanupViewCache;
     private _selectView;
     private _applyUndoRedo;
     private _undo;

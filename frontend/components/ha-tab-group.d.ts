@@ -4,6 +4,9 @@ export declare class HaTabGroup extends TabGroup {
     private _dragScrollController;
     tabTag: string;
     tabOnly: boolean;
+    connectedCallback(): void;
+    disconnectedCallback(): void;
+    private _handleKeyDown;
     protected handleClick(event: MouseEvent): void;
     static get styles(): CSSResultGroup;
 }

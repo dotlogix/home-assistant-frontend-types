@@ -2,6 +2,7 @@ import type { Connection } from "home-assistant-js-websocket";
 import type { HomeAssistant } from "../../types";
 import type { LightColor } from "../light";
 import type { RegistryEntry } from "../registry";
+import type { Segment } from "../vacuum";
 type EntityCategory = "config" | "diagnostic";
 export interface EntityRegistryDisplayEntry {
     entity_id: string;
@@ -60,7 +61,7 @@ export interface ExtEntityRegistryEntry extends EntityRegistryEntry {
     original_icon?: string;
     device_class?: string;
     original_device_class?: string;
-    aliases: string[];
+    aliases: (string | null)[];
 }
 export interface UpdateEntityRegistryEntryResult {
     entity_entry: ExtEntityRegistryEntry;
@@ -74,6 +75,20 @@ export interface SensorEntityOptions {
 }
 export interface LightEntityOptions {
     favorite_colors?: LightColor[];
+}
+export interface ValveEntityOptions {
+    favorite_positions?: number[];
+}
+export type FavoriteOption = "favorite_colors" | "favorite_positions" | "favorite_tilt_positions";
+export type FavoritesDomain = "light" | "cover" | "valve";
+export type FavoriteOptionValue = LightColor[] | number[];
+export declare const DOMAINS_WITH_FAVORITES: FavoritesDomain[];
+export declare const isFavoritesDomain: (domain: string) => domain is FavoritesDomain;
+export declare const shouldShowFavoriteOptions: (values?: FavoriteOptionValue | null) => boolean;
+export declare const hasCustomFavoriteOptionValues: (values?: FavoriteOptionValue | null) => boolean;
+export interface CoverEntityOptions {
+    favorite_positions?: number[];
+    favorite_tilt_positions?: number[];
 }
 export interface NumberEntityOptions {
     unit_of_measurement?: string | null;
@@ -98,6 +113,10 @@ export interface SwitchAsXEntityOptions {
     entity_id: string;
     invert: boolean;
 }
+export interface VacuumEntityOptions {
+    area_mapping?: Record<string, string[]>;
+    last_seen_segments?: Segment[];
+}
 export interface EntityRegistryOptions {
     number?: NumberEntityOptions;
     sensor?: SensorEntityOptions;
@@ -106,6 +125,9 @@ export interface EntityRegistryOptions {
     lock?: LockEntityOptions;
     weather?: WeatherEntityOptions;
     light?: LightEntityOptions;
+    cover?: CoverEntityOptions;
+    valve?: ValveEntityOptions;
+    vacuum?: VacuumEntityOptions;
     switch_as_x?: SwitchAsXEntityOptions;
     conversation?: Record<string, unknown>;
     "cloud.alexa"?: Record<string, unknown>;
@@ -120,8 +142,8 @@ export interface EntityRegistryEntryUpdateParams {
     hidden_by: string | null;
     new_entity_id?: string;
     options_domain?: string;
-    options?: SensorEntityOptions | NumberEntityOptions | LockEntityOptions | AlarmControlPanelEntityOptions | CalendarEntityOptions | WeatherEntityOptions | LightEntityOptions;
-    aliases?: string[];
+    options?: SensorEntityOptions | NumberEntityOptions | LockEntityOptions | AlarmControlPanelEntityOptions | CalendarEntityOptions | WeatherEntityOptions | LightEntityOptions | CoverEntityOptions | ValveEntityOptions | VacuumEntityOptions;
+    aliases?: (string | null)[];
     labels?: string[];
     categories?: Record<string, string | null>;
 }

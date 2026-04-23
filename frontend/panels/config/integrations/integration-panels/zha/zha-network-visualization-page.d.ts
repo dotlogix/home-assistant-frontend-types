@@ -1,7 +1,8 @@
 import type { CSSResultGroup, PropertyValues } from "lit";
 import { LitElement } from "lit";
 import "../../../../../components/chart/ha-network-graph";
-import "../../../../../layouts/hass-tabs-subpage";
+import "../../../../../components/input/ha-input-search";
+import "../../../../../layouts/hass-subpage";
 import type { HomeAssistant, Route } from "../../../../../types";
 export declare class ZHANetworkVisualizationPage extends LitElement {
     hass: HomeAssistant;
@@ -10,15 +11,17 @@ export declare class ZHANetworkVisualizationPage extends LitElement {
     isWide: boolean;
     private _networkData;
     private _devices;
+    private _searchFilter;
     protected firstUpdated(changedProperties: PropertyValues): void;
     protected render(): import("lit-html").TemplateResult<1>;
+    private _renderInputSearch;
     private _fetchData;
+    private _getSearchableAttributes;
+    private _handleSearchChange;
     private _tooltipFormatter;
     private _refreshTopology;
     private _handleChartClick;
     static get styles(): CSSResultGroup;
-    private _createChartData;
-    private _getLQIWidth;
 }
 declare global {
     interface HTMLElementTagNameMap {

@@ -1,8 +1,8 @@
 import type { CSSResultGroup } from "lit";
 import { LitElement, nothing } from "lit";
 import "../../../../../components/ha-button";
+import "../../../../../components/ha-dialog-footer";
 import "../../../../../components/ha-dialog";
-import "../../../../../components/ha-dialog-header";
 import "../../../../../components/ha-dropdown";
 import "../../../../../components/ha-dropdown-item";
 import "../../../../../components/ha-icon-button";
@@ -15,19 +15,20 @@ declare class DialogDashboardStrategyEditor extends LitElement {
     private _strategyConfig?;
     private _GUImode;
     private _guiModeAvailable?;
+    private _open;
     private _strategyEditorEl?;
     showDialog(params: DashboardStrategyEditorDialogParams): Promise<void>;
     closeDialog(): void;
+    private _dialogClosed;
     private _handleConfigChanged;
     private _handleGUIModeChanged;
-    private _opened;
     private _save;
     private _delete;
     private _cancel;
     private _handleAction;
     private _toggleMode;
     private _takeControl;
-    protected render(): import("lit-html").TemplateResult<1> | typeof nothing;
+    protected render(): typeof nothing | import("lit-html").TemplateResult<1>;
     static get styles(): CSSResultGroup;
 }
 declare global {

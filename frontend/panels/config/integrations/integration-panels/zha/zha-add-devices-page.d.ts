@@ -3,7 +3,7 @@ import { LitElement } from "lit";
 import "../../../../../components/ha-button";
 import "../../../../../components/ha-spinner";
 import "../../../../../components/ha-textarea";
-import "../../../../../layouts/hass-tabs-subpage";
+import "../../../../../layouts/hass-subpage";
 import type { HomeAssistant, Route } from "../../../../../types";
 import "./zha-device-pairing-status-card";
 declare class ZHAAddDevicesPage extends LitElement {

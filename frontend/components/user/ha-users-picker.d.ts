@@ -13,7 +13,7 @@ declare class HaUsersPicker extends LitElement {
     disabled: boolean;
     protected firstUpdated(changedProps: any): void;
     private _fetchUsers;
-    protected render(): import("lit-html").TemplateResult<1> | typeof nothing;
+    protected render(): typeof nothing | import("lit-html").TemplateResult<1>;
     private _notSelectedUsers;
     private _notSelectedUsersAndSelected;
     private get _currentUsers();

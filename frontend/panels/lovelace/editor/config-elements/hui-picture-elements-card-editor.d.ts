@@ -18,7 +18,7 @@ export declare class HuiPictureElementsCardEditor extends LitElement implements 
     private _onPreviewClick;
     private _handlePositionClick;
     private _schema;
-    protected render(): import("lit-html").TemplateResult<1> | typeof nothing;
+    protected render(): typeof nothing | import("lit-html").TemplateResult<1>;
     private _processData;
     private _formChanged;
     private _elementsChanged;

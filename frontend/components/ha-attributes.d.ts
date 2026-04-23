@@ -11,7 +11,7 @@ declare class HaAttributes extends LitElement {
     private _expanded;
     private get _filteredAttributes();
     protected willUpdate(changedProperties: PropertyValues): void;
-    protected render(): import("lit-html").TemplateResult<1> | typeof nothing;
+    protected render(): typeof nothing | import("lit-html").TemplateResult<1>;
     static get styles(): CSSResultGroup;
     private _computeDisplayAttributes;
     private _expandedChanged;

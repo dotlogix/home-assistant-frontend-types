@@ -10,6 +10,7 @@ import "@home-assistant/webawesome/dist/components/divider/divider";
 declare class HaConfigSectionUpdates extends LitElement {
     hass: HomeAssistant;
     narrow: boolean;
+    private _searchParms;
     private _showSkipped;
     private _supervisorInfo?;
     protected firstUpdated(changedProps: any): void;

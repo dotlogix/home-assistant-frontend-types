@@ -5,6 +5,7 @@ import "../../../../../components/ha-help-tooltip";
 import "../../../../../components/ha-list";
 import "../../../../../components/ha-list-item";
 import "../../../../../components/ha-svg-icon";
+import "../../../../../components/ha-dialog";
 import type { HomeAssistant } from "../../../../../types";
 import type { ZWaveJSNodeStatisticsDialogParams } from "./show-dialog-zwave_js-node-statistics";
 declare class DialogZWaveJSNodeStatistics extends LitElement {
@@ -13,11 +14,13 @@ declare class DialogZWaveJSNodeStatistics extends LitElement {
     private _nodeStatistics?;
     private _deviceIDsToName;
     private _workingRoutes;
+    private _open;
     private _subscribedNodeStatistics?;
     private _subscribedDeviceRegistry?;
     showDialog(params: ZWaveJSNodeStatisticsDialogParams): void;
     closeDialog(): void;
-    protected render(): TemplateResult<1> | typeof nothing;
+    private _dialogClosed;
+    protected render(): typeof nothing | TemplateResult<1>;
     private _computeRSSI;
     private _computeDeviceNameById;
     private _subscribeNodeStatistics;

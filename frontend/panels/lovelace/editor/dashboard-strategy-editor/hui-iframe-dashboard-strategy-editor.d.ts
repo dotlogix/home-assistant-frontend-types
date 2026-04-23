@@ -7,7 +7,7 @@ export declare class HuiIframeDashboarStrategyEditor extends LitElement implemen
     hass?: HomeAssistant;
     private _config?;
     setConfig(config: IframeDashboardStrategyConfig): void;
-    protected render(): import("lit-html").TemplateResult<1> | typeof nothing;
+    protected render(): typeof nothing | import("lit-html").TemplateResult<1>;
     private _valueChanged;
     private _computeLabelCallback;
 }

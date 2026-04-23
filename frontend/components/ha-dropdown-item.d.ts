@@ -13,6 +13,7 @@ import "./ha-svg-icon";
  *
  */
 export declare class HaDropdownItem extends DropdownItem {
+    selected: boolean;
     protected renderCheckboxIcon(): import("lit-html").TemplateResult<1>;
     static get styles(): CSSResultGroup;
 }

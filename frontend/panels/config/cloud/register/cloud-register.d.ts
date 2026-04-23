@@ -3,11 +3,10 @@ import { LitElement } from "lit";
 import "../../../../components/buttons/ha-progress-button";
 import "../../../../components/ha-alert";
 import "../../../../components/ha-card";
-import "../../../../components/ha-textfield";
+import "../../../../components/input/ha-input";
 import "../../../../layouts/hass-subpage";
 import type { HomeAssistant } from "../../../../types";
 import "../../ha-config-section";
-import "../../../../components/ha-password-field";
 export declare class CloudRegister extends LitElement {
     hass: HomeAssistant;
     isWide: boolean;

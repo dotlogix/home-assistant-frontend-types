@@ -19,7 +19,7 @@ export declare class HuiThermostatCard extends LitElement implements LovelaceCar
     setConfig(config: ThermostatCardConfig): void;
     private _handleMoreInfo;
     protected updated(changedProps: PropertyValues): void;
-    protected render(): import("lit-html").TemplateResult<1> | typeof nothing;
+    protected render(): typeof nothing | import("lit-html").TemplateResult<1>;
     getGridOptions(): LovelaceGridOptions;
     static styles: import("lit").CSSResult;
 }

@@ -4,9 +4,11 @@ import "../../components/ha-alert";
 import "../../components/ha-button";
 import "../../components/ha-checkbox";
 import "../../components/ha-date-input";
+import "../../components/ha-dialog-footer";
 import "../../components/ha-textarea";
 import "../../components/ha-textfield";
 import "../../components/ha-time-input";
+import "../../components/ha-dialog";
 import type { HomeAssistant } from "../../types";
 import type { TodoItemEditDialogParams } from "./show-dialog-todo-item-editor";
 declare class DialogTodoItemEditor extends LitElement {
@@ -20,10 +22,12 @@ declare class DialogTodoItemEditor extends LitElement {
     private _checked;
     private _hasTime;
     private _submitting;
+    private _open;
     private _timeZone?;
     showDialog(params: TodoItemEditDialogParams): void;
     closeDialog(): void;
-    protected render(): import("lit-html").TemplateResult<1> | typeof nothing;
+    private _dialogClosed;
+    protected render(): typeof nothing | import("lit-html").TemplateResult<1>;
     private _todoListSupportsFeature;
     private _getLocaleStrings;
     private _formatDate;

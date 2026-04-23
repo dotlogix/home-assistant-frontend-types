@@ -13,7 +13,7 @@ export declare class HaQrCode extends LitElement {
     private _canvas?;
     protected willUpdate(changedProperties: PropertyValues): void;
     updated(changedProperties: PropertyValues): void;
-    render(): import("lit-html").TemplateResult<1> | typeof nothing;
+    render(): typeof nothing | import("lit-html").TemplateResult<1>;
     static styles: import("lit").CSSResult;
 }
 declare global {

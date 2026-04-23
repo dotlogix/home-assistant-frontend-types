@@ -14,7 +14,7 @@ export declare class HuiErrorSection extends LitElement implements LovelaceSecti
     isStrategy: boolean;
     private _config?;
     setConfig(config: ErrorSectionConfig): void;
-    protected render(): import("lit-html").TemplateResult<1> | typeof nothing;
+    protected render(): typeof nothing | import("lit-html").TemplateResult<1>;
 }
 declare global {
     interface HTMLElementTagNameMap {

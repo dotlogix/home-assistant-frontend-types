@@ -25,7 +25,7 @@ export declare class HuiButtonCard extends LitElement implements LovelaceCard {
     getCardSize(): number;
     getGridOptions(): LovelaceGridOptions;
     setConfig(config: ButtonCardConfig): void;
-    protected render(): import("lit-html").TemplateResult<1> | typeof nothing;
+    protected render(): typeof nothing | import("lit-html").TemplateResult<1>;
     protected updated(changedProps: PropertyValues): void;
     static get styles(): CSSResultGroup;
     private _computeColor;

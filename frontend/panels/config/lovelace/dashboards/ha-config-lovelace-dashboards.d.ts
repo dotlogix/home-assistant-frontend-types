@@ -1,5 +1,6 @@
 import type { PropertyValues } from "lit";
 import { LitElement } from "lit";
+import "../../../../components/ha-alert";
 import "../../../../components/ha-button";
 import "../../../../components/ha-dropdown";
 import "../../../../components/ha-dropdown-item";
@@ -34,6 +35,7 @@ export declare class HaConfigLovelaceDashboards extends LitElement {
     private _getDashboards;
     private _handleRowClicked;
     private _handleEdit;
+    private _handleEditPanel;
     private _handleSetAsDefault;
     private _handleDelete;
     private _addDashboard;

@@ -3,8 +3,6 @@ import type { DeviceAutomation } from "../../data/device/device_automation";
 import type { EntityRegistryEntry } from "../../data/entity/entity_registry";
 import type { HomeAssistant } from "../../types";
 import "../ha-generic-picker";
-import "../ha-md-select";
-import "../ha-md-select-option";
 export declare abstract class HaDeviceAutomationPicker<T extends DeviceAutomation> extends LitElement {
     hass: HomeAssistant;
     label?: string;
@@ -19,12 +17,11 @@ export declare abstract class HaDeviceAutomationPicker<T extends DeviceAutomatio
     private _createNoAutomation;
     constructor(localizeDeviceAutomation: HaDeviceAutomationPicker<T>["_localizeDeviceAutomation"], fetchDeviceAutomations: HaDeviceAutomationPicker<T>["_fetchDeviceAutomations"], createNoAutomation: HaDeviceAutomationPicker<T>["_createNoAutomation"]);
     private get _value();
-    protected render(): import("lit-html").TemplateResult<1> | typeof nothing;
+    protected render(): typeof nothing | import("lit-html").TemplateResult<1>;
     protected updated(changedProps: any): void;
     private _getItems;
     private _valueRenderer;
     private _updateDeviceInfo;
     private _automationChanged;
     private _setValue;
-    static styles: import("lit").CSSResult;
 }

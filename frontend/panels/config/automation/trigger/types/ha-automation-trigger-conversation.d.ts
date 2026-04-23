@@ -1,6 +1,7 @@
+import "@home-assistant/webawesome/dist/components/divider/divider";
 import { LitElement } from "lit";
-import "../../../../../components/ha-textfield";
 import "../../../../../components/ha-icon-button";
+import "../../../../../components/input/ha-input";
 import type { ConversationTrigger } from "../../../../../data/automation";
 import type { HomeAssistant } from "../../../../../types";
 import type { TriggerElement } from "../ha-automation-trigger-row";

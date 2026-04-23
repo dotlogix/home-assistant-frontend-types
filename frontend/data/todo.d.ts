@@ -31,7 +31,7 @@ export declare const enum TodoListEntityFeature {
     SET_DUE_DATETIME_ON_ITEM = 32,
     SET_DESCRIPTION_ON_ITEM = 64
 }
-export declare const getTodoLists: (hass: HomeAssistant) => TodoList[];
+export declare const getTodoLists: (hass: HomeAssistant, includeHidden?: boolean) => TodoList[];
 export interface TodoItems {
     items: TodoItem[];
 }

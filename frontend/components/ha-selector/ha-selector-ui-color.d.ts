@@ -8,6 +8,7 @@ export declare class HaSelectorUiColor extends LitElement {
     value?: string;
     label?: string;
     helper?: string;
+    disabled: boolean;
     protected render(): import("lit-html").TemplateResult<1>;
     private _valueChanged;
 }

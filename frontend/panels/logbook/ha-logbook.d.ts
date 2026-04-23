@@ -29,7 +29,7 @@ export declare class HaLogbook extends LitElement {
     private _pendingStreamMessages;
     private _throttleGetLogbookEntries;
     private _logbookSubscriptionId;
-    protected render(): import("lit-html").TemplateResult<1> | typeof nothing;
+    protected render(): typeof nothing | import("lit-html").TemplateResult<1>;
     refresh(force?: boolean): Promise<void>;
     protected shouldUpdate(changedProps: PropertyValues): boolean;
     protected willUpdate(changedProps: PropertyValues): void;

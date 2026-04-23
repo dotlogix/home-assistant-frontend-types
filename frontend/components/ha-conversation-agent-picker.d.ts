@@ -2,7 +2,6 @@ import type { PropertyValues } from "lit";
 import { LitElement, nothing } from "lit";
 import type { Agent } from "../data/conversation";
 import type { HomeAssistant } from "../types";
-import "./ha-list-item";
 import "./ha-select";
 export declare class HaConversationAgentPicker extends LitElement {
     value?: string;
@@ -14,7 +13,7 @@ export declare class HaConversationAgentPicker extends LitElement {
     _agents?: Agent[];
     private _configEntry?;
     private _subConfigEntry?;
-    protected render(): import("lit-html").TemplateResult<1> | typeof nothing;
+    protected render(): typeof nothing | import("lit-html").TemplateResult<1>;
     protected willUpdate(changedProperties: PropertyValues<this>): void;
     private _maybeFetchConfigEntry;
     private _debouncedUpdateAgents;

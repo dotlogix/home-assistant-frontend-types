@@ -6,7 +6,7 @@ declare class HuiMarquee extends LitElement {
     animating: boolean;
     protected firstUpdated(changedProps: any): void;
     protected updated(changedProperties: PropertyValues): void;
-    protected render(): import("lit-html").TemplateResult<1> | typeof nothing;
+    protected render(): typeof nothing | import("lit-html").TemplateResult<1>;
     private _onIteration;
     static styles: import("lit").CSSResult;
 }

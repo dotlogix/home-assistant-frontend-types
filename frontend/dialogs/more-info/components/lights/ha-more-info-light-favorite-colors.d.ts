@@ -1,10 +1,9 @@
 import type { PropertyValues, TemplateResult } from "lit";
 import { LitElement } from "lit";
-import "../../../../components/ha-control-slider";
-import "../../../../components/ha-sortable";
 import type { ExtEntityRegistryEntry } from "../../../../data/entity/entity_registry";
 import type { LightEntity } from "../../../../data/light";
 import type { HomeAssistant } from "../../../../types";
+import "../ha-more-info-favorites";
 import "./ha-favorite-color-button";
 declare global {
     interface HASSDomEvents {
@@ -18,19 +17,20 @@ export declare class HaMoreInfoLightFavoriteColors extends LitElement {
     editMode?: boolean;
     private _favoriteColors;
     protected updated(changedProps: PropertyValues): void;
-    private _colorMoved;
     private _move;
     private _apply;
     private _save;
     private _add;
     private _edit;
     private _delete;
-    private _handleDeleteButton;
-    private _handleAddButton;
-    private _handleColorAction;
-    private _exitEditMode;
+    private _renderFavorite;
+    private _deleteLabel;
+    private _handleFavoriteAction;
+    private _handleFavoriteMoved;
+    private _handleFavoriteDelete;
+    private _handleFavoriteAdd;
+    private _handleFavoriteDone;
     protected render(): TemplateResult;
-    static styles: import("lit").CSSResult;
 }
 declare global {
     interface HTMLElementTagNameMap {

@@ -29,7 +29,7 @@ declare class HuiAlarmPanelCard extends LitElement implements LovelaceCard {
     protected shouldUpdate(changedProps: PropertyValues): boolean;
     private _unsubscribeEntityRegistry;
     private _subscribeEntityEntry;
-    protected render(): import("lit-html").TemplateResult<1> | typeof nothing;
+    protected render(): typeof nothing | import("lit-html").TemplateResult<1>;
     private _actionDisplay;
     private _stateDisplay;
     private _handleInput;

@@ -52,6 +52,7 @@ export default class HaAutomationTriggerRow extends LitElement {
     private _triggered?;
     private _triggerColor;
     private _selected;
+    private _isNew;
     private _warnings?;
     triggerDescriptions: TriggerDescriptions;
     narrow: boolean;
@@ -63,7 +64,7 @@ export default class HaAutomationTriggerRow extends LitElement {
     private _triggerUnsub?;
     private _renderOverflowLabel;
     private _renderRow;
-    protected render(): TemplateResult<1> | typeof nothing;
+    protected render(): typeof nothing | TemplateResult<1>;
     private _renderTargets;
     protected willUpdate(changedProperties: any): void;
     protected updated(changedProps: PropertyValues<this>): void;
@@ -73,6 +74,8 @@ export default class HaAutomationTriggerRow extends LitElement {
     private _doSubscribeTrigger;
     private _handleUiModeNotAvailable;
     private _toggleSidebar;
+    markAsNew(): void;
+    private _expansionPanelChanged;
     openSidebar(trigger?: Trigger): void;
     private _setClipboard;
     private _onDelete;

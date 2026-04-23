@@ -21,6 +21,7 @@ export declare class HaAuthFlow extends LitElement {
     private _stepData?;
     private _errorMessage?;
     private _submitting;
+    private _form?;
     createRenderRoot(): this;
     willUpdate(changedProps: PropertyValues): void;
     protected render(): import("lit-html").TemplateResult<1>;

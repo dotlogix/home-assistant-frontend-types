@@ -14,7 +14,7 @@ export declare class HaStateControlClimateHumidity extends LitElement {
     private _targetHumidity?;
     private _sizeController;
     protected willUpdate(changedProp: PropertyValues): void;
-    private _step;
+    private get _step();
     private get _min();
     private get _max();
     private _valueChanged;

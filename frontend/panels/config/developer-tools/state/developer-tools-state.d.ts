@@ -10,7 +10,7 @@ import "../../../../components/ha-input-helper-text";
 import "../../../../components/ha-svg-icon";
 import "../../../../components/ha-tip";
 import "../../../../components/ha-yaml-editor";
-import "../../../../components/search-input";
+import "../../../../components/input/ha-input-search";
 import type { HomeAssistant } from "../../../../types";
 import "./developer-tools-state-renderer";
 declare class HaPanelDevState extends LitElement {

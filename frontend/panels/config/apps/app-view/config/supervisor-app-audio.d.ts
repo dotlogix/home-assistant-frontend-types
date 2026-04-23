@@ -3,7 +3,6 @@ import { LitElement } from "lit";
 import "../../../../../components/buttons/ha-progress-button";
 import "../../../../../components/ha-alert";
 import "../../../../../components/ha-card";
-import "../../../../../components/ha-list-item";
 import "../../../../../components/ha-select";
 import type { HassioAddonDetails } from "../../../../../data/hassio/addon";
 import type { HomeAssistant } from "../../../../../types";

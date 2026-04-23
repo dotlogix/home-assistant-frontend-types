@@ -7,7 +7,6 @@ import "../../../components/ha-dropdown";
 import "../../../components/ha-dropdown-item";
 import "../../../components/ha-icon-button";
 import "../../../components/ha-icon-next";
-import "../../../components/ha-password-field";
 import "../../../components/ha-svg-icon";
 import type { BackupAgent, BackupConfig } from "../../../data/backup";
 import type { CloudStatus } from "../../../data/cloud";
@@ -33,7 +32,7 @@ declare class HaConfigBackupSettings extends LitElement {
     private _scrollToSection;
     private _scrolltoHash;
     private _clearHash;
-    protected render(): import("lit-html").TemplateResult<1> | typeof nothing;
+    protected render(): typeof nothing | import("lit-html").TemplateResult<1>;
     private _changeLocalLocation;
     private _supervisorUpdateConfigChanged;
     private _scheduleConfigChanged;

@@ -13,7 +13,7 @@ export declare class HuiHeadingEntityEditor extends LitElement implements Lovela
     setConfig(config: EntityHeadingBadgeConfig): void;
     private _schema;
     private _displayedElements;
-    protected render(): import("lit-html").TemplateResult<1> | typeof nothing;
+    protected render(): typeof nothing | import("lit-html").TemplateResult<1>;
     private _valueChanged;
     private _conditionChanged;
     private _computeLabelCallback;

@@ -126,6 +126,9 @@ interface EMOutgoingMessageAssistShow extends EMMessage {
         start_listening: boolean;
     };
 }
+interface EMOutgoingMessageAssistSettings extends EMMessage {
+    type: "assist/settings";
+}
 interface EMOutgoingMessageImprovScan extends EMMessage {
     type: "improv/scan";
 }
@@ -157,7 +160,8 @@ interface EMOutgoingMessageFocusElement extends EMMessage {
         element_id: string;
     };
 }
-type EMOutgoingMessageWithoutAnswer = EMMessageResultError | EMMessageResultSuccess | EMOutgoingMessageAppConfiguration | EMOutgoingMessageAssistShow | EMOutgoingMessageBarCodeClose | EMOutgoingMessageBarCodeNotify | EMOutgoingMessageBarCodeScan | EMOutgoingMessageConnectionStatus | EMOutgoingMessageExoplayerPlayHLS | EMOutgoingMessageExoplayerResize | EMOutgoingMessageExoplayerStop | EMOutgoingMessageHaptic | EMOutgoingMessageImportThreadCredentials | EMOutgoingMessageMatterCommission | EMOutgoingMessageSidebarShow | EMOutgoingMessageTagWrite | EMOutgoingMessageThemeUpdate | EMOutgoingMessageThreadStoreInPlatformKeychain | EMOutgoingMessageImprovScan | EMOutgoingMessageImprovConfigureDevice | EMOutgoingMessageAddEntityTo | EMOutgoingMessageFocusElement;
+type RejectedEMMessageType = "onHomeAssistantSetTheme" | "handleBlob";
+type EMOutgoingMessageWithoutAnswer = EMMessageResultError | EMMessageResultSuccess | EMOutgoingMessageAppConfiguration | EMOutgoingMessageAssistShow | EMOutgoingMessageBarCodeClose | EMOutgoingMessageBarCodeNotify | EMOutgoingMessageBarCodeScan | EMOutgoingMessageConnectionStatus | EMOutgoingMessageExoplayerPlayHLS | EMOutgoingMessageExoplayerResize | EMOutgoingMessageExoplayerStop | EMOutgoingMessageHaptic | EMOutgoingMessageImportThreadCredentials | EMOutgoingMessageMatterCommission | EMOutgoingMessageSidebarShow | EMOutgoingMessageTagWrite | EMOutgoingMessageThemeUpdate | EMOutgoingMessageThreadStoreInPlatformKeychain | EMOutgoingMessageImprovScan | EMOutgoingMessageImprovConfigureDevice | EMOutgoingMessageAddEntityTo | EMOutgoingMessageFocusElement | EMOutgoingMessageAssistSettings;
 export interface EMIncomingMessageRestart {
     id: number;
     type: "command";
@@ -250,6 +254,7 @@ export interface ExternalConfig {
     canSetupImprov?: boolean;
     appVersion?: string;
     hasEntityAddTo?: boolean;
+    hasAssistSettings?: boolean;
 }
 export interface ExternalEntityAddToAction {
     enabled: boolean;
@@ -272,12 +277,16 @@ export declare class ExternalMessaging {
      * Send message to external app that expects a response.
      * @param msg message to send
      */
-    sendMessage<T extends keyof EMOutgoingMessageWithAnswer>(msg: EMOutgoingMessageWithAnswer[T]["request"]): Promise<EMOutgoingMessageWithAnswer[T]["response"]>;
+    sendMessage<T extends keyof EMOutgoingMessageWithAnswer, TType extends string = EMOutgoingMessageWithAnswer[T]["request"]["type"]>(msg: EMOutgoingMessageWithAnswer[T]["request"] & {
+        type: TType & (TType extends RejectedEMMessageType ? "ERROR: message type is rejected" : {});
+    }): Promise<EMOutgoingMessageWithAnswer[T]["response"]>;
     /**
      * Send message to external app without expecting a response.
      * @param msg message to send
      */
-    fireMessage(msg: EMOutgoingMessageWithoutAnswer): void;
+    fireMessage<T extends string>(msg: EMOutgoingMessageWithoutAnswer & {
+        type: T & (T extends RejectedEMMessageType ? "ERROR: message type is rejected" : {});
+    }): void;
     receiveMessage(msg: EMIncomingMessage): void;
     protected _sendExternal(msg: EMMessage): void;
 }

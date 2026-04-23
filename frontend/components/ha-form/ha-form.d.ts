@@ -18,9 +18,9 @@ export declare class HaForm extends LitElement implements HaFormElement {
     computeHelper?: (schema: any) => string | undefined;
     localizeValue?: (key: string) => string;
     protected getFormProperties(): Record<string, any>;
-    focus(): Promise<void>;
-    protected willUpdate(changedProps: PropertyValues): void;
     static shadowRootOptions: ShadowRootInit;
+    reportValidity(): boolean;
+    protected willUpdate(changedProps: PropertyValues): void;
     protected render(): TemplateResult;
     protected fieldElementName(type: string): string;
     private _generateContext;

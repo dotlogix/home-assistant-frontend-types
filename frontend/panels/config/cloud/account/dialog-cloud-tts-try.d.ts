@@ -1,21 +1,24 @@
 import type { CSSResultGroup } from "lit";
 import { LitElement, nothing } from "lit";
-import "../../../../components/ha-list-item";
-import "../../../../components/ha-select";
 import "../../../../components/ha-button";
+import "../../../../components/ha-dialog-footer";
+import "../../../../components/ha-select";
 import "../../../../components/ha-textarea";
+import "../../../../components/ha-dialog";
 import type { HomeAssistant } from "../../../../types";
 import type { TryTtsDialogParams } from "./show-dialog-cloud-tts-try";
 export declare class DialogTryTts extends LitElement {
     hass: HomeAssistant;
     private _loadingExample;
+    private _open;
     private _params?;
     private _messageInput?;
     private _message;
     private _target;
     showDialog(params: TryTtsDialogParams): void;
     closeDialog(): void;
-    protected render(): import("lit-html").TemplateResult<1> | typeof nothing;
+    private _dialogClosed;
+    protected render(): typeof nothing | import("lit-html").TemplateResult<1>;
     private _handleTargetChanged;
     private _playExample;
     private _createAutomation;

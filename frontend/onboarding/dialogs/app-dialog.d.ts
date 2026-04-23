@@ -1,10 +1,15 @@
 import { LitElement, nothing } from "lit";
 import type { LocalizeFunc } from "../../common/translations/localize";
+import "../../components/ha-dialog";
 declare class DialogApp extends LitElement {
     localize?: LocalizeFunc;
-    showDialog(params: any): Promise<void>;
-    closeDialog(): Promise<void>;
-    protected render(): import("lit-html").TemplateResult<1> | typeof nothing;
+    private _open;
+    showDialog(params: {
+        localize: LocalizeFunc;
+    }): Promise<void>;
+    closeDialog(): void;
+    private _dialogClosed;
+    protected render(): typeof nothing | import("lit-html").TemplateResult<1>;
     static styles: import("lit").CSSResult;
 }
 declare global {

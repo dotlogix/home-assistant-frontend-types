@@ -2,7 +2,7 @@ import type { CSSResultGroup } from "lit";
 import { LitElement, nothing } from "lit";
 import "../../../../components/ha-alert";
 import "../../../../components/ha-area-picker";
-import "../../../../components/ha-wa-dialog";
+import "../../../../components/ha-adaptive-dialog";
 import "../../../../components/ha-dialog-footer";
 import "../../../../components/ha-button";
 import "../../../../components/ha-labels-picker";
@@ -22,7 +22,7 @@ declare class DialogDeviceRegistryDetail extends LitElement {
     showDialog(params: DeviceRegistryDetailDialogParams): Promise<void>;
     closeDialog(): void;
     private _dialogClosed;
-    protected render(): import("lit-html").TemplateResult<1> | typeof nothing;
+    protected render(): typeof nothing | import("lit-html").TemplateResult<1>;
     private _nameChanged;
     private _areaPicked;
     private _labelsChanged;

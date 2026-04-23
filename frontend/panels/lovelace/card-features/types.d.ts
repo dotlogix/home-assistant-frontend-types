@@ -19,11 +19,20 @@ export interface CoverTiltCardFeatureConfig {
 export interface CoverTiltPositionCardFeatureConfig {
     type: "cover-tilt-position";
 }
+export interface CoverPositionFavoriteCardFeatureConfig {
+    type: "cover-position-favorite";
+}
+export interface CoverTiltFavoriteCardFeatureConfig {
+    type: "cover-tilt-favorite";
+}
 export interface LightBrightnessCardFeatureConfig {
     type: "light-brightness";
 }
 export interface LightColorTempCardFeatureConfig {
     type: "light-color-temp";
+}
+export interface LightColorFavoritesCardFeatureConfig {
+    type: "light-color-favorites";
 }
 export interface LockCommandsCardFeatureConfig {
     type: "lock-commands";
@@ -135,6 +144,9 @@ export interface ValveOpenCloseCardFeatureConfig {
 export interface ValvePositionCardFeatureConfig {
     type: "valve-position";
 }
+export interface ValvePositionFavoriteCardFeatureConfig {
+    type: "valve-position-favorite";
+}
 export declare const LAWN_MOWER_COMMANDS: readonly ["start_pause", "dock"];
 export type LawnMowerCommand = (typeof LAWN_MOWER_COMMANDS)[number];
 export interface LawnMowerCommandsCardFeatureConfig {
@@ -165,7 +177,7 @@ export interface BarGaugeCardFeatureConfig {
     max?: number;
 }
 export type LovelaceCardFeaturePosition = "bottom" | "inline";
-export type LovelaceCardFeatureConfig = AlarmModesCardFeatureConfig | ButtonCardFeatureConfig | ClimateFanModesCardFeatureConfig | ClimateSwingModesCardFeatureConfig | ClimateSwingHorizontalModesCardFeatureConfig | ClimateHvacModesCardFeatureConfig | ClimatePresetModesCardFeatureConfig | CounterActionsCardFeatureConfig | CoverOpenCloseCardFeatureConfig | CoverPositionCardFeatureConfig | CoverTiltPositionCardFeatureConfig | CoverTiltCardFeatureConfig | DateSetCardFeatureConfig | FanDirectionCardFeatureConfig | FanOscillateCardFeatureConfig | FanPresetModesCardFeatureConfig | FanSpeedCardFeatureConfig | TrendGraphCardFeatureConfig | HumidifierToggleCardFeatureConfig | HumidifierModesCardFeatureConfig | LawnMowerCommandsCardFeatureConfig | LightBrightnessCardFeatureConfig | LightColorTempCardFeatureConfig | LockCommandsCardFeatureConfig | LockOpenDoorCardFeatureConfig | MediaPlayerPlaybackCardFeatureConfig | MediaPlayerVolumeButtonsCardFeatureConfig | MediaPlayerVolumeSliderCardFeatureConfig | NumericInputCardFeatureConfig | SelectOptionsCardFeatureConfig | TrendGraphCardFeatureConfig | TargetHumidityCardFeatureConfig | TargetTemperatureCardFeatureConfig | ToggleCardFeatureConfig | UpdateActionsCardFeatureConfig | VacuumCommandsCardFeatureConfig | ValveOpenCloseCardFeatureConfig | ValvePositionCardFeatureConfig | WaterHeaterOperationModesCardFeatureConfig | AreaControlsCardFeatureConfig | BarGaugeCardFeatureConfig;
+export type LovelaceCardFeatureConfig = AlarmModesCardFeatureConfig | ButtonCardFeatureConfig | ClimateFanModesCardFeatureConfig | ClimateSwingModesCardFeatureConfig | ClimateSwingHorizontalModesCardFeatureConfig | ClimateHvacModesCardFeatureConfig | ClimatePresetModesCardFeatureConfig | CounterActionsCardFeatureConfig | CoverOpenCloseCardFeatureConfig | CoverPositionCardFeatureConfig | CoverPositionFavoriteCardFeatureConfig | CoverTiltFavoriteCardFeatureConfig | CoverTiltPositionCardFeatureConfig | CoverTiltCardFeatureConfig | DateSetCardFeatureConfig | FanDirectionCardFeatureConfig | FanOscillateCardFeatureConfig | FanPresetModesCardFeatureConfig | FanSpeedCardFeatureConfig | TrendGraphCardFeatureConfig | HumidifierToggleCardFeatureConfig | HumidifierModesCardFeatureConfig | LawnMowerCommandsCardFeatureConfig | LightBrightnessCardFeatureConfig | LightColorTempCardFeatureConfig | LightColorFavoritesCardFeatureConfig | LockCommandsCardFeatureConfig | LockOpenDoorCardFeatureConfig | MediaPlayerPlaybackCardFeatureConfig | MediaPlayerVolumeButtonsCardFeatureConfig | MediaPlayerVolumeSliderCardFeatureConfig | NumericInputCardFeatureConfig | SelectOptionsCardFeatureConfig | TrendGraphCardFeatureConfig | TargetHumidityCardFeatureConfig | TargetTemperatureCardFeatureConfig | ToggleCardFeatureConfig | UpdateActionsCardFeatureConfig | VacuumCommandsCardFeatureConfig | ValveOpenCloseCardFeatureConfig | ValvePositionFavoriteCardFeatureConfig | ValvePositionCardFeatureConfig | WaterHeaterOperationModesCardFeatureConfig | AreaControlsCardFeatureConfig | BarGaugeCardFeatureConfig;
 export interface LovelaceCardFeatureContext {
     entity_id?: string;
     area_id?: string;

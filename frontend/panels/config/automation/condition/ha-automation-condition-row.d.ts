@@ -43,6 +43,7 @@ export default class HaAutomationConditionRow extends LitElement {
     highlight?: boolean;
     sortSelected: boolean;
     private _collapsed;
+    private _isNew;
     private _warnings?;
     conditionDescriptions: ConditionDescriptions;
     optionsInSidebar: boolean;
@@ -57,7 +58,7 @@ export default class HaAutomationConditionRow extends LitElement {
     get selected(): boolean;
     private _renderOverflowLabel;
     private _renderRow;
-    protected render(): TemplateResult<1> | typeof nothing;
+    protected render(): typeof nothing | TemplateResult<1>;
     private _renderTargets;
     protected firstUpdated(changedProperties: PropertyValues): void;
     protected willUpdate(changedProperties: any): void;
@@ -82,6 +83,8 @@ export default class HaAutomationConditionRow extends LitElement {
     collapseAll(): void;
     private _handleUiModeNotAvailable;
     private _toggleSidebar;
+    markAsNew(): void;
+    private _expansionPanelChanged;
     openSidebar(condition?: Condition): void;
     private _getType;
     private _uiSupported;

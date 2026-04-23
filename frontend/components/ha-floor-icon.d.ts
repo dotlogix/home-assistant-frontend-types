@@ -7,7 +7,7 @@ export declare const floorDefaultIcon: (floor: Pick<FloorRegistryEntry, "level">
 export declare class HaFloorIcon extends LitElement {
     floor?: Pick<FloorRegistryEntry, "icon" | "level">;
     icon?: string;
-    protected render(): import("lit-html").TemplateResult<1> | typeof nothing;
+    protected render(): typeof nothing | import("lit-html").TemplateResult<1>;
 }
 declare global {
     interface HTMLElementTagNameMap {

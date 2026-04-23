@@ -1,13 +1,15 @@
 import { LitElement, nothing } from "lit";
-import type { HassDialog } from "../../../../../dialogs/make-dialog-manager";
 import type { HomeAssistant } from "../../../../../types";
 import type { DialogThreadDatasetParams } from "./show-dialog-thread-dataset";
-declare class DialogThreadDataset extends LitElement implements HassDialog {
+import "../../../../../components/ha-dialog";
+declare class DialogThreadDataset extends LitElement {
     hass: HomeAssistant;
     private _params?;
+    private _open;
     showDialog(params: DialogThreadDatasetParams): Promise<Promise<void>>;
-    closeDialog(): boolean;
-    protected render(): import("lit-html").TemplateResult<1> | typeof nothing;
+    closeDialog(): void;
+    private _dialogClosed;
+    protected render(): typeof nothing | import("lit-html").TemplateResult<1>;
 }
 declare global {
     interface HTMLElementTagNameMap {

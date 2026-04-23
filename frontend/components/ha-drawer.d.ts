@@ -1,9 +1,24 @@
 import { DrawerBase } from "@material/mwc-drawer/mwc-drawer-base";
 import type { PropertyValues } from "lit";
+import type { HASSDomEvent } from "../common/dom/fire_event";
+declare global {
+    interface HASSDomEvents {
+        "hass-layout-transition": {
+            active: boolean;
+            reason?: string;
+        };
+    }
+    interface HTMLElementEventMap {
+        "hass-layout-transition": HASSDomEvent<HASSDomEvents["hass-layout-transition"]>;
+    }
+}
 export declare class HaDrawer extends DrawerBase {
     direction: "ltr" | "rtl";
     private _mc?;
     private _rtlStyle?;
+    private _sidebarTransitionActive;
+    private _handleDrawerTransitionStart;
+    private _handleDrawerTransitionEnd;
     protected createAdapter(): {
         trapFocus: () => void;
         releaseFocus: () => void;
@@ -18,6 +33,8 @@ export declare class HaDrawer extends DrawerBase {
         notifyOpen(): void;
     };
     protected updated(changedProps: PropertyValues): void;
+    protected firstUpdated(): void;
+    disconnectedCallback(): void;
     private _setupSwipe;
     static styles: import("lit").CSSResult[];
 }

@@ -2,11 +2,11 @@ import type { CSSResultGroup, TemplateResult } from "lit";
 import { LitElement, nothing } from "lit";
 import "../../../../../components/ha-alert";
 import "../../../../../components/ha-button";
-import "../../../../../components/ha-dialog";
-import "../../../../../components/ha-dialog-header";
 import "../../../../../components/ha-icon-next";
 import "../../../../../components/ha-list-item";
 import "../../../../../components/ha-spinner";
+import "../../../../../components/ha-dialog-footer";
+import "../../../../../components/ha-dialog";
 import type { HomeAssistant } from "../../../../../types";
 import type { ZWaveJSRemoveNodeDialogParams } from "./show-dialog-zwave_js-remove-node";
 export interface ZWaveJSRemovedNode {
@@ -25,9 +25,10 @@ declare class DialogZWaveJSRemoveNode extends LitElement {
     private _removeNodeTimeoutHandle?;
     private _subscribed?;
     private _error?;
+    private _open;
     disconnectedCallback(): void;
     showDialog(params: ZWaveJSRemoveNodeDialogParams): Promise<void>;
-    protected render(): TemplateResult<1> | typeof nothing;
+    protected render(): typeof nothing | TemplateResult<1>;
     private _renderStepContent;
     private _renderAction;
     private _startExclusion;

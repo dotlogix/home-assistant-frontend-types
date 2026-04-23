@@ -28,7 +28,7 @@ export declare class HuiTileCard extends LitElement implements LovelaceCard {
     private get _hasIconAction();
     private _featurePosition;
     private _displayedFeatures;
-    protected render(): import("lit-html").TemplateResult<1> | typeof nothing;
+    protected render(): typeof nothing | import("lit-html").TemplateResult<1>;
     static styles: import("lit").CSSResult[];
 }
 declare global {

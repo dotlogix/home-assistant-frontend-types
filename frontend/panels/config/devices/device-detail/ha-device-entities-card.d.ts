@@ -1,4 +1,4 @@
-import type { PropertyValues, TemplateResult } from "lit";
+import type { TemplateResult } from "lit";
 import { LitElement } from "lit";
 import "../../../../components/ha-button";
 import "../../../../components/ha-card";
@@ -13,13 +13,10 @@ export declare class HaDeviceEntitiesCard extends LitElement {
     hass: HomeAssistant;
     entities: EntityRegistryStateEntry[];
     showHidden: boolean;
-    private _extDisabledEntityEntries?;
-    private _entityRows;
-    protected shouldUpdate(changedProps: PropertyValues): boolean;
     protected render(): TemplateResult;
     private _toggleShowHidden;
     private _renderEntity;
-    private _renderEntry;
+    private _renderUnavailableEntity;
     private _openEditEntry;
     private _addToLovelaceView;
     static styles: import("lit").CSSResult;

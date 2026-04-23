@@ -18,7 +18,7 @@ declare class HuiLockOpenDoorCardFeature extends LitElement implements LovelaceC
     setConfig(config: LockOpenDoorCardFeatureConfig): void;
     private _setButtonState;
     private _open;
-    protected render(): import("lit-html").TemplateResult<1> | typeof nothing;
+    protected render(): typeof nothing | import("lit-html").TemplateResult<1>;
     static get styles(): CSSResultGroup;
 }
 declare global {

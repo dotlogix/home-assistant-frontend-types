@@ -1,3 +1,4 @@
+export declare const setViewTransitionDisabled: (disabled: boolean) => void;
 /**
  * Executes a synchronous callback within a View Transition if supported, otherwise runs it directly.
  *

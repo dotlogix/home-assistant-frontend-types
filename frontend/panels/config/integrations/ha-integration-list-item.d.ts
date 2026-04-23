@@ -12,10 +12,9 @@ export declare class HaIntegrationListItem extends ListItemBase {
     integration?: IntegrationListItem;
     graphic: GraphicType;
     hasMeta: boolean;
-    brand: boolean;
-    protected renderSingleLine(): import("lit-html").TemplateResult<1> | typeof nothing;
-    protected renderGraphic(): import("lit-html").TemplateResult<1> | typeof nothing;
-    protected renderMeta(): import("lit-html").TemplateResult<1> | typeof nothing;
+    protected renderSingleLine(): typeof nothing | import("lit-html").TemplateResult<1>;
+    protected renderGraphic(): typeof nothing | import("lit-html").TemplateResult<1>;
+    protected renderMeta(): typeof nothing | import("lit-html").TemplateResult<1>;
     static get styles(): CSSResultGroup;
 }
 declare global {

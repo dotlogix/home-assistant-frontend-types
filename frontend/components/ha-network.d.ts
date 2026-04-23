@@ -16,7 +16,7 @@ export declare class HaNetwork extends LitElement {
     hass: HomeAssistant;
     networkConfig?: NetworkConfig;
     private _expanded?;
-    protected render(): TemplateResult<1> | typeof nothing;
+    protected render(): typeof nothing | TemplateResult<1>;
     private _handleAutoConfigureCheckboxClick;
     private _handleAdapterCheckboxClick;
     static get styles(): CSSResultGroup;

@@ -4,6 +4,7 @@ export declare class HuiGraphBase extends LitElement {
     coordinates?: number[][];
     yAxisOrigin?: number;
     private _path?;
+    private _uniqueId;
     protected render(): TemplateResult;
     willUpdate(changedProps: PropertyValues): void;
     static styles: import("lit").CSSResult;

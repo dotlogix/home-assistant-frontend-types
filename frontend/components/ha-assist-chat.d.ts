@@ -1,10 +1,10 @@
-import type { PropertyValues, TemplateResult } from "lit";
+import type { CSSResultGroup, PropertyValues, TemplateResult } from "lit";
 import { LitElement } from "lit";
 import { type AssistPipeline } from "../data/assist_pipeline";
 import type { HomeAssistant } from "../types";
 import "./ha-alert";
 import "./ha-markdown";
-import "./ha-textfield";
+import "./input/ha-input";
 export declare class HaAssistChat extends LitElement {
     hass: HomeAssistant;
     pipeline?: AssistPipeline;
@@ -32,6 +32,7 @@ export declare class HaAssistChat extends LitElement {
     private _handleSendMessage;
     private _handleListeningButton;
     private _toggleListening;
+    private _handleToggleThinking;
     private _addMessage;
     private _showNotSupportedMessage;
     private _startListening;
@@ -40,7 +41,7 @@ export declare class HaAssistChat extends LitElement {
     private _unloadAudio;
     private _processText;
     private _createAddHassMessageProcessor;
-    static styles: import("lit").CSSResult;
+    static get styles(): CSSResultGroup;
 }
 declare global {
     interface HTMLElementTagNameMap {

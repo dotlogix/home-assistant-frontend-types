@@ -2,7 +2,7 @@ import type { CSSResultGroup, PropertyValues, TemplateResult } from "lit";
 import { LitElement, nothing } from "lit";
 import "../../components/ha-button";
 import "../../components/ha-dialog-footer";
-import "../../components/ha-wa-dialog";
+import "../../components/ha-dialog";
 import type { HomeAssistant } from "../../types";
 import type { HassDialog } from "../make-dialog-manager";
 import type { HaImageCropperDialogParams } from "./show-image-cropper-dialog";

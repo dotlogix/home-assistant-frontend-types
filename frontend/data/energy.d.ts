@@ -1,8 +1,8 @@
 import type { Collection, HassEntity } from "home-assistant-js-websocket";
 import type { HomeAssistant } from "../types";
 import type { Statistics, StatisticsMetaData } from "./recorder";
-export declare const emptyFlowFromGridSourceEnergyPreference: () => FlowFromGridSourceEnergyPreference;
-export declare const emptyFlowToGridSourceEnergyPreference: () => FlowToGridSourceEnergyPreference;
+export declare const ENERGY_COLLECTION_KEY_PREFIX = "energy_";
+export declare function validateEnergyCollectionKey(key: string | undefined): void;
 export declare const emptyGridSourceEnergyPreference: () => GridSourceTypeEnergyPreference;
 export declare const emptySolarEnergyPreference: () => SolarSourceTypeEnergyPreference;
 export declare const emptyBatteryEnergyPreference: () => BatterySourceTypeEnergyPreference;
@@ -18,41 +18,29 @@ export interface DeviceConsumptionEnergyPreference {
     name?: string;
     included_in_stat?: string;
 }
-export interface FlowFromGridSourceEnergyPreference {
-    stat_energy_from: string;
-    stat_cost: string | null;
-    entity_energy_price: string | null;
-    number_energy_price: number | null;
-}
-export interface FlowToGridSourceEnergyPreference {
-    stat_energy_to: string;
-    stat_compensation: string | null;
-    entity_energy_price: string | null;
-    number_energy_price: number | null;
-}
 export interface PowerConfig {
     stat_rate?: string;
     stat_rate_inverted?: string;
     stat_rate_from?: string;
     stat_rate_to?: string;
 }
-export interface GridPowerSourceEnergyPreference {
-    stat_rate: string;
-    power_config?: PowerConfig;
-}
 /**
- * Input type for saving grid power sources.
- * Core requires EITHER stat_rate (legacy) OR power_config (new format).
- * When reading from backend, stat_rate is always populated.
+ * Grid source format.
+ * Each grid connection is a single object with import/export/power together.
+ * Multiple grid sources are allowed.
  */
-export type GridPowerSourceInput = Omit<GridPowerSourceEnergyPreference, "stat_rate"> & {
-    stat_rate?: string;
-};
 export interface GridSourceTypeEnergyPreference {
     type: "grid";
-    flow_from: FlowFromGridSourceEnergyPreference[];
-    flow_to: FlowToGridSourceEnergyPreference[];
-    power?: GridPowerSourceEnergyPreference[];
+    stat_energy_from: string | null;
+    stat_energy_to: string | null;
+    stat_cost: string | null;
+    entity_energy_price: string | null;
+    number_energy_price: number | null;
+    stat_compensation: string | null;
+    entity_energy_price_export: string | null;
+    number_energy_price_export: number | null;
+    stat_rate?: string;
+    power_config?: PowerConfig;
     cost_adjustment_day: number;
 }
 export interface SolarSourceTypeEnergyPreference {
@@ -71,6 +59,7 @@ export interface BatterySourceTypeEnergyPreference {
 export interface GasSourceTypeEnergyPreference {
     type: "gas";
     stat_energy_from: string;
+    stat_rate?: string;
     stat_cost: string | null;
     entity_energy_price: string | null;
     number_energy_price: number | null;
@@ -79,6 +68,7 @@ export interface GasSourceTypeEnergyPreference {
 export interface WaterSourceTypeEnergyPreference {
     type: "water";
     stat_energy_from: string;
+    stat_rate?: string;
     stat_cost: string | null;
     entity_energy_price: string | null;
     number_energy_price: number | null;
@@ -150,6 +140,7 @@ export interface EnergyCollection extends Collection<EnergyData> {
     clearPrefs(): void;
     setPeriod(newStart: Date, newEnd?: Date): void;
     setCompare(compare: CompareMode): void;
+    isActive(): boolean;
     _refreshTimeout?: number;
     _updatePeriodTimeout?: number;
     _active: number;
@@ -224,6 +215,25 @@ export declare const computeConsumptionSingle: (data: {
 };
 export declare const formatConsumptionShort: (hass: HomeAssistant, consumption: number | null, unit: string, targetUnit?: string) => string;
 export declare const calculateSolarConsumedGauge: (hasBattery: boolean, data: EnergySumData) => number | undefined;
+export declare const FLOW_RATE_TO_LMIN: Record<string, number>;
+/**
+ * Get current flow rate from an entity state, converted to L/min.
+ * @returns Flow rate in L/min, or undefined if unavailable/invalid.
+ */
+export declare const getFlowRateFromState: (stateObj?: HassEntity) => number | undefined;
+/**
+ * Compute the total flow rate across all energy sources of a given type.
+ * Used by gas and water total badges.
+ */
+export declare const computeTotalFlowRate: (sourceType: "gas" | "water", prefs: EnergyPreferences, states: HomeAssistant["states"], entities: Set<string>) => {
+    value: number;
+    unit: string;
+};
+/**
+ * Format a flow rate value (in L/min) to a human-readable string using
+ * the preferred unit system: metric → L/min, imperial → gal/min.
+ */
+export declare const formatFlowRateShort: (hassLocale: HomeAssistant["locale"], lengthUnitSystem: string, litersPerMin: number) => string;
 /**
  * Get current power value from entity state, normalized to watts (W)
  * @param stateObj - The entity state object to get power value from
@@ -238,4 +248,5 @@ export declare const getPowerFromState: (stateObj: HassEntity) => number | undef
  */
 export declare const formatPowerShort: (hass: HomeAssistant, powerWatts: number) => string;
 export declare function getSuggestedPeriod(start: Date, end?: Date, fine?: boolean): "5minute" | "hour" | "day" | "month";
+export declare const downloadEnergyData: (hass: HomeAssistant, collectionKey?: string) => void;
 export {};

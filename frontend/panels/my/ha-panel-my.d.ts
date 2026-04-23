@@ -17,7 +17,7 @@ declare class HaPanelMy extends LitElement {
     _error?: string;
     private _redirect?;
     connectedCallback(): void;
-    protected render(): import("lit-html").TemplateResult<1> | typeof nothing;
+    protected render(): typeof nothing | import("lit-html").TemplateResult<1>;
     private _createRedirectUrl;
     private _createRedirectParams;
     private _createOptionalParams;

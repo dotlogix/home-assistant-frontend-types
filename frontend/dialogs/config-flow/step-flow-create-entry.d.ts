@@ -2,6 +2,7 @@ import type { CSSResultGroup, PropertyValues, TemplateResult } from "lit";
 import { LitElement } from "lit";
 import "../../components/ha-area-picker";
 import "../../components/ha-button";
+import "../../components/input/ha-input";
 import type { DataEntryFlowStepCreateEntry } from "../../data/data_entry_flow";
 import type { DeviceRegistryEntry } from "../../data/device/device_registry";
 import type { HomeAssistant } from "../../types";

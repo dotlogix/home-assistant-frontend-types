@@ -6,7 +6,7 @@ import type { HomeAssistant } from "../../../types";
 declare class MoreInfoDate extends LitElement {
     hass: HomeAssistant;
     stateObj?: HassEntity;
-    protected render(): import("lit-html").TemplateResult<1> | typeof nothing;
+    protected render(): typeof nothing | import("lit-html").TemplateResult<1>;
     private _dateChanged;
     static styles: import("lit").CSSResult;
 }

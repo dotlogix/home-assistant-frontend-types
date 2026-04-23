@@ -1,2 +1,4 @@
-import "./dialog-registries";
-export declare const showRegistriesDialog: (element: HTMLElement) => void;
+export interface RegistryDialogParams {
+    registryAdded?: () => void;
+}
+export declare const showAddRegistryDialog: (element: HTMLElement, dialogParams: RegistryDialogParams) => void;

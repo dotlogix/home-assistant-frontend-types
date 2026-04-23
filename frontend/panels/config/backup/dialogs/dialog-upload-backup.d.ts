@@ -4,7 +4,7 @@ import "../../../../components/ha-alert";
 import "../../../../components/ha-button";
 import "../../../../components/ha-dialog-footer";
 import "../../../../components/ha-file-upload";
-import "../../../../components/ha-wa-dialog";
+import "../../../../components/ha-dialog";
 import type { HassDialog } from "../../../../dialogs/make-dialog-manager";
 import type { HomeAssistant } from "../../../../types";
 import type { UploadBackupDialogParams } from "./show-dialog-upload-backup";
@@ -19,7 +19,7 @@ export declare class DialogUploadBackup extends LitElement implements HassDialog
     private _dialogClosed;
     closeDialog(): boolean;
     private _formValid;
-    protected render(): import("lit-html").TemplateResult<1> | typeof nothing;
+    protected render(): typeof nothing | import("lit-html").TemplateResult<1>;
     private _filePicked;
     private _filesCleared;
     private _upload;

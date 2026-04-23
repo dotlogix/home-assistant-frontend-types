@@ -13,6 +13,7 @@ export declare class HaPlatformCondition extends LitElement {
     disabled: boolean;
     private _checkedKeys;
     private _manifest?;
+    private _resolvedTargetEntityCount?;
     static get defaultConfig(): PlatformCondition;
     protected willUpdate(changedProperties: PropertyValues<this>): void;
     protected render(): import("lit-html").TemplateResult<1>;
@@ -24,6 +25,8 @@ export declare class HaPlatformCondition extends LitElement {
     private _checkboxChanged;
     private _localizeValueCallback;
     private _fetchManifest;
+    private _resolveTargetEntityCount;
+    private _updateResolvedTargetEntityCount;
     static styles: import("lit").CSSResult;
 }
 declare global {

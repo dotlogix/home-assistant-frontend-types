@@ -7,7 +7,7 @@ export declare class HuiStateBadgeElementEditor extends LitElement implements Lo
     hass?: HomeAssistant;
     private _config?;
     setConfig(config: StateBadgeElementConfig): void;
-    protected render(): import("lit-html").TemplateResult<1> | typeof nothing;
+    protected render(): typeof nothing | import("lit-html").TemplateResult<1>;
     private _valueChanged;
     private _computeLabelCallback;
 }

@@ -4,6 +4,7 @@ import type { ExposeEntitySettings } from "../../../data/expose";
 import "../../../layouts/hass-loading-screen";
 import "../../../layouts/hass-tabs-subpage";
 import type { HomeAssistant, Route } from "../../../types";
+import "./assist-current-device-pref";
 import "./assist-pref";
 import "./cloud-alexa-pref";
 import "./cloud-discover";

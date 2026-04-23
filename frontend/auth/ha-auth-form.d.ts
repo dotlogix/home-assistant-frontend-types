@@ -1,6 +1,6 @@
+import type { LocalizeFunc } from "../common/translations/localize";
 import { HaForm } from "../components/ha-form/ha-form";
 import "./ha-auth-form-string";
-import type { LocalizeFunc } from "../common/translations/localize";
 export declare class HaAuthForm extends HaForm {
     localize?: LocalizeFunc;
     protected getFormProperties(): Record<string, any>;

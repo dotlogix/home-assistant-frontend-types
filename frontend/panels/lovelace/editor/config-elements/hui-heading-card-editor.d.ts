@@ -12,7 +12,7 @@ export declare class HuiHeadingCardEditor extends LitElement implements Lovelace
     setConfig(config: HeadingCardConfig): void;
     private _schema;
     private _badges;
-    protected render(): import("lit-html").TemplateResult<1> | typeof nothing;
+    protected render(): typeof nothing | import("lit-html").TemplateResult<1>;
     private _badgesChanged;
     private _valueChanged;
     private _editBadge;

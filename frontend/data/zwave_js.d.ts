@@ -473,9 +473,5 @@ export interface ZWaveJSLogConfig {
 }
 export declare const fetchZWaveJSLogConfig: (hass: HomeAssistant, entry_id: string) => Promise<ZWaveJSLogConfig>;
 export declare const setZWaveJSLogLevel: (hass: HomeAssistant, entry_id: string, level: string) => Promise<ZWaveJSLogConfig>;
-export interface ZWaveJSIntegrationSettings {
-    installer_mode: boolean;
-}
-export declare const fetchZwaveIntegrationSettings: (hass: HomeAssistant) => Promise<ZWaveJSIntegrationSettings>;
 export declare const cancelSecureBootstrapS2: (hass: HomeAssistant, entry_id: string) => Promise<void>;
 export {};

@@ -1,7 +1,7 @@
 import type { CSSResultGroup } from "lit";
 import { LitElement } from "lit";
 import "../../components/ha-alert";
-import "../../components/ha-wa-dialog";
+import "../../components/ha-dialog";
 import "../../components/ha-spinner";
 import type { HomeAssistant } from "../../types";
 import type { RestartWaitDialogParams } from "./show-dialog-restart";

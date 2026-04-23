@@ -23,8 +23,8 @@ declare class HuiEntitiesCard extends LitElement implements LovelaceCard {
     getGridOptions(): LovelaceGridOptions;
     setConfig(config: EntitiesCardConfig): void;
     protected updated(changedProps: PropertyValues): void;
-    protected render(): TemplateResult<1> | typeof nothing;
-    static styles: import("lit").CSSResult;
+    protected render(): typeof nothing | TemplateResult<1>;
+    static styles: import("lit").CSSResult[];
     private _renderEntity;
     private _updateRowVisibility;
 }

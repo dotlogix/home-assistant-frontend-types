@@ -1,3 +1,4 @@
+import type { HassEntity } from "home-assistant-js-websocket";
 import type { FrontendLocaleData } from "../translation";
 export declare const STATE_ATTRIBUTES: string[];
 export declare const STATE_ATTRIBUTES_DOMAIN_CLASS: {
@@ -59,4 +60,5 @@ export declare const DOMAIN_ATTRIBUTES_UNITS: {
 type Formatter = (value: number, locale: FrontendLocaleData) => string;
 export declare const DOMAIN_ATTRIBUTES_FORMATERS: Record<string, Record<string, Formatter>>;
 export declare const NON_NUMERIC_ATTRIBUTES: string[];
+export declare const computeShownAttributes: (stateObj: HassEntity) => string[];
 export {};

@@ -1,6 +1,6 @@
 import type { HomeAssistant } from "../types";
 export type BackupManagerState = "idle" | "create_backup" | "receive_backup" | "restore_backup";
-export type CreateBackupStage = "addon_repositories" | "addons" | "await_addon_restarts" | "app_repositories" | "apps" | "await_app_restarts" | "docker_config" | "finishing_file" | "folders" | "home_assistant" | "upload_to_agents";
+export type CreateBackupStage = "addon_repositories" | "addons" | "await_addon_restarts" | "app_repositories" | "apps" | "await_app_restarts" | "cleaning_up" | "docker_config" | "finishing_file" | "folders" | "home_assistant" | "upload_to_agents";
 export type CreateBackupState = "completed" | "failed" | "in_progress";
 export type ReceiveBackupStage = "receive_file" | "upload_to_agents";
 export type ReceiveBackupState = "completed" | "failed" | "in_progress";
@@ -24,8 +24,15 @@ interface RestoreBackupEvent {
     stage: RestoreBackupStage | null;
     state: RestoreBackupState;
 }
+export interface UploadBackupEvent {
+    manager_state: BackupManagerState;
+    agent_id: string;
+    uploaded_bytes: number;
+    total_bytes: number;
+}
 export type ManagerState = "idle" | "create_backup" | "receive_backup" | "restore_backup";
 export type ManagerStateEvent = IdleEvent | CreateBackupEvent | ReceiveBackupEvent | RestoreBackupEvent;
-export declare const subscribeBackupEvents: (hass: HomeAssistant, callback: (event: ManagerStateEvent) => void, preCheck?: () => boolean | Promise<boolean>) => Promise<() => Promise<void>>;
+export type BackupSubscriptionEvent = ManagerStateEvent | UploadBackupEvent;
+export declare const subscribeBackupEvents: (hass: HomeAssistant, callback: (event: BackupSubscriptionEvent) => void, preCheck?: () => boolean | Promise<boolean>) => Promise<() => Promise<void>>;
 export declare const DEFAULT_MANAGER_STATE: ManagerStateEvent;
 export {};

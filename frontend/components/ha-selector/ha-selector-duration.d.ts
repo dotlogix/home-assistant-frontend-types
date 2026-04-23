@@ -1,8 +1,8 @@
 import { LitElement } from "lit";
 import type { DurationSelector } from "../../data/selector";
 import type { HomeAssistant } from "../../types";
-import type { HaDurationData } from "../ha-duration-input";
 import "../ha-duration-input";
+import type { HaDurationData } from "../ha-duration-input";
 export declare class HaTimeDuration extends LitElement {
     hass: HomeAssistant;
     selector: DurationSelector;
@@ -11,6 +11,8 @@ export declare class HaTimeDuration extends LitElement {
     helper?: string;
     disabled: boolean;
     required: boolean;
+    private _input?;
+    reportValidity(): boolean;
     private _data;
     protected render(): import("lit-html").TemplateResult<1>;
 }

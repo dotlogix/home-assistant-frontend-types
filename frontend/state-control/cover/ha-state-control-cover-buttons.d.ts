@@ -20,7 +20,7 @@ export declare class HaStateControlCoverButtons extends LitElement {
     private _onOpenTiltTap;
     private _onCloseTiltTap;
     private _onStopTap;
-    protected renderButton(button: CoverButton | undefined): TemplateResult<1> | typeof nothing;
+    protected renderButton(button: CoverButton | undefined): typeof nothing | TemplateResult<1>;
     protected render(): TemplateResult;
     static styles: import("lit").CSSResult;
 }

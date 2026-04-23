@@ -19,7 +19,7 @@ export declare class HuiViewEditor extends LitElement {
     private _schema;
     set config(config: LovelaceViewConfig);
     get _type(): string;
-    protected render(): import("lit-html").TemplateResult<1> | typeof nothing;
+    protected render(): typeof nothing | import("lit-html").TemplateResult<1>;
     private _valueChanged;
     private _computeError;
     private _computeLabel;

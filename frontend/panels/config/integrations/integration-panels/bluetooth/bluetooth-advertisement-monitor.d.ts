@@ -11,6 +11,7 @@ export declare class BluetoothAdvertisementMonitorPanel extends LitElement {
     address?: string;
     narrow: boolean;
     isWide: boolean;
+    private _tabs;
     private _data;
     private _scanners;
     private _sourceDevices;

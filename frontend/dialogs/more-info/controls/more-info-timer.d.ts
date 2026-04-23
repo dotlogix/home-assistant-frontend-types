@@ -5,7 +5,7 @@ import type { HomeAssistant } from "../../../types";
 declare class MoreInfoTimer extends LitElement {
     hass: HomeAssistant;
     stateObj?: TimerEntity;
-    protected render(): import("lit-html").TemplateResult<1> | typeof nothing;
+    protected render(): typeof nothing | import("lit-html").TemplateResult<1>;
     private _handleActionClick;
     static styles: import("lit").CSSResult;
 }

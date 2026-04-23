@@ -1,15 +1,15 @@
 import { LitElement, type CSSResultGroup } from "lit";
-import "../../components/ha-button";
+import type { LocalizeFunc } from "../../common/translations/localize";
+import "../../components/buttons/ha-progress-button";
 import "../../components/ha-alert";
+import "../../components/ha-button";
+import "../../components/ha-icon-button-arrow-prev";
 import "../../components/ha-md-list";
 import "../../components/ha-md-list-item";
-import "../../components/buttons/ha-progress-button";
-import "../../components/ha-icon-button-arrow-prev";
-import "../../components/ha-password-field";
+import "../../components/input/ha-input";
+import { type BackupContentExtended } from "../../data/backup";
 import "../../panels/config/backup/components/ha-backup-data-picker";
 import "../../panels/config/backup/components/ha-backup-formfield-label";
-import type { LocalizeFunc } from "../../common/translations/localize";
-import { type BackupContentExtended } from "../../data/backup";
 declare class OnboardingRestoreBackupRestore extends LitElement {
     localize: LocalizeFunc;
     backup: BackupContentExtended;

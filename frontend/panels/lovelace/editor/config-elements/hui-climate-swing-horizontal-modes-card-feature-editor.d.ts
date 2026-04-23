@@ -9,7 +9,7 @@ export declare class HuiClimateSwingHorizontalModesCardFeatureEditor extends Lit
     private _config?;
     setConfig(config: ClimateSwingHorizontalModesCardFeatureConfig): void;
     private _schema;
-    protected render(): import("lit-html").TemplateResult<1> | typeof nothing;
+    protected render(): typeof nothing | import("lit-html").TemplateResult<1>;
     private _valueChanged;
     private _computeLabelCallback;
 }

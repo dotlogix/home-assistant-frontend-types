@@ -19,6 +19,7 @@ declare class PanelTodo extends LitElement {
     narrow: boolean;
     mobile: boolean;
     private _entityId?;
+    private _openAddItemFromUrl;
     private _showPaneController;
     private _mql?;
     private _conversation;

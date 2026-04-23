@@ -10,7 +10,7 @@ import "../../components/ha-icon-button";
 import "../../components/ha-items-display-editor";
 import "../../components/ha-spinner";
 import "../../components/ha-svg-icon";
-import "../../components/ha-wa-dialog";
+import "../../components/ha-dialog";
 import type { HomeAssistant } from "../../types";
 declare class DialogEditSidebar extends LitElement {
     hass: HomeAssistant;

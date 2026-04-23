@@ -1,11 +1,9 @@
 import type { TemplateResult } from "lit";
 import { LitElement } from "lit";
-import type { HomeAssistant } from "../types";
 import "./ha-combo-box-item";
 import "./ha-generic-picker";
 import "./ha-icon";
 export declare class HaIconPicker extends LitElement {
-    hass?: HomeAssistant;
     value?: string;
     label?: string;
     helper?: string;

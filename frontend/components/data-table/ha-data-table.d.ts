@@ -4,7 +4,7 @@ import type { LocalizeFunc } from "../../common/translations/localize";
 import type { HomeAssistant } from "../../types";
 import "../ha-checkbox";
 import "../ha-svg-icon";
-import "../search-input";
+import "../input/ha-input-search";
 export interface RowClickedEvent {
     id: string;
 }
@@ -44,6 +44,7 @@ export interface DataTableColumnData<T = any> extends DataTableSortColumnData {
     flex?: number;
     forceLTR?: boolean;
     hidden?: boolean;
+    lastFixed?: boolean;
 }
 export type ClonedDataTableColumnData = Omit<DataTableColumnData, "title"> & {
     title?: TemplateResult | string;
@@ -61,7 +62,6 @@ export declare class HaDataTable extends LitElement {
     data: DataTableRowData[];
     selectable: boolean;
     clickable: boolean;
-    hasFab: boolean;
     /**
      * Add an extra row at the bottom of the data table
      * @type {TemplateResult}
@@ -71,7 +71,6 @@ export declare class HaDataTable extends LitElement {
     id: string;
     noDataText?: string;
     searchLabel?: string;
-    noLabelFloat?: boolean;
     filter: string;
     groupColumn?: string;
     groupOrder?: string[];

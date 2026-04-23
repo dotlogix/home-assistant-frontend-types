@@ -15,7 +15,7 @@ export declare class HuiLightCard extends LitElement implements LovelaceCard {
     private _brightnessTimout?;
     getCardSize(): number;
     setConfig(config: LightCardConfig): void;
-    protected render(): import("lit-html").TemplateResult<1> | typeof nothing;
+    protected render(): typeof nothing | import("lit-html").TemplateResult<1>;
     protected shouldUpdate(changedProps: PropertyValues): boolean;
     protected updated(changedProps: PropertyValues): void;
     private _dragEvent;

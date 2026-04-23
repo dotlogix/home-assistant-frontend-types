@@ -13,7 +13,7 @@ declare class HuiButtonCardFeature extends LitElement implements LovelaceCardFea
     private _pressButton;
     static getStubConfig(): ButtonCardFeatureConfig;
     setConfig(config: ButtonCardFeatureConfig): void;
-    protected render(): import("lit-html").TemplateResult<1> | typeof nothing;
+    protected render(): typeof nothing | import("lit-html").TemplateResult<1>;
     static styles: import("lit").CSSResult;
     static getConfigElement(): Promise<LovelaceCardFeatureEditor>;
 }

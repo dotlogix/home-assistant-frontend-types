@@ -11,8 +11,9 @@ declare class MoreInfoHumidifier extends LitElement {
     hass: HomeAssistant;
     stateObj?: HumidifierEntity;
     _mode?: string;
+    private _renderModeIcon;
     protected willUpdate(changedProps: PropertyValues): void;
-    protected render(): import("lit-html").TemplateResult<1> | typeof nothing;
+    protected render(): typeof nothing | import("lit-html").TemplateResult<1>;
     private _handleStateChanged;
     private _handleModeChanged;
     private _callServiceHelper;

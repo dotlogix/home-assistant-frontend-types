@@ -1,11 +1,11 @@
 import type { PropertyValues, TemplateResult } from "lit";
 import { LitElement } from "lit";
-import "../ha-slider";
+import type { LocalizeFunc } from "../../common/translations/localize";
 import "../ha-checkbox";
 import "../ha-input-helper-text";
-import "../ha-textfield";
+import "../ha-slider";
+import "../input/ha-input";
 import type { HaFormElement, HaFormIntegerData, HaFormIntegerSchema } from "./types";
-import type { LocalizeFunc } from "../../common/translations/localize";
 export declare class HaFormInteger extends LitElement implements HaFormElement {
     localize?: LocalizeFunc;
     schema: HaFormIntegerSchema;
@@ -15,7 +15,16 @@ export declare class HaFormInteger extends LitElement implements HaFormElement {
     disabled: boolean;
     private _input?;
     private _lastValue?;
-    focus(): void;
+    static shadowRootOptions: {
+        delegatesFocus: boolean;
+        clonable?: boolean;
+        customElementRegistry?: CustomElementRegistry;
+        mode: ShadowRootMode;
+        serializable?: boolean;
+        slotAssignment?: SlotAssignmentMode;
+    };
+    reportValidity(): boolean;
+    private _showSlider;
     protected render(): TemplateResult;
     protected updated(changedProps: PropertyValues): void;
     private get _value();

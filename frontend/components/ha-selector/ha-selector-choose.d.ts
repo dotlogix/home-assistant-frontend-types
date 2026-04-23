@@ -15,7 +15,7 @@ export declare class HaChooseSelector extends LitElement {
     required: boolean;
     _activeChoice?: string;
     protected willUpdate(changedProperties: PropertyValues): void;
-    protected render(): import("lit-html").TemplateResult<1> | typeof nothing;
+    protected render(): typeof nothing | import("lit-html").TemplateResult<1>;
     private _toggleButtons;
     private _choiceChanged;
     private _handleValueChanged;

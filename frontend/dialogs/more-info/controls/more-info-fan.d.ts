@@ -14,13 +14,15 @@ declare class MoreInfoFan extends LitElement {
     hass: HomeAssistant;
     stateObj?: FanEntity;
     _presetMode?: string;
+    private _renderPresetModeIcon;
+    private _renderDirectionIcon;
     private _toggle;
     private _handleDirection;
     private _handlePresetMode;
     private _handleOscillating;
     protected updated(changedProps: PropertyValues): void;
     private get _stateOverride();
-    protected render(): import("lit-html").TemplateResult<1> | typeof nothing;
+    protected render(): typeof nothing | import("lit-html").TemplateResult<1>;
     static get styles(): CSSResultGroup;
 }
 declare global {

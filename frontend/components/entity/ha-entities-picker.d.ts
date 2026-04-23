@@ -50,7 +50,7 @@ declare class HaEntitiesPicker extends LitElement {
     entityFilter?: HaEntityPickerEntityFilterFunc;
     createDomains?: string[];
     reorder: boolean;
-    protected render(): import("lit-html").TemplateResult<1> | typeof nothing;
+    protected render(): typeof nothing | import("lit-html").TemplateResult<1>;
     private _entityMoved;
     private _excludeEntities;
     private get _currentEntities();

@@ -12,9 +12,9 @@ export declare class HuiPictureGlanceCardEditor extends LitElement implements Lo
     private _subElementEditorConfig?;
     private _configEntities?;
     private _schema;
-    private _subSchema;
+    private _subForm;
     setConfig(config: PictureGlanceCardConfig): void;
-    protected render(): import("lit-html").TemplateResult<1> | typeof nothing;
+    protected render(): typeof nothing | import("lit-html").TemplateResult<1>;
     private _processData;
     private _goBack;
     private _editDetailElement;

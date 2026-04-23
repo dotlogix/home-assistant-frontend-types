@@ -10,6 +10,8 @@ export declare class HaDateSelector extends LitElement {
     helper?: string;
     disabled: boolean;
     required: boolean;
+    private _input?;
+    reportValidity(): boolean;
     protected render(): import("lit-html").TemplateResult<1>;
 }
 declare global {

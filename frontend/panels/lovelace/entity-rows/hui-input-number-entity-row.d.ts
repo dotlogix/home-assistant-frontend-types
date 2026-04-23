@@ -16,7 +16,7 @@ declare class HuiInputNumberEntityRow extends LitElement implements LovelaceRow 
     disconnectedCallback(): void;
     protected firstUpdated(): void;
     protected shouldUpdate(changedProps: PropertyValues): boolean;
-    protected render(): import("lit-html").TemplateResult<1> | typeof nothing;
+    protected render(): typeof nothing | import("lit-html").TemplateResult<1>;
     static styles: import("lit").CSSResult;
     private _initialLoad;
     private _measureCard;

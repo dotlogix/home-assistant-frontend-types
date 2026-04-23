@@ -14,7 +14,7 @@ declare class HuiPictureElementsCard extends LitElement implements LovelaceCard 
     getCardSize(): number;
     setConfig(config: PictureElementsCardConfig): void;
     protected updated(changedProps: PropertyValues): void;
-    protected render(): import("lit-html").TemplateResult<1> | typeof nothing;
+    protected render(): typeof nothing | import("lit-html").TemplateResult<1>;
     static styles: import("lit").CSSResult;
     private _createElement;
     private _rebuildElement;

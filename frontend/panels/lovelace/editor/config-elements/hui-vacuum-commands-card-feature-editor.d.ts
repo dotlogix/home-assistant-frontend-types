@@ -9,7 +9,7 @@ export declare class HuiVacuumCommandsCardFeatureEditor extends LitElement imple
     private _config?;
     setConfig(config: VacuumCommandsCardFeatureConfig): void;
     private _schema;
-    protected render(): import("lit-html").TemplateResult<1> | typeof nothing;
+    protected render(): typeof nothing | import("lit-html").TemplateResult<1>;
     private _valueChanged;
     private _computeLabelCallback;
 }

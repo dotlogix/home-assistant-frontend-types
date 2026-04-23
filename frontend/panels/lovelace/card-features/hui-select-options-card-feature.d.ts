@@ -11,16 +11,14 @@ declare class HuiSelectOptionsCardFeature extends LitElement implements Lovelace
     context?: LovelaceCardFeatureContext;
     private _config?;
     _currentOption?: string;
-    private _haSelect;
     private get _stateObj();
     static getStubConfig(): SelectOptionsCardFeatureConfig;
     static getConfigElement(): Promise<LovelaceCardFeatureEditor>;
     setConfig(config: SelectOptionsCardFeatureConfig): void;
     protected willUpdate(changedProp: PropertyValues): void;
-    protected updated(changedProps: PropertyValues): void;
     private _valueChanged;
     private _setOption;
-    protected render(): import("lit-html").TemplateResult<1> | typeof nothing;
+    protected render(): typeof nothing | import("lit-html").TemplateResult<1>;
     private _getOptions;
     static get styles(): import("lit").CSSResult;
 }

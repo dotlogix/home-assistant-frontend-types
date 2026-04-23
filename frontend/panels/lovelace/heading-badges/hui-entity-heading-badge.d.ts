@@ -15,7 +15,7 @@ export declare class HuiEntityHeadingBadge extends LitElement implements Lovelac
     get hasAction(): boolean;
     private _handleAction;
     private _computeStateColor;
-    protected render(): import("lit-html").TemplateResult<1> | typeof nothing;
+    protected render(): typeof nothing | import("lit-html").TemplateResult<1>;
     static styles: import("lit").CSSResult;
 }
 declare global {

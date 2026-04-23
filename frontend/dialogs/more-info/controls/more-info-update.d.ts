@@ -26,7 +26,7 @@ declare class MoreInfoUpdate extends LitElement {
     private _fetchEntitySources;
     private _isHaOrOsUpdate;
     private _computeCreateBackupTexts;
-    protected render(): import("lit-html").TemplateResult<1> | typeof nothing;
+    protected render(): typeof nothing | import("lit-html").TemplateResult<1>;
     private _renderLoader;
     protected firstUpdated(): void;
     private _markdownLoaded;

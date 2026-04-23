@@ -13,9 +13,11 @@ export interface ConfirmationDialogParams extends BaseDialogBoxParams {
     confirm?: () => void;
     cancel?: () => void;
     destructive?: boolean;
+    action?: () => Promise<void>;
 }
 export interface PromptDialogParams extends BaseDialogBoxParams {
     inputLabel?: string;
+    inputSuffix?: string;
     dismissText?: string;
     inputType?: string;
     defaultValue?: string;
@@ -24,11 +26,13 @@ export interface PromptDialogParams extends BaseDialogBoxParams {
     cancel?: () => void;
     inputMin?: number | string;
     inputMax?: number | string;
+    action?: (value?: string) => Promise<void>;
 }
 export interface DialogBoxParams extends ConfirmationDialogParams, PromptDialogParams {
     confirm?: (out?: string) => void;
     confirmation?: boolean;
     prompt?: boolean;
+    action?: (value?: string) => Promise<void>;
 }
 export declare const loadGenericDialog: () => Promise<typeof import("./dialog-box")>;
 export declare const showAlertDialog: (element: HTMLElement, dialogParams: AlertDialogParams) => Promise<unknown>;

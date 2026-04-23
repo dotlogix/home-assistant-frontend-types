@@ -1,21 +1,26 @@
 import type { CSSResultGroup } from "lit";
 import { LitElement, nothing } from "lit";
 import "../../../../components/ha-button";
+import "../../../../components/ha-dialog-footer";
 import "../../../../components/ha-form/ha-form";
+import "../../../../components/ha-dialog";
 import type { HomeAssistant } from "../../../../types";
 import type { LovelaceDashboardDetailsDialogParams } from "./show-dialog-lovelace-dashboard-detail";
 export declare class DialogLovelaceDashboardDetail extends LitElement {
     hass: HomeAssistant;
     private _params?;
+    private _open;
     private _urlPathChanged;
     private _data?;
     private _error?;
     private _submitting;
     showDialog(params: LovelaceDashboardDetailsDialogParams): void;
     closeDialog(): void;
-    protected render(): import("lit-html").TemplateResult<1> | typeof nothing;
+    private _dialogClosed;
+    protected render(): typeof nothing | import("lit-html").TemplateResult<1>;
     private _schema;
     private _computeLabel;
+    private _computeHelper;
     private _valueChanged;
     private _fillUrlPath;
     private _updateDashboard;

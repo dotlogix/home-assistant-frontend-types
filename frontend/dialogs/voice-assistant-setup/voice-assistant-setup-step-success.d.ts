@@ -1,8 +1,8 @@
 import type { PropertyValues } from "lit";
 import { LitElement } from "lit";
-import "../../components/ha-list-item";
 import "../../components/ha-select";
 import "../../components/ha-tts-voice-picker";
+import "../../components/input/ha-input";
 import type { AssistSatelliteConfiguration } from "../../data/assist_satellite";
 import "../../panels/lovelace/entity-rows/hui-select-entity-row";
 import type { HomeAssistant } from "../../types";

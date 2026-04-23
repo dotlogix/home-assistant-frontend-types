@@ -23,7 +23,7 @@ export declare class HuiHeadingBadgesEditor extends LitElement {
     private _badgesKeys;
     private _getKey;
     private _getBadgeTypeLabel;
-    protected render(): import("lit-html").TemplateResult<1> | typeof nothing;
+    protected render(): typeof nothing | import("lit-html").TemplateResult<1>;
     private _renderBadgeItem;
     private _renderEntityBadge;
     private _renderButtonBadge;

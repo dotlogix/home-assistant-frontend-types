@@ -7,7 +7,7 @@ import type { HomeAssistant } from "../../../../types";
 export declare class CloudICEServersPref extends LitElement {
     hass: HomeAssistant;
     cloudStatus?: CloudStatusLoggedIn;
-    protected render(): import("lit-html").TemplateResult<1> | typeof nothing;
+    protected render(): typeof nothing | import("lit-html").TemplateResult<1>;
     private _toggleCloudICEServersEnabledChanged;
     static styles: import("lit").CSSResult;
 }

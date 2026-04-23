@@ -1,7 +1,8 @@
 import type { CSSResultGroup, PropertyValues, TemplateResult } from "lit";
 import { LitElement, nothing } from "lit";
+import "../../../../components/ha-expansion-panel";
 import "../../../../components/ha-spinner";
-import "../../../../components/search-input";
+import "../../../../components/input/ha-input-search";
 import type { LovelaceCardConfig } from "../../../../data/lovelace/config/card";
 import type { LovelaceConfig } from "../../../../data/lovelace/config/types";
 import type { HomeAssistant } from "../../../../types";
@@ -20,7 +21,8 @@ export declare class HuiCardPicker extends LitElement {
     private _suggestedCards;
     private _customCards;
     private _otherCards;
-    protected render(): TemplateResult<1> | typeof nothing;
+    private _energyCards;
+    protected render(): typeof nothing | TemplateResult<1>;
     protected shouldUpdate(changedProps: PropertyValues): boolean;
     protected firstUpdated(): void;
     protected updated(changedProps: any): void;

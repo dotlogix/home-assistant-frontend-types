@@ -1,6 +1,6 @@
 import { LitElement } from "lit";
 import "../../../../components/ha-form/ha-form";
-import type { LovelaceSectionRawConfig } from "../../../../data/lovelace/config/section";
+import { type LovelaceSectionRawConfig } from "../../../../data/lovelace/config/section";
 import type { LovelaceViewConfig } from "../../../../data/lovelace/config/view";
 import type { HomeAssistant } from "../../../../types";
 export declare class HuiDialogEditSection extends LitElement {

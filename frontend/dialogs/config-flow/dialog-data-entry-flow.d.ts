@@ -2,7 +2,6 @@ import type { CSSResultGroup, PropertyValues, TemplateResult } from "lit";
 import { LitElement, nothing } from "lit";
 import type { HASSDomEvent } from "../../common/dom/fire_event";
 import "../../components/ha-dialog";
-import "../../components/ha-dialog-header";
 import "../../components/ha-icon-button";
 import type { DataEntryFlowStep } from "../../data/data_entry_flow";
 import type { HomeAssistant } from "../../types";
@@ -32,19 +31,22 @@ declare class DataEntryFlowDialog extends LitElement {
     private _loading?;
     private _progress?;
     private _instance;
+    private _open;
     private _step;
     private _handler?;
     private _unsubDataEntryFlowProgress?;
     showDialog(params: DataEntryFlowDialogParams): Promise<void>;
     closeDialog(): void;
+    private _dialogClosed;
     private _devices;
     private _getDialogTitle;
     private _getDialogSubtitle;
-    protected render(): TemplateResult<1> | typeof nothing;
+    protected render(): typeof nothing | TemplateResult<1>;
     protected firstUpdated(changedProps: PropertyValues): void;
     willUpdate(changedProps: PropertyValues): void;
     private _processStep;
     private _subscribeDataEntryFlowProgressed;
+    private _focusFormStep;
     static get styles(): CSSResultGroup;
 }
 declare global {

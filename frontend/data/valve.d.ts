@@ -6,6 +6,9 @@ export declare const enum ValveEntityFeature {
     SET_POSITION = 4,
     STOP = 8
 }
+export declare const DEFAULT_VALVE_FAVORITE_POSITIONS: number[];
+export declare const valveSupportsPosition: (stateObj: ValveEntity) => boolean;
+export declare const normalizeValveFavoritePositions: (positions?: number[]) => number[];
 export declare function isFullyOpen(stateObj: ValveEntity): boolean;
 export declare function isFullyClosed(stateObj: ValveEntity): boolean;
 export declare function isOpening(stateObj: ValveEntity): boolean;

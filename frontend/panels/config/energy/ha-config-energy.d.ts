@@ -1,8 +1,8 @@
 import "../../../layouts/hass-error-screen";
-import type { CSSResultGroup, TemplateResult } from "lit";
+import type { CSSResultGroup, PropertyValues, TemplateResult } from "lit";
 import { LitElement } from "lit";
 import "../../../layouts/hass-loading-screen";
-import "../../../layouts/hass-subpage";
+import "../../../layouts/hass-tabs-subpage";
 import type { HomeAssistant, Route } from "../../../types";
 import "../../../components/ha-alert";
 import "./components/ha-energy-device-settings";
@@ -24,8 +24,11 @@ declare class HaConfigEnergy extends LitElement {
     private _validationResult?;
     private _error?;
     private _statsMetadata?;
+    private get _currTab();
+    protected willUpdate(changedProperties: PropertyValues): void;
     protected firstUpdated(): void;
     protected render(): TemplateResult;
+    private _renderTabContent;
     private _fetchConfig;
     private _prefsChanged;
     private _fetchMetaData;

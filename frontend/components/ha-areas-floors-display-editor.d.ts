@@ -5,7 +5,6 @@ import "./ha-expansion-panel";
 import "./ha-floor-icon";
 import "./ha-items-display-editor";
 import "./ha-svg-icon";
-import "./ha-textfield";
 export interface AreasFloorsDisplayValue {
     areas_display?: {
         hidden?: string[];

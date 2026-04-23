@@ -9,7 +9,7 @@ export declare class HaAttributeIcon extends LitElement {
     attribute?: string;
     attributeValue?: string;
     icon?: string;
-    protected render(): import("lit-html").TemplateResult<1> | typeof nothing;
+    protected render(): typeof nothing | import("lit-html").TemplateResult<1>;
 }
 declare global {
     interface HTMLElementTagNameMap {

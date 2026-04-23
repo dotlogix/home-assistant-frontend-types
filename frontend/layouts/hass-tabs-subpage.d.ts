@@ -14,6 +14,8 @@ export interface PageNavigation {
     not_component?: string | string[];
     core?: boolean;
     advancedOnly?: boolean;
+    /** Hide from non-admin users in filtered navigation and quick bar. */
+    adminOnly?: boolean;
     iconPath?: string;
     iconSecondaryPath?: string;
     iconViewBox?: string;
@@ -21,7 +23,7 @@ export interface PageNavigation {
     iconColor?: string;
     info?: any;
 }
-declare class HassTabsSubpage extends LitElement {
+export declare class HassTabsSubpage extends LitElement {
     hass: HomeAssistant;
     localizeFunc?: LocalizeFunc;
     backPath?: string;
@@ -37,6 +39,12 @@ declare class HassTabsSubpage extends LitElement {
      * @type {Boolean}
      */
     hasFab: boolean;
+    /**
+     * Whether tabs are shown (2 or more tabs visible).
+     * When both, show-tabs and narrow are true, tabs are shown as bottom bar.
+     * @type {Boolean}
+     */
+    showTabs: boolean;
     private _activeTab?;
     private _savedScrollPos?;
     private _getTabs;
@@ -44,6 +52,8 @@ declare class HassTabsSubpage extends LitElement {
     protected render(): TemplateResult;
     private _saveScrollPos;
     private _backTapped;
+    private _isActiveTabPath;
+    private _tabClicked;
     static get styles(): CSSResultGroup;
 }
 declare global {
@@ -51,4 +61,3 @@ declare global {
         "hass-tabs-subpage": HassTabsSubpage;
     }
 }
-export {};

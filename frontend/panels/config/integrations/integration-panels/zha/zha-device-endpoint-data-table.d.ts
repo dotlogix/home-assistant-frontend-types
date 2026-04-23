@@ -7,6 +7,7 @@ import type { HomeAssistant } from "../../../../../types";
 export interface DeviceEndpointRowData extends DataTableRowData {
     id: string;
     name: string;
+    area: string | undefined;
     model: string;
     manufacturer: string;
     endpoint_id: number;

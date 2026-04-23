@@ -11,6 +11,7 @@ export declare const FALLBACK_DOMAIN_ICONS: {
     air_quality: string;
     alert: string;
     automation: string;
+    battery: string;
     calendar: string;
     climate: string;
     configurator: string;
@@ -20,12 +21,18 @@ export declare const FALLBACK_DOMAIN_ICONS: {
     datetime: string;
     demo: string;
     device_tracker: string;
+    door: string;
+    garage_door: string;
+    gate: string;
     google_assistant: string;
     group: string;
     homeassistant: string;
     homekit: string;
+    humidity: string;
+    illuminance: string;
     image_processing: string;
     image: string;
+    infrared: string;
     input_boolean: string;
     input_button: string;
     input_datetime: string;
@@ -34,11 +41,15 @@ export declare const FALLBACK_DOMAIN_ICONS: {
     input_text: string;
     lawn_mower: string;
     light: string;
+    moisture: string;
+    motion: string;
     notify: string;
     number: string;
+    occupancy: string;
     persistent_notification: string;
     person: string;
     plant: string;
+    power: string;
     proximity: string;
     remote: string;
     scene: string;
@@ -50,6 +61,7 @@ export declare const FALLBACK_DOMAIN_ICONS: {
     siren: string;
     stt: string;
     sun: string;
+    temperature: string;
     text: string;
     time: string;
     timer: string;
@@ -59,6 +71,7 @@ export declare const FALLBACK_DOMAIN_ICONS: {
     vacuum: string;
     wake_word: string;
     weather: string;
+    window: string;
     zone: string;
 };
 interface IconResources<T extends ComponentIcons | PlatformIcons | ServiceIcons | TriggerIcons | ConditionIcons> {

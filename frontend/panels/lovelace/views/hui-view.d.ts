@@ -1,6 +1,6 @@
 import type { PropertyValues } from "lit";
 import { ReactiveElement } from "lit";
-import { type HASSDomEvent } from "../../../common/dom/fire_event";
+import type { HASSDomEvent } from "../../../common/dom/fire_event";
 import "../../../components/entity/ha-state-label-badge";
 import "../../../components/ha-svg-icon";
 import type { LovelaceBadgeConfig } from "../../../data/lovelace/config/badge";
@@ -58,18 +58,14 @@ export declare class HUIView extends ReactiveElement {
     private _sections;
     private _layoutElementType?;
     private _layoutElement?;
-    private _layoutElementConfig?;
-    private _rendered;
+    private _config?;
     protected _clipboard?: LovelaceCardConfig;
     private _createCardElement;
     createBadgeElement(badgeConfig: LovelaceBadgeConfig): HuiBadge;
     createSectionElement(sectionConfig: LovelaceSectionConfig): HuiSection;
     protected createRenderRoot(): this;
-    connectedCallback(): void;
-    disconnectedCallback(): void;
     willUpdate(changedProperties: PropertyValues<typeof this>): void;
     private _debounceRefreshConfig;
-    private _refreshConfig;
     protected update(changedProperties: PropertyValues): void;
     private _generateConfig;
     private _setConfig;

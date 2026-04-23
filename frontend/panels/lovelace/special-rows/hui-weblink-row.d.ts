@@ -6,7 +6,7 @@ declare class HuiWeblinkRow extends LitElement implements LovelaceRow {
     hass?: HomeAssistant;
     private _config?;
     setConfig(config: WeblinkConfig): void;
-    protected render(): import("lit-html").TemplateResult<1> | typeof nothing;
+    protected render(): typeof nothing | import("lit-html").TemplateResult<1>;
     static styles: import("lit").CSSResult;
     protected _computeTargetValue(): string | undefined;
 }

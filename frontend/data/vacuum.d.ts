@@ -1,4 +1,5 @@
 import type { HassEntityAttributeBase, HassEntityBase } from "home-assistant-js-websocket";
+import type { HomeAssistant } from "../types";
 export type VacuumEntityState = "on" | "off" | "cleaning" | "docked" | "idle" | "paused" | "returning" | "error";
 export declare const enum VacuumEntityFeature {
     TURN_ON = 1,
@@ -14,7 +15,8 @@ export declare const enum VacuumEntityFeature {
     CLEAN_SPOT = 1024,
     MAP = 2048,
     STATE = 4096,
-    START = 8192
+    START = 8192,
+    CLEAN_AREA = 16384
 }
 interface VacuumEntityAttributes extends HassEntityAttributeBase {
     battery_level?: number;
@@ -28,4 +30,12 @@ export declare function isCleaning(stateObj: VacuumEntity): boolean;
 export declare function canStart(stateObj: VacuumEntity): boolean;
 export declare function canStop(stateObj: VacuumEntity): boolean;
 export declare function canReturnHome(stateObj: VacuumEntity): boolean;
+export interface Segment {
+    id: string;
+    name: string;
+    group?: string;
+}
+export declare const getVacuumSegments: (hass: HomeAssistant, entity_id: string) => Promise<{
+    segments: Segment[];
+}>;
 export {};

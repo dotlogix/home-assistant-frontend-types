@@ -14,7 +14,7 @@ export declare class HuiLogbookCardEditor extends LitElement implements Lovelace
     get _targetPicker(): HassServiceTarget;
     private _loadNumericDeviceClasses;
     protected updated(): void;
-    protected render(): import("lit-html").TemplateResult<1> | typeof nothing;
+    protected render(): typeof nothing | import("lit-html").TemplateResult<1>;
     private _data;
     private _filterFunc;
     private _entitiesChanged;

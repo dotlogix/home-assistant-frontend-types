@@ -1,8 +1,8 @@
 import { LitElement } from "lit";
-import "../panels/lovelace/editor/card-editor/ha-grid-layout-slider";
-import "./ha-icon-button";
 import type { CardGridSize } from "../panels/lovelace/common/compute-card-grid-size";
+import "../panels/lovelace/editor/card-editor/ha-grid-layout-slider";
 import type { HomeAssistant } from "../types";
+import "./ha-icon-button";
 export declare class HaGridSizeEditor extends LitElement {
     hass: HomeAssistant;
     value?: CardGridSize;
@@ -14,8 +14,6 @@ export declare class HaGridSizeEditor extends LitElement {
     columnMax?: number;
     isDefault?: boolean;
     step: number;
-    rowsDisabled?: boolean;
-    columnsDisabled?: boolean;
     _localValue?: CardGridSize;
     protected willUpdate(changedProperties: any): void;
     protected render(): import("lit-html").TemplateResult<1>;

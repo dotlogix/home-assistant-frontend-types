@@ -6,7 +6,7 @@ import "./notification-item-template";
 export declare class HuiConfiguratorNotificationItem extends LitElement {
     hass?: HomeAssistant;
     notification?: PersitentNotificationEntity;
-    protected render(): import("lit-html").TemplateResult<1> | typeof nothing;
+    protected render(): typeof nothing | import("lit-html").TemplateResult<1>;
     private _handleClick;
 }
 declare global {

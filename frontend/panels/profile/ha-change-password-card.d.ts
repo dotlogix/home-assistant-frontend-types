@@ -1,13 +1,12 @@
 import type { CSSResultGroup, PropertyValues, TemplateResult } from "lit";
 import { LitElement } from "lit";
-import "../../components/ha-card";
-import "../../components/ha-button";
-import "../../components/ha-spinner";
-import "../../components/ha-textfield";
-import "../../components/ha-password-field";
-import type { HomeAssistant } from "../../types";
 import "../../components/ha-alert";
+import "../../components/ha-button";
+import "../../components/ha-card";
+import "../../components/ha-spinner";
+import "../../components/input/ha-input";
 import type { RefreshToken } from "../../data/refresh_token";
+import type { HomeAssistant } from "../../types";
 declare class HaChangePasswordCard extends LitElement {
     hass: HomeAssistant;
     private _loading;

@@ -5,7 +5,8 @@ import type { HomeAssistant } from "../types";
 import { type DeviceRegistryEntry } from "./device/device_registry";
 import type { EntityRegistryDisplayEntry, EntityRegistryEntry } from "./entity/entity_registry";
 import type { EntitySources } from "./entity/entity_sources";
-export type Selector = ActionSelector | AddonSelector | AppSelector | AreaSelector | AreasDisplaySelector | AttributeSelector | BooleanSelector | ButtonToggleSelector | ChooseSelector | ColorRGBSelector | ColorTempSelector | ConditionSelector | ConversationAgentSelector | ConfigEntrySelector | ConstantSelector | CountrySelector | DateSelector | DateTimeSelector | DeviceSelector | FloorSelector | LegacyDeviceSelector | DurationSelector | EntitySelector | EntityNameSelector | LegacyEntitySelector | FileSelector | IconSelector | LabelSelector | LanguageSelector | LocationSelector | MediaSelector | NavigationSelector | NumberSelector | ObjectSelector | AssistPipelineSelector | QRCodeSelector | SelectSelector | SelectorSelector | StateSelector | StatisticSelector | StringSelector | STTSelector | TargetSelector | TemplateSelector | ThemeSelector | TimeSelector | TimezoneSelector | TriggerSelector | TTSSelector | TTSVoiceSelector | UiActionSelector | UiColorSelector | UiStateContentSelector | BackupLocationSelector;
+export type ThresholdMode = "crossed" | "changed" | "is";
+export type Selector = ActionSelector | AddonSelector | AppSelector | AreaSelector | AreasDisplaySelector | AttributeSelector | BooleanSelector | ButtonToggleSelector | ChooseSelector | ColorRGBSelector | ColorTempSelector | ConditionSelector | ConversationAgentSelector | ConfigEntrySelector | ConstantSelector | CountrySelector | DateSelector | DateTimeSelector | DeviceSelector | FloorSelector | LegacyDeviceSelector | DurationSelector | EntitySelector | EntityNameSelector | LegacyEntitySelector | FileSelector | IconSelector | LabelSelector | LanguageSelector | LocationSelector | MediaSelector | NavigationSelector | NumberSelector | NumericThresholdSelector | ObjectSelector | AssistPipelineSelector | QRCodeSelector | SelectSelector | SelectorSelector | StateSelector | StatisticSelector | StringSelector | STTSelector | TargetSelector | TemplateSelector | ThemeSelector | TimeSelector | TimezoneSelector | TriggerSelector | TTSSelector | TTSVoiceSelector | UiActionSelector | UiColorSelector | UiStateContentSelector | BackupLocationSelector;
 export interface ActionSelector {
     action: {
         optionsInSidebar?: boolean;
@@ -25,6 +26,7 @@ export interface AreaSelector {
         entity?: EntitySelectorFilter | readonly EntitySelectorFilter[];
         device?: DeviceSelectorFilter | readonly DeviceSelectorFilter[];
         multiple?: boolean;
+        reorder?: boolean;
     } | null;
 }
 export interface AreasDisplaySelector {
@@ -141,6 +143,7 @@ export interface DurationSelector {
         enable_day?: boolean;
         enable_millisecond?: boolean;
         allow_negative?: boolean;
+        enable_second?: boolean;
     } | null;
 }
 interface EntitySelectorFilter {
@@ -148,6 +151,7 @@ interface EntitySelectorFilter {
     domain?: string | readonly string[];
     device_class?: string | readonly string[];
     supported_features?: number | [number];
+    unit_of_measurement?: string | readonly string[];
 }
 export interface EntitySelector {
     entity: {
@@ -255,6 +259,14 @@ export interface NumberSelector {
         unit_of_measurement?: string;
         slider_ticks?: boolean;
         translation_key?: string;
+    } | null;
+}
+export interface NumericThresholdSelector {
+    numeric_threshold: {
+        mode?: ThresholdMode;
+        unit_of_measurement?: readonly string[];
+        number?: NumberSelector["number"];
+        entity?: EntitySelectorFilter | readonly EntitySelectorFilter[];
     } | null;
 }
 interface ObjectSelectorField {
@@ -383,11 +395,18 @@ export interface UiActionSelector {
         default_action?: UiAction;
     } | null;
 }
+export interface UiColorExtraOption {
+    value: string;
+    label: string;
+    icon?: string;
+    display_color?: string;
+}
 export interface UiColorSelector {
     ui_color: {
         default_color?: string;
         include_none?: boolean;
         include_state?: boolean;
+        extra_options?: UiColorExtraOption[];
     } | null;
 }
 export interface UiStateContentSelector {

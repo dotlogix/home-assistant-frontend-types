@@ -13,11 +13,13 @@ declare class HaConfigAppDashboard extends LitElement {
     private _error?;
     private _controlEnabled;
     private _fromStore;
+    private _loading;
     private _computeTail;
     protected firstUpdated(): Promise<void>;
     protected updated(changedProperties: PropertyValues): void;
     protected render(): TemplateResult;
     private _loadAddon;
+    private _handleMissingRepository;
     private _apiCalled;
     private _enableControl;
     static get styles(): CSSResultGroup;

@@ -1,7 +1,7 @@
 import type { CSSResultGroup } from "lit";
 import { LitElement, nothing } from "lit";
 import "../../../components/ha-alert";
-import "../../../components/ha-wa-dialog";
+import "../../../components/ha-dialog";
 import "../../../components/ha-button";
 import "../../../components/ha-svg-icon";
 import "../../../components/ha-dialog-footer";
@@ -17,7 +17,7 @@ declare class DialogRepairsIssue extends LitElement {
     showDialog(params: RepairsIssueDialogParams): void;
     private _dialogClosed;
     closeDialog(): void;
-    protected render(): import("lit-html").TemplateResult<1> | typeof nothing;
+    protected render(): typeof nothing | import("lit-html").TemplateResult<1>;
     private _ignoreIssue;
     private _clickHandler;
     static styles: CSSResultGroup;

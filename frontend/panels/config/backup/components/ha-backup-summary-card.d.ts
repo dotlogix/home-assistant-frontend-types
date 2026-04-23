@@ -3,7 +3,7 @@ import "../../../../components/ha-button";
 import "../../../../components/ha-card";
 import "../../../../components/ha-icon";
 import "../../../../components/ha-spinner";
-type SummaryStatus = "success" | "error" | "info" | "warning" | "loading";
+type SummaryStatus = "success" | "error" | "info" | "warning" | "loading" | "none";
 declare class HaBackupSummaryCard extends LitElement {
     heading: string;
     description: string;

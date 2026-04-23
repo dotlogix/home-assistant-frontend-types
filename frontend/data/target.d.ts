@@ -12,6 +12,10 @@ import type { EntityRegistryDisplayEntry } from "./entity/entity_registry";
 export declare const TARGET_SEPARATOR = "________";
 export type TargetType = "entity" | "device" | "area" | "label" | "floor";
 export type TargetTypeFloorless = Exclude<TargetType, "floor">;
+export interface TargetItem {
+    type: TargetType;
+    id: string;
+}
 export interface SingleHassServiceTarget {
     entity_id?: string;
     device_id?: string;
@@ -33,7 +37,8 @@ export interface ExtractFromTargetResultReferenced {
     referenced_devices: string[];
     referenced_entities: string[];
 }
-export declare const extractFromTarget: (hass: HomeAssistant, target: HassServiceTarget) => Promise<ExtractFromTargetResult>;
+export declare const extractFromTarget: (hass: HomeAssistant, target: HassServiceTarget, expandGroup?: boolean) => Promise<ExtractFromTargetResult>;
+export declare const getResolvedTargetEntityCount: (hass: HomeAssistant, target?: HassServiceTarget) => Promise<number | undefined>;
 export declare const getTriggersForTarget: (callWS: HomeAssistant["callWS"], target: HassServiceTarget, expandGroup?: boolean) => Promise<string[]>;
 export declare const getConditionsForTarget: (callWS: HomeAssistant["callWS"], target: HassServiceTarget, expandGroup?: boolean) => Promise<string[]>;
 export declare const getServicesForTarget: (callWS: HomeAssistant["callWS"], target: HassServiceTarget, expandGroup?: boolean) => Promise<string[]>;

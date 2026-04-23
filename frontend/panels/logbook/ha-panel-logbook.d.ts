@@ -1,7 +1,7 @@
 import type { PropertyValues } from "lit";
 import { LitElement } from "lit";
 import "../../components/entity/ha-entity-picker";
-import "../../components/ha-date-range-picker";
+import "../../components/date-picker/ha-date-range-picker";
 import "../../components/ha-icon-button";
 import "../../components/ha-icon-button-arrow-prev";
 import "../../components/ha-menu-button";

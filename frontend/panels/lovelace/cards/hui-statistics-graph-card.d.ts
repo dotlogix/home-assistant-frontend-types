@@ -34,9 +34,10 @@ export declare class HuiStatisticsGraphCard extends LitElement implements Lovela
     private _computeNames;
     protected shouldUpdate(changedProps: PropertyValues): boolean;
     willUpdate(changedProps: PropertyValues): void;
+    private _fetchInitialStatistics;
     private _setFetchStatisticsTimer;
     private get _period();
-    protected render(): import("lit-html").TemplateResult<1> | typeof nothing;
+    protected render(): typeof nothing | import("lit-html").TemplateResult<1>;
     private get _intervalTimeout();
     private _getStatisticsMetaData;
     private _getStatistics;

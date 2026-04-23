@@ -16,7 +16,7 @@ declare class HaAddonPicker extends LitElement {
     open(): void;
     focus(): void;
     protected firstUpdated(): void;
-    protected render(): import("lit-html").TemplateResult<1> | typeof nothing;
+    protected render(): typeof nothing | import("lit-html").TemplateResult<1>;
     private _getApps;
     private _getItems;
     private get _value();

@@ -8,7 +8,7 @@ export declare class HuiLightCardEditor extends LitElement implements LovelaceCa
     hass?: HomeAssistant;
     private _config?;
     setConfig(config: LightCardConfig): void;
-    protected render(): import("lit-html").TemplateResult<1> | typeof nothing;
+    protected render(): typeof nothing | import("lit-html").TemplateResult<1>;
     private _valueChanged;
     private _computeLabelCallback;
     static styles: CSSResultGroup;

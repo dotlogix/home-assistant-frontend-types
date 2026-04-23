@@ -15,7 +15,8 @@ import type { HomeAssistant } from "../../types";
 import type { VoiceCommandDialogParams } from "./show-ha-voice-command-dialog";
 export declare class HaVoiceCommandDialog extends LitElement {
     hass: HomeAssistant;
-    private _opened;
+    private _open;
+    private _dialogOpen;
     private _pipelineId?;
     private _pipeline?;
     private _pipelines?;
@@ -23,8 +24,9 @@ export declare class HaVoiceCommandDialog extends LitElement {
     private _errorLoadAssist?;
     private _startListening;
     showDialog(params: Required<VoiceCommandDialogParams>): Promise<void>;
-    closeDialog(): Promise<void>;
-    protected render(): import("lit-html").TemplateResult<1> | typeof nothing;
+    closeDialog(): void;
+    private _dialogClosed;
+    protected render(): typeof nothing | import("lit-html").TemplateResult<1>;
     protected willUpdate(changedProperties: PropertyValues): void;
     private _loadPipelines;
     private _selectPipeline;

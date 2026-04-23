@@ -1,12 +1,11 @@
 import type { TemplateResult } from "lit";
 import { LitElement } from "lit";
-import "../../../../../components/ha-card";
 import "../../../../../components/ha-button";
+import "../../../../../components/ha-card";
 import "../../../../../components/ha-select";
 import "../../../../../components/ha-textfield";
 import type { HomeAssistant } from "../../../../../types";
 import "../../../../../components/ha-formfield";
-import "../../../../../components/ha-list-item";
 import "../../../../../components/ha-switch";
 declare class MqttSubscribeCard extends LitElement {
     hass: HomeAssistant;

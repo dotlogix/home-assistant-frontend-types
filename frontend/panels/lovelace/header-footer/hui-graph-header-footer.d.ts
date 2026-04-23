@@ -13,14 +13,17 @@ export declare class HuiGraphHeaderFooter extends LitElement implements Lovelace
     protected _config?: GraphHeaderFooterConfig;
     private _coordinates?;
     private _error?;
+    private _history?;
     private _interval?;
     private _subscribed?;
     getCardSize(): number;
     setConfig(config: GraphHeaderFooterConfig): void;
-    protected render(): import("lit-html").TemplateResult<1> | typeof nothing;
+    protected render(): typeof nothing | import("lit-html").TemplateResult<1>;
+    private _handleClick;
     connectedCallback(): void;
     disconnectedCallback(): void;
     private _subscribeHistory;
+    private _computeCoordinates;
     private _redrawGraph;
     private _setRedrawTimer;
     private _unsubscribeHistory;

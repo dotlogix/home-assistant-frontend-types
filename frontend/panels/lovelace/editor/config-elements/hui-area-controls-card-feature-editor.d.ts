@@ -15,7 +15,7 @@ export declare class HuiAreaControlsCardFeatureEditor extends LitElement impleme
     setConfig(config: AreaControlsCardFeatureConfig): void;
     private _schema;
     private _supportedControls;
-    protected render(): import("lit-html").TemplateResult<1> | typeof nothing;
+    protected render(): typeof nothing | import("lit-html").TemplateResult<1>;
     private _getItemLabel;
     private _itemMoved;
     private _removeItem;

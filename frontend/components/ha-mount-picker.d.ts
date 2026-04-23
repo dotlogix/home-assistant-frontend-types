@@ -16,10 +16,9 @@ declare class HaMountPicker extends LitElement {
     private _mounts?;
     private _error?;
     protected firstUpdated(): void;
-    protected render(): import("lit-html").TemplateResult<1> | typeof nothing;
+    protected render(): typeof nothing | import("lit-html").TemplateResult<1>;
     private _filterMounts;
     private _getMounts;
-    private get _value();
     private _mountChanged;
     private _setValue;
     static get styles(): CSSResultGroup;

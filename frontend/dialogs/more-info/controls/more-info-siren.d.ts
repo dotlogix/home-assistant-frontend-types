@@ -8,7 +8,7 @@ import "../components/ha-more-info-state-header";
 declare class MoreInfoSiren extends LitElement {
     hass: HomeAssistant;
     stateObj?: HassEntity;
-    protected render(): import("lit-html").TemplateResult<1> | typeof nothing;
+    protected render(): typeof nothing | import("lit-html").TemplateResult<1>;
     private _showAdvancedControlsDialog;
     static get styles(): CSSResultGroup;
 }

@@ -12,7 +12,7 @@ declare class MediaManageButton extends LitElement {
     hass: HomeAssistant;
     currentItem?: MediaPlayerItem;
     _uploading: number;
-    protected render(): import("lit-html").TemplateResult<1> | typeof nothing;
+    protected render(): typeof nothing | import("lit-html").TemplateResult<1>;
     private _manage;
 }
 declare global {

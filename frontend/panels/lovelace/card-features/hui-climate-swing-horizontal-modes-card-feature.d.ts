@@ -13,13 +13,12 @@ declare class HuiClimateSwingHorizontalModesCardFeature extends LitElement imple
     context?: LovelaceCardFeatureContext;
     private _config?;
     _currentSwingHorizontalMode?: string;
-    private _haSelect?;
+    private _renderSwingHorizontalModeIcon;
     private get _stateObj();
     static getStubConfig(): ClimateSwingHorizontalModesCardFeatureConfig;
     static getConfigElement(): Promise<LovelaceCardFeatureEditor>;
     setConfig(config: ClimateSwingHorizontalModesCardFeatureConfig): void;
     protected willUpdate(changedProp: PropertyValues): void;
-    protected updated(changedProps: PropertyValues): void;
     private _valueChanged;
     private _setMode;
     protected render(): TemplateResult | null;

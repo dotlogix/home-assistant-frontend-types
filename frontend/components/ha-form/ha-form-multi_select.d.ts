@@ -7,7 +7,7 @@ import "../ha-dropdown-item";
 import "../ha-formfield";
 import "../ha-icon-button";
 import "../ha-picker-field";
-import type { HaDropdownItem } from "../ha-dropdown-item";
+import type { HaDropdownSelectEvent } from "../ha-dropdown";
 import type { HaFormElement, HaFormMultiSelectData, HaFormMultiSelectSchema } from "./types";
 export declare class HaFormMultiSelect extends LitElement implements HaFormElement {
     schema: HaFormMultiSelectSchema;
@@ -16,10 +16,9 @@ export declare class HaFormMultiSelect extends LitElement implements HaFormEleme
     disabled: boolean;
     private _dropdown;
     focus(): void;
+    reportValidity(): boolean;
     protected render(): TemplateResult;
-    protected _toggleItem(ev: CustomEvent<{
-        item: HaDropdownItem;
-    }>): void;
+    protected _toggleItem(ev: HaDropdownSelectEvent): void;
     protected updated(changedProps: PropertyValues): void;
     private _valueChanged;
     private _handleValueChanged;

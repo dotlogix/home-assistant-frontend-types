@@ -1,11 +1,11 @@
 import type { CSSResultGroup, PropertyValues } from "lit";
 import { LitElement, nothing } from "lit";
 import type { HASSDomEvent } from "../../../../common/dom/fire_event";
-import "../../../../components/ha-spinner";
 import "../../../../components/ha-button";
 import "../../../../components/ha-dialog";
-import "../../../../components/ha-dialog-header";
+import "../../../../components/ha-dialog-footer";
 import "../../../../components/ha-icon-button";
+import "../../../../components/ha-spinner";
 import type { HassDialog } from "../../../../dialogs/make-dialog-manager";
 import type { HomeAssistant } from "../../../../types";
 import "../../cards/hui-card";
@@ -24,6 +24,7 @@ export declare class HuiDialogEditCard extends LitElement implements HassDialog<
     hass: HomeAssistant;
     large: boolean;
     private _params?;
+    private _open;
     private _cardConfig?;
     private _sectionConfig?;
     private _saving;
@@ -35,8 +36,9 @@ export declare class HuiDialogEditCard extends LitElement implements HassDialog<
     private _dirty;
     showDialog(params: EditCardDialogParams): Promise<void>;
     closeDialog(): boolean;
+    private _dialogClosed;
     protected updated(changedProps: PropertyValues): void;
-    protected render(): import("lit-html").TemplateResult<1> | typeof nothing;
+    protected render(): typeof nothing | import("lit-html").TemplateResult<1>;
     private _enlarge;
     private _ignoreKeydown;
     private _handleConfigChanged;

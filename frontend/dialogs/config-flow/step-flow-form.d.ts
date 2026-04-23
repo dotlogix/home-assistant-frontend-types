@@ -11,6 +11,7 @@ import type { FlowConfig } from "./show-dialog-data-entry-flow";
 declare class StepFlowForm extends LitElement {
     flowConfig: FlowConfig;
     narrow: boolean;
+    autoFocus: boolean;
     step: DataEntryFlowStepForm;
     hass: HomeAssistant;
     private _loading;
@@ -19,11 +20,13 @@ declare class StepFlowForm extends LitElement {
     private _submitErrors?;
     private _errorMsg?;
     private _errors?;
+    static shadowRootOptions: ShadowRootInit;
     disconnectedCallback(): void;
     private handleReadOnlyFields;
     protected render(): TemplateResult;
     private _setError;
     protected firstUpdated(changedProps: PropertyValues): void;
+    focus(_options?: FocusOptions): void;
     protected willUpdate(changedProps: PropertyValues): void;
     private _clickHandler;
     private _handleKeyDown;

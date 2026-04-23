@@ -1,16 +1,18 @@
+import "@home-assistant/webawesome/dist/components/divider/divider";
 import type { CSSResultGroup, PropertyValues } from "lit";
 import { LitElement, nothing } from "lit";
 import "../../../components/ha-alert";
 import "../../../components/ha-area-picker";
 import "../../../components/ha-color-picker";
+import "../../../components/ha-dropdown-item";
 import "../../../components/ha-icon";
 import "../../../components/ha-icon-button-next";
 import "../../../components/ha-icon-picker";
 import "../../../components/ha-labels-picker";
 import "../../../components/ha-list-item";
+import "../../../components/ha-md-list-item";
 import "../../../components/ha-radio";
 import "../../../components/ha-select";
-import "../../../components/ha-settings-row";
 import "../../../components/ha-state-icon";
 import "../../../components/ha-switch";
 import "../../../components/ha-textfield";
@@ -56,7 +58,7 @@ export declare class EntityRegistrySettingsEditor extends LitElement {
     private _precisionLabel;
     private _isInvalidDefaultCode;
     protected updated(changedProps: PropertyValues): Promise<void>;
-    protected render(): import("lit-html").TemplateResult<1> | typeof nothing;
+    protected render(): typeof nothing | import("lit-html").TemplateResult<1>;
     updateEntry(): Promise<{
         close: boolean;
         entry: ExtEntityRegistryEntry;
@@ -89,9 +91,11 @@ export declare class EntityRegistrySettingsEditor extends LitElement {
     private _hiddenChanged;
     private _openDeviceSettings;
     private _handleVoiceAssistantsClicked;
+    private _handleVacuumSegmentMappingClicked;
     private _showOptionsFlow;
     private _switchAsDomainsSorted;
     private _deviceClassesSorted;
+    private _switchAsLabel;
     static get styles(): CSSResultGroup;
 }
 declare global {

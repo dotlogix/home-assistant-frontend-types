@@ -1,5 +1,6 @@
 declare const translations: {
     panel: {
+        demo: string;
         apps: string;
         energy: string;
         calendar: string;
@@ -15,6 +16,7 @@ declare const translations: {
         security: string;
         climate: string;
         home: string;
+        notfound: string;
     };
     state: {
         default: {
@@ -214,10 +216,25 @@ declare const translations: {
                 no_media_playing: string;
                 count_media_playing: string;
             };
+            "toggle-group": {
+                all_off: string;
+                all_on: string;
+                some_on: string;
+            };
             "discovered-devices": {
                 title: string;
                 count_devices: string;
                 no_devices: string;
+            };
+            repairs: {
+                title: string;
+                count_issues: string;
+                no_issues: string;
+            };
+            updates: {
+                title: string;
+                count_updates: string;
+                no_updates: string;
             };
             media_player: {
                 source: string;
@@ -294,6 +311,7 @@ declare const translations: {
                 };
             };
             valve: {
+                position: string;
                 open_valve: string;
                 close_valve: string;
                 stop_valve: string;
@@ -537,6 +555,35 @@ declare const translations: {
                     show_password: string;
                     hide_password: string;
                 };
+                numeric_threshold: {
+                    unit: string;
+                    number: string;
+                    entity: string;
+                    from: string;
+                    to: string;
+                    crossed: {
+                        type: string;
+                        above: string;
+                        below: string;
+                        between: string;
+                        outside: string;
+                    };
+                    changed: {
+                        type: string;
+                        any: string;
+                        above: string;
+                        below: string;
+                        between: string;
+                        outside: string;
+                    };
+                    is: {
+                        type: string;
+                        above: string;
+                        below: string;
+                        between: string;
+                        outside: string;
+                    };
+                };
             };
             logbook: {
                 entries_not_found: string;
@@ -677,6 +724,8 @@ declare const translations: {
                         floor_missing: string;
                         device_missing: string;
                     };
+                    mode_composed: string;
+                    mode_custom: string;
                     add: string;
                     search: string;
                     custom_name: string;
@@ -757,7 +806,7 @@ declare const translations: {
             "config-entry-picker": {
                 config_entry: string;
             };
-            "coversation-agent-picker": {
+            "conversation-agent-picker": {
                 conversation_agent: string;
                 none: string;
             };
@@ -825,7 +874,7 @@ declare const translations: {
                 categories: string;
                 category: string;
                 add_category: string;
-                add_new_sugestion: string;
+                add_new_suggestion: string;
                 add_new: string;
                 no_categories: string;
                 no_match: string;
@@ -841,7 +890,7 @@ declare const translations: {
             "label-picker": {
                 label: string;
                 labels: string;
-                add_new_sugestion: string;
+                add_new_suggestion: string;
                 add_new: string;
                 add: string;
                 no_labels: string;
@@ -852,7 +901,7 @@ declare const translations: {
                 clear: string;
                 show_areas: string;
                 area: string;
-                add_new_sugestion: string;
+                add_new_suggestion: string;
                 add_new: string;
                 no_areas: string;
                 no_match: string;
@@ -863,7 +912,7 @@ declare const translations: {
                 clear: string;
                 show_floors: string;
                 floor: string;
-                add_new_sugestion: string;
+                add_new_suggestion: string;
                 add_new: string;
                 no_floors: string;
                 no_match: string;
@@ -975,6 +1024,8 @@ declare const translations: {
                 end_date: string;
                 select: string;
                 select_date_range: string;
+                time_from: string;
+                time_to: string;
                 ranges: {
                     today: string;
                     yesterday: string;
@@ -1036,7 +1087,6 @@ declare const translations: {
             "service-control": {
                 required: string;
                 target: string;
-                target_secondary: string;
                 action_data: string;
                 integration_doc: string;
                 script_variables: string;
@@ -1354,10 +1404,17 @@ declare const translations: {
                 dashboards: string;
                 related: string;
                 views: string;
+                area_settings: string;
                 other_routes: string;
             };
         };
         dialogs: {
+            vacuum_segment_mapping: {
+                title: string;
+                no_segments: string;
+                area_label: string;
+                description: string;
+            };
             safe_mode: {
                 title: string;
                 text: string;
@@ -1457,6 +1514,7 @@ declare const translations: {
                         knx: string;
                         insteon: string;
                         "voice-assistants": string;
+                        "ai-tasks": string;
                     };
                 };
                 filter_placeholder: string;
@@ -1482,6 +1540,7 @@ declare const translations: {
                 not_supported_microphone_documentation_link: string;
                 unknown_error_load_assist: string;
                 not_found_error_load_assist: string;
+                show_details: string;
             };
             generic: {
                 default_confirmation_title: string;
@@ -1492,13 +1551,23 @@ declare const translations: {
                 use_original: string;
             };
             "date-picker": {
+                title: string;
                 today: string;
                 clear: string;
             };
             more_info_control: {
                 settings: string;
                 edit: string;
+                edit_domain: {
+                    automation: string;
+                    script: string;
+                    scene: string;
+                    person: string;
+                };
                 details: string;
+                toggle_yaml_mode: string;
+                translated: string;
+                raw: string;
                 back_to_info: string;
                 info: string;
                 related: string;
@@ -1574,9 +1643,37 @@ declare const translations: {
                     create_zone: string;
                 };
                 cover: {
+                    edit_mode: string;
+                    reset_favorites: string;
+                    reset_favorites_text: string;
+                    copy_favorites: string;
+                    copy_favorites_helper: string;
+                    copy_favorites_entities: string;
                     switch_mode: {
                         button: string;
                         position: string;
+                    };
+                    favorite_position: {
+                        set: string;
+                        edit: string;
+                        delete: string;
+                        delete_confirm_title: string;
+                        delete_confirm_text: string;
+                        delete_confirm_action: string;
+                        add: string;
+                        edit_title: string;
+                        add_title: string;
+                    };
+                    favorite_tilt_position: {
+                        set: string;
+                        edit: string;
+                        delete: string;
+                        delete_confirm_title: string;
+                        delete_confirm_text: string;
+                        delete_confirm_action: string;
+                        add: string;
+                        edit_title: string;
+                        add_title: string;
                     };
                 };
                 zone: {
@@ -1584,6 +1681,11 @@ declare const translations: {
                 };
                 light: {
                     edit_mode: string;
+                    reset_favorites: string;
+                    reset_favorites_text: string;
+                    copy_favorites: string;
+                    copy_favorites_helper: string;
+                    copy_favorites_entities: string;
                     toggle: string;
                     color: string;
                     color_temp: string;
@@ -1626,9 +1728,26 @@ declare const translations: {
                     dock: string;
                 };
                 valve: {
+                    edit_mode: string;
+                    reset_favorites: string;
+                    reset_favorites_text: string;
+                    copy_favorites: string;
+                    copy_favorites_helper: string;
+                    copy_favorites_entities: string;
                     switch_mode: {
                         button: string;
                         position: string;
+                    };
+                    favorite_position: {
+                        set: string;
+                        edit: string;
+                        delete: string;
+                        delete_confirm_title: string;
+                        delete_confirm_text: string;
+                        delete_confirm_action: string;
+                        add: string;
+                        edit_title: string;
+                        add_title: string;
                     };
                 };
                 camera: {
@@ -1735,7 +1854,15 @@ declare const translations: {
                     enabled_restart_confirm: string;
                     hidden_explanation: string;
                     delete: string;
+                    confirm_delete_title: string;
                     confirm_delete: string;
+                    confirm_delete_related: string;
+                    confirm_delete_count: {
+                        automation: string;
+                        script: string;
+                        group: string;
+                        scene: string;
+                    };
                     update: string;
                     note: string;
                     use_device_area: string;
@@ -1799,6 +1926,7 @@ declare const translations: {
                 aliases_header: string;
                 aliases_description: string;
                 aliases_no_unique_id: string;
+                entity_name_alias_description: string;
                 ask_pin: string;
                 manual_config: string;
                 unsupported: string;
@@ -2345,6 +2473,13 @@ declare const translations: {
             config: {
                 generic: {
                     headers: {
+                        entity_id: string;
+                        domain: string;
+                        area: string;
+                        floor: string;
+                        category: string;
+                        assistants: string;
+                        editable: string;
                         modified_at: string;
                         created_at: string;
                         actions: string;
@@ -2558,30 +2693,34 @@ declare const translations: {
                         check_updates: string;
                         repositories: string;
                         registries: string;
-                        missing_apps: string;
                         no_results_found: string;
                     };
-                    dialog: {
-                        repositories: {
-                            title: string;
-                            add: string;
-                            remove: string;
-                            used: string;
-                            no_repositories: string;
-                        };
-                        registries: {
-                            title_add: string;
-                            title_manage: string;
-                            add_registry: string;
-                            add_new_registry: string;
-                            username: string;
-                            remove: string;
-                            no_registries: string;
-                            failed_to_add: string;
-                            failed_to_remove: string;
-                            registry: string;
-                            password: string;
-                        };
+                    repositories: {
+                        maintainer: string;
+                        url: string;
+                        confirm_remove: string;
+                        add_title: string;
+                        add: string;
+                        remove: string;
+                        used: string;
+                        no_repositories: string;
+                    };
+                    registries: {
+                        add_title: string;
+                        add: string;
+                        username: string;
+                        remove: string;
+                        confirm_remove: string;
+                        no_registries: string;
+                        failed_to_add: string;
+                        failed_to_remove: string;
+                        registry: string;
+                        password: string;
+                    };
+                    my: {
+                        add_repository_title: string;
+                        add_repository_description: string;
+                        error_repository_not_found: string;
                     };
                     panel: {
                         info: string;
@@ -3231,6 +3370,7 @@ declare const translations: {
                                     folders: string;
                                     home_assistant: string;
                                     upload_to_agents: string;
+                                    cleaning_up: string;
                                 };
                                 restore_backup: {
                                     addon_repositories: string;
@@ -3252,6 +3392,17 @@ declare const translations: {
                                     receive_file: string;
                                     upload_to_agents: string;
                                 };
+                            };
+                            segments: {
+                                home_assistant: string;
+                                apps: string;
+                                media: string;
+                                upload: string;
+                                cleaning_up: string;
+                            };
+                            agent_status: {
+                                uploading: string;
+                                uploaded: string;
                             };
                         };
                         summary: {
@@ -3454,6 +3605,7 @@ declare const translations: {
                         name: string;
                         last_scanned: string;
                         write: string;
+                        tag_id: string;
                     };
                     detail: {
                         new_tag: string;
@@ -3484,6 +3636,10 @@ declare const translations: {
                         debug: {
                             title: string;
                             debug_connection: {
+                                title: string;
+                                description: string;
+                            };
+                            disable_view_transition: {
                                 title: string;
                                 description: string;
                             };
@@ -3757,61 +3913,64 @@ declare const translations: {
                     caption: string;
                     description: string;
                     new_device_info: string;
+                    tabs: {
+                        electricity: string;
+                        gas: string;
+                        water: string;
+                    };
                     delete_source: string;
                     delete_integration: string;
                     grid: {
                         title: string;
                         sub: string;
                         learn_more: string;
-                        grid_consumption: string;
-                        edit_consumption: string;
-                        delete_consumption: string;
-                        add_consumption: string;
-                        return_to_grid: string;
-                        edit_return: string;
-                        delete_return: string;
-                        add_return: string;
+                        grid_connections: string;
+                        add_connection: string;
+                        edit_connection: string;
+                        delete_connection: string;
                         grid_carbon_footprint: string;
                         remove_co2_signal: string;
                         add_co2_signal: string;
-                        grid_power: string;
-                        add_power: string;
-                        edit_power: string;
-                        delete_power: string;
-                        power_dialog: {
+                        dialog: {
                             header: string;
+                            energy: string;
+                            energy_from_grid: string;
+                            energy_from_helper: string;
+                            energy_to_grid: string;
+                            energy_to_helper: string;
+                            import_cost: string;
+                            import_cost_para: string;
+                            no_cost_tracking: string;
+                            cost_stat: string;
+                            cost_stat_label: string;
+                            cost_entity: string;
+                            cost_entity_label: string;
+                            cost_number: string;
+                            cost_number_label: string;
+                            export_compensation: string;
+                            export_compensation_para: string;
+                            no_compensation_tracking: string;
+                            compensation_stat: string;
+                            compensation_stat_label: string;
+                            compensation_entity: string;
+                            compensation_entity_label: string;
+                            compensation_number: string;
+                            compensation_number_label: string;
+                            power: string;
                             sensor_type: string;
+                            sensor_type_para: string;
+                            type_none: string;
                             type_standard: string;
                             type_inverted: string;
                             type_inverted_description: string;
                             type_two_sensors: string;
                             power_stat: string;
                             power_helper: string;
-                            power_from_grid: string;
-                            power_to_grid: string;
+                            power_from: string;
+                            power_to: string;
                         };
                         flow_dialog: {
-                            cost_entity_helper: string;
                             from: {
-                                header: string;
-                                paragraph: string;
-                                entity_para: string;
-                                energy_stat: string;
-                                cost_para: string;
-                                no_cost: string;
-                                cost_stat: string;
-                                cost_stat_input: string;
-                                cost_entity: string;
-                                cost_entity_input: string;
-                                cost_number: string;
-                                cost_number_input: string;
-                            };
-                            to: {
-                                header: string;
-                                paragraph: string;
-                                entity_para: string;
-                                energy_stat: string;
-                                cost_para: string;
                                 no_cost: string;
                                 cost_stat: string;
                                 cost_stat_input: string;
@@ -3862,13 +4021,14 @@ declare const translations: {
                             power: string;
                             power_helper: string;
                             sensor_type: string;
+                            sensor_type_para: string;
                             type_none: string;
                             type_standard: string;
                             type_inverted: string;
                             type_inverted_description: string;
                             type_two_sensors: string;
-                            power_discharge: string;
-                            power_charge: string;
+                            power_from: string;
+                            power_to: string;
                         };
                     };
                     gas: {
@@ -3896,6 +4056,8 @@ declare const translations: {
                             cost_number: string;
                             cost_number_input: string;
                             gas_usage: string;
+                            gas_flow_rate: string;
+                            flow_rate_para: string;
                         };
                     };
                     water: {
@@ -3920,6 +4082,8 @@ declare const translations: {
                             cost_number: string;
                             cost_number_input: string;
                             water_usage: string;
+                            water_flow_rate: string;
+                            flow_rate_para: string;
                         };
                     };
                     device_consumption: {
@@ -3951,6 +4115,7 @@ declare const translations: {
                             header: string;
                             display_name: string;
                             device_consumption_water: string;
+                            device_consumption_water_flow_rate: string;
                             selected_stat_intro: string;
                             included_in_device: string;
                             included_in_device_helper: string;
@@ -3976,11 +4141,7 @@ declare const translations: {
                         headers: {
                             icon: string;
                             name: string;
-                            entity_id: string;
                             type: string;
-                            editable: string;
-                            category: string;
-                            area: string;
                         };
                         create_helper: string;
                         no_helpers: string;
@@ -4031,6 +4192,15 @@ declare const translations: {
                                 update_units_confirm_text: string;
                                 update_units_confirm_update: string;
                             };
+                            home_name_card: {
+                                header: string;
+                            };
+                            location_card: {
+                                header: string;
+                            };
+                            regional_settings_card: {
+                                header: string;
+                            };
                         };
                     };
                 };
@@ -4049,6 +4219,7 @@ declare const translations: {
                     internal_url_https_error_description: string;
                     internal_url_automatic_description: string;
                     internal_url_placeholder: string;
+                    invalid_url: string;
                 };
                 hardware: {
                     caption: string;
@@ -4243,6 +4414,18 @@ declare const translations: {
                             remove_default: string;
                             set_default_confirm_title: string;
                             set_default_confirm_text: string;
+                            set_default_confirm_note: string;
+                            set_default_admin_only_title: string;
+                            set_default_admin_only_text: string;
+                        };
+                        panel_detail: {
+                            edit_panel: string;
+                            title: string;
+                            icon: string;
+                            require_admin: string;
+                            show_in_sidebar: string;
+                            reset_to_default: string;
+                            require_admin_helper: string;
                         };
                     };
                     resources: {
@@ -4360,6 +4543,11 @@ declare const translations: {
                                 name: string;
                             };
                         };
+                        current_device: {
+                            title: string;
+                            description: string;
+                            open_settings: string;
+                        };
                         cloud: {
                             title: string;
                             features: {
@@ -4437,10 +4625,6 @@ declare const translations: {
                         headers: {
                             icon: string;
                             name: string;
-                            entity_id: string;
-                            area: string;
-                            domain: string;
-                            assistants: string;
                             aliases: string;
                             remove: string;
                         };
@@ -4610,8 +4794,6 @@ declare const translations: {
                             trigger: string;
                             actions: string;
                             state: string;
-                            category: string;
-                            area: string;
                             icon: string;
                         };
                         bulk_action: string;
@@ -4632,6 +4814,7 @@ declare const translations: {
                         header: string;
                         create_empty: string;
                         create_empty_description: string;
+                        no_blueprints_match_search: string;
                         create_blueprint: string;
                         create_blueprint_description: string;
                         blueprint_source: {
@@ -4730,6 +4913,10 @@ declare const translations: {
                         home: string;
                         unassigned: string;
                         blocks: string;
+                        tabs: {
+                            target: string;
+                            type: string;
+                        };
                         show_more: string;
                         unassigned_entities: string;
                         unassigned_devices: string;
@@ -4753,6 +4940,7 @@ declare const translations: {
                             none_entities: string;
                             template: string;
                         };
+                        generic: string;
                         triggers: {
                             name: string;
                             header: string;
@@ -5610,6 +5798,8 @@ declare const translations: {
                         override_title: string;
                         override_description: string;
                         error_no_url: string;
+                        source_warning_title: string;
+                        source_warning_description: string;
                         unsupported_blueprint: string;
                         file_name: string;
                     };
@@ -5631,8 +5821,6 @@ declare const translations: {
                         headers: {
                             name: string;
                             state: string;
-                            category: string;
-                            area: string;
                             icon: string;
                         };
                         edit_category: string;
@@ -5651,6 +5839,7 @@ declare const translations: {
                         header: string;
                         create_empty: string;
                         create_empty_description: string;
+                        no_blueprints_match_search: string;
                         create_blueprint: string;
                         create_blueprint_description: string;
                         blueprint_source: {
@@ -5758,9 +5947,6 @@ declare const translations: {
                             state: string;
                             name: string;
                             last_activated: string;
-                            category: string;
-                            editable: string;
-                            area: string;
                             icon: string;
                         };
                         edit_category: string;
@@ -6154,8 +6340,6 @@ declare const translations: {
                         device: string;
                         manufacturer: string;
                         model: string;
-                        area: string;
-                        floor: string;
                         integration: string;
                         battery: string;
                         disabled_by: string;
@@ -6213,10 +6397,8 @@ declare const translations: {
                         headers: {
                             state_icon: string;
                             entity: string;
-                            entity_id: string;
                             device: string;
                             integration: string;
-                            area: string;
                             disabled_by: string;
                             status: string;
                             domain: string;
@@ -6661,13 +6843,27 @@ declare const translations: {
                 };
                 bluetooth: {
                     title: string;
-                    tabs: {
-                        overview: string;
+                    adapters_count: string;
+                    connections_count: string;
+                    advertisements_count: string;
+                    status_online: string;
+                    status_warning: string;
+                    status_offline: string;
+                    connections_summary: string;
+                    adapter_info_title: string;
+                    my_network: string;
+                    show_map: string;
+                    navigation: {
+                        adapter_info: string;
+                        adapter_info_description: string;
                         advertisements: string;
-                        visualization: string;
+                        advertisements_description: string;
                         connections: string;
+                        connections_description: string;
+                        visualization: string;
                     };
-                    settings_title: string;
+                    disabled_by_user: string;
+                    manage_integration: string;
                     option_flow: string;
                     no_connections: string;
                     active_connections: string;
@@ -6751,7 +6947,9 @@ declare const translations: {
                     thread_network_info: string;
                     thread_network_delete_credentials: string;
                     thread_network_send_credentials_ha: string;
+                    thread_network_send_credentials_ha_description: string;
                     thread_network_send_credentials_phone: string;
+                    thread_network_send_credentials_phone_description: string;
                     thread_network_make_preferred: string;
                 };
                 ssdp: {
@@ -6788,10 +6986,55 @@ declare const translations: {
                         status_offline: string;
                         devices: string;
                         devices_offline: string;
+                        device_count: string;
+                        entity_count: string;
+                        group_count: string;
+                        show_map: string;
                         update_button: string;
                         download_backup: string;
+                        download_backup_description: string;
+                        download_backup_action: string;
                         migrate_radio: string;
-                        network_settings_title: string;
+                        migrate_radio_description: string;
+                        migrate_radio_action: string;
+                        group_members_assume_state_label: string;
+                        enable_identify_on_join_label: string;
+                        default_light_transition_label: string;
+                        enhanced_light_transition_label: string;
+                        light_transitioning_flag_label: string;
+                        consider_unavailable_mains_label: string;
+                        consider_unavailable_battery_label: string;
+                        enable_mains_startup_polling_label: string;
+                        my_network_title: string;
+                        options_title: string;
+                        options_description: string;
+                        network_info_title: string;
+                        network_info_description: string;
+                        backup_restore_title: string;
+                        backup_restore_description_short: string;
+                        backup_restore_description: string;
+                        group_members_assume_state_description: string;
+                        enable_identify_on_join_description: string;
+                        channel_description: string;
+                        default_light_transition_description: string;
+                        enhanced_light_transition_description: string;
+                        light_transitioning_flag_description: string;
+                        consider_unavailable_mains_description: string;
+                        consider_unavailable_battery_description: string;
+                        enable_mains_startup_polling_description: string;
+                        channel_label: string;
+                        radio_type: string;
+                        serial_port: string;
+                        baudrate: string;
+                        custom_seconds: string;
+                        timeout_30_min: string;
+                        timeout_1_hour: string;
+                        timeout_2_hours: string;
+                        timeout_6_hours: string;
+                        timeout_12_hours: string;
+                        timeout_24_hours: string;
+                        timeout_default: string;
+                        timeout_custom: string;
                         change_channel: string;
                         channel_dialog: {
                             title: string;
@@ -6861,6 +7104,9 @@ declare const translations: {
                         create: string;
                         creating_group: string;
                         delete: string;
+                        endpoint: string;
+                        associated_entities: string;
+                        no_associated_entities: string;
                     };
                     visualization: {
                         header: string;
@@ -6901,6 +7147,7 @@ declare const translations: {
                         title: string;
                         new_channel: string;
                         change_channel: string;
+                        migration_warning_title: string;
                         migration_warning: string;
                         description: string;
                         smart_explanation: string;
@@ -6911,7 +7158,8 @@ declare const translations: {
                 };
                 zwave_js: {
                     navigation: {
-                        network: string;
+                        general: string;
+                        statistics: string;
                         logs: string;
                         visualization: string;
                     };
@@ -6929,29 +7177,57 @@ declare const translations: {
                         cancel_inclusion_exclusion: string;
                     };
                     dashboard: {
+                        network_card_title: string;
+                        show_map: string;
+                        options_title: string;
+                        options_description: string;
+                        network_info_title: string;
+                        network_info_description: string;
+                        visualization_description: string;
+                        statistics_description: string;
+                        logs_description: string;
+                        analytics_title: string;
+                        analytics_description: string;
+                        analytics_on: string;
+                        analytics_off: string;
                         driver_version: string;
                         server_version: string;
                         home_id: string;
                         server_url: string;
                         devices: string;
+                        device_count: string;
+                        entity_count: string;
                         provisioned_devices: string;
-                        not_ready: string;
+                        provisioned_count: string;
+                        not_included: string;
+                        devices_offline: string;
+                        rebuild_routes_description: string;
+                        rebuild_routes_action: string;
+                        remove_node_description: string;
+                        remove_node_action: string;
                         nvm_backup: {
                             title: string;
-                            description: string;
                             download_backup: string;
+                            download_backup_description: string;
+                            download_action: string;
                             restore_backup: string;
+                            restore_backup_description: string;
+                            restore_action: string;
                             backup_failed: string;
                             restore_complete: string;
                             restore_failed: string;
                             creating: string;
                             restoring: string;
                             migrate: string;
+                            migrate_description: string;
+                            migrate_action: string;
                         };
                         data_collection: {
                             title: string;
-                            description: string;
+                            info: string;
                             documentation_link: string;
+                            toggle_title: string;
+                            toggle_description: string;
                         };
                         statistics: {
                             title: string;
@@ -6998,7 +7274,6 @@ declare const translations: {
                         node_id: string;
                         node_ready: string;
                         device_config: string;
-                        installer_settings: string;
                         reinterview_device: string;
                         rebuild_routes: string;
                         update_firmware: string;
@@ -7148,9 +7423,10 @@ declare const translations: {
                         default: string;
                     };
                     network_status: {
-                        connected: string;
-                        connecting: string;
-                        unknown: string;
+                        online: string;
+                        offline: string;
+                        online_named: string;
+                        offline_named: string;
                     };
                     add_node: {
                         title: string;
@@ -7241,6 +7517,8 @@ declare const translations: {
                         };
                     };
                     provisioned: {
+                        caption: string;
+                        name: string;
                         dsk: string;
                         security_classes: string;
                         unprovision: string;
@@ -7248,6 +7526,7 @@ declare const translations: {
                         not_included: string;
                         confirm_unprovision_title: string;
                         confirm_unprovision_text: string;
+                        confirm_unprovision_text_included: string;
                         active: string;
                     };
                     security_classes: {
@@ -7365,6 +7644,7 @@ declare const translations: {
                         };
                     };
                     logs: {
+                        caption: string;
                         title: string;
                         log_level: string;
                         subscribed_to_logs: string;
@@ -7399,84 +7679,6 @@ declare const translations: {
                         "3": string;
                         "4": string;
                     };
-                    node_installer: {
-                        header: string;
-                        introduction: string;
-                        endpoint: string;
-                        no_settings: string;
-                        command_class: string;
-                        capability_controls: {
-                            thermostat_setback: {
-                                title: string;
-                                setback_state_label: string;
-                                setback_state_helper: string;
-                                setback_special_state: {
-                                    label: string;
-                                    frost_protection: string;
-                                    energy_saving: string;
-                                    unused: string;
-                                };
-                                setback_type: {
-                                    label: string;
-                                    none: string;
-                                    temporary: string;
-                                    permanent: string;
-                                };
-                                get_setback_failed: string;
-                                save_setback_failed: string;
-                            };
-                            multilevel_switch: {
-                                title: string;
-                                direction: string;
-                                up: string;
-                                down: string;
-                                ignore_start_level: string;
-                                start_level: string;
-                                start_transition: string;
-                                stop_transition: string;
-                                control_failed: string;
-                            };
-                            door_lock: {
-                                title: string;
-                                twist_assist: string;
-                                block_to_block: string;
-                                auto_relock_time: string;
-                                hold_release_time: string;
-                                operation_type: string;
-                                operation_types: {
-                                    "1": string;
-                                    "2": string;
-                                };
-                                mode: string;
-                                modes: {
-                                    "0": string;
-                                    "1": string;
-                                    "16": string;
-                                    "17": string;
-                                    "32": string;
-                                    "33": string;
-                                    "254": string;
-                                    "255": string;
-                                };
-                                lock_timeout: string;
-                                lock_timeout_helper: string;
-                            };
-                            color_switch: {
-                                color_component: string;
-                                colors: {
-                                    "0": string;
-                                    "1": string;
-                                    "2": string;
-                                    "3": string;
-                                    "4": string;
-                                    "5": string;
-                                    "6": string;
-                                    "7": string;
-                                    "8": string;
-                                };
-                            };
-                        };
-                    };
                     picker: {
                         title: string;
                         no_entries: string;
@@ -7485,19 +7687,31 @@ declare const translations: {
                 matter: {
                     panel: {
                         thread_panel: string;
+                        thread_panel_description: string;
                         add_device: string;
-                        status_title: string;
                         status_online: string;
                         status_offline: string;
+                        my_network_title: string;
                         devices: string;
-                        developer_tools_title: string;
-                        developer_tools_description: string;
-                        developer_tools_info: string;
+                        device_count: string;
+                        entity_count: string;
+                        options_title: string;
+                        options_description: string;
                         mobile_app_commisioning: string;
+                        mobile_app_commisioning_description: string;
+                        mobile_app_commisioning_action: string;
                         commission_device: string;
+                        commission_device_description: string;
+                        commission_device_action: string;
                         add_shared_device: string;
+                        add_shared_device_description: string;
+                        add_shared_device_action: string;
                         set_wifi_credentials: string;
+                        set_wifi_credentials_description: string;
+                        set_wifi_credentials_action: string;
                         set_thread_credentials: string;
+                        set_thread_credentials_description: string;
+                        set_thread_credentials_action: string;
                         prompts: {
                             network_name: {
                                 title: string;
@@ -7554,6 +7768,7 @@ declare const translations: {
                         ping_device: string;
                         open_commissioning_window: string;
                         manage_fabrics: string;
+                        manage_lock: string;
                         view_thread_network: string;
                     };
                     manage_fabrics: {
@@ -7594,6 +7809,102 @@ declare const translations: {
                         success: string;
                         scan_code: string;
                         copy_code: string;
+                    };
+                    lock: {
+                        manage: string;
+                        dialog_title: string;
+                        users: {
+                            title: string;
+                            add: string;
+                            edit: string;
+                            delete: string;
+                            name: string;
+                            status: string;
+                            type: string;
+                            credential_rule: string;
+                            credentials: string;
+                            no_users: string;
+                            user_status: {
+                                available: string;
+                                occupied_enabled: string;
+                                occupied_disabled: string;
+                            };
+                            user_type: {
+                                unrestricted_user: string;
+                                year_day_schedule_user: string;
+                                week_day_schedule_user: string;
+                                programming_user: string;
+                                non_access_user: string;
+                                forced_user: string;
+                                disposable_user: string;
+                                expiring_user: string;
+                                schedule_restricted_user: string;
+                                remote_only_user: string;
+                            };
+                            credential_rules: {
+                                single: string;
+                                dual: string;
+                                tri: string;
+                            };
+                            user_types: {
+                                unrestricted_user: {
+                                    label: string;
+                                    description: string;
+                                };
+                                disposable_user: {
+                                    label: string;
+                                    description: string;
+                                };
+                            };
+                        };
+                        credentials: {
+                            add: string;
+                            edit: string;
+                            delete: string;
+                            type: string;
+                            data: string;
+                            pin: string;
+                            types: {
+                                pin: string;
+                                rfid: string;
+                                fingerprint: string;
+                                finger_vein: string;
+                                face: string;
+                                aliro_credential: string;
+                                aliro_evictable: string;
+                                aliro_non_evictable: string;
+                            };
+                        };
+                        events: {
+                            title: string;
+                            types: {
+                                lock: string;
+                                unlock: string;
+                                lock_jammed: string;
+                                lock_failure: string;
+                                invalid_pin: string;
+                            };
+                            sources: {
+                                manual: string;
+                                pin: string;
+                                remote: string;
+                                auto: string;
+                            };
+                            no_events: string;
+                        };
+                        errors: {
+                            load_failed: string;
+                            save_failed: string;
+                            not_supported: string;
+                            user_not_found: string;
+                            name_required: string;
+                            pin_required: string;
+                            pin_length: string;
+                            pin_digits_only: string;
+                            pin_placeholder: string;
+                        };
+                        confirm_delete_user: string;
+                        confirm_delete_credential: string;
                     };
                 };
                 tips: {
@@ -7645,6 +7956,10 @@ declare const translations: {
                     learn_more: string;
                     intro: string;
                     download_device_info: string;
+                };
+                ai_tasks: {
+                    caption: string;
+                    description: string;
                 };
                 labs: {
                     caption: string;
@@ -7751,8 +8066,8 @@ declare const translations: {
                         used: string;
                         free: string;
                         system: string;
-                        apps_data: string;
-                        apps_config: string;
+                        addons_data: string;
+                        addons_config: string;
                         media: string;
                         share: string;
                         backup: string;
@@ -7905,7 +8220,7 @@ declare const translations: {
                         areas: string;
                         other_areas: string;
                         devices: string;
-                        unamed_device: string;
+                        unnamed_device: string;
                         others: string;
                         scenes: string;
                         automations: string;
@@ -7924,6 +8239,8 @@ declare const translations: {
                     light: {
                         lights: string;
                         other_lights: string;
+                        on: string;
+                        off: string;
                     };
                     security: {
                         devices: string;
@@ -8065,7 +8382,6 @@ declare const translations: {
                             water: string;
                             solar: string;
                             low_carbon: string;
-                            home: string;
                             battery: string;
                             go_to_energy_dashboard: string;
                         };
@@ -8097,7 +8413,11 @@ declare const translations: {
                             info: string;
                             compare_previous_year: string;
                             compare_previous_period: string;
+                            compare_preview: string;
                         };
+                        power_total_title: string;
+                        water_total_title: string;
+                        gas_total_title: string;
                     };
                     distribution: {
                         no_entities: string;
@@ -8185,7 +8505,6 @@ declare const translations: {
                         unsaved_changes: string;
                         saved: string;
                         reload: string;
-                        lovelace_changed: string;
                         confirm_reset_config_title: string;
                         confirm_reset_config_text: string;
                         confirm_unsaved_changes: string;
@@ -8320,6 +8639,16 @@ declare const translations: {
                             };
                         };
                     };
+                    edit_view_footer: {
+                        header: string;
+                        add: string;
+                        edit_ui: string;
+                        edit_yaml: string;
+                        saving_failed: string;
+                        settings: {
+                            max_width: string;
+                        };
+                    };
                     edit_badges: {
                         view_no_badges: string;
                     };
@@ -8360,8 +8689,11 @@ declare const translations: {
                         layout: {
                             full_width: string;
                             full_width_helper: string;
+                            auto_height: string;
+                            auto_height_helper: string;
                             precise_mode: string;
                             precise_mode_helper: string;
+                            no_grid_support: string;
                         };
                     };
                     edit_badge: {
@@ -8395,8 +8727,8 @@ declare const translations: {
                     };
                     move_section: {
                         header: string;
-                        strategy_error_title: string;
-                        strategy_error_text_strategy: string;
+                        error_title: string;
+                        error_text: string;
                         success: string;
                         error: string;
                     };
@@ -8451,6 +8783,12 @@ declare const translations: {
                         settings: {
                             column_span: string;
                             column_span_helper: string;
+                            background: string;
+                            background_enabled: string;
+                            background_enabled_helper: string;
+                            background_color: string;
+                            background_color_default: string;
+                            background_opacity: string;
                         };
                         visibility: {
                             explanation: string;
@@ -8626,6 +8964,7 @@ declare const translations: {
                                 brightness: string;
                                 "last-updated": string;
                                 state: string;
+                                area: string;
                             };
                             entity_row: {
                                 divider: string;
@@ -8703,6 +9042,122 @@ declare const translations: {
                             max_y_axis: string;
                             fit_y_data: string;
                         };
+                        "energy-date-selection": {
+                            name: string;
+                            description: string;
+                            disable_compare: string;
+                            vertical_opening_direction: string;
+                            vertical_opening_directions: {
+                                auto: string;
+                                up: string;
+                                down: string;
+                            };
+                            opening_direction: string;
+                            opening_directions: {
+                                auto: string;
+                                right: string;
+                                left: string;
+                                center: string;
+                            };
+                        };
+                        "energy-distribution": {
+                            name: string;
+                            description: string;
+                            link_dashboard: string;
+                        };
+                        "energy-usage-graph": {
+                            name: string;
+                            description: string;
+                        };
+                        "energy-solar-graph": {
+                            name: string;
+                            description: string;
+                        };
+                        "energy-gas-graph": {
+                            name: string;
+                            description: string;
+                        };
+                        "energy-water-graph": {
+                            name: string;
+                            description: string;
+                        };
+                        "power-sources-graph": {
+                            name: string;
+                            description: string;
+                            show_legend: string;
+                        };
+                        "energy-devices-graph": {
+                            name: string;
+                            description: string;
+                            max_devices: string;
+                            hide_compound_stats: string;
+                            modes: string;
+                            mode_options: {
+                                bar: string;
+                                pie: string;
+                            };
+                        };
+                        "energy-sources-table": {
+                            name: string;
+                            description: string;
+                            show_only_totals: string;
+                            types: string;
+                            type_options: {
+                                grid: string;
+                                solar: string;
+                                battery: string;
+                                gas: string;
+                                water: string;
+                            };
+                        };
+                        "energy-compare": {
+                            name: string;
+                            description: string;
+                        };
+                        "energy-devices-detail-graph": {
+                            name: string;
+                            description: string;
+                        };
+                        "energy-sankey": {
+                            name: string;
+                            description: string;
+                            group_by_floor: string;
+                            group_by_area: string;
+                            layout: string;
+                            layout_directions: {
+                                auto: string;
+                                vertical: string;
+                                horizontal: string;
+                            };
+                        };
+                        "power-sankey": {
+                            name: string;
+                            description: string;
+                        };
+                        "water-sankey": {
+                            name: string;
+                            description: string;
+                        };
+                        "water-flow-sankey": {
+                            name: string;
+                            description: string;
+                        };
+                        "energy-solar-consumed-gauge": {
+                            name: string;
+                            description: string;
+                        };
+                        "energy-self-sufficiency-gauge": {
+                            name: string;
+                            description: string;
+                        };
+                        "energy-grid-neutrality-gauge": {
+                            name: string;
+                            description: string;
+                        };
+                        "energy-carbon-consumed-gauge": {
+                            name: string;
+                            description: string;
+                        };
                         "statistics-graph": {
                             name: string;
                             description: string;
@@ -8723,15 +9178,18 @@ declare const translations: {
                                 bar: string;
                             };
                             periods: {
+                                auto: string;
+                                "5minute": string;
                                 hour: string;
                                 day: string;
-                                month: string;
                                 week: string;
-                                "5minute": string;
+                                month: string;
+                                year: string;
                             };
                             pick_statistic: string;
                             picked_statistic: string;
                             hide_legend: string;
+                            expand_legend: string;
                             logarithmic_scale: string;
                             min_y_axis: string;
                             max_y_axis: string;
@@ -8795,6 +9253,9 @@ declare const translations: {
                                 auto: string;
                                 live: string;
                             };
+                            energy_date_selection: string;
+                            collection_key: string;
+                            collection_key_description: string;
                             double_tap_action: string;
                             entities: string;
                             entity: string;
@@ -8808,8 +9269,10 @@ declare const translations: {
                             hours_to_show: string;
                             days_to_show: string;
                             icon: string;
+                            color: string;
                             icon_height: string;
                             image: string;
+                            label_mode: string;
                             maximum: string;
                             manual: string;
                             manual_description: string;
@@ -8833,7 +9296,8 @@ declare const translations: {
                             search: string;
                             state_color: string;
                             suggested_cards: string;
-                            other_cards: string;
+                            core_cards: string;
+                            energy_cards: string;
                             custom_cards: string;
                             round_temperature: string;
                             features: string;
@@ -8876,6 +9340,8 @@ declare const translations: {
                             name: string;
                             geo_location_sources: string;
                             no_geo_location_sources: string;
+                            focus: string;
+                            focus_helper: string;
                             appearance: string;
                             theme_mode: string;
                             theme_modes: {
@@ -8884,7 +9350,18 @@ declare const translations: {
                                 dark: string;
                             };
                             default_zoom: string;
+                            auto_fit: string;
+                            fit_zones: string;
+                            cluster: string;
+                            show_all: string;
+                            show_all_helper: string;
                             source: string;
+                            label_modes: {
+                                name: string;
+                                icon: string;
+                                state: string;
+                                attribute: string;
+                            };
                             description: string;
                         };
                         markdown: {
@@ -8895,6 +9372,7 @@ declare const translations: {
                                 card: string;
                                 "text-only": string;
                             };
+                            actions_warning: string;
                             description: string;
                         };
                         clock: {
@@ -9169,8 +9647,16 @@ declare const translations: {
                             "cover-position": {
                                 label: string;
                             };
+                            "cover-position-favorite": {
+                                label: string;
+                                description: string;
+                            };
                             "cover-tilt": {
                                 label: string;
+                            };
+                            "cover-tilt-favorite": {
+                                label: string;
+                                description: string;
                             };
                             "cover-tilt-position": {
                                 label: string;
@@ -9201,6 +9687,9 @@ declare const translations: {
                                 customize_modes: string;
                             };
                             "light-brightness": {
+                                label: string;
+                            };
+                            "light-color-favorites": {
                                 label: string;
                             };
                             "light-color-temp": {
@@ -9235,6 +9724,10 @@ declare const translations: {
                             };
                             "valve-open-close": {
                                 label: string;
+                            };
+                            "valve-position-favorite": {
+                                label: string;
+                                description: string;
                             };
                             "valve-position": {
                                 label: string;
@@ -9495,7 +9988,7 @@ declare const translations: {
                     entity_unavailable: string;
                     starting: string;
                 };
-                changed_toast: {
+                externally_updated_toast: {
                     message: string;
                 };
                 components: {
@@ -9508,6 +10001,7 @@ declare const translations: {
                         previous: string;
                         next: string;
                         compare: string;
+                        download_data: string;
                     };
                 };
                 reload_lovelace: string;
@@ -9520,6 +10014,11 @@ declare const translations: {
             map: {
                 edit_zones: string;
             };
+            notfound: {
+                no_access_title: string;
+                no_access_content: string;
+                no_access_go_to_profile: string;
+            };
             profile: {
                 tabs: {
                     general: string;
@@ -9527,8 +10026,10 @@ declare const translations: {
                 };
                 current_user: string;
                 is_owner: string;
-                user_settings_header: string;
-                user_settings_detail: string;
+                user_preferences_header: string;
+                user_preferences_detail: string;
+                localization_header: string;
+                localization_detail: string;
                 mobile_app_settings: string;
                 browser_settings: string;
                 client_settings_detail: string;
@@ -9732,8 +10233,10 @@ declare const translations: {
                     confirm_delete_text: string;
                     delete_failed: string;
                     create: string;
+                    created_title: string;
                     create_failed: string;
                     name: string;
+                    name_exists: string;
                     prompt_name: string;
                     prompt_copy_token: string;
                     empty_state: string;
@@ -10146,6 +10649,7 @@ declare const translations: {
                 };
             };
             energy: {
+                error_loading_preferences: string;
                 title: {
                     overview: string;
                     electricity: string;
@@ -10153,7 +10657,6 @@ declare const translations: {
                     water: string;
                     now: string;
                 };
-                download_data: string;
                 configure: string;
                 setup: {
                     next: string;
@@ -10181,6 +10684,7 @@ declare const translations: {
                     water_sankey_title: string;
                     energy_top_consumers_title: string;
                     power_sankey_title: string;
+                    water_flow_sankey_title: string;
                     power_sources_graph_title: string;
                 };
             };

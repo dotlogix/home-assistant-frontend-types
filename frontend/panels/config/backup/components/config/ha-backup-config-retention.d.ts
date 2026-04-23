@@ -1,9 +1,8 @@
 import { LitElement, nothing } from "lit";
 import "../../../../../components/ha-expansion-panel";
 import "../../../../../components/ha-md-list-item";
-import "../../../../../components/ha-md-select";
-import "../../../../../components/ha-md-select-option";
-import "../../../../../components/ha-md-textfield";
+import "../../../../../components/ha-select";
+import "../../../../../components/input/ha-input";
 import type { BackupConfig, Retention } from "../../../../../data/backup";
 import type { HomeAssistant } from "../../../../../types";
 export type BackupConfigSchedule = Pick<BackupConfig, "schedule" | "retention">;
@@ -30,7 +29,7 @@ declare class HaBackupConfigRetention extends LitElement {
     private _configLoaded;
     private presetOptions;
     willUpdate(): void;
-    protected render(): import("lit-html").TemplateResult<1> | typeof nothing;
+    protected render(): typeof nothing | import("lit-html").TemplateResult<1>;
     private _retentionPresetChanged;
     private _retentionValueChanged;
     private _retentionTypeChanged;

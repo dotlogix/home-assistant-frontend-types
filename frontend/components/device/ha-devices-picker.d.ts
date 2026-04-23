@@ -25,7 +25,7 @@ declare class HaDevicesPicker extends LitElement {
     pickDeviceLabel?: string;
     deviceFilter?: HaDevicePickerDeviceFilterFunc;
     entityFilter?: HaDevicePickerEntityFilterFunc;
-    protected render(): import("lit-html").TemplateResult<1> | typeof nothing;
+    protected render(): typeof nothing | import("lit-html").TemplateResult<1>;
     private get _currentDevices();
     private _updateDevices;
     private _deviceChanged;

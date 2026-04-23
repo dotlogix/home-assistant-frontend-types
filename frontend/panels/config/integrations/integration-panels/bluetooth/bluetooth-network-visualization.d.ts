@@ -1,7 +1,8 @@
 import type { CSSResultGroup } from "lit";
 import { LitElement } from "lit";
 import "../../../../../components/chart/ha-network-graph";
-import "../../../../../layouts/hass-tabs-subpage";
+import "../../../../../components/input/ha-input-search";
+import "../../../../../layouts/hass-subpage";
 import type { HomeAssistant, Route } from "../../../../../types";
 export declare class BluetoothNetworkVisualization extends LitElement {
     hass: HomeAssistant;
@@ -11,12 +12,16 @@ export declare class BluetoothNetworkVisualization extends LitElement {
     private _data;
     private _scanners;
     private _sourceDevices;
+    private _searchFilter;
     private _unsub_advertisements?;
     private _unsub_scanners?;
     private _throttledUpdateData;
     connectedCallback(): void;
     disconnectedCallback(): void;
     protected render(): import("lit-html").TemplateResult<1>;
+    private _renderInputSearch;
+    private _getSearchableAttributes;
+    private _handleSearchChange;
     private _getRssiColorVar;
     private _formatNetworkData;
     private _getBluetoothDeviceName;

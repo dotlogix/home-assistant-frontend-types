@@ -22,10 +22,12 @@ export interface HaMapPaths {
     gradualOpacity?: number;
     fullDatetime?: boolean;
 }
+export declare const MAP_CARD_MARKER_LABEL_MODES: readonly ["name", "state", "attribute", "icon"];
+export type MapCardMarkerLabelMode = (typeof MAP_CARD_MARKER_LABEL_MODES)[number];
 export interface HaMapEntity {
     entity_id: string;
     color: string;
-    label_mode?: "name" | "state" | "attribute" | "icon";
+    label_mode?: MapCardMarkerLabelMode;
     attribute?: string;
     unit?: string;
     name?: string;

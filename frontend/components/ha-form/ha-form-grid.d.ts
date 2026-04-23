@@ -1,8 +1,8 @@
-import "./ha-form";
 import type { PropertyValues, TemplateResult } from "lit";
 import { LitElement } from "lit";
-import type { HaFormGridSchema, HaFormDataContainer, HaFormElement, HaFormSchema } from "./types";
 import type { HomeAssistant } from "../../types";
+import "./ha-form";
+import type { HaFormDataContainer, HaFormElement, HaFormGridSchema, HaFormSchema } from "./types";
 export declare class HaFormGrid extends LitElement implements HaFormElement {
     hass: HomeAssistant;
     data: HaFormDataContainer;
@@ -11,7 +11,16 @@ export declare class HaFormGrid extends LitElement implements HaFormElement {
     computeLabel?: (schema: HaFormSchema, data?: HaFormDataContainer) => string;
     computeHelper?: (schema: HaFormSchema) => string;
     localizeValue?: (key: string) => string;
-    focus(): Promise<void>;
+    private _forms?;
+    static shadowRootOptions: {
+        delegatesFocus: boolean;
+        clonable?: boolean;
+        customElementRegistry?: CustomElementRegistry;
+        mode: ShadowRootMode;
+        serializable?: boolean;
+        slotAssignment?: SlotAssignmentMode;
+    };
+    reportValidity(): boolean;
     protected updated(changedProps: PropertyValues): void;
     protected render(): TemplateResult;
     static styles: import("lit").CSSResult;

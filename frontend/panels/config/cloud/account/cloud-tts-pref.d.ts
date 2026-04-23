@@ -1,8 +1,7 @@
 import { LitElement, nothing } from "lit";
-import "../../../../components/ha-card";
 import "../../../../components/ha-button";
+import "../../../../components/ha-card";
 import "../../../../components/ha-language-picker";
-import "../../../../components/ha-list-item";
 import "../../../../components/ha-select";
 import "../../../../components/ha-svg-icon";
 import "../../../../components/ha-switch";
@@ -19,8 +18,7 @@ export declare class CloudTTSPref extends LitElement {
     narrow: boolean;
     private savingPreferences;
     private ttsInfo?;
-    protected render(): import("lit-html").TemplateResult<1> | typeof nothing;
-    protected updated(changedProps: any): void;
+    protected render(): typeof nothing | import("lit-html").TemplateResult<1>;
     protected willUpdate(changedProps: any): void;
     private getLanguages;
     private getSupportedVoices;

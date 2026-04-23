@@ -10,7 +10,7 @@ import "../../components/ha-spinner";
 import "../../components/ha-svg-icon";
 import "../../components/ha-tip";
 import type { HomeAssistant } from "../../types";
-import type { QuickBarParams } from "./show-dialog-quick-bar";
+import { type QuickBarParams } from "./show-dialog-quick-bar";
 export declare class QuickBar extends LitElement {
     hass: HomeAssistant;
     private _open;
@@ -18,6 +18,7 @@ export declare class QuickBar extends LitElement {
     private _showHint;
     private _selectedSection?;
     private _opened;
+    private _relatedResult?;
     private _comboBox?;
     private get _showEntityId();
     private _configEntryLookup;
@@ -32,13 +33,13 @@ export declare class QuickBar extends LitElement {
     private _showTriggered;
     closeDialog(): boolean;
     private _dialogClosed;
-    private _dialogCloseStarted;
-    protected render(): import("lit-html").TemplateResult<1> | typeof nothing;
+    protected render(): typeof nothing | import("lit-html").TemplateResult<1>;
     private _renderRow;
     private _getRowSpinner;
     private _sectionTitleFunction;
     private _getItems;
     private _getItemsMemoized;
+    private _getRelatedIdSets;
     private _getEntitiesMemoized;
     private _getDevicesMemoized;
     private _getAreasMemoized;
@@ -48,6 +49,8 @@ export declare class QuickBar extends LitElement {
     private _fuseIndexes;
     private _filterGroup;
     private _sortBySortingLabel;
+    private _sortRelatedByLabel;
+    private _sortRelatedFirst;
     private _navigate;
     private _handleItemSelected;
     private _openShortcutDialog;

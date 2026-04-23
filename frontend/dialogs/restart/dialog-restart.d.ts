@@ -21,7 +21,7 @@ declare class DialogRestart extends LitElement {
     private _loadBackupState;
     private _loadHostInfo;
     private _dialogClosed;
-    protected render(): import("lit-html").TemplateResult<1> | typeof nothing;
+    protected render(): typeof nothing | import("lit-html").TemplateResult<1>;
     private _reload;
     private _getBackupProgressMessage;
     private _restartAction;

@@ -1,4 +1,4 @@
-import type { CSSResultGroup, TemplateResult } from "lit";
+import type { CSSResultGroup, PropertyValues, TemplateResult } from "lit";
 import { LitElement } from "lit";
 import "../../../../../components/ha-fab";
 import "../../../../../components/ha-icon-button";
@@ -11,6 +11,8 @@ export declare class BluetoothConnectionMonitorPanel extends LitElement {
     route: Route;
     narrow: boolean;
     isWide: boolean;
+    private _filter?;
+    private _tabs;
     private _data;
     private _scanners;
     private _addressNames;
@@ -24,6 +26,7 @@ export declare class BluetoothConnectionMonitorPanel extends LitElement {
     connectedCallback(): void;
     private _subscribeBluetoothConnectionAllocations;
     disconnectedCallback(): void;
+    protected willUpdate(changedProps: PropertyValues): void;
     private _columns;
     private _dataWithNamedSourceAndIds;
     protected render(): TemplateResult;

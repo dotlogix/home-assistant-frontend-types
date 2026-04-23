@@ -17,6 +17,7 @@ declare class HuiMapCard extends LitElement implements LovelaceCard {
     private _map?;
     private _configEntities?;
     private _mapEntities;
+    private _filteredMapEntities;
     private _colorDict;
     private _colorIndex;
     private _error?;
@@ -28,7 +29,7 @@ declare class HuiMapCard extends LitElement implements LovelaceCard {
     static getConfigElement(): Promise<import("../editor/config-elements/hui-map-card-editor").HuiMapCardEditor>;
     static getStubConfig(hass: HomeAssistant, entities: string[], entitiesFallback: string[]): MapCardConfig;
     protected firstUpdated(): void;
-    protected render(): import("lit-html").TemplateResult<1> | typeof nothing;
+    protected render(): typeof nothing | import("lit-html").TemplateResult<1>;
     protected shouldUpdate(changedProps: PropertyValues): boolean;
     protected willUpdate(changedProps: PropertyValues): void;
     connectedCallback(): void;
@@ -40,6 +41,7 @@ declare class HuiMapCard extends LitElement implements LovelaceCard {
     private _resetFocus;
     private _toggleClusterMarkers;
     private _getColor;
+    private _resolveColor;
     private _getSourceEntities;
     private _getMapEntities;
     private _getHistoryPaths;

@@ -2,7 +2,7 @@ import { LitElement, nothing } from "lit";
 import "../../../components/ha-alert";
 import "../../../components/ha-card";
 import "../../../components/ha-button";
-import "../../../components/ha-settings-row";
+import "../../../components/ha-md-list-item";
 import "../../../components/ha-switch";
 import type { CloudStatusLoggedIn } from "../../../data/cloud";
 import type { ExposeEntitySettings } from "../../../data/expose";
@@ -15,7 +15,7 @@ export declare class CloudAlexaPref extends LitElement {
     private _exposeNew?;
     private _exposedEntitiesCount;
     protected willUpdate(): void;
-    protected render(): import("lit-html").TemplateResult<1> | typeof nothing;
+    protected render(): typeof nothing | import("lit-html").TemplateResult<1>;
     private _exposeNewToggleChanged;
     private _enabledToggleChanged;
     private _reportToggleChanged;

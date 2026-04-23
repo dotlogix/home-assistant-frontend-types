@@ -13,13 +13,12 @@ declare class HuiClimateSwingModesCardFeature extends LitElement implements Love
     context?: LovelaceCardFeatureContext;
     private _config?;
     _currentSwingMode?: string;
-    private _haSelect?;
+    private _renderSwingModeIcon;
     private get _stateObj();
     static getStubConfig(): ClimateSwingModesCardFeatureConfig;
     static getConfigElement(): Promise<LovelaceCardFeatureEditor>;
     setConfig(config: ClimateSwingModesCardFeatureConfig): void;
     protected willUpdate(changedProp: PropertyValues): void;
-    protected updated(changedProps: PropertyValues): void;
     private _valueChanged;
     private _setMode;
     protected render(): TemplateResult | null;

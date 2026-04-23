@@ -8,7 +8,15 @@ export declare class HaFormTimePeriod extends LitElement implements HaFormElemen
     label: string;
     disabled: boolean;
     private _input?;
-    focus(): void;
+    static shadowRootOptions: {
+        delegatesFocus: boolean;
+        clonable?: boolean;
+        customElementRegistry?: CustomElementRegistry;
+        mode: ShadowRootMode;
+        serializable?: boolean;
+        slotAssignment?: SlotAssignmentMode;
+    };
+    reportValidity(): boolean;
     protected render(): TemplateResult;
 }
 declare global {

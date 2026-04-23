@@ -18,7 +18,6 @@ export declare class HaLanguagePicker extends LitElement {
     nativeName: boolean;
     buttonStyle: boolean;
     noSort: boolean;
-    inlineArrow: boolean;
     _defaultLanguages: string[];
     genericPicker: HaGenericPicker;
     protected firstUpdated(changedProps: PropertyValues): void;

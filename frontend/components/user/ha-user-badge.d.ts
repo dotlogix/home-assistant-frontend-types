@@ -8,7 +8,7 @@ declare class UserBadge extends LitElement {
     private _personPicture?;
     private _personEntityId?;
     willUpdate(changedProps: PropertyValues<this>): void;
-    protected render(): import("lit-html").TemplateResult<1> | typeof nothing;
+    protected render(): typeof nothing | import("lit-html").TemplateResult<1>;
     private _getPersonPicture;
     static styles: import("lit").CSSResult;
 }

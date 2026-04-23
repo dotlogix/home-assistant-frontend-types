@@ -6,13 +6,13 @@ import "../../../components/ha-alert";
 import "../../../components/ha-aliases-editor";
 import "../../../components/ha-area-picker";
 import "../../../components/ha-button";
+import "../../../components/ha-dialog";
 import "../../../components/ha-dialog-footer";
 import "../../../components/ha-floor-icon";
 import "../../../components/ha-icon-picker";
 import "../../../components/ha-settings-row";
 import "../../../components/ha-svg-icon";
-import "../../../components/ha-textfield";
-import "../../../components/ha-wa-dialog";
+import "../../../components/input/ha-input";
 import type { HomeAssistant } from "../../../types";
 import type { FloorRegistryDetailDialogParams } from "./show-dialog-floor-registry-detail";
 declare class DialogFloorDetail extends LitElement {
@@ -31,7 +31,7 @@ declare class DialogFloorDetail extends LitElement {
     closeDialog(): void;
     private _dialogClosed;
     private _floorAreas;
-    protected render(): import("lit-html").TemplateResult<1> | typeof nothing;
+    protected render(): typeof nothing | import("lit-html").TemplateResult<1>;
     private _openArea;
     private _removeArea;
     private _addArea;

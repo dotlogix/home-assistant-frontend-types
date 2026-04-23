@@ -3,7 +3,6 @@ import "../../../../components/ha-form/ha-form";
 import type { HomeAssistant } from "../../../../types";
 import type { EntityBadgeConfig } from "../../badges/types";
 import type { LovelaceBadgeEditor } from "../../types";
-import "../hui-sub-element-editor";
 import "./hui-card-features-editor";
 export declare class HuiEntityBadgeEditor extends LitElement implements LovelaceBadgeEditor {
     hass?: HomeAssistant;
@@ -11,7 +10,7 @@ export declare class HuiEntityBadgeEditor extends LitElement implements Lovelace
     setConfig(config: EntityBadgeConfig): void;
     private _schema;
     _displayedElements: import("memoize-one").MemoizedFn<(config: EntityBadgeConfig) => string[]>;
-    protected render(): import("lit-html").TemplateResult<1> | typeof nothing;
+    protected render(): typeof nothing | import("lit-html").TemplateResult<1>;
     private _valueChanged;
     private _computeLabelCallback;
     private _computeHelperCallback;

@@ -1,7 +1,7 @@
 import type { CSSResultGroup, TemplateResult } from "lit";
 import { LitElement } from "lit";
-import "../../../../components/ha-card";
 import "../../../../components/ha-button";
+import "../../../../components/ha-card";
 import "../../../../components/ha-icon-button";
 import "../../../../components/ha-svg-icon";
 import type { EnergyPreferences, EnergyPreferencesValidation } from "../../../../data/energy";
@@ -19,16 +19,10 @@ export declare class EnergyGridSettings extends LitElement {
     private _fetchCO2SignalConfigEntries;
     private _addCO2Sensor;
     private _removeCO2Sensor;
-    private _addFromSource;
-    private _addToSource;
-    private _editFromSource;
-    private _editToSource;
-    private _deleteFromSource;
-    private _deleteToSource;
-    private _addPowerSource;
-    private _editPowerSource;
-    private _deletePowerSource;
-    private _removeEmptySources;
+    private _getGridSources;
+    private _addSource;
+    private _editSource;
+    private _deleteSource;
     private _savePreferences;
     static get styles(): CSSResultGroup;
 }

@@ -13,7 +13,7 @@ export declare class HuiButtonHeadingBadge extends LitElement implements Lovelac
     setConfig(config: ButtonHeadingBadgeConfig): void;
     get hasAction(): boolean;
     private _handleAction;
-    protected render(): import("lit-html").TemplateResult<1> | typeof nothing;
+    protected render(): typeof nothing | import("lit-html").TemplateResult<1>;
     static styles: import("lit").CSSResult;
 }
 declare global {

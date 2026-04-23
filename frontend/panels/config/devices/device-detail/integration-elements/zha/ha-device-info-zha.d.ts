@@ -8,7 +8,7 @@ export declare class HaDeviceInfoZha extends LitElement {
     device: DeviceRegistryEntry;
     private _zhaDevice?;
     protected updated(changedProperties: PropertyValues): void;
-    protected render(): import("lit-html").TemplateResult<1> | typeof nothing;
+    protected render(): typeof nothing | import("lit-html").TemplateResult<1>;
     static get styles(): CSSResultGroup;
 }
 declare global {

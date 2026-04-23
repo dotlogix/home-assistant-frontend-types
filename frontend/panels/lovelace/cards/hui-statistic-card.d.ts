@@ -7,6 +7,11 @@ import type { HomeAssistant } from "../../../types";
 import type { LovelaceCard, LovelaceCardEditor, LovelaceGridOptions } from "../types";
 import type { StatisticCardConfig } from "./types";
 export declare const PERIOD_ENERGY = "energy_date_selection";
+export declare const STATISTIC_CARD_DEFAULT_PERIOD: {
+    calendar: {
+        period: string;
+    };
+};
 export declare class HuiStatisticCard extends LitElement implements LovelaceCard {
     static getConfigElement(): Promise<LovelaceCardEditor>;
     static getStubConfig(hass: HomeAssistant, entities: string[], entitiesFill: string[]): {
@@ -33,11 +38,12 @@ export declare class HuiStatisticCard extends LitElement implements LovelaceCard
     private _unsubscribeEnergy;
     setConfig(config: StatisticCardConfig): void;
     getCardSize(): Promise<number>;
-    protected render(): import("lit-html").TemplateResult<1> | typeof nothing;
+    protected render(): typeof nothing | import("lit-html").TemplateResult<1>;
     protected shouldUpdate(changedProps: PropertyValues): boolean;
     protected willUpdate(changedProps: PropertyValues): void;
     protected firstUpdated(): void;
     protected updated(changedProps: PropertyValues): void;
+    private _useEnergyDateSelect;
     private _setFetchStatisticTimer;
     private _fetchStatistic;
     private _fetchMetadata;

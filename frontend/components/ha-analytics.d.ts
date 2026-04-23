@@ -2,7 +2,7 @@ import type { CSSResultGroup, TemplateResult } from "lit";
 import { LitElement } from "lit";
 import type { LocalizeFunc } from "../common/translations/localize";
 import type { Analytics, AnalyticsPreferences } from "../data/analytics";
-import "./ha-settings-row";
+import "./ha-md-list-item";
 import "./ha-switch";
 import "./ha-tooltip";
 declare global {
@@ -17,7 +17,6 @@ export declare class HaAnalytics extends LitElement {
     analytics?: Analytics;
     translationKeyPanel: "page-onboarding" | "config";
     protected render(): TemplateResult;
-    protected updated(changedProps: any): void;
     private _handleRowClick;
     static get styles(): CSSResultGroup;
 }

@@ -1,6 +1,5 @@
 import type { PropertyValues } from "lit";
 import { LitElement, nothing } from "lit";
-import "../../../components/ha-list-item";
 import "../../../components/ha-select";
 import type { HomeAssistant } from "../../../types";
 import type { EntitiesCardEntityConfig } from "../cards/types";
@@ -11,7 +10,7 @@ declare class HuiInputSelectEntityRow extends LitElement implements LovelaceRow 
     private _config?;
     setConfig(config: EntitiesCardEntityConfig): void;
     protected shouldUpdate(changedProps: PropertyValues): boolean;
-    protected render(): import("lit-html").TemplateResult<1> | typeof nothing;
+    protected render(): typeof nothing | import("lit-html").TemplateResult<1>;
     static styles: import("lit").CSSResult;
     private _selectedChanged;
 }

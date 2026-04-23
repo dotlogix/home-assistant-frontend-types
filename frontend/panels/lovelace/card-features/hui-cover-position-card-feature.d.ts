@@ -12,7 +12,7 @@ declare class HuiCoverPositionCardFeature extends LitElement implements Lovelace
     private get _stateObj();
     static getStubConfig(): CoverPositionCardFeatureConfig;
     setConfig(config: CoverPositionCardFeatureConfig): void;
-    protected render(): import("lit-html").TemplateResult<1> | typeof nothing;
+    protected render(): typeof nothing | import("lit-html").TemplateResult<1>;
     private _valueChanged;
     static get styles(): import("lit").CSSResult;
 }

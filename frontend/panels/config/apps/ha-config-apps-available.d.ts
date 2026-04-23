@@ -3,7 +3,7 @@ import { LitElement } from "lit";
 import "../../../components/ha-dropdown";
 import "../../../components/ha-dropdown-item";
 import "../../../components/ha-icon-button";
-import "../../../components/search-input";
+import "../../../components/input/ha-input-search";
 import "../../../layouts/hass-error-screen";
 import "../../../layouts/hass-loading-screen";
 import "../../../layouts/hass-subpage";
@@ -26,7 +26,6 @@ export declare class HaConfigAppsAvailable extends LitElement {
     private _refreshData;
     private _apiCalled;
     private _manageRepositoriesClicked;
-    private _manageRepositories;
     private _manageRegistries;
     private _loadData;
     private _handleCollectionRefresh;

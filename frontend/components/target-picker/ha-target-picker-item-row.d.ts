@@ -41,13 +41,14 @@ export declare class HaTargetPickerItemRow extends LitElement {
     list?: HaMdList;
     itemRow?: HaTargetPickerItemRow;
     protected willUpdate(changedProps: PropertyValues): void;
-    protected render(): import("lit-html").TemplateResult<1> | typeof nothing;
+    protected render(): typeof nothing | import("lit-html").TemplateResult<1>;
     private _renderEntries;
     private _updateItemData;
     private _itemData;
     private _setDomainName;
     private _removeItem;
     private _getDeviceDomain;
+    private _replaceItem;
     private _openDetails;
     static styles: import("lit").CSSResult[];
 }

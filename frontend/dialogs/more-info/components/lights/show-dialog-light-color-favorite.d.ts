@@ -5,7 +5,6 @@ export interface LightColorFavoriteDialogParams {
     title: string;
     initialColor?: LightColor;
     submit?: (color?: LightColor) => void;
-    cancel?: () => void;
 }
 export declare const loadLightColorFavoriteDialog: () => Promise<typeof import("./dialog-light-color-favorite")>;
 export declare const showLightColorFavoriteDialog: (element: HTMLElement, dialogParams: LightColorFavoriteDialogParams) => Promise<LightColor>;

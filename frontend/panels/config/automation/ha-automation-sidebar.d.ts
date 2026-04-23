@@ -24,7 +24,7 @@ export default class HaAutomationSidebar extends LitElement {
     protected updated(changedProperties: PropertyValues): void;
     disconnectedCallback(): void;
     private _renderContent;
-    protected render(): import("lit-html").TemplateResult<1> | typeof nothing;
+    protected render(): typeof nothing | import("lit-html").TemplateResult<1>;
     private _getType;
     triggerCloseSidebar(ev?: CustomEvent): void;
     private _closeSidebar;

@@ -1,10 +1,10 @@
 import type { CSSResultGroup, PropertyValues } from "lit";
 import { LitElement, nothing } from "lit";
 import "../../../../../components/ha-code-editor";
-import "../../../../../components/ha-dialog";
 import "../../../../../components/ha-dialog-header";
 import "../../../../../components/ha-tab-group";
 import "../../../../../components/ha-tab-group-tab";
+import "../../../../../components/ha-dialog";
 import type { HomeAssistant } from "../../../../../types";
 import type { ZHAManageZigbeeDeviceDialogParams } from "./show-dialog-zha-manage-zigbee-device";
 import "./zha-cluster-attributes";
@@ -21,11 +21,13 @@ declare class DialogZHAManageZigbeeDevice extends LitElement {
     private _device?;
     private _bindableDevices;
     private _groups;
+    private _open;
     showDialog(params: ZHAManageZigbeeDeviceDialogParams): Promise<void>;
     closeDialog(): void;
+    private _dialogClosed;
     protected firstUpdated(changedProps: PropertyValues): void;
     protected willUpdate(changedProps: PropertyValues): void;
-    protected render(): import("lit-html").TemplateResult<1> | typeof nothing;
+    protected render(): typeof nothing | import("lit-html").TemplateResult<1>;
     private _fetchData;
     private _enlarge;
     private _handleTabChanged;

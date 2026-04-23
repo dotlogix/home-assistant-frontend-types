@@ -15,7 +15,7 @@ declare class SupervisorAppNetwork extends LitElement {
     private _configHasChanged;
     private _error?;
     private _config?;
-    protected render(): import("lit-html").TemplateResult<1> | typeof nothing;
+    protected render(): typeof nothing | import("lit-html").TemplateResult<1>;
     protected willUpdate(changedProperties: PropertyValues): void;
     private _createSchema;
     private _computeLabel;

@@ -14,7 +14,7 @@ export declare class HaStateControlValveButtons extends LitElement {
     private _onOpenTap;
     private _onCloseTap;
     private _onStopTap;
-    protected renderButton(button: ValveButton | undefined): TemplateResult<1> | typeof nothing;
+    protected renderButton(button: ValveButton | undefined): typeof nothing | TemplateResult<1>;
     protected render(): TemplateResult;
     static styles: import("lit").CSSResult;
 }

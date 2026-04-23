@@ -1,6 +1,7 @@
 import type { PropertyValues } from "lit";
 import { LitElement, nothing } from "lit";
 import "../../../../../components/ha-service-control";
+import "../../../../../components/input/ha-input";
 import type { ServiceAction } from "../../../../../data/script";
 import type { HomeAssistant } from "../../../../../types";
 import type { ActionElement } from "../ha-automation-action-row";
@@ -13,7 +14,7 @@ export declare class HaServiceAction extends LitElement implements ActionElement
     private _responseChecked;
     static get defaultConfig(): ServiceAction;
     protected willUpdate(changedProperties: PropertyValues): void;
-    protected render(): import("lit-html").TemplateResult<1> | typeof nothing;
+    protected render(): typeof nothing | import("lit-html").TemplateResult<1>;
     private _actionChanged;
     private _responseVariableChanged;
     private _responseCheckboxChanged;

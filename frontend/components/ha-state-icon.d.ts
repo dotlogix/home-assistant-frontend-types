@@ -8,7 +8,7 @@ export declare class HaStateIcon extends LitElement {
     stateObj?: HassEntity;
     stateValue?: string;
     icon?: string;
-    protected render(): import("lit-html").TemplateResult<1> | typeof nothing;
+    protected render(): typeof nothing | import("lit-html").TemplateResult<1>;
     private _renderFallback;
 }
 declare global {

@@ -1,15 +1,13 @@
 import type { CSSResultGroup, TemplateResult } from "lit";
 import { LitElement } from "lit";
-import "../../../../../components/ha-alert";
 import "../../../../../components/ha-button";
 import "../../../../../components/ha-card";
-import "../../../../../components/ha-icon-button";
-import "../../../../../components/ha-list";
-import "../../../../../components/ha-list-item";
-import "../../../../../layouts/hass-tabs-subpage";
-import type { PageNavigation } from "../../../../../layouts/hass-tabs-subpage";
+import "../../../../../components/ha-icon-next";
+import "../../../../../components/ha-md-list";
+import "../../../../../components/ha-md-list-item";
+import "../../../../../components/ha-svg-icon";
+import "../../../../../layouts/hass-subpage";
 import type { HomeAssistant, Route } from "../../../../../types";
-export declare const bluetoothTabs: PageNavigation[];
 export declare class BluetoothConfigDashboard extends LitElement {
     hass: HomeAssistant;
     route: Route;
@@ -18,23 +16,17 @@ export declare class BluetoothConfigDashboard extends LitElement {
     private _configEntries;
     private _connectionAllocationData;
     private _scannerStates;
-    private _scannerDetails?;
+    private _advertisementData;
     private _unsubConnectionAllocations?;
     private _unsubScannerState?;
-    private _unsubScannerDetails?;
+    private _unsubAdvertisements?;
     connectedCallback(): void;
     private _loadConfigEntries;
     private _subscribeBluetoothConnectionAllocations;
     private _subscribeBluetoothScannerState;
-    private _subscribeScannerDetails;
+    private _subscribeBluetoothAdvertisements;
     disconnectedCallback(): void;
     protected render(): TemplateResult;
-    private _renderAdaptersList;
-    private _renderScannerMismatchWarning;
-    private _formatMode;
-    private _formatModeLabel;
-    private _formatScannerModeText;
-    private _openOptionFlow;
     static get styles(): CSSResultGroup;
 }
 declare global {

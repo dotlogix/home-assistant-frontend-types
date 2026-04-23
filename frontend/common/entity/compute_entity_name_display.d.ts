@@ -14,5 +14,5 @@ export type EntityNameItem = {
 export interface EntityNameOptions {
     separator?: string;
 }
-export declare const computeEntityNameDisplay: (stateObj: HassEntity, name: EntityNameItem | EntityNameItem[] | undefined, entities: HomeAssistant["entities"], devices: HomeAssistant["devices"], areas: HomeAssistant["areas"], floors: HomeAssistant["floors"], options?: EntityNameOptions) => string;
+export declare const computeEntityNameDisplay: (stateObj: HassEntity, name: string | EntityNameItem | EntityNameItem[] | undefined, entities: HomeAssistant["entities"], devices: HomeAssistant["devices"], areas: HomeAssistant["areas"], floors: HomeAssistant["floors"], options?: EntityNameOptions) => string;
 export declare const computeEntityNameList: (stateObj: HassEntity, name: EntityNameItem[], entities: HomeAssistant["entities"], devices: HomeAssistant["devices"], areas: HomeAssistant["areas"], floors: HomeAssistant["floors"]) => (string | undefined)[];

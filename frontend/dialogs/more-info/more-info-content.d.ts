@@ -10,8 +10,8 @@ declare class MoreInfoContent extends LitElement {
     entry?: ExtEntityRegistryEntry | null;
     editMode?: boolean;
     data?: Record<string, any>;
-    protected render(): import("lit-html").TemplateResult<1> | typeof nothing;
-    private _showEntityMembers;
+    protected render(): typeof nothing | import("lit-html").TemplateResult<1>;
+    private _getEntityMemberIds;
     private _entitiesSectionConfig;
     static styles: import("lit").CSSResult;
 }

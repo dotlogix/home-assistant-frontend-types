@@ -1,5 +1,6 @@
 import type { CSSResultGroup } from "lit";
 import { LitElement, nothing } from "lit";
+import "../../../../components/ha-dialog-footer";
 import "../../../../components/ha-dialog";
 import "../../../../components/ha-button";
 import "../../../../components/ha-formfield";
@@ -9,11 +10,12 @@ import type { DialogStatisticsUnitsChangedParams } from "./show-dialog-statistic
 export declare class DialogStatisticsFixUnitsChanged extends LitElement {
     hass: HomeAssistant;
     private _params?;
+    private _open;
     private _action?;
     showDialog(params: DialogStatisticsUnitsChangedParams): void;
     closeDialog(): void;
-    private _closeDialog;
-    protected render(): import("lit-html").TemplateResult<1> | typeof nothing;
+    private _dialogClosed;
+    protected render(): typeof nothing | import("lit-html").TemplateResult<1>;
     private _handleActionChanged;
     private _cancel;
     private _fixIssue;

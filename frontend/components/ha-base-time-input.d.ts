@@ -2,9 +2,8 @@ import type { TemplateResult } from "lit";
 import { LitElement } from "lit";
 import "./ha-icon-button";
 import "./ha-input-helper-text";
-import "./ha-list-item";
 import "./ha-select";
-import "./ha-textfield";
+import "./input/ha-input";
 export interface TimeChangedEvent {
     days?: number;
     hours: number;
@@ -99,6 +98,17 @@ export declare class HaBaseTimeInput extends LitElement {
      */
     amPm: "AM" | "PM";
     clearable?: boolean;
+    placeholderLabels: boolean;
+    private _inputs?;
+    static shadowRootOptions: {
+        delegatesFocus: boolean;
+        clonable?: boolean;
+        customElementRegistry?: CustomElementRegistry;
+        mode: ShadowRootMode;
+        serializable?: boolean;
+        slotAssignment?: SlotAssignmentMode;
+    };
+    reportValidity(): boolean;
     protected render(): TemplateResult;
     private _clearValue;
     private _valueChanged;

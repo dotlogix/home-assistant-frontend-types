@@ -32,6 +32,10 @@ declare class HaConfigBackupOverview extends LitElement {
     fetching: boolean;
     config?: BackupConfig;
     agents: BackupAgent[];
+    uploadProgress: Record<string, {
+        uploaded_bytes: number;
+        total_bytes: number;
+    }>;
     private _uploadBackup;
     private _handleOnboardingButtonClick;
     private _setupAutomaticBackup;

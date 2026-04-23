@@ -11,5 +11,6 @@ interface EntityContext {
     floor: FloorRegistryEntry | null;
 }
 export declare const getEntityContext: (stateObj: HassEntity, entities: HomeAssistant["entities"], devices: HomeAssistant["devices"], areas: HomeAssistant["areas"], floors: HomeAssistant["floors"]) => EntityContext;
+export declare const getEntityAreaId: (entityId: string, entities: HomeAssistant["entities"], devices: HomeAssistant["devices"]) => string | undefined;
 export declare const getEntityEntryContext: (entry: EntityRegistryDisplayEntry | EntityRegistryEntry | ExtEntityRegistryEntry, entities: HomeAssistant["entities"], devices: HomeAssistant["devices"], areas: HomeAssistant["areas"], floors: HomeAssistant["floors"]) => EntityContext;
 export {};

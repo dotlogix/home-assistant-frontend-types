@@ -3,7 +3,6 @@ import { LitElement } from "lit";
 import "../../../../../components/buttons/ha-progress-button";
 import "../../../../../components/ha-card";
 import "../../../../../components/ha-select";
-import "../../../../../components/ha-list-item";
 import type { ZHADevice } from "../../../../../data/zha";
 import type { HomeAssistant } from "../../../../../types";
 export declare class ZHADeviceBindingControl extends LitElement {

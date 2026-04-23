@@ -8,7 +8,7 @@ declare class MoreInfoViewVoiceAssistants extends LitElement {
     entry: ExtEntityRegistryEntry;
     params?: any;
     private _calculateExposed;
-    protected render(): import("lit-html").TemplateResult<1> | typeof nothing;
+    protected render(): typeof nothing | import("lit-html").TemplateResult<1>;
     static get styles(): CSSResultGroup;
 }
 declare global {

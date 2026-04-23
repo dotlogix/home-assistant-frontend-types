@@ -1,9 +1,8 @@
 import type { LovelaceConfig } from "../../../../data/lovelace/config/types";
-import type { LovelaceContainerPath } from "../lovelace-path";
 export interface CreateBadgeDialogParams {
     lovelaceConfig: LovelaceConfig;
     saveConfig: (config: LovelaceConfig) => void;
-    path: LovelaceContainerPath;
+    path: [number];
     suggestedBadges?: string[];
     entities?: string[];
 }

@@ -6,7 +6,7 @@ declare class HaAttributeValue extends LitElement {
     stateObj?: HassEntity;
     attribute: string;
     hideUnit: boolean;
-    protected render(): string | import("lit-html").TemplateResult<1> | typeof nothing;
+    protected render(): string | typeof nothing | import("lit-html").TemplateResult<1>;
     static styles: import("lit").CSSResult;
 }
 declare global {

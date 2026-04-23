@@ -8,8 +8,12 @@ export declare class HaTimeInput extends LitElement {
     helper?: string;
     disabled: boolean;
     required: boolean;
+    autoValidate: boolean;
     enableSecond: boolean;
     clearable?: boolean;
+    placeholderLabels: boolean;
+    private _input?;
+    reportValidity(): boolean;
     protected render(): import("lit-html").TemplateResult<1>;
     private _timeChanged;
 }

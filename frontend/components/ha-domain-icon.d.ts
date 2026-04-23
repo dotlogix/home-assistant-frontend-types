@@ -8,7 +8,7 @@ export declare class HaDomainIcon extends LitElement {
     state?: string;
     icon?: string;
     brandFallback?: boolean;
-    protected render(): import("lit-html").TemplateResult<1> | typeof nothing;
+    protected render(): typeof nothing | import("lit-html").TemplateResult<1>;
     private _renderFallback;
     static styles: import("lit").CSSResult;
 }

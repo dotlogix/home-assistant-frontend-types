@@ -17,6 +17,9 @@ declare global {
             revokeExternalAuth(payload: string): any;
             externalBus(payload: string): any;
         };
+        externalAppV2?: {
+            postMessage(payload: string): void;
+        };
         webkit?: {
             messageHandlers: {
                 getExternalAuth: {

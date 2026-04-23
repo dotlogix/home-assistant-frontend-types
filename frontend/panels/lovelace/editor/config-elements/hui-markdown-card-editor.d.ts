@@ -8,7 +8,7 @@ export declare class HuiMarkdownCardEditor extends LitElement implements Lovelac
     private _config?;
     setConfig(config: MarkdownCardConfig): void;
     private _schema;
-    protected render(): import("lit-html").TemplateResult<1> | typeof nothing;
+    protected render(): typeof nothing | import("lit-html").TemplateResult<1>;
     private _valueChanged;
     private _computeLabelCallback;
 }

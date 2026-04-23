@@ -7,7 +7,7 @@ import "../../ha-icon-next";
 import "../../ha-md-list";
 import "../../ha-md-list-item";
 import "../../ha-svg-icon";
-import "../../ha-wa-dialog";
+import "../../ha-dialog";
 import "../ha-target-picker-item-row";
 import type { TargetDetailsDialogParams } from "./show-dialog-target-details";
 declare class DialogTargetDetails extends LitElement implements HassDialog {
@@ -17,7 +17,7 @@ declare class DialogTargetDetails extends LitElement implements HassDialog {
     showDialog(params: TargetDetailsDialogParams): void;
     closeDialog(): boolean;
     private _dialogClosed;
-    protected render(): import("lit-html").TemplateResult<1> | typeof nothing;
+    protected render(): typeof nothing | import("lit-html").TemplateResult<1>;
 }
 declare global {
     interface HTMLElementTagNameMap {
