@@ -1,0 +1,72 @@
+import "@home-assistant/webawesome/dist/components/tree-item/tree-item";
+import "@home-assistant/webawesome/dist/components/tree/tree";
+import { LitElement, nothing, type PropertyValues, type TemplateResult } from "lit";
+import "../../../../components/ha-floor-icon";
+import "../../../../components/ha-icon";
+import "../../../../components/ha-icon-next";
+import "../../../../components/ha-md-list";
+import "../../../../components/ha-md-list-item";
+import "../../../../components/ha-section-title";
+import "../../../../components/ha-state-icon";
+import "../../../../components/ha-svg-icon";
+import { type DomainManifestLookup } from "../../../../data/integration";
+import { type SingleHassServiceTarget } from "../../../../data/target";
+import type { HomeAssistant } from "../../../../types";
+export default class HaAutomationAddFromTarget extends LitElement {
+    hass: HomeAssistant;
+    value?: SingleHassServiceTarget;
+    narrow: boolean;
+    manifests?: DomainManifestLookup;
+    private _i18n;
+    private states;
+    private _registries;
+    private _labelRegistry;
+    private _floorAreas;
+    private _entries;
+    private _showShowMoreButton?;
+    private _fullHeight;
+    private _configEntryLookup;
+    willUpdate(changedProps: PropertyValues<this>): void;
+    protected updated(changedProps: PropertyValues<this>): void;
+    private _initialDataLoad;
+    private _setShowTargetShowMoreButton;
+    protected render(): typeof nothing | TemplateResult<1>;
+    private _renderNarrow;
+    private _renderFloors;
+    private _renderLabels;
+    private _renderUnassigned;
+    private _renderAreas;
+    private _renderDevices;
+    private _renderDomains;
+    private _renderEntities;
+    private _renderFloorIcon;
+    private _renderAreaIcon;
+    private _renderDomainIcon;
+    private _renderEntityIcon;
+    private _renderItem;
+    private _getAreaDeviceLookupMemoized;
+    private _getAreaEntityLookupMemoized;
+    private _getDeviceEntityLookupMemoized;
+    private _getSelectedTargetId;
+    private _getLabelsMemoized;
+    private _formatId;
+    private _getTreeData;
+    private _loadUnassignedDevices;
+    private _loadUnassignedEntities;
+    private _loadArea;
+    private _expandTreeToItem;
+    private _handleSelectionChange;
+    private _selectItem;
+    private _valueChanged;
+    private _toggleItem;
+    private _expandItem;
+    private _collapseItem;
+    private _loadConfigEntries;
+    private _expandHeight;
+    static styles: import("lit").CSSResult;
+}
+declare global {
+    interface HTMLElementTagNameMap {
+        "ha-automation-add-from-target": HaAutomationAddFromTarget;
+    }
+}
