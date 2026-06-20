@@ -1,1 +1,0 @@
-export declare const ANY_STATE_VALUE = "__ANY_STATE_IGNORE_ATTRIBUTES__";
